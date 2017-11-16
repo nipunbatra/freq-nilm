@@ -1,5 +1,6 @@
 import autograd.numpy as np
 from autograd import multigrad
+import sys
 from scipy.spatial.distance import pdist, squareform
 from sklearn.neighbors import NearestNeighbors
 
@@ -206,7 +207,7 @@ def stf_4dim(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
 
         if i%50==0:
             print cost(tensor, home, appliance, day, hour), i
-
+            sys.stdout.flush()
 
 
 
