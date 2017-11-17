@@ -8,6 +8,7 @@ __pycache__/
 # C extensions
 *.so
 
+.idea/
 hourly.pkl
 
 # Distribution / packaging
@@ -98,3 +99,5 @@ ENV/
 .ropeproject
 
 /notebooks/hourly.pkl
+
+idea/
