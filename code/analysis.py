@@ -2,6 +2,8 @@ import pickle
 from tensor_custom_core import *
 import sys
 
+r = int(sys.argv[1])
+
 tensor = pickle.load(open('../hourly.pkl','r'))
 
 t = tensor[:, :, :, :]
@@ -15,8 +17,8 @@ for train, test in kf.split(t):
     sys.stdout.flush()
     t_copy = t.copy()
     t_copy[test][1:, :, :] = np.nan
-    home, appliance, day, hour = stf_4dim(tensor=t_copy, r=2, num_iter=50, lr=2)
+    home, appliance, day, hour = stf_4dim(tensor=t_copy, r=r, num_iter=50, lr=2)
     pred[test] = np.einsum("Hr, Ar, Dr, Tr ->HADT", home, appliance, day, hour)[test]
 
-pickle.dump(pred, open("../pred-hourly.pkl",'w'))
+pickle.dump(pred, open("../{}-pred-hourly.pkl".format(r),'w'))
 
