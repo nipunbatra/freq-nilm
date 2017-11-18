@@ -2,9 +2,10 @@ import pickle
 from tensor_custom_core import *
 import sys
 
-r = int(sys.argv[1])
+freq, r = sys.argv[1:]
+r = int(r)
 
-tensor = pickle.load(open('../hourly.pkl','r'))
+tensor = pickle.load(open('../{}-input.pkl'.format(freq),'r'))
 
 t = tensor[:, :, :, :]
 from sklearn.model_selection import KFold
@@ -20,5 +21,5 @@ for train, test in kf.split(t):
     home, appliance, day, hour = stf_4dim(tensor=t_copy, r=r, num_iter=50, lr=2)
     pred[test] = np.einsum("Hr, Ar, Dr, Tr ->HADT", home, appliance, day, hour)[test]
 
-pickle.dump(pred, open("../{}-pred-hourly.pkl".format(r),'w'))
+pickle.dump(pred, open("../{}-{}-pred-hourly.pkl".format(freq, r),'w'))
 

@@ -10,6 +10,7 @@ __pycache__/
 
 .idea/
 hourly.pkl
+*.pkl
 
 # Distribution / packaging
 .Python
