@@ -16,6 +16,29 @@ def get_tensor(df, start=1, stop=13):
 	return tensor
 
 
+def hourly_4d(tensor, pred):
+
+	error = {}
+	from common import APPLIANCES_ORDER
+	for appliance, appliance_name in enumerate(APPLIANCES_ORDER):
+		error[appliance_name] = {}
+		for home in range(tensor.shape[0]):
+			error[appliance_name][home] = 0.
+			for hour in range(2):
+				y_pred = pred[home, appliance, :, hour]
+				y_true = tensor[home, appliance, :, hour]
+				mask = ~np.isnan(y_true)
+				if np.nansum(y_true) > 1:
+					error_hour = np.nansum((y_pred - y_true)[mask]) / np.nansum(y_true)
+
+					# error_hour =  np.nansum((y_pred - y_true)[mask])/max(np.nansum(y_true), np.nansum(y_pred))
+					error[appliance_name][home] += error_hour ** 2
+			error[appliance_name][home] = np.sqrt(error[appliance_name][home])
+	error = pd.DataFrame(error)
+	error = error.replace(0.0, np.nan)
+	return error
+
+
 def create_region_df_dfc_static(region, year, start=1, stop=13):
 	df, dfc = create_matrix_single_region(region, year)
 	tensor = get_tensor(df, start, stop)
