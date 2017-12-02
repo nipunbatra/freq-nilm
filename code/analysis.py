@@ -1,11 +1,11 @@
-import pickle
+import numpy as np
 from tensor_custom_core import *
 import sys
 
-freq, r = sys.argv[1:]
+tf_type, freq, r = sys.argv[1:]
 r = int(r)
 
-tensor = pickle.load(open('../{}-input.pkl'.format(freq),'r'))
+tensor = np.load('../{}-input.npy'.format(freq))
 
 t = tensor[:, :, :, :]
 from sklearn.model_selection import KFold
@@ -14,12 +14,17 @@ pred = np.zeros_like(t)
 pred[:] = np.nan
 
 for train, test in kf.split(t):
-    print "*"*20, train, test
+    print("*"*20, train, test)
     sys.stdout.flush()
     t_copy = t.copy()
     t_copy[test][1:, :, :] = np.nan
-    home, appliance, day, hour = stf_4dim(tensor=t_copy, r=r, num_iter=50, lr=2)
-    pred[test] = np.einsum("Hr, Ar, Dr, Tr ->HADT", home, appliance, day, hour)[test]
+    if tf_type=="STF":
+        home, appliance, day, hour = stf_4dim(tensor=t_copy, r=r, num_iter=110, lr=2)
+        pred[test] = np.einsum("Hr, Ar, Dr, Tr ->HADT", home, appliance, day, hour)[test]
+    elif tf_type=="MTF":
+        home, appliance, day, hour = stf_4dim_time(tensor=t_copy, r=r, num_iter=110, lr=2)
+        pred[test] = np.einsum("Hr, Ar, Dr, ATr ->HADT", home, appliance, day, hour)[test]
 
-pickle.dump(pred, open("../{}-{}-pred-hourly.pkl".format(freq, r),'w'))
+
+np.save(pred, open("../{}-{}-{}-pred-hourly.pkl".format(tf_type, freq, r),'w'))
 
