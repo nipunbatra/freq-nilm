@@ -1,19 +1,20 @@
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import os
-from copy import deepcopy
-import pickle
+
 from tensor_custom_core import *
 from common import hourly_4d
 
-freq = sys.argv[1]
-#freq = '2H'
-tensor = pickle.load(open('../{}-input.pkl'.format(freq),'r'))
+freq = '1H'
 error_rank = {}
-for r in range(1, 10):
-	print("*" * 20)
+for tf_type in ['MTF','STF']:
+	error_rank[tf_type] = {}
 
-	pred = pickle.load(open("../{}-{}-pred-hourly.pkl".format(freq, r), 'r'))
+	#freq = '2H'
+	tensor = np.load('../{}-input.npy'.format(freq))
 
-	error_rank[r] = hourly_4d(tensor, pred)
+	for r in range(1, 10):
+		print("*" * 20)
+		print(tf_type, r)
+
+		pred = np.load("../{}-{}-{}-pred-hourly.npy".format(tf_type, freq, r))
+
+		error_rank[tf_type][r] = hourly_4d(tensor, pred)

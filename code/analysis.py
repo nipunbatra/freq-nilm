@@ -24,6 +24,9 @@ for train, test in kf.split(t):
     elif tf_type=="MTF":
         home, appliance, day, hour = stf_4dim_time(tensor=t_copy, r=r, num_iter=50, lr=2)
         pred[test] = np.einsum("Hr, Ar, Dr, ATr ->HADT", home, appliance, day, hour)[test]
+    elif tf_type=="MTF-2":
+        home, appliance, day, hour = stf_4dim_time_day(tensor=t_copy, r=r, num_iter=50, lr=2)
+        pred[test] = np.einsum("Hr, Ar, ADr, ATr ->HADT", home, appliance, day, hour)[test]
 
 
 np.save("../{}-{}-{}-pred-hourly.npy".format(tf_type, freq, r), pred)
