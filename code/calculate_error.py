@@ -5,13 +5,13 @@ from common import hourly_4d
 
 freq = '1H'
 error_rank = {}
-for tf_type in ['MTF','STF']:
+for tf_type in ['MTF-2','MTF']:
 	error_rank[tf_type] = {}
 
 	#freq = '2H'
 	tensor = np.load('../{}-input.npy'.format(freq))
 
-	for r in range(1, 10):
+	for r in range(1, 11):
 		print("*" * 20)
 		print(tf_type, r)
 

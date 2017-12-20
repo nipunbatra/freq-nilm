@@ -184,3 +184,53 @@ def stf_4dim(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
 
 
     return home, appliance, day, hour
+
+
+def stf_3dim(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
+    np.random.seed(random_seed)
+    args_num = [1, 2, 3]
+
+    def cost(tensor, home, appliance, time):
+        pred = np.einsum('Hr, Ar, Tr ->HAT', home, appliance, time)
+        mask = ~np.isnan(tensor)
+        error = (pred - tensor)[mask].flatten()
+        return np.sqrt((error ** 2).mean())
+
+    mg = grad(cost, argnum=args_num)
+    sizes = [(x, r) for x in tensor.shape]
+    home = np.random.rand(*sizes[0])
+    appliance = np.random.rand(*sizes[1])
+    time = np.random.rand(*sizes[2])
+
+    sum_home = np.zeros_like(home)
+    sum_appliance = np.zeros_like(appliance)
+    sum_time = np.zeros_like(time)
+
+    # GD procedure
+    for i in range(num_iter):
+        del_home, del_appliance, del_time = mg(tensor, home, appliance, time)
+
+        sum_home += eps + np.square(del_home)
+        lr_home = np.divide(lr, np.sqrt(sum_home))
+        home -= lr_home * del_home
+
+        sum_appliance += eps + np.square(del_appliance)
+        lr_appliance = np.divide(lr, np.sqrt(sum_appliance))
+        appliance -= lr_appliance * del_appliance
+
+        sum_time += eps + np.square(del_time)
+        lr_time = np.divide(lr, np.sqrt(sum_time))
+        time -= lr_time * del_time
+
+
+        # Projection to non-negative space
+        home[home < 0] = 1e-8
+        appliance[appliance < 0] = 1e-8
+        time[time < 0] = 1e-8
+
+        if i % 50 == 0:
+            print(cost(tensor, home, appliance, time), i)
+            sys.stdout.flush()
+
+    return home, appliance, time
+

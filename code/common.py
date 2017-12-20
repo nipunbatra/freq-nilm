@@ -25,7 +25,7 @@ def hourly_4d(tensor, pred):
 		error[appliance_name] = {}
 		for home in range(tensor.shape[0]):
 			error[appliance_name][home] = 0.
-			for hour in range(2):
+			for hour in range(24):
 				y_pred = pred[home, appliance, :, hour]
 				y_true = tensor[home, appliance, :, hour]
 				mask = ~np.isnan(y_true)
