@@ -97,7 +97,7 @@ class CustomRNN(nn.Module):
 
         return pred
 
-ORDER = ['hvac','fridge','oven','dw','mw','wm']
+ORDER = ['hvac','fridge','oven','dw','mw','wm'][:3]
 
 class AppliancesRNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, num_appliance):
@@ -108,7 +108,7 @@ class AppliancesRNN(nn.Module):
         for appliance in range(self.num_appliance):
             setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size))
 
-    def forward(self, agg, hvac, fridge, oven, dw, mw, wm, p):
+    def forward(self, agg, hvac, fridge, oven, p):
         agg_current = agg
         flag = False
         if np.random.random() > p:
@@ -147,8 +147,7 @@ for t in range(num_iterations):
     out = torch.cat([out_train[appliance] for appliance in ORDER])
 
     pred = a(inp, out_train['hvac'], out_train['fridge'],
-             out_train['oven'], out_train['dw'], out_train['mw'],
-             out_train['wm'],0.8)
+             out_train['oven'], 0.8)
 
     optimizer.zero_grad()
     predictions.append(pred.data.numpy())
@@ -159,7 +158,7 @@ for t in range(num_iterations):
     optimizer.step()
 
 test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
-test_pred = a(test_inp, None, None, None, None, None, None, -2).data.numpy().reshape(-1, 24)
+test_pred = a(test_inp, None, None, None,  -2).data.numpy().reshape(-1, 24)
 
 from sklearn.metrics import mean_absolute_error
 
