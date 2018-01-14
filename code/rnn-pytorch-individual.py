@@ -75,6 +75,9 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
+torch.manual_seed(0)
+np.random.seed(0)
+
 input_dim = 1
 hidden_size = 200
 num_layers = 1
