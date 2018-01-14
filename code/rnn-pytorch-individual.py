@@ -9,7 +9,6 @@ num_iterations = int(num_iterations)
 import numpy as np
 
 import pandas as pd
-import matplotlib.pyplot as plt
 tensor = np.load('../1H-input.npy')
 
 
