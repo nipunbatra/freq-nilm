@@ -1,6 +1,6 @@
 from common import APPLIANCES_ORDER
 import sys
-appliance, num_hidden, num_iterations, num_layers = sys.argv[1:]
+num_hidden, num_iterations, num_layers = sys.argv[1:]
 num_hidden = int(num_hidden)
 num_layers = int(num_layers)
 num_iterations = int(num_iterations)
@@ -158,7 +158,7 @@ for t in range(num_iterations):
     optimizer.step()
 
 test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
-test_pred = a(test_inp, None, None, None,  -2).data.numpy().reshape(-1, 24)
+test_pred = torch.split(a(test_inp, None, None, None,  -2), test_agg.shape[0])
 
 from sklearn.metrics import mean_absolute_error
 
