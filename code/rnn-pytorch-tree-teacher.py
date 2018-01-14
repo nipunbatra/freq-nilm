@@ -127,7 +127,7 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-a = AppliancesRNN(input_dim, hidden_size, 1, 3)
+a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
 print(a)
 # Storing predictions per iterations to visualise later
 predictions = []
