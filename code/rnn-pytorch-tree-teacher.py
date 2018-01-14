@@ -144,7 +144,7 @@ for t in range(num_iterations):
     inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))), requires_grad=True)
 
 
-    out = torch.cat([[out_train[appliance] for appliance in ORDER]])
+    out = torch.cat([out_train[appliance] for appliance in ORDER])
 
     pred = a(inp, out_train['hvac'], out_train['fridge'],
              out_train['oven'], out_train['dw'], out_train['mw'],
