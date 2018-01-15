@@ -178,15 +178,16 @@ for t in range(num_iterations):
     #loss = loss - loss_0
     if t % 1 == 0:
         print(t, loss.data[0])
-    if t%2 == 0:
-        test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
-        test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
+    if not cuda_av:
+        if t%2 == 0:
+            test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
+            test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
 
-        preds = {k: test_pred[i].data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
-        errors = {}
-        for appliance in ORDER:
-            errors[appliance] = mean_absolute_error(eval("test_" + appliance), preds[appliance])
-        print(pd.Series(errors))
+            preds = {k: test_pred[i].data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
+            errors = {}
+            for appliance in ORDER:
+                errors[appliance] = mean_absolute_error(eval("test_" + appliance), preds[appliance])
+            print(pd.Series(errors))
 
     loss.backward()
     optimizer.step()
