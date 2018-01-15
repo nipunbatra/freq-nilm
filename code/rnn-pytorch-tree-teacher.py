@@ -124,7 +124,7 @@ class AppliancesRNN(nn.Module):
         self.preds = {}
         self.order = ORDER
         for appliance in range(self.num_appliance):
-            setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size))
+            setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
 
     def forward(self, agg, dw,  oven, fridge, hvac, p):
         agg_current = agg
