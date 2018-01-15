@@ -148,7 +148,7 @@ class AppliancesRNN(nn.Module):
 
 a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
 if cuda_av:
-    a = a.cuda(0)
+    a = a.cuda()
 print(a)
 # Storing predictions per iterations to visualise later
 predictions = []
@@ -179,7 +179,7 @@ for t in range(num_iterations):
     optimizer.zero_grad()
     #predictions.append(pred.data.numpy())
     loss = loss_func(pred, out)
-    loss_0 = torch.split(pred, train_agg.shape[0])[0].mean()
+    #loss_0 = torch.split(pred, train_agg.shape[0])[0].mean()
     #loss = loss - loss_0
     if t % 1 == 0:
         print(t, loss.data[0])
