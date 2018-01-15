@@ -172,9 +172,8 @@ inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type
 if cuda_av:
     inp = inp.cuda()
 for t in range(num_iterations):
-
-
-
+    import pdb
+    pdb.set_trace()
     out = torch.cat([out_train[appliance] for appliance in ORDER])
 
     pred = a(inp, out_train['dw'], out_train['oven'], out_train['fridge'],
