@@ -192,8 +192,8 @@ for t in range(num_iterations):
     loss.backward()
     optimizer.step()
 
-
-
+if cuda_av:
+    preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
 for appliance in ORDER:
     errors[appliance] = mean_absolute_error(eval("test_"+appliance), preds[appliance])
