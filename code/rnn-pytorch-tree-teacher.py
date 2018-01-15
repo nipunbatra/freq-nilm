@@ -147,6 +147,7 @@ class AppliancesRNN(nn.Module):
 
 
 a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
+print(cuda_av)
 if cuda_av:
     a = a.cuda()
 print(a)
