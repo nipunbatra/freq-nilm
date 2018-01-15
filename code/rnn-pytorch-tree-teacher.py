@@ -158,10 +158,15 @@ loss_func = nn.L1Loss()
 
 out_train = {}
 for appliance in ORDER:
-    out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype))
+    if not cuda_av:
+        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype))
+    else:
+        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype)).cuda()
 
-inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
-
+if not cuda_av:
+    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
+else:
+    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True).cuda()
 for t in range(num_iterations):
 
 
@@ -180,6 +185,7 @@ for t in range(num_iterations):
         print(t, loss.data[0])
     if not cuda_av:
         if t%2 == 0:
+            
             test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
             test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
 
