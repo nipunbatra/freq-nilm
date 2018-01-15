@@ -164,6 +164,9 @@ for appliance in ORDER:
     else:
         out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).cuda())
 
+print(out_train[appliance])
+
+
 if not cuda_av:
     inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
 else:
