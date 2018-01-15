@@ -154,7 +154,7 @@ print(a)
 predictions = []
 
 optimizer = torch.optim.Adam(a.parameters(), lr=2)
-loss_func = nn.L1Loss()
+loss_func = nn.L1Loss().cuda()
 
 out_train = {}
 for appliance in ORDER:
