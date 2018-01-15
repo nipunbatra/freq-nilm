@@ -13,7 +13,7 @@ from sklearn.metrics import mean_absolute_error
 import numpy as np
 
 import pandas as pd
-tensor = np.load('../1H-input.npy').astype('float64')
+tensor = np.load('../1H-input.npy')
 
 
 def create_subset_dataset(tensor, start=160, num_days=112):
@@ -82,9 +82,9 @@ from torch.autograd import Variable
 cuda_av = False
 if torch.cuda.is_available():
     cuda_av=True
-    dtype=torch.cuda.DoubleTensor
+    dtype=torch.cuda.FloatTensor
 else:
-    dtype=torch.DoubleTensor
+    dtype=torch.FloatTensor
 
 torch.manual_seed(0)
 np.random.seed(0)
@@ -159,7 +159,7 @@ loss_func = nn.L1Loss().cuda()
 
 out_train = {}
 for appliance in ORDER:
-    out_train[appliance] = Variable(torch.Tensor(eval("train_" + appliance).reshape((train_agg.shape[0], -1, 1))).type(torch.DoubleTensor))
+    out_train[appliance] = Variable(torch.Tensor(eval("train_" + appliance).reshape((train_agg.shape[0], -1, 1))).type(torch.FloatTensor))
     if cuda_av:
         out_train[appliance] = out_train[appliance].cuda()
 
@@ -168,7 +168,7 @@ print(out_train[appliance])
 
 
 
-inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(torch.DoubleTensor), requires_grad=True)
+inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(torch.FloatTensor), requires_grad=True)
 if cuda_av:
     inp = inp.cuda()
 for t in range(num_iterations):
