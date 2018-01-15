@@ -13,7 +13,7 @@ from sklearn.metrics import mean_absolute_error
 import numpy as np
 
 import pandas as pd
-tensor = np.load('../1H-input.npy')
+tensor = np.load('../1H-input.npy').astype('float64')
 
 
 def create_subset_dataset(tensor, start=160, num_days=112):
@@ -84,7 +84,7 @@ if torch.cuda.is_available():
     cuda_av=True
     dtype=torch.cuda.DoubleTensor
 else:
-    dtype=torch.FloatTensor
+    dtype=torch.DoubleTensor
 
 torch.manual_seed(0)
 np.random.seed(0)
@@ -173,7 +173,7 @@ if cuda_av:
     inp = inp.cuda()
 for t in range(num_iterations):
     import pdb
-    pdb.set_trace()
+    #pdb.set_trace()
     out = torch.cat([out_train[appliance] for appliance in ORDER])
 
     pred = a(inp, out_train['dw'], out_train['oven'], out_train['fridge'],
