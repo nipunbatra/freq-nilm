@@ -124,18 +124,23 @@ class AppliancesRNN(nn.Module):
         self.preds = {}
         self.order = ORDER
         for appliance in range(self.num_appliance):
-            setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
+            if cuda_av:
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
+            else:
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size))
+
 
     def forward(self, agg, dw,  oven, fridge, hvac, p):
         agg_current = agg
         flag = False
         if np.random.random() > p:
             flag = True
-            print("Subtracting prediction")
+            #print("Subtracting prediction")
         else:
-            print("Subtracting true")
+            pass
+            #print("Subtracting true")
         for appliance in range(self.num_appliance):
-            print(agg_current.mean().data[0])
+            #print(agg_current.mean().data[0])
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
             if flag:
                 agg_current = agg_current - self.preds[appliance]
@@ -164,7 +169,6 @@ for appliance in ORDER:
         out_train[appliance] = out_train[appliance].cuda()
 
 
-print(out_train[appliance])
 
 
 
