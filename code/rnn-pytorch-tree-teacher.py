@@ -161,12 +161,12 @@ for appliance in ORDER:
     if not cuda_av:
         out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype))
     else:
-        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype)).cuda()
+        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).cuda())
 
 if not cuda_av:
     inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
 else:
-    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True).cuda()
+    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).cuda(), requires_grad=True)
 for t in range(num_iterations):
 
 
@@ -185,7 +185,7 @@ for t in range(num_iterations):
         print(t, loss.data[0])
     if not cuda_av:
         if t%2 == 0:
-            
+
             test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
             test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
 
@@ -199,7 +199,7 @@ for t in range(num_iterations):
     optimizer.step()
 
 if cuda_av:
-    test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
+    test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))).cuda(), requires_grad=True)
     test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
     preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
