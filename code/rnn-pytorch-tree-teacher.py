@@ -159,18 +159,18 @@ loss_func = nn.L1Loss().cuda()
 
 out_train = {}
 for appliance in ORDER:
-    if not cuda_av:
-        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).type(dtype))
-    else:
-        out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).cuda())
+    out_train[appliance] = Variable(torch.Tensor(eval("train_" + appliance).reshape((train_agg.shape[0], -1, 1))))
+    if cuda_av:
+        out_train[appliance] = out_train[appliance].cuda()
+
 
 print(out_train[appliance])
 
 
-if not cuda_av:
-    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
-else:
-    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).cuda(), requires_grad=True)
+
+inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
+if cuda_av:
+    inp = inp.cuda()
 for t in range(num_iterations):
 
 
