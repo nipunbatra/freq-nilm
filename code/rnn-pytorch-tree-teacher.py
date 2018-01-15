@@ -172,7 +172,7 @@ for t in range(num_iterations):
              out_train['hvac'], p)
 
     optimizer.zero_grad()
-    predictions.append(pred.data.numpy())
+    #predictions.append(pred.data.numpy())
     loss = loss_func(pred, out)
     loss_0 = torch.split(pred, train_agg.shape[0])[0].mean()
     #loss = loss - loss_0
