@@ -35,6 +35,7 @@ def create_subset_dataset(tensor, start=160, num_days=112):
 t_all, valid_homes = create_subset_dataset(tensor)
 
 num_days = 112
+train_agg
 train_agg = t_all[:30, 0, :].reshape(30*num_days, 24)
 
 train_hvac = t_all[:30, 1, :].reshape(30*num_days, 24)
@@ -79,13 +80,6 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
-cuda_av = False
-if torch.cuda.is_available():
-    cuda_av=True
-    dtype=torch.cuda.FloatTensor
-else:
-    dtype=torch.FloatTensor
-
 torch.manual_seed(0)
 np.random.seed(0)
 
@@ -104,7 +98,7 @@ class CustomRNN(nn.Module):
         self.rnn = nn.GRU(input_size=input_size, hidden_size=hidden_size,
                           num_layers=num_layers, batch_first=True,
                           dropout=0.1, bidirectional=bidirectional)
-        self.linear = nn.Linear(hidden_size*num_directions, output_size, )
+        self.linear = nn.Linear(hidden_size, output_size, )
 
     def forward(self, x):
         pred, hidden = self.rnn(x, None)
@@ -147,8 +141,6 @@ class AppliancesRNN(nn.Module):
 
 
 a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
-if cuda_av:
-    a = a.cuda(0)
 print(a)
 # Storing predictions per iterations to visualise later
 predictions = []
@@ -158,12 +150,11 @@ loss_func = nn.L1Loss()
 
 out_train = {}
 for appliance in ORDER:
-    out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))).astype(dtype))
-
-inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).astype(dtype), requires_grad=True)
+    out_train[appliance] = Variable(torch.Tensor(eval("train_"+appliance).reshape((train_agg.shape[0], -1, 1))))
 
 for t in range(num_iterations):
 
+    inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))), requires_grad=True)
 
 
     out = torch.cat([out_train[appliance] for appliance in ORDER])

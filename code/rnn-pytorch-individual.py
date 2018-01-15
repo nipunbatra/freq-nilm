@@ -103,7 +103,7 @@ print(r)
 # Storing predictions per iterations to visualise later
 predictions = []
 
-optimizer = torch.optim.Adam(r.parameters(), lr=2)
+optimizer = torch.optim.Adam(r.parameters(), lr=1e-1)
 loss_func = nn.L1Loss()
 
 train_appliance = eval("train_"+appliance)
