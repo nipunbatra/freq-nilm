@@ -193,6 +193,8 @@ for t in range(num_iterations):
     optimizer.step()
 
 if cuda_av:
+    test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
+    test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
     preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
 for appliance in ORDER:
