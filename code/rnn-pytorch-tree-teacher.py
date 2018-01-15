@@ -82,7 +82,7 @@ from torch.autograd import Variable
 cuda_av = False
 if torch.cuda.is_available():
     cuda_av=True
-    dtype=torch.cuda.FloatTensor
+    dtype=torch.cuda.DoubleTensor
 else:
     dtype=torch.FloatTensor
 
@@ -159,7 +159,7 @@ loss_func = nn.L1Loss().cuda()
 
 out_train = {}
 for appliance in ORDER:
-    out_train[appliance] = Variable(torch.Tensor(eval("train_" + appliance).reshape((train_agg.shape[0], -1, 1))))
+    out_train[appliance] = Variable(torch.Tensor(eval("train_" + appliance).reshape((train_agg.shape[0], -1, 1))).type(torch.DoubleTensor))
     if cuda_av:
         out_train[appliance] = out_train[appliance].cuda()
 
@@ -168,7 +168,7 @@ print(out_train[appliance])
 
 
 
-inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(dtype), requires_grad=True)
+inp = Variable(torch.Tensor(train_agg.reshape((train_agg.shape[0], -1, 1))).type(torch.DoubleTensor), requires_grad=True)
 if cuda_av:
     inp = inp.cuda()
 for t in range(num_iterations):
