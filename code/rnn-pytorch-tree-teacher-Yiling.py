@@ -178,8 +178,8 @@ for t in range(num_iterations):
     loss = loss_func(pred, out)
     # loss_0 = torch.split(pred, train_agg.shape[0])[0].mean()
     # loss = loss - loss_0
-    # if t % 1 == 0:
-    #    print(t, loss.data[0])
+    if t % 1 == 0:
+        print(t, loss.data[0])
     if not cuda_av:
         if t % 2 == 0:
 
