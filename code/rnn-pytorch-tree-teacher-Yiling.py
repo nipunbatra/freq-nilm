@@ -25,7 +25,7 @@ def create_subset_dataset(tensor, start=160, num_days=112):
     for i in range(1, 7):
         valid_homes = pd.DataFrame(t_subset[:, i, :].reshape(320, num_days * 24)).dropna().index
         all_indices = np.intersect1d(all_indices, valid_homes)
-    print(len(all_indices))
+    #print(len(all_indices))
     t_subset = t_subset[all_indices, :, :, :].reshape(len(all_indices), 7, num_days * 24)
 
     # Create artificial aggregate
@@ -158,10 +158,10 @@ class AppliancesRNN(nn.Module):
 
 
 a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
-print(cuda_av)
+#print(cuda_av)
 if cuda_av:
     a = a.cuda()
-print(a)
+#print(a)
 # Storing predictions per iterations to visualise later
 predictions = []
 
@@ -199,8 +199,8 @@ for t in range(num_iterations):
     loss = loss_func(pred, out)
     #loss_0 = torch.split(pred, train_agg.shape[0])[0].mean()
     #loss = loss - loss_0
-    if t % 1 == 0:
-        print(t, loss.data[0])
+    #if t % 1 == 0:
+    #    print(t, loss.data[0])
     if not cuda_av:
         if t%2 == 0:
 
@@ -228,7 +228,7 @@ if cuda_av:
     preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
 for appliance in ORDER:
-    print appliance
+    #print appliance
     errors[appliance] = mean_absolute_error(eval("test_"+appliance), preds[appliance])
 print(pd.Series(errors))
 

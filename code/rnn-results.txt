@@ -1,0 +1,5761 @@
+script.sh: line 9: : No such file or directory
+hvac fridge oven dw wm mw
+dw         14.201703
+fridge     87.032838
+hvac      134.679617
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge oven dw mw wm
+dw         14.201703
+fridge     87.032838
+hvac      134.484670
+mw          6.054502
+oven       18.429772
+wm          9.756574
+dtype: float64
+hvac fridge oven wm dw mw
+dw         14.201703
+fridge     85.229481
+hvac      134.799878
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge oven wm mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge oven mw dw wm
+dw         16.348220
+fridge     83.409663
+hvac      142.575083
+mw          6.057637
+oven       18.429737
+wm          7.410024
+dtype: float64
+hvac fridge oven mw wm dw
+dw         15.841235
+fridge    116.834830
+hvac      146.044890
+mw          6.089154
+oven       18.428745
+wm          5.492065
+dtype: float64
+hvac fridge dw oven wm mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge dw oven mw wm
+dw         14.201703
+fridge     85.264002
+hvac      135.029080
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge dw wm oven mw
+dw         14.201703
+fridge     84.718535
+hvac      135.755310
+mw          6.189087
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge dw wm mw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge dw mw oven wm
+dw         14.201703
+fridge     87.032838
+hvac      134.126561
+mw          6.054502
+oven       25.693093
+wm          5.492065
+dtype: float64
+hvac fridge dw mw wm oven
+dw         14.201703
+fridge     87.032838
+hvac      134.443683
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge wm oven dw mw
+dw         14.201703
+fridge     84.754211
+hvac      135.645903
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge wm oven mw dw
+dw         14.201703
+fridge    100.469364
+hvac      135.093957
+mw          6.054502
+oven       17.985186
+wm          5.492065
+dtype: float64
+hvac fridge wm dw oven mw
+dw         14.201703
+fridge     86.993724
+hvac      136.844869
+mw          6.321145
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge wm dw mw oven
+dw         14.201703
+fridge     83.303610
+hvac      142.049545
+mw          6.054502
+oven       18.492690
+wm          5.492065
+dtype: float64
+hvac fridge wm mw oven dw
+dw         14.201703
+fridge     85.723987
+hvac      134.260731
+mw          6.054502
+oven       24.621552
+wm          5.492065
+dtype: float64
+hvac fridge wm mw dw oven
+dw         14.201703
+fridge     99.863587
+hvac      134.802119
+mw          6.054502
+oven       18.155662
+wm          5.492065
+dtype: float64
+hvac fridge mw oven dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge mw oven wm dw
+dw         14.201703
+fridge     85.215806
+hvac      134.741576
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac fridge mw dw oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge mw dw wm oven
+dw         14.201703
+fridge     85.004034
+hvac      135.182822
+mw          6.054502
+oven       18.429772
+wm          6.220164
+dtype: float64
+hvac fridge mw wm oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac fridge mw wm dw oven
+dw         14.201703
+fridge     87.032838
+hvac      136.505241
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven fridge dw wm mw
+dw         14.201703
+fridge     87.032838
+hvac      134.627138
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven fridge dw mw wm
+dw         14.201703
+fridge     87.032838
+hvac      136.138056
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven fridge wm dw mw
+dw         14.201703
+fridge     87.032838
+hvac      134.361894
+mw          6.427671
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven fridge wm mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac oven fridge mw dw wm
+dw         14.201703
+fridge     87.032838
+hvac      134.429905
+mw          6.054502
+oven       18.429772
+wm          5.492097
+dtype: float64
+hvac oven fridge mw wm dw
+dw         14.201703
+fridge     97.509421
+hvac      135.220332
+mw          6.057343
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven dw fridge wm mw
+dw         14.201703
+fridge     85.308528
+hvac      134.685358
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven dw fridge mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac oven dw wm fridge mw
+dw         14.201703
+fridge     85.191668
+hvac      134.951015
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven dw wm mw fridge
+dw         14.201728
+fridge     85.225649
+hvac      134.837682
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven dw mw fridge wm
+dw         14.201703
+fridge     98.032909
+hvac      134.461200
+mw          6.054502
+oven       18.429772
+wm          6.024951
+dtype: float64
+hvac oven dw mw wm fridge
+dw         14.201703
+fridge     85.231661
+hvac      134.874838
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven wm fridge dw mw
+dw         14.201703
+fridge     85.192128
+hvac      134.860813
+mw          6.307112
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven wm fridge mw dw
+dw         14.201703
+fridge    102.663895
+hvac      136.402979
+mw          7.545800
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven wm dw fridge mw
+dw         14.201703
+fridge     85.255915
+hvac      134.896578
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven wm dw mw fridge
+dw         14.201703
+fridge     85.280994
+hvac      134.752782
+mw          6.054502
+oven       18.429772
+wm          5.492067
+dtype: float64
+hvac oven wm mw fridge dw
+dw         14.201703
+fridge     85.177448
+hvac      134.950431
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven wm mw dw fridge
+dw         14.201703
+fridge     85.217123
+hvac      134.786901
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven mw fridge dw wm
+dw         14.201703
+fridge     86.881039
+hvac      159.891291
+mw          6.058385
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven mw fridge wm dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac oven mw dw fridge wm
+dw         14.201703
+fridge     84.491449
+hvac      136.944360
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven mw dw wm fridge
+dw         14.201703
+fridge     85.219266
+hvac      134.824031
+mw          6.057141
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven mw wm fridge dw
+dw         14.201708
+fridge     88.170231
+hvac      149.226519
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac oven mw wm dw fridge
+dw         14.201703
+fridge     85.193838
+hvac      134.949399
+mw          6.059581
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw fridge oven wm mw
+dw         14.201703
+fridge     87.032838
+hvac      134.602107
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw fridge oven mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac dw fridge wm oven mw
+dw         14.201703
+fridge     85.135763
+hvac      134.976910
+mw          6.450744
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw fridge wm mw oven
+dw         14.201703
+fridge     86.011923
+hvac      134.150529
+mw          6.495677
+oven       24.300024
+wm          5.492065
+dtype: float64
+hvac dw fridge mw oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.669454
+dtype: float64
+hvac dw fridge mw wm oven
+dw         14.201703
+fridge     87.032838
+hvac      146.203120
+mw          6.106669
+oven       20.156388
+wm          5.567170
+dtype: float64
+hvac dw oven fridge wm mw
+dw         14.201703
+fridge     85.212182
+hvac      134.817381
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw oven fridge mw wm
+dw         14.201703
+fridge     85.195991
+hvac      134.807900
+mw          6.054502
+oven       18.429772
+wm          5.492070
+dtype: float64
+hvac dw oven wm fridge mw
+dw         14.201703
+fridge     85.148465
+hvac      134.939863
+mw          6.054645
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw oven wm mw fridge
+dw         14.201703
+fridge     85.255600
+hvac      134.824092
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw oven mw fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac dw oven mw wm fridge
+dw         14.201703
+fridge     85.274410
+hvac      134.807357
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw wm fridge oven mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac dw wm fridge mw oven
+dw         14.201703
+fridge     87.032838
+hvac      135.675722
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw wm oven fridge mw
+dw         14.201703
+fridge     85.131135
+hvac      134.930069
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw wm oven mw fridge
+dw         14.201703
+fridge     85.347994
+hvac      134.761668
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw wm mw fridge oven
+dw         14.201703
+fridge     86.915092
+hvac      203.486593
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw wm mw oven fridge
+dw         14.201703
+fridge     85.246076
+hvac      134.750212
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw mw fridge oven wm
+dw         14.201703
+fridge     95.696460
+hvac      134.084674
+mw          6.054502
+oven       18.261065
+wm          5.512605
+dtype: float64
+hvac dw mw fridge wm oven
+dw         14.201703
+fridge     85.479951
+hvac      136.289180
+mw          6.054502
+oven       28.858061
+wm          5.492065
+dtype: float64
+hvac dw mw oven fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac dw mw oven wm fridge
+dw         14.201703
+fridge     85.213215
+hvac      134.919142
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac dw mw wm fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac dw mw wm oven fridge
+dw         14.201703
+fridge     85.243969
+hvac      134.777731
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm fridge oven dw mw
+dw         14.201703
+fridge     87.032838
+hvac      135.404379
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm fridge oven mw dw
+dw         14.201703
+fridge     86.145253
+hvac      135.383820
+mw         20.569633
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm fridge dw oven mw
+dw         14.201703
+fridge     87.019551
+hvac      159.250242
+mw          6.850009
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm fridge dw mw oven
+dw         14.201703
+fridge     86.370413
+hvac      133.982365
+mw         14.242774
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm fridge mw oven dw
+dw          14.208797
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm fridge mw dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm oven fridge dw mw
+dw         14.201703
+fridge     85.229353
+hvac      134.772344
+mw          6.899899
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm oven fridge mw dw
+dw         14.201703
+fridge     89.892835
+hvac      135.730510
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm oven dw fridge mw
+dw         14.201703
+fridge     85.321495
+hvac      134.670366
+mw          6.332573
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm oven dw mw fridge
+dw         14.201703
+fridge     85.260094
+hvac      134.794799
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm oven mw fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm oven mw dw fridge
+dw         14.201703
+fridge     85.250884
+hvac      134.799650
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm dw fridge oven mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm dw fridge mw oven
+dw         14.201703
+fridge     87.032838
+hvac      136.023375
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm dw oven fridge mw
+dw         14.201703
+fridge     84.903879
+hvac      135.317469
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm dw oven mw fridge
+dw         14.201703
+fridge     85.705298
+hvac      134.335613
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm dw mw fridge oven
+dw         14.201703
+fridge     87.032838
+hvac      133.980938
+mw          6.054502
+oven       25.639511
+wm          5.492065
+dtype: float64
+hvac wm dw mw oven fridge
+dw         14.201703
+fridge     85.239654
+hvac      134.764751
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm mw fridge oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm mw fridge dw oven
+dw         14.201703
+fridge     87.124010
+hvac      139.142512
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm mw oven fridge dw
+dw          14.201703
+fridge      30.848039
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac wm mw oven dw fridge
+dw         14.201703
+fridge     85.212200
+hvac      134.907805
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac wm mw dw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        26.446063
+wm           5.492065
+dtype: float64
+hvac wm mw dw oven fridge
+dw         14.201703
+fridge     85.308675
+hvac      134.841096
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw fridge oven dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw fridge oven wm dw
+dw         14.201703
+fridge     87.032838
+hvac      137.022291
+mw          6.054502
+oven       27.983749
+wm          5.564818
+dtype: float64
+hvac mw fridge dw oven wm
+dw         14.201703
+fridge     87.032838
+hvac      134.494023
+mw          6.054502
+oven       18.379169
+wm          5.492065
+dtype: float64
+hvac mw fridge dw wm oven
+dw         14.201703
+fridge     87.032838
+hvac      134.120780
+mw          6.054502
+oven       26.078487
+wm          5.492065
+dtype: float64
+hvac mw fridge wm oven dw
+dw         14.201703
+fridge     87.032838
+hvac      134.631432
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw fridge wm dw oven
+dw         14.201703
+fridge     87.032838
+hvac      136.358540
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw oven fridge dw wm
+dw         14.201703
+fridge     85.070887
+hvac      135.355146
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw oven fridge wm dw
+dw         14.212359
+fridge    102.689147
+hvac      136.214118
+mw          6.054502
+oven       18.429772
+wm          6.585206
+dtype: float64
+hvac mw oven dw fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm         197.125083
+dtype: float64
+hvac mw oven dw wm fridge
+dw         14.201703
+fridge     85.248621
+hvac      134.805509
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw oven wm fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw oven wm dw fridge
+dw         14.201703
+fridge     85.247915
+hvac      134.868214
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw dw fridge oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw dw fridge wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw dw oven fridge wm
+dw         14.201703
+fridge     84.483335
+hvac      136.873760
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw dw oven wm fridge
+dw         14.201703
+fridge     84.325495
+hvac      137.249525
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw dw wm fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw dw wm oven fridge
+dw         14.201703
+fridge     85.333936
+hvac      134.837161
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw wm fridge oven dw
+dw         14.201703
+fridge    124.229854
+hvac      150.231823
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw wm fridge dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw wm oven fridge dw
+dw          14.201703
+fridge     691.756126
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw wm oven dw fridge
+dw         14.201703
+fridge     84.679839
+hvac      141.925541
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+hvac mw wm dw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+hvac mw wm dw oven fridge
+dw         14.201703
+fridge     85.236242
+hvac      134.849002
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge hvac oven dw wm mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.606236
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac oven dw mw wm
+dw        14.201703
+fridge    30.559759
+hvac      66.701548
+mw         6.054502
+oven      18.429772
+wm         8.281368
+dtype: float64
+fridge hvac oven wm dw mw
+dw          14.201817
+fridge      30.866397
+hvac      1018.370834
+mw           7.156175
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac oven wm mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac oven mw dw wm
+dw         14.201844
+fridge     87.032838
+hvac      134.030766
+mw          6.054502
+oven       18.429772
+wm          8.609334
+dtype: float64
+fridge hvac oven mw wm dw
+dw         14.201703
+fridge    346.508521
+hvac      323.799225
+mw          6.054502
+oven       18.429772
+wm          6.952387
+dtype: float64
+fridge hvac dw oven wm mw
+dw         14.201703
+fridge     87.032838
+hvac      133.194318
+mw          6.054502
+oven       23.894233
+wm          5.492065
+dtype: float64
+fridge hvac dw oven mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac dw wm oven mw
+dw          14.201703
+fridge      30.848669
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac dw wm mw oven
+dw          14.201703
+fridge      31.062067
+hvac      1018.370834
+mw           6.054502
+oven        18.699611
+wm           5.492065
+dtype: float64
+fridge hvac dw mw oven wm
+dw        14.201703
+fridge    31.464072
+hvac      64.109313
+mw         6.054502
+oven      18.429772
+wm         5.492206
+dtype: float64
+fridge hvac dw mw wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac wm oven dw mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac wm oven mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac wm dw oven mw
+dw         14.201703
+fridge     87.032838
+hvac      129.871177
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge hvac wm dw mw oven
+dw          14.201703
+fridge      31.012622
+hvac      1018.370834
+mw           6.054502
+oven        18.429767
+wm           5.492065
+dtype: float64
+fridge hvac wm mw oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac wm mw dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac mw oven dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.540748
+dtype: float64
+fridge hvac mw oven wm dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge hvac mw dw oven wm
+dw         14.201703
+fridge     87.032838
+hvac      134.054828
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge hvac mw dw wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        28.939364
+wm           5.492065
+dtype: float64
+fridge hvac mw wm oven dw
+dw         14.201703
+fridge     87.032838
+hvac      130.064076
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge hvac mw wm dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        31.916705
+wm           5.492065
+dtype: float64
+fridge oven hvac dw wm mw
+dw        14.201703
+fridge    33.117554
+hvac      63.575452
+mw         6.746772
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven hvac dw mw wm
+dw         14.201703
+fridge     87.032838
+hvac      131.132800
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven hvac wm dw mw
+dw         14.201703
+fridge     87.032838
+hvac      129.399886
+mw          7.862025
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven hvac wm mw dw
+dw         26.443653
+fridge     87.032838
+hvac      134.198596
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven hvac mw dw wm
+dw        14.201703
+fridge    30.951790
+hvac      71.599052
+mw         6.054502
+oven      18.429772
+wm         7.818847
+dtype: float64
+fridge oven hvac mw wm dw
+dw         14.301601
+fridge     30.932268
+hvac      224.920465
+mw          8.092565
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven dw hvac wm mw
+dw        14.201703
+fridge    46.947799
+hvac      73.790272
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven dw hvac mw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.407733
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven dw wm hvac mw
+dw        14.201703
+fridge    32.192954
+hvac      73.741503
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven dw wm mw hvac
+dw        14.201703
+fridge    31.664112
+hvac      73.057214
+mw         6.054597
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven dw mw hvac wm
+dw          14.201703
+fridge      30.848241
+hvac      1018.370834
+mw           6.054494
+oven        18.429783
+wm           5.492065
+dtype: float64
+fridge oven dw mw wm hvac
+dw        14.201703
+fridge    36.222775
+hvac      66.595087
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven wm hvac dw mw
+dw          14.201703
+fridge      30.848581
+hvac      1018.370834
+mw           6.054502
+oven        18.429749
+wm           5.492065
+dtype: float64
+fridge oven wm hvac mw dw
+dw        14.201703
+fridge    31.337323
+hvac      71.463625
+mw        13.444722
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven wm dw hvac mw
+dw        14.201703
+fridge    32.177153
+hvac      73.342775
+mw         6.164418
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven wm dw mw hvac
+dw        14.201703
+fridge    32.229100
+hvac      73.226449
+mw         6.054587
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven wm mw hvac dw
+dw        14.201703
+fridge    30.847972
+hvac      71.348104
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge oven wm mw dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.080705
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven mw hvac dw wm
+dw          14.201703
+fridge      31.007564
+hvac      1018.370844
+mw           6.054502
+oven        18.429772
+wm           5.494996
+dtype: float64
+fridge oven mw hvac wm dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge oven mw dw hvac wm
+dw        14.201703
+fridge    31.999319
+hvac      73.413126
+mw         6.054502
+oven      18.429772
+wm         7.609237
+dtype: float64
+fridge oven mw dw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.391573
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge oven mw wm hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.114022
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge oven mw wm dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.454691
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw hvac oven wm mw
+dw        14.201703
+fridge    58.220695
+hvac      78.657106
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw hvac oven mw wm
+dw         14.201703
+fridge     87.032838
+hvac      134.095007
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw hvac wm oven mw
+dw        14.201703
+fridge    31.054364
+hvac      69.464147
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw hvac wm mw oven
+dw         14.201703
+fridge     30.990869
+hvac      117.495763
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw hvac mw oven wm
+dw         14.201703
+fridge     87.032838
+hvac      133.296379
+mw          6.054502
+oven       24.104376
+wm          5.492065
+dtype: float64
+fridge dw hvac mw wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        24.816798
+wm           5.492065
+dtype: float64
+fridge dw oven hvac wm mw
+dw         14.201703
+fridge     87.032838
+hvac      133.429861
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw oven hvac mw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.651844
+mw          6.054502
+oven       18.429772
+wm          5.492394
+dtype: float64
+fridge dw oven wm hvac mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge dw oven wm mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.159788
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw oven mw hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      133.357948
+mw          6.054502
+oven       18.429772
+wm          9.828121
+dtype: float64
+fridge dw oven mw wm hvac
+dw        14.201703
+fridge    32.475216
+hvac      65.076161
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw wm hvac oven mw
+dw         14.201703
+fridge     87.032838
+hvac      133.201940
+mw          6.277354
+oven       23.840667
+wm          5.492065
+dtype: float64
+fridge dw wm hvac mw oven
+dw        14.201766
+fridge    31.212751
+hvac      69.335287
+mw         6.054502
+oven      24.008475
+wm         5.492065
+dtype: float64
+fridge dw wm oven hvac mw
+dw        14.201703
+fridge    34.080992
+hvac      74.470317
+mw         7.794978
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw wm oven mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.153816
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw wm mw hvac oven
+dw         14.201703
+fridge     87.032838
+hvac      134.087577
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge dw wm mw oven hvac
+dw        14.201789
+fridge    30.999663
+hvac      69.274721
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw mw hvac oven wm
+dw        14.201703
+fridge    57.723145
+hvac      80.490365
+mw         6.054502
+oven      18.429772
+wm         7.826355
+dtype: float64
+fridge dw mw hvac wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge dw mw oven hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge dw mw oven wm hvac
+dw        14.201703
+fridge    38.873349
+hvac      67.794310
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge dw mw wm hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge dw mw wm oven hvac
+dw        14.201797
+fridge    31.192906
+hvac      66.700323
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge wm hvac oven dw mw
+dw         14.201703
+fridge     87.032838
+hvac      134.052355
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm hvac oven mw dw
+dw        14.201703
+fridge    31.372620
+hvac      75.579871
+mw        21.454595
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge wm hvac dw oven mw
+dw        14.201703
+fridge    37.135326
+hvac      69.976497
+mw         6.054502
+oven      18.429772
+wm         5.492296
+dtype: float64
+fridge wm hvac dw mw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.987834
+mw          6.054502
+oven       26.850220
+wm          5.492065
+dtype: float64
+fridge wm hvac mw oven dw
+dw         14.201703
+fridge     87.032838
+hvac      135.236139
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm hvac mw dw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.881970
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm oven hvac dw mw
+dw         14.201703
+fridge     87.032838
+hvac      133.665813
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm oven hvac mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge wm oven dw hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.544484
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm oven dw mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.178170
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm oven mw hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge wm oven mw dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.416373
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm dw hvac oven mw
+dw        14.201703
+fridge    31.270522
+hvac      69.088415
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge wm dw hvac mw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge wm dw oven hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.426228
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm dw oven mw hvac
+dw        14.201703
+fridge    31.977074
+hvac      65.668975
+mw         6.054502
+oven      18.429772
+wm         5.492072
+dtype: float64
+fridge wm dw mw hvac oven
+dw        14.201703
+fridge    31.268826
+hvac      70.529080
+mw         6.054515
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge wm dw mw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.143793
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm mw hvac oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge wm mw hvac dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.379468
+wm           5.492065
+dtype: float64
+fridge wm mw oven hvac dw
+dw         14.201744
+fridge     87.032838
+hvac      133.726212
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge wm mw oven dw hvac
+dw        14.201703
+fridge    37.610361
+hvac      67.501464
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge wm mw dw hvac oven
+dw        14.201703
+fridge    30.357720
+hvac      69.480860
+mw         6.054502
+oven      18.429772
+wm         5.492399
+dtype: float64
+fridge wm mw dw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.854623
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw hvac oven dw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.429237
+mw          6.054502
+oven       18.429772
+wm          8.040334
+dtype: float64
+fridge mw hvac oven wm dw
+dw          15.006715
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge mw hvac dw oven wm
+dw        14.201703
+fridge    36.859987
+hvac      69.190347
+mw         6.054502
+oven      23.360884
+wm         5.899052
+dtype: float64
+fridge mw hvac dw wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        27.890763
+wm           5.492065
+dtype: float64
+fridge mw hvac wm oven dw
+dw         14.201703
+fridge     87.032838
+hvac      133.959410
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw hvac wm dw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.061248
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw oven hvac dw wm
+dw        14.201703
+fridge    31.067817
+hvac      70.889024
+mw         6.054617
+oven      18.598345
+wm         9.370892
+dtype: float64
+fridge mw oven hvac wm dw
+dw        14.201703
+fridge    31.300683
+hvac      71.643700
+mw         6.054502
+oven      18.429772
+wm        12.220019
+dtype: float64
+fridge mw oven dw hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      132.834467
+mw          6.054502
+oven       18.429772
+wm          8.590436
+dtype: float64
+fridge mw oven dw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      130.825525
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw oven wm hvac dw
+dw        14.201703
+fridge    31.397072
+hvac      73.020102
+mw         6.062717
+oven      18.432827
+wm         5.492065
+dtype: float64
+fridge mw oven wm dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.057291
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw dw hvac oven wm
+dw        14.201703
+fridge    33.109339
+hvac      67.981396
+mw         6.054673
+oven      18.429772
+wm         8.196509
+dtype: float64
+fridge mw dw hvac wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge mw dw oven hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      133.618398
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw dw oven wm hvac
+dw        14.201703
+fridge    53.466655
+hvac      76.917644
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge mw dw wm hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.384105
+wm           5.492065
+dtype: float64
+fridge mw dw wm oven hvac
+dw        14.201703
+fridge    42.184081
+hvac      70.835189
+mw         6.054629
+oven      18.429772
+wm         5.492065
+dtype: float64
+fridge mw wm hvac oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge mw wm hvac dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge mw wm oven hvac dw
+dw        14.201703
+fridge    31.231211
+hvac      72.731570
+mw         6.054502
+oven      18.429750
+wm         5.492065
+dtype: float64
+fridge mw wm oven dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.284748
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+fridge mw wm dw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+fridge mw wm dw oven hvac
+dw        14.201703
+fridge    35.021528
+hvac      67.767695
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven hvac fridge dw wm mw
+dw         14.201703
+fridge     85.580146
+hvac      134.327715
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac fridge dw mw wm
+dw          14.201703
+fridge      43.684784
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492082
+dtype: float64
+oven hvac fridge wm dw mw
+dw         14.201703
+fridge     87.032838
+hvac      134.126763
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac fridge wm mw dw
+dw         14.201703
+fridge     87.032838
+hvac      134.028076
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac fridge mw dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac fridge mw wm dw
+dw         14.504411
+fridge     87.032838
+hvac      130.222614
+mw          6.054502
+oven       18.429772
+wm          9.435369
+dtype: float64
+oven hvac dw fridge wm mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac dw fridge mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac dw wm fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac dw wm mw fridge
+dw         14.201703
+fridge     85.415428
+hvac      134.507155
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac dw mw fridge wm
+dw         14.218866
+fridge     85.777880
+hvac      134.362805
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac dw mw wm fridge
+dw         14.201703
+fridge     85.395141
+hvac      134.757181
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac wm fridge dw mw
+dw          14.201703
+fridge      38.129634
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac wm fridge mw dw
+dw          14.319332
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac wm dw fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac wm dw mw fridge
+dw         14.201703
+fridge     85.730818
+hvac      133.543797
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac wm mw fridge dw
+dw         14.201703
+fridge     87.045960
+hvac      129.516813
+mw          7.357553
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac wm mw dw fridge
+dw         14.201703
+fridge     85.589062
+hvac      134.384868
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven hvac mw fridge dw wm
+dw          14.201725
+fridge     576.018642
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac mw fridge wm dw
+dw          14.201729
+fridge      48.628404
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac mw dw fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac mw dw wm fridge
+dw          14.201703
+fridge      45.237979
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac mw wm fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven hvac mw wm dw fridge
+dw          14.201703
+fridge      57.111695
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge hvac dw wm mw
+dw        14.201703
+fridge    30.619185
+hvac      63.966788
+mw         6.748260
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven fridge hvac dw mw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.399252
+mw          6.053509
+oven       18.429772
+wm          9.963001
+dtype: float64
+oven fridge hvac wm dw mw
+dw        14.201703
+fridge    50.245207
+hvac      73.129056
+mw         8.620368
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven fridge hvac wm mw dw
+dw         14.201703
+fridge     87.032838
+hvac      133.549389
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge hvac mw dw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.557728
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge hvac mw wm dw
+dw         14.201703
+fridge     87.032838
+hvac      133.608400
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge dw hvac wm mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.068936
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge dw hvac mw wm
+dw         14.201703
+fridge    429.363690
+hvac      402.766216
+mw          6.065355
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge dw wm hvac mw
+dw        14.201703
+fridge    30.922463
+hvac      68.888551
+mw         7.446537
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven fridge dw wm mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.055400
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge dw mw hvac wm
+dw        14.201703
+fridge    31.190290
+hvac      68.625118
+mw         6.054502
+oven      18.429772
+wm         5.513279
+dtype: float64
+oven fridge dw mw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.004235
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge wm hvac dw mw
+dw         14.201703
+fridge     87.032838
+hvac      133.652306
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge wm hvac mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054928
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge wm dw hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.380681
+mw          6.197427
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge wm dw mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.868231
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge wm mw hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge wm mw dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      130.047658
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge mw hvac dw wm
+dw        20.364950
+fridge    37.674849
+hvac      67.969671
+mw         6.054502
+oven      18.429772
+wm         5.492644
+dtype: float64
+oven fridge mw hvac wm dw
+dw         133.896911
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge mw dw hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven fridge mw dw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.877049
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge mw wm hvac dw
+dw         23.972052
+fridge     87.032838
+hvac      133.906101
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven fridge mw wm dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.340348
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw hvac fridge wm mw
+dw         14.201703
+fridge     85.935768
+hvac      134.039878
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw hvac fridge mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           6.086285
+dtype: float64
+oven dw hvac wm fridge mw
+dw         14.201703
+fridge     87.032838
+hvac      133.936025
+mw          9.414427
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw hvac wm mw fridge
+dw         14.201703
+fridge     85.814922
+hvac      134.075352
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw hvac mw fridge wm
+dw         14.201703
+fridge     86.831751
+hvac      134.106922
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw hvac mw wm fridge
+dw         14.201703
+fridge     85.748372
+hvac      134.213419
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw fridge hvac wm mw
+dw        14.201703
+fridge    31.111015
+hvac      66.465515
+mw         7.091564
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven dw fridge hvac mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven dw fridge wm hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      132.789062
+mw          6.639147
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw fridge wm mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.458945
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw fridge mw hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm          10.791731
+dtype: float64
+oven dw fridge mw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.824871
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw wm hvac fridge mw
+dw         14.201703
+fridge     95.591486
+hvac      135.820619
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw wm hvac mw fridge
+dw         14.201703
+fridge     85.758995
+hvac      134.088218
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw wm fridge hvac mw
+dw        14.201703
+fridge    34.517677
+hvac      74.718305
+mw         8.899168
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven dw wm fridge mw hvac
+dw        14.201703
+fridge    31.248100
+hvac      70.327169
+mw         6.054499
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven dw wm mw hvac fridge
+dw         14.201703
+fridge     85.878415
+hvac      133.988482
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw wm mw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.872508
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw mw hvac fridge wm
+dw         14.201703
+fridge     87.499430
+hvac      134.943628
+mw          6.054502
+oven       18.429772
+wm          6.590804
+dtype: float64
+oven dw mw hvac wm fridge
+dw         14.201703
+fridge     85.873483
+hvac      133.961486
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw mw fridge hvac wm
+dw        14.201703
+fridge    32.988222
+hvac      75.587919
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven dw mw fridge wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.410918
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw mw wm hvac fridge
+dw         14.201703
+fridge     85.857912
+hvac      133.982047
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven dw mw wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.885287
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm hvac fridge dw mw
+dw          14.201703
+fridge      43.965629
+hvac      1018.370764
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven wm hvac fridge mw dw
+dw         14.201703
+fridge     87.032838
+hvac      134.361736
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm hvac dw fridge mw
+dw         14.201703
+fridge     87.032838
+hvac      134.106531
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm hvac dw mw fridge
+dw         14.201703
+fridge     85.765889
+hvac      134.301923
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm hvac mw fridge dw
+dw         14.201703
+fridge     86.086346
+hvac      132.657368
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm hvac mw dw fridge
+dw         14.201703
+fridge     85.568012
+hvac      134.446698
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm fridge hvac dw mw
+dw         14.201703
+fridge     87.032838
+hvac      133.649260
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm fridge hvac mw dw
+dw         14.201703
+fridge     87.032838
+hvac      133.210148
+mw         14.999280
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm fridge dw hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.051229
+mw          6.236183
+oven       18.429772
+wm          5.492164
+dtype: float64
+oven wm fridge dw mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.378858
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm fridge mw hvac dw
+dw         14.201703
+fridge     87.032838
+hvac      133.991263
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm fridge mw dw hvac
+dw        14.201703
+fridge    35.777190
+hvac      66.557776
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven wm dw hvac fridge mw
+dw         14.201703
+fridge     96.472805
+hvac      135.067858
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm dw hvac mw fridge
+dw         14.201703
+fridge     85.770974
+hvac      134.076061
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm dw fridge hvac mw
+dw        14.201703
+fridge    53.086959
+hvac      75.464091
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven wm dw fridge mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.280072
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm dw mw hvac fridge
+dw         14.201703
+fridge     85.890502
+hvac      133.994782
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm dw mw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.099228
+mw          6.054502
+oven       18.429772
+wm          5.492217
+dtype: float64
+oven wm mw hvac fridge dw
+dw         14.201703
+fridge     99.078602
+hvac      134.784478
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm mw hvac dw fridge
+dw         14.201703
+fridge     85.742375
+hvac      134.272071
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm mw fridge hvac dw
+dw         14.201713
+fridge     87.032838
+hvac      133.644785
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm mw fridge dw hvac
+dw        14.201703
+fridge    36.296835
+hvac      67.632459
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven wm mw dw hvac fridge
+dw         14.201703
+fridge     85.828096
+hvac      134.013055
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven wm mw dw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.370163
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw hvac fridge dw wm
+dw         14.201703
+fridge     87.032838
+hvac      129.641186
+mw          6.054502
+oven       18.429772
+wm          6.643940
+dtype: float64
+oven mw hvac fridge wm dw
+dw         14.201703
+fridge     87.032838
+hvac      129.513686
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw hvac dw fridge wm
+dw         14.201703
+fridge     87.344695
+hvac      130.132611
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw hvac dw wm fridge
+dw         14.201703
+fridge     85.596133
+hvac      134.311975
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw hvac wm fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven mw hvac wm dw fridge
+dw         14.201703
+fridge     85.617035
+hvac      134.275997
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw fridge hvac dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven mw fridge hvac wm dw
+dw          15.128783
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven mw fridge dw hvac wm
+dw          14.201703
+fridge      33.638175
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven mw fridge dw wm hvac
+dw        14.201703
+fridge    33.964501
+hvac      67.013778
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven mw fridge wm hvac dw
+dw        21.295807
+fridge    29.791787
+hvac      67.077422
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven mw fridge wm dw hvac
+dw        14.201703
+fridge    30.913548
+hvac      65.006526
+mw         6.054502
+oven      18.429772
+wm         5.492145
+dtype: float64
+oven mw dw hvac fridge wm
+dw         14.201703
+fridge     86.344556
+hvac      134.735768
+mw          6.054502
+oven       18.429772
+wm          5.492756
+dtype: float64
+oven mw dw hvac wm fridge
+dw         14.201703
+fridge     85.890193
+hvac      133.991361
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw dw fridge hvac wm
+dw        14.201703
+fridge    30.521191
+hvac      70.961206
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven mw dw fridge wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.922104
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw dw wm hvac fridge
+dw         14.201703
+fridge     85.847849
+hvac      133.993784
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw dw wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.188778
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw wm hvac fridge dw
+dw         16.177540
+fridge     97.504032
+hvac      134.863336
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw wm hvac dw fridge
+dw         14.201703
+fridge     85.761321
+hvac      134.182401
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+oven mw wm fridge hvac dw
+dw          15.716016
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+oven mw wm fridge dw hvac
+dw        14.201703
+fridge    31.059451
+hvac      67.197156
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+oven mw wm dw hvac fridge
+dw         14.201703
+fridge     85.910155
+hvac      134.012649
+mw          6.054502
+oven       18.429772
+wm          5.493845
+dtype: float64
+oven mw wm dw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.213497
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac fridge oven wm mw
+dw         14.201703
+fridge     85.462814
+hvac      134.555315
+mw          6.376863
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac fridge oven mw wm
+dw         14.201703
+fridge     85.571212
+hvac      134.361886
+mw          6.054502
+oven       18.429772
+wm          7.115412
+dtype: float64
+dw hvac fridge wm oven mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           7.616374
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw hvac fridge wm mw oven
+dw         14.201703
+fridge     79.803270
+hvac      175.673963
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac fridge mw oven wm
+dw         14.201703
+fridge     86.877503
+hvac      158.593723
+mw          6.054502
+oven       18.429746
+wm          6.709211
+dtype: float64
+dw hvac fridge mw wm oven
+dw         14.201703
+fridge     85.250602
+hvac      134.731207
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac oven fridge wm mw
+dw         14.201703
+fridge     85.417733
+hvac      134.467105
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac oven fridge mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw hvac oven wm fridge mw
+dw         14.201703
+fridge     86.036852
+hvac      134.408906
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac oven wm mw fridge
+dw         14.201703
+fridge     85.617763
+hvac      134.316476
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac oven mw fridge wm
+dw         14.201703
+fridge     82.223668
+hvac      171.556496
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac oven mw wm fridge
+dw         14.201703
+fridge     85.604287
+hvac      134.329234
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac wm fridge oven mw
+dw         14.201703
+fridge     85.566775
+hvac      134.372141
+mw          6.146770
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac wm fridge mw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw hvac wm oven fridge mw
+dw         14.201703
+fridge     87.032838
+hvac      134.504338
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac wm oven mw fridge
+dw         14.201703
+fridge     85.515176
+hvac      134.460022
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac wm mw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429403
+wm           5.492065
+dtype: float64
+dw hvac wm mw oven fridge
+dw         14.201703
+fridge     85.471514
+hvac      134.487526
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac mw fridge oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw hvac mw fridge wm oven
+dw         14.201703
+fridge    120.891036
+hvac      191.994418
+mw          6.054502
+oven       18.924735
+wm          5.492065
+dtype: float64
+dw hvac mw oven fridge wm
+dw         14.201703
+fridge     87.032838
+hvac      133.803802
+mw          6.054502
+oven       18.429766
+wm         10.769712
+dtype: float64
+dw hvac mw oven wm fridge
+dw         14.201703
+fridge     85.478363
+hvac      134.374172
+mw          6.054655
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw hvac mw wm fridge oven
+dw         14.201703
+fridge     87.032838
+hvac      134.299440
+mw          6.054502
+oven       18.443230
+wm          5.492065
+dtype: float64
+dw hvac mw wm oven fridge
+dw         14.201703
+fridge     85.556684
+hvac      134.372132
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge hvac oven wm mw
+dw         14.201703
+fridge     87.032838
+hvac      133.537088
+mw          7.340623
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge hvac oven mw wm
+dw         14.201703
+fridge     87.032838
+hvac      134.405932
+mw          6.054502
+oven       18.429772
+wm          7.212415
+dtype: float64
+dw fridge hvac wm oven mw
+dw         14.201703
+fridge     87.032838
+hvac      133.939308
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge hvac wm mw oven
+dw        14.201703
+fridge    37.047127
+hvac      69.688217
+mw         6.309674
+oven      18.429157
+wm         5.492065
+dtype: float64
+dw fridge hvac mw oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge hvac mw wm oven
+dw        14.201703
+fridge    31.227749
+hvac      69.440043
+mw         8.327354
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw fridge oven hvac wm mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge oven hvac mw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.050656
+mw          6.054502
+oven       18.429772
+wm          6.995185
+dtype: float64
+dw fridge oven wm hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.044987
+mw          7.551257
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge oven wm mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.503192
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge oven mw hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge oven mw wm hvac
+dw        14.201703
+fridge    31.150056
+hvac      68.535914
+mw         6.054502
+oven      18.429774
+wm         5.492065
+dtype: float64
+dw fridge wm hvac oven mw
+dw        14.201703
+fridge    30.834254
+hvac      69.488301
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw fridge wm hvac mw oven
+dw        14.201703
+fridge    31.188421
+hvac      69.684964
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw fridge wm oven hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.289707
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge wm oven mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.510060
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge wm mw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge wm mw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.287115
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw fridge mw hvac oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge mw hvac wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge mw oven hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge mw oven wm hvac
+dw        14.201703
+fridge    30.721334
+hvac      69.532262
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw fridge mw wm hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw fridge mw wm oven hvac
+dw        14.201703
+fridge    50.318863
+hvac      75.313849
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw oven hvac fridge wm mw
+dw          14.201703
+fridge      65.761332
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven hvac fridge mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven hvac wm fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven hvac wm mw fridge
+dw         14.201703
+fridge     85.878283
+hvac      134.189655
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven hvac mw fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven hvac mw wm fridge
+dw         14.201703
+fridge     85.789847
+hvac      134.083228
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven fridge hvac wm mw
+dw        14.201703
+fridge    31.059842
+hvac      69.379076
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw oven fridge hvac mw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven fridge wm hvac mw
+dw        14.201703
+fridge    60.411048
+hvac      82.890379
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw oven fridge wm mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.192829
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven fridge mw hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      133.408695
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven fridge mw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.291120
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven wm hvac fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven wm hvac mw fridge
+dw         14.201703
+fridge     85.878419
+hvac      134.053597
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven wm fridge hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.195299
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven wm fridge mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.403253
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven wm mw hvac fridge
+dw         14.201703
+fridge     87.032838
+hvac      133.827976
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven wm mw fridge hvac
+dw        14.201703
+fridge    33.788445
+hvac      75.510198
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw oven mw hvac fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw oven mw hvac wm fridge
+dw         14.201703
+fridge     85.813983
+hvac      134.022058
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven mw fridge hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      133.070986
+mw          6.054502
+oven       18.429772
+wm          6.660752
+dtype: float64
+dw oven mw fridge wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.720742
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven mw wm hvac fridge
+dw         14.201703
+fridge     85.839125
+hvac      134.017988
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw oven mw wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.282455
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm hvac fridge oven mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.689191
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm hvac fridge mw oven
+dw          14.201703
+fridge      41.087077
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm hvac oven fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           7.592707
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm hvac oven mw fridge
+dw          14.201703
+fridge     123.312664
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm hvac mw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm hvac mw oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm fridge hvac oven mw
+dw         14.201703
+fridge     87.032838
+hvac      133.810286
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm fridge hvac mw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.113492
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm fridge oven hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.391874
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm fridge oven mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.984279
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm fridge mw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm fridge mw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.453047
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm oven hvac fridge mw
+dw         14.201703
+fridge     85.701900
+hvac      134.114819
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm oven hvac mw fridge
+dw         14.201703
+fridge     85.779407
+hvac      134.062957
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm oven fridge hvac mw
+dw        14.201703
+fridge    30.869173
+hvac      69.395089
+mw         6.582734
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw wm oven fridge mw hvac
+dw        14.201703
+fridge    30.824903
+hvac      66.452363
+mw         6.054503
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw wm oven mw hvac fridge
+dw         14.201703
+fridge     85.875157
+hvac      133.984673
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm oven mw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.119464
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm mw hvac fridge oven
+dw         14.201703
+fridge     85.407136
+hvac      134.515998
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm mw hvac oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw wm mw fridge hvac oven
+dw        14.201703
+fridge    31.038540
+hvac      75.924882
+mw         6.054502
+oven      21.181304
+wm         5.492065
+dtype: float64
+dw wm mw fridge oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      130.938382
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm mw oven hvac fridge
+dw         14.201703
+fridge     85.852060
+hvac      133.928589
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw wm mw oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.970871
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw hvac fridge oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw hvac fridge wm oven
+dw          14.201703
+fridge      40.274085
+hvac      1018.370834
+mw           6.054502
+oven        18.429785
+wm           5.492065
+dtype: float64
+dw mw hvac oven fridge wm
+dw          14.201703
+fridge      41.671559
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.537514
+dtype: float64
+dw mw hvac oven wm fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw hvac wm fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.390971
+wm           5.492065
+dtype: float64
+dw mw hvac wm oven fridge
+dw          14.201703
+fridge      38.574579
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw fridge hvac oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw fridge hvac wm oven
+dw         14.201703
+fridge     87.032838
+hvac      177.755470
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw fridge oven hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      132.426541
+mw          6.054502
+oven       18.429772
+wm          7.868912
+dtype: float64
+dw mw fridge oven wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.040486
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw fridge wm hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw fridge wm oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.811433
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw oven hvac fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw oven hvac wm fridge
+dw         14.201703
+fridge     85.746203
+hvac      134.062956
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw oven fridge hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           6.524126
+dtype: float64
+dw mw oven fridge wm hvac
+dw        14.201703
+fridge    39.516844
+hvac      66.365795
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw mw oven wm hvac fridge
+dw         14.201703
+fridge     85.794000
+hvac      134.057486
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw oven wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.484361
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw wm hvac fridge oven
+dw         14.201703
+fridge     87.032838
+hvac      134.305368
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw wm hvac oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+dw mw wm fridge hvac oven
+dw        14.201703
+fridge    31.161516
+hvac      71.537804
+mw         6.054502
+oven      18.432966
+wm         5.492065
+dtype: float64
+dw mw wm fridge oven hvac
+dw        14.201703
+fridge    60.981178
+hvac      79.299985
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+dw mw wm oven hvac fridge
+dw         14.201703
+fridge     85.803378
+hvac      134.038158
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+dw mw wm oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.335558
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac fridge oven dw mw
+dw         14.201703
+fridge     85.219881
+hvac      134.483590
+mw          6.536257
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac fridge oven mw dw
+dw         14.201703
+fridge     83.944620
+hvac      139.202986
+mw          6.054502
+oven       18.500758
+wm          5.492065
+dtype: float64
+wm hvac fridge dw oven mw
+dw         14.201703
+fridge     87.032838
+hvac      134.408703
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac fridge dw mw oven
+dw         14.201703
+fridge     81.841609
+hvac      153.968599
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac fridge mw oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm hvac fridge mw dw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.408175
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac oven fridge dw mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm hvac oven fridge mw dw
+dw         24.147733
+fridge     85.851383
+hvac      134.574174
+mw          6.434191
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac oven dw fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm hvac oven dw mw fridge
+dw         14.201703
+fridge     85.447009
+hvac      134.498362
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac oven mw fridge dw
+dw         14.201703
+fridge     87.032838
+hvac      134.440022
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac oven mw dw fridge
+dw         14.201703
+fridge     85.320645
+hvac      134.692382
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac dw fridge oven mw
+dw         14.201703
+fridge     86.021359
+hvac      134.131432
+mw          6.362233
+oven       24.319477
+wm          5.492065
+dtype: float64
+wm hvac dw fridge mw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.891542
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac dw oven fridge mw
+dw         14.201703
+fridge     85.410788
+hvac      134.364667
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac dw oven mw fridge
+dw         14.201703
+fridge     85.363271
+hvac      134.642018
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac dw mw fridge oven
+dw         14.201703
+fridge     85.693731
+hvac      138.957329
+mw          6.054502
+oven       31.795064
+wm          5.492065
+dtype: float64
+wm hvac dw mw oven fridge
+dw         14.201703
+fridge     85.316734
+hvac      134.658744
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac mw fridge oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm hvac mw fridge dw oven
+dw         14.201703
+fridge     85.233393
+hvac      134.791227
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac mw oven fridge dw
+dw         14.201703
+fridge     85.194860
+hvac      134.907245
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac mw oven dw fridge
+dw         14.201703
+fridge     85.338755
+hvac      134.149519
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm hvac mw dw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm hvac mw dw oven fridge
+dw         14.201703
+fridge     85.483825
+hvac      134.514016
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge hvac oven dw mw
+dw         14.201703
+fridge     87.032838
+hvac      134.348558
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge hvac oven mw dw
+dw        14.201703
+fridge    30.964642
+hvac      69.753561
+mw         6.054502
+oven      20.672159
+wm         5.492065
+dtype: float64
+wm fridge hvac dw oven mw
+dw         14.201703
+fridge     87.032838
+hvac      134.167977
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge hvac dw mw oven
+dw         14.201703
+fridge     32.204468
+hvac      132.059245
+mw         92.784332
+oven       24.210303
+wm          5.492065
+dtype: float64
+wm fridge hvac mw oven dw
+dw        14.201703
+fridge    30.879080
+hvac      69.495705
+mw        14.445958
+oven      18.048790
+wm         5.492065
+dtype: float64
+wm fridge hvac mw dw oven
+dw        14.201703
+fridge    31.151251
+hvac      69.900374
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm fridge oven hvac dw mw
+dw        14.201703
+fridge    40.540801
+hvac      70.726289
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm fridge oven hvac mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm fridge oven dw hvac mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm fridge oven dw mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.408807
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge oven mw hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm fridge oven mw dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.019463
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge dw hvac oven mw
+dw         14.201703
+fridge     87.032838
+hvac      133.814936
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge dw hvac mw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        25.202277
+wm           5.492065
+dtype: float64
+wm fridge dw oven hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.395819
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge dw oven mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.138119
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge dw mw hvac oven
+dw         14.201703
+fridge     87.032838
+hvac      133.961962
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge dw mw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.206016
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge mw hvac oven dw
+dw          14.202015
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm fridge mw hvac dw oven
+dw        14.201703
+fridge    31.081709
+hvac      69.553412
+mw         6.054502
+oven      24.008555
+wm         5.492065
+dtype: float64
+wm fridge mw oven hvac dw
+dw         24.483235
+fridge     87.032838
+hvac      134.290420
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge mw oven dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.261349
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge mw dw hvac oven
+dw         14.201703
+fridge     87.032838
+hvac      137.596421
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm fridge mw dw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.484476
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven hvac fridge dw mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven hvac fridge mw dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven hvac dw fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.984213
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven hvac dw mw fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven hvac mw fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven hvac mw dw fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven fridge hvac dw mw
+dw         14.201703
+fridge     87.032838
+hvac      133.704737
+mw          6.805814
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven fridge hvac mw dw
+dw         25.946877
+fridge     87.032838
+hvac      134.016295
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven fridge dw hvac mw
+dw        14.201703
+fridge    38.607896
+hvac      69.486924
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm oven fridge dw mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.414395
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven fridge mw hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven fridge mw dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.116830
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven dw hvac fridge mw
+dw         14.201703
+fridge     87.032838
+hvac      133.779735
+mw          6.175377
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven dw hvac mw fridge
+dw         14.201703
+fridge     85.767505
+hvac      134.082186
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven dw fridge hvac mw
+dw        14.201703
+fridge    39.194928
+hvac      69.588449
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm oven dw fridge mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.379992
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven dw mw hvac fridge
+dw         14.201703
+fridge     87.032838
+hvac      133.867915
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven dw mw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.417210
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven mw hvac fridge dw
+dw         14.218240
+fridge     83.807572
+hvac      139.133505
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven mw hvac dw fridge
+dw         14.201703
+fridge     85.791899
+hvac      134.094586
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven mw fridge hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm oven mw fridge dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.359144
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven mw dw hvac fridge
+dw         14.201703
+fridge     85.798677
+hvac      134.017009
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm oven mw dw fridge hvac
+dw        14.201703
+fridge    38.003438
+hvac      66.249323
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm dw hvac fridge oven mw
+dw          14.201703
+fridge      74.139442
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw hvac fridge mw oven
+dw          14.201703
+fridge      62.688437
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw hvac oven fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw hvac oven mw fridge
+dw          14.201703
+fridge      76.841732
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw hvac mw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        25.682169
+wm           5.492065
+dtype: float64
+wm dw hvac mw oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw fridge hvac oven mw
+dw         14.201703
+fridge     87.032838
+hvac      133.810460
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw fridge hvac mw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.078297
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw fridge oven hvac mw
+dw         14.201703
+fridge     87.032838
+hvac      133.397752
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw fridge oven mw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.704542
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw fridge mw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw fridge mw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.376991
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw oven hvac fridge mw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           7.110808
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw oven hvac mw fridge
+dw         14.201703
+fridge     85.800376
+hvac      134.054987
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw oven fridge hvac mw
+dw        14.201703
+fridge    30.889693
+hvac      69.265219
+mw         6.333212
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm dw oven fridge mw hvac
+dw        14.201703
+fridge    30.439761
+hvac      66.049294
+mw         6.054520
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm dw oven mw hvac fridge
+dw         14.201703
+fridge     86.089925
+hvac      133.752056
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw oven mw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.531747
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw mw hvac fridge oven
+dw         14.201703
+fridge     87.032838
+hvac      134.300916
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw mw hvac oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm dw mw fridge hvac oven
+dw        14.201703
+fridge    31.165647
+hvac      71.315212
+mw         6.054502
+oven      23.524347
+wm         5.492065
+dtype: float64
+wm dw mw fridge oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.560076
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw mw oven hvac fridge
+dw         14.201703
+fridge     85.841087
+hvac      133.991253
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm dw mw oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.774082
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw hvac fridge oven dw
+dw          14.201703
+fridge      42.691111
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw hvac fridge dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw hvac oven fridge dw
+dw          14.298467
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw hvac oven dw fridge
+dw          14.201703
+fridge      85.489893
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw hvac dw fridge oven
+dw          14.201703
+fridge      43.348466
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw hvac dw oven fridge
+dw          14.201703
+fridge      51.924282
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw fridge hvac oven dw
+dw         14.201703
+fridge     87.032838
+hvac      177.905141
+mw          6.054502
+oven       18.586729
+wm          5.492065
+dtype: float64
+wm mw fridge hvac dw oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw fridge oven hvac dw
+dw         14.201703
+fridge     87.032838
+hvac      135.116084
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw fridge oven dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.056957
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw fridge dw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw fridge dw oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.135165
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven hvac fridge dw
+dw         14.201703
+fridge     97.291564
+hvac      134.316528
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven hvac dw fridge
+dw         14.201703
+fridge     85.601654
+hvac      134.293034
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven fridge hvac dw
+dw         14.201703
+fridge     87.032838
+hvac      133.897761
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven fridge dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.049848
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven dw hvac fridge
+dw         14.201703
+fridge     86.041902
+hvac      134.008221
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw oven dw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.249449
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw dw hvac fridge oven
+dw         14.201703
+fridge     87.032838
+hvac      134.299754
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw dw hvac oven fridge
+dw          14.201703
+fridge      32.538579
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+wm mw dw fridge hvac oven
+dw         14.201703
+fridge     87.032838
+hvac      133.240983
+mw          6.054502
+oven       24.183520
+wm          5.492065
+dtype: float64
+wm mw dw fridge oven hvac
+dw        14.201703
+fridge    30.976391
+hvac      66.268784
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+wm mw dw oven hvac fridge
+dw         14.201703
+fridge     85.829432
+hvac      134.021560
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+wm mw dw oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.960276
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac fridge oven dw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.855540
+mw          6.054502
+oven       24.918895
+wm          5.491752
+dtype: float64
+mw hvac fridge oven wm dw
+dw         14.201703
+fridge     87.032838
+hvac      134.006725
+mw          6.054502
+oven       25.570744
+wm          5.927505
+dtype: float64
+mw hvac fridge dw oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac fridge dw wm oven
+dw         14.201703
+fridge     87.032838
+hvac      133.841628
+mw          6.054502
+oven       25.300537
+wm          5.492065
+dtype: float64
+mw hvac fridge wm oven dw
+dw          18.804091
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac fridge wm dw oven
+dw         14.201703
+fridge     87.032838
+hvac      134.569720
+mw          6.054502
+oven       18.429771
+wm          5.492065
+dtype: float64
+mw hvac oven fridge dw wm
+dw         14.201703
+fridge     87.032838
+hvac      134.354913
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac oven fridge wm dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac oven dw fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac oven dw wm fridge
+dw         14.201703
+fridge     85.486075
+hvac      134.436658
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac oven wm fridge dw
+dw         14.201703
+fridge     96.626431
+hvac      134.081518
+mw          6.054502
+oven       18.429819
+wm          5.492065
+dtype: float64
+mw hvac oven wm dw fridge
+dw         14.201703
+fridge     85.400106
+hvac      134.542269
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac dw fridge oven wm
+dw          14.201703
+fridge      38.590560
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac dw fridge wm oven
+dw          14.201703
+fridge      34.027214
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac dw oven fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac dw oven wm fridge
+dw         14.201703
+fridge     87.032838
+hvac      134.394373
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac dw wm fridge oven
+dw         14.201703
+fridge     85.658421
+hvac      134.589363
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac dw wm oven fridge
+dw         14.201703
+fridge     87.032838
+hvac      134.458683
+mw          6.054502
+oven       18.429769
+wm          5.492065
+dtype: float64
+mw hvac wm fridge oven dw
+dw         14.201703
+fridge     85.968455
+hvac      134.243651
+mw          6.054502
+oven       24.515510
+wm          5.492065
+dtype: float64
+mw hvac wm fridge dw oven
+dw         14.201703
+fridge     85.243396
+hvac      134.727839
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac wm oven fridge dw
+dw         23.590346
+fridge     85.940946
+hvac      134.113501
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac wm oven dw fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw hvac wm dw fridge oven
+dw         14.201703
+fridge     85.440341
+hvac      134.606590
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw hvac wm dw oven fridge
+dw         14.201703
+fridge     87.032838
+hvac      134.418826
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge hvac oven dw wm
+dw         14.201703
+fridge     87.032838
+hvac      132.930789
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge hvac oven wm dw
+dw         14.201703
+fridge     87.032838
+hvac      133.910387
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge hvac dw oven wm
+dw         14.201703
+fridge     87.032838
+hvac      133.070176
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge hvac dw wm oven
+dw          14.201703
+fridge      30.427380
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw fridge hvac wm oven dw
+dw        14.201703
+fridge    30.694039
+hvac      64.589712
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw fridge hvac wm dw oven
+dw         14.201703
+fridge     87.032838
+hvac      133.948926
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge oven hvac dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw fridge oven hvac wm dw
+dw         14.201703
+fridge     87.032838
+hvac      132.919081
+mw          6.054502
+oven       18.429772
+wm         15.101011
+dtype: float64
+mw fridge oven dw hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      176.143029
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge oven dw wm hvac
+dw        14.201703
+fridge    30.925882
+hvac      68.761120
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw fridge oven wm hvac dw
+dw        14.201703
+fridge    31.361304
+hvac      69.318910
+mw         6.054502
+oven      18.429772
+wm         5.492503
+dtype: float64
+mw fridge oven wm dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.151883
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge dw hvac oven wm
+dw        14.201703
+fridge    38.571718
+hvac      69.622861
+mw         6.054502
+oven      22.936784
+wm         5.920398
+dtype: float64
+mw fridge dw hvac wm oven
+dw        14.201703
+fridge    30.155837
+hvac      71.528328
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw fridge dw oven hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      132.677913
+mw          6.054502
+oven       18.429772
+wm          8.323068
+dtype: float64
+mw fridge dw oven wm hvac
+dw        14.201703
+fridge    32.443534
+hvac      62.791078
+mw         6.054502
+oven      18.429770
+wm         5.492065
+dtype: float64
+mw fridge dw wm hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw fridge dw wm oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.219153
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge wm hvac oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw fridge wm hvac dw oven
+dw         14.201703
+fridge     30.032929
+hvac      113.541184
+mw          6.054502
+oven       18.453581
+wm          5.492065
+dtype: float64
+mw fridge wm oven hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw fridge wm oven dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.473251
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw fridge wm dw hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.399253
+wm           5.492065
+dtype: float64
+mw fridge wm dw oven hvac
+dw        14.201703
+fridge    37.195703
+hvac      65.121144
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw oven hvac fridge dw wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven hvac fridge wm dw
+dw          14.201703
+fridge      35.543824
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492153
+dtype: float64
+mw oven hvac dw fridge wm
+dw          14.201703
+fridge      35.034325
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven hvac dw wm fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven hvac wm fridge dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven hvac wm dw fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven fridge hvac dw wm
+dw         14.201703
+fridge     87.032838
+hvac      133.815203
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven fridge hvac wm dw
+dw         22.797494
+fridge     87.032838
+hvac      132.818613
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven fridge dw hvac wm
+dw         14.201703
+fridge     87.032838
+hvac      132.831498
+mw          6.054502
+oven       18.429772
+wm          8.156634
+dtype: float64
+mw oven fridge dw wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.414654
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven fridge wm hvac dw
+dw        21.168003
+fridge    30.244132
+hvac      67.786730
+mw         6.054502
+oven      18.429772
+wm         5.492110
+dtype: float64
+mw oven fridge wm dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.196048
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven dw hvac fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven dw hvac wm fridge
+dw         14.201703
+fridge     86.125128
+hvac      134.005426
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven dw fridge hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           6.261654
+dtype: float64
+mw oven dw fridge wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.933355
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven dw wm hvac fridge
+dw         14.201703
+fridge     85.906820
+hvac      134.015326
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven dw wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.076485
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven wm hvac fridge dw
+dw         22.656406
+fridge     86.329148
+hvac      133.708005
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven wm hvac dw fridge
+dw         14.201703
+fridge     86.291263
+hvac      133.381535
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven wm fridge hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw oven wm fridge dw hvac
+dw        14.201703
+fridge    31.834979
+hvac      70.345997
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw oven wm dw hvac fridge
+dw         14.201703
+fridge     85.905718
+hvac      134.010657
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw oven wm dw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.018171
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw hvac fridge oven wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.681357
+dtype: float64
+mw dw hvac fridge wm oven
+dw          14.201703
+fridge      32.923443
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw hvac oven fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw hvac oven wm fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw hvac wm fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw hvac wm oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw fridge hvac oven wm
+dw         14.201703
+fridge     87.032838
+hvac      133.962851
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw fridge hvac wm oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.512590
+dtype: float64
+mw dw fridge oven hvac wm
+dw          14.201703
+fridge      30.299165
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.748891
+dtype: float64
+mw dw fridge oven wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.017424
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw fridge wm hvac oven
+dw         14.201703
+fridge     87.032838
+hvac      134.773525
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw fridge wm oven hvac
+dw        14.201703
+fridge    37.255425
+hvac      68.514522
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw dw oven hvac fridge wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.579108
+dtype: float64
+mw dw oven hvac wm fridge
+dw         14.201703
+fridge     86.044029
+hvac      134.005478
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw oven fridge hvac wm
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.686327
+dtype: float64
+mw dw oven fridge wm hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.182631
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw oven wm hvac fridge
+dw         14.201703
+fridge     85.936091
+hvac      133.984151
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw oven wm fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.973043
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw wm hvac fridge oven
+dw         14.201703
+fridge     85.435436
+hvac      135.091380
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw wm hvac oven fridge
+dw         14.201703
+fridge     85.586255
+hvac      134.331748
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw wm fridge hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw dw wm fridge oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.849515
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw wm oven hvac fridge
+dw         14.201703
+fridge     85.962910
+hvac      133.993419
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw dw wm oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      133.062887
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm hvac fridge oven dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm hvac fridge dw oven
+dw          14.201703
+fridge     414.598928
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm hvac oven fridge dw
+dw         14.201703
+fridge     87.032838
+hvac      134.298951
+mw          6.054502
+oven       18.429803
+wm          5.492065
+dtype: float64
+mw wm hvac oven dw fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm hvac dw fridge oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm hvac dw oven fridge
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm fridge hvac oven dw
+dw        14.201703
+fridge    29.729088
+hvac      71.514919
+mw         6.054502
+oven      18.433871
+wm         5.492065
+dtype: float64
+mw wm fridge hvac dw oven
+dw          14.201703
+fridge      31.392764
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm fridge oven hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm fridge oven dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.764176
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm fridge dw hvac oven
+dw        14.201703
+fridge    33.149175
+hvac      70.476650
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw wm fridge dw oven hvac
+dw        14.201703
+fridge    38.524550
+hvac      68.967629
+mw         6.054502
+oven      18.429772
+wm         5.492065
+dtype: float64
+mw wm oven hvac fridge dw
+dw         22.416175
+fridge     86.241698
+hvac      133.799756
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm oven hvac dw fridge
+dw         14.201703
+fridge     85.614694
+hvac      134.332588
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm oven fridge hvac dw
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm oven fridge dw hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.861145
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm oven dw hvac fridge
+dw         14.201703
+fridge     85.882623
+hvac      133.997580
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm oven dw fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.576100
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm dw hvac fridge oven
+dw         14.201703
+fridge     85.030179
+hvac      135.086125
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm dw hvac oven fridge
+dw         14.201703
+fridge     85.577645
+hvac      134.327780
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm dw fridge hvac oven
+dw          14.201703
+fridge      87.032838
+hvac      1018.370834
+mw           6.054502
+oven        18.429772
+wm           5.492065
+dtype: float64
+mw wm dw fridge oven hvac
+dw         14.201703
+fridge     87.032838
+hvac      131.407141
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm dw oven hvac fridge
+dw         14.201703
+fridge     85.911944
+hvac      134.019312
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
+mw wm dw oven fridge hvac
+dw         14.201703
+fridge     87.032838
+hvac      132.326765
+mw          6.054502
+oven       18.429772
+wm          5.492065
+dtype: float64
