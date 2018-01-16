@@ -9,6 +9,7 @@ p = float(p)
 num_directions = int(num_directions)
 ORDER = sys.argv[6:len(sys.argv)]
 
+
 from sklearn.metrics import mean_absolute_error
 
 
@@ -116,8 +117,8 @@ class CustomRNN(nn.Module):
 
         return pred
 
-# ORDER = ['hvac','fridge','oven','dw','mw','wm'][:3]
-# ORDER = ['oven','fridge','hvac','dw','mw','wm'][:4]
+#ORDER = ['hvac','fridge','oven','dw','mw','wm'][:3]
+#ORDER = ['oven','fridge','hvac','dw','mw','wm'][:4]
 
 class AppliancesRNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, num_appliance):
@@ -126,24 +127,32 @@ class AppliancesRNN(nn.Module):
         self.preds = {}
         self.order = ORDER
         for appliance in range(self.num_appliance):
-            setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
+            if cuda_av:
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
+            else:
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size))
 
-    def forward(self, agg, dw,  oven, fridge, hvac, p):
-        agg_current = agg
+
+    def forward(self, *args):
+        agg_current = args[0]
         flag = False
-        if np.random.random() > p:
+        if np.random.random() > args[1]:
             flag = True
-            print("Subtracting prediction")
+            #print("Subtracting prediction")
         else:
-            print("Subtracting true")
+            pass
+            #print("Subtracting true")
         for appliance in range(self.num_appliance):
-            print(agg_current.mean().data[0])
+            #print(agg_current.mean().data[0])
+            #print appliance
+	    #print self.order[appliance]
+	    #print args[2+appliance]
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
             if flag:
                 agg_current = agg_current - self.preds[appliance]
 
             else:
-                agg_current = agg_current - eval(self.order[appliance])
+                agg_current = agg_current - args[2+appliance]
 
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
@@ -166,7 +175,6 @@ for appliance in ORDER:
         out_train[appliance] = out_train[appliance].cuda()
 
 
-print(out_train[appliance])
 
 
 
@@ -178,8 +186,13 @@ for t in range(num_iterations):
     #pdb.set_trace()
     out = torch.cat([out_train[appliance] for appliance in ORDER])
 
-    pred = a(inp, out_train['dw'], out_train['oven'], out_train['fridge'],
-             out_train['hvac'], p)
+    #pred = a(inp, p)
+    params = [inp, p]
+    for appliance in ORDER:
+        params.append(out_train[appliance])
+    
+    pred = a(*params)
+    #pred = a(inp, p, out_train['oven'], out_train['fridge'], out_train['hvac'], out_train['dw'])
 
     optimizer.zero_grad()
     #predictions.append(pred.data.numpy())
@@ -192,7 +205,10 @@ for t in range(num_iterations):
         if t%2 == 0:
 
             test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))), requires_grad=True)
-            test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
+            params = [test_inp, -2]
+            for i in range(len(ORDER)):
+ 		params.append(None)
+            test_pred = torch.split(a(*params), test_agg.shape[0])
 
             preds = {k: test_pred[i].data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
             errors = {}
@@ -205,10 +221,14 @@ for t in range(num_iterations):
 
 if cuda_av:
     test_inp = Variable(torch.Tensor(test_agg.reshape((test_agg.shape[0], -1, 1))).cuda(), requires_grad=True)
-    test_pred = torch.split(a(test_inp, None, None, None, None, -2), test_agg.shape[0])
+    params = [test_inp, -2]
+    for i in range(len(ORDER)):
+       params.append(None)
+    test_pred = torch.split(a(*params), test_agg.shape[0])
     preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
 for appliance in ORDER:
+    print appliance
     errors[appliance] = mean_absolute_error(eval("test_"+appliance), preds[appliance])
 print(pd.Series(errors))
 
