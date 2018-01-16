@@ -90,7 +90,7 @@ torch.manual_seed(0)
 np.random.seed(0)
 
 input_dim = 1
-hidden_size = 200
+hidden_size = num_hidden
 num_layers = 1
 if num_directions==1:
     bidirectional=False
