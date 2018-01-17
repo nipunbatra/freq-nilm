@@ -23,7 +23,7 @@ from sklearn.metrics import mean_absolute_error
 
 err_stf ={}
 gt = tensor[:, 1:, :, :]
-for num_latent in range(1, 2):
+for num_latent in range(1, 21):
 	err_stf[num_latent] = {}
 	for lr in [0.01, 0.1, 1, 2]:
 		err_stf[num_latent][lr] = {}
