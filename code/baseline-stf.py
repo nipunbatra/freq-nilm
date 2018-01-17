@@ -33,3 +33,6 @@ for num_latent in range(1, 2):
 			pred = np.minimum(pred, tensor[:, 0:1, :, :])
 			err_stf[num_latent][lr][iters] = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
+
+import pickle
+pickle.dump(err_stf, open("./baseline-stf.pkl", 'w'))

@@ -35,4 +35,4 @@ for num_latent in range(1, 2):
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
 import pickle
-pickle.dump(err_mtf, open("../result/baseline-mtf.pkl", 'w'))
+pickle.dump(err_mtf, open("./baseline-mtf.pkl", 'w'))

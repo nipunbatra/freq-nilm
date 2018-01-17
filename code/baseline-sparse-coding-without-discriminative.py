@@ -32,4 +32,4 @@ for num_latent in range(1, 50):
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
 import pickle
-pickle.dump(err_non_disc, open("../result/baseline-sparse-coding-non-disc.pkl"), 'w')
+pickle.dump(err_non_disc, open("./baseline-sparse-coding-non-disc.pkl"), 'w')
