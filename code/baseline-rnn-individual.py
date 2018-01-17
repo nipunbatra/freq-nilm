@@ -13,6 +13,8 @@ np.random.seed(0)
 class CustomRNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
         super(CustomRNN, self).__init__()
+        torch.manual_seed(0)
+
         if bidirectional:
             self.num_directions = 2
         else:
@@ -31,11 +33,13 @@ class CustomRNN(nn.Module):
                               bidirectional=bidirectional)
 
         self.linear = nn.Linear(hidden_size*self.num_directions, 1 )
+        self.act = nn.ReLU()
 
     def forward(self, x):
         pred, hidden = self.rnn(x, None)
         pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
-        pred = torch.clamp(pred, min=0.)
+        #pred = self.act(pred)
+        #pred = torch.clamp(pred, min=0.)
         pred = torch.min(pred, x)
         return pred
 
@@ -53,6 +57,8 @@ preds = []
 def disagg_fold(fold_num, appliance, cell_type, hidden_size,
                 num_layers, bidirectional, lr,
                 num_iterations):
+    torch.manual_seed(0)
+
     appliance_num = APPLIANCE_ORDER.index(appliance)
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
@@ -63,9 +69,14 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
     gts.append(test_appliance.reshape(-1, 24))
     loss_func = nn.L1Loss()
     r = CustomRNN(cell_type, hidden_size, num_layers, bidirectional)
+
     if cuda_av:
         r = r.cuda()
         loss_func = loss_func.cuda()
+
+    # Setting the params all to be non-negative
+    #for param in r.parameters():
+    #    param.data = param.data.abs()
 
     optimizer = torch.optim.Adam(r.parameters(), lr=lr)
 
@@ -95,13 +106,19 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
         prediction_fold = pred.cpu().data.numpy()
     else:
         prediction_fold = pred.data.numpy()
-    return prediction_fold
+    return prediction_fold, test_appliance
 
 def disagg(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
-
+    from sklearn.metrics import mean_absolute_error
+    preds = []
+    gts = []
     for cur_fold in range(num_folds):
-        print(cur_fold)
-        # ... do something ...
+        pred, gt = disagg_fold(cur_fold, appliance, cell_type, hidden_size, num_folds
+                               ,bidirectional, lr, num_iterations)
+        pred[pred<0.] = 0.
+        preds.append(pred)
+        gts.append(gt)
+    return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
 
 appliance = "hvac"
 cell_type="GRU"
@@ -111,4 +128,5 @@ bidirectional=False
 lr =1e-1
 num_iterations = 200
 
-p = disagg_fold(0, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+p = disagg(appliance, cell_type, hidden_size, num_layers,
+                bidirectional, lr, num_iterations)
