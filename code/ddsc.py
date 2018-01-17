@@ -97,7 +97,6 @@ class SparseCoding:
         self.B_tilde = np.hstack(self.Bs)
 
         for iter_number in range(num_iter):
-            print(iter_number)
             self.A_hat = nnls_autograd(self.B_tilde, X_train)
             self.B_tilde = self.B_tilde - alpha * ((X_train - self.B_tilde @ self.A_hat) @ self.A_hat.T - (
                     (X_train - self.B_tilde @ self.A_star) @ self.A_star.T))
