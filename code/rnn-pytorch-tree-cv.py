@@ -111,7 +111,7 @@ loss_func = nn.L1Loss().cuda()
 out_train = {}
 for appliance in ORDER:
     out_train[appliance] = Variable(
-        torch.Tensor(train[APPLIANCE_ORDER.index(appliance)].reshape((train_agg.shape[0], -1, 1))))
+        torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train_agg.shape[0], -1, 1))))
     if cuda_av:
         out_train[appliance] = out_train[appliance].cuda()
 
