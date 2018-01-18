@@ -29,19 +29,22 @@ def discriminative(num_latent, num_iterations):
 tensor = np.load('../2015-5appliances.numpy.npy')
 from sklearn.metrics import mean_absolute_error
 
+num_latent, num_iterations = sys.argv[1:]
+num_iterations = int(num_iterations)
+num_latent = int(num_latent)
 err_disc ={}
 gt = tensor[:, 1:, :, :]
 # should be varied from [1, 30]
-for num_latent in range(1, 50):
-    err_disc[num_latent] = {}
+#for num_latent in range(1, 51):
+   #err_disc[num_latent] = {}
     # Should be upto 100 or so iterations.
-    for num_iterations in range(10, 110, 10):
-        print(num_latent, num_iterations)
-        pred = discriminative(num_latent, num_iterations)
+    #for num_iterations in range(10, 110, 10):
+print(num_latent, num_iterations)
+pred = discriminative(num_latent, num_iterations)
         # Clamping prediction to aggregate
-        pred = np.minimum(pred, tensor[:, 0:1, :,:])
-        err_disc[num_latent][num_iterations] = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
+pred = np.minimum(pred, tensor[:, 0:1, :,:])
+err_disc = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
 import pickle
-pickle.dump(err_non_disc, open("./baseline-sparse-coding-disc.pkl"), 'w')
+pickle.dump(err_disc, open("./baseline-sc-disc-{}-{}.pkl".format(num_latent, num_iterations), 'wb'))

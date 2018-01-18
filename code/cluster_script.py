@@ -15,24 +15,24 @@ if not os.path.exists(SLURM_OUT):
 	os.makedirs(SLURM_OUT)
 
 # Max. num running processes you want. This is to prevent hogging the cluster
-MAX_NUM_MY_JOBS = 30
+MAX_NUM_MY_JOBS = 100
 # Delay between jobs when we exceed the max. number of jobs we want on the cluster
 DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
 
-for num_latent in range(1, 21):
-	for lr in [0.01, 0.1, 1, 2]:
-		for iters in range(100, 2500, 400):
-			OFILE = "{}/{}-{}-{}.out".format(SLURM_OUT, num_latent, lr, iters)
-			EFILE = "{}/{}-{}-{}.err".format(SLURM_OUT, num_latent, lr, iters)
-			SLURM_SCRIPT = "{}/{}-{}-{}.pbs".format('pbs_files', SLURM_OUT, num_latent, lr, iters)
-			CMD = 'python baseline-mtf.py {} {} {}'.format(num_latent, lr, iters)
+for num_latent in range(1, 51):
+	for lr in [0]:
+		for iters in range(10, 110, 10):
+			OFILE = "{}/sc-disc-{}-{}.out".format(SLURM_OUT, num_latent, iters)
+			EFILE = "{}/sc-disc-{}-{}.err".format(SLURM_OUT, num_latent, iters)
+			SLURM_SCRIPT = "{}/sc-disc-{}-{}.pbs".format(SLURM_OUT, num_latent, iters)
+			CMD = 'python3 baseline-sparse-coding-with-discriminative.py {} {}'.format(num_latent, iters)
 			lines = []
 			lines.append("#!/bin/sh\n")
 			lines.append('#SBATCH --time=1-16:0:00\n')
-			lines.append('#SBATCH --mem=16\n')
-			lines.append('#SBATCH -c 32\n')
+			lines.append('#SBATCH --mem=64\n')
+			#lines.append('#SBATCH -c 32\n')
 			lines.append('#SBATCH --exclude=artemis[1-5]\n')
 			lines.append('#SBATCH -o ' + '"' + OFILE + '"\n')
 			lines.append('#SBATCH -e ' + '"' + EFILE + '"\n')
@@ -44,4 +44,4 @@ for num_latent in range(1, 21):
 				time.sleep(DELAY_NUM_JOBS_EXCEEDED)
 
 			delegator.run(command, block=False)
-			print SLURM_SCRIPT
+			print (SLURM_SCRIPT)
