@@ -165,7 +165,10 @@ if cuda_av:
     test_pred = torch.split(a(*params), test_agg.shape[0])
     preds = {k: test_pred[i].cpu().data.numpy().reshape(-1, 24) for i, k in enumerate(ORDER)}
 errors = {}
+test_gt = {}
+for appliance in ORDER:
+    test_gt[appliance] = test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape( -1, 24)
 for appliance in ORDER:
     # print appliance
-    errors[appliance] = mean_absolute_error(eval("test_" + appliance), preds[appliance])
+    errors[appliance] = mean_absolute_error(test_gt[appliance], preds[appliance])
 print(pd.Series(errors))
