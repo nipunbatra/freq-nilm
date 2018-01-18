@@ -52,7 +52,7 @@ class CustomRNN(nn.Module):
     def forward(self, x):
         pred, hidden = self.rnn(x, None)
         pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
-        pred = torch.clamp(pred, min=0.)
+        #pred = torch.clamp(pred, min=0.)
         pred = torch.min(pred, x)
 
         return pred
