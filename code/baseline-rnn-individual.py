@@ -101,7 +101,8 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
     if cuda_av:
         test_inp = test_inp.cuda()
     pred = r(test_inp)
-
+    #pred[pred<0.] = 0.
+    pred = torch.clamp(pred, min=0.)
     if cuda_av:
         prediction_fold = pred.cpu().data.numpy()
     else:
@@ -115,18 +116,18 @@ def disagg(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num
     for cur_fold in range(num_folds):
         pred, gt = disagg_fold(cur_fold, appliance, cell_type, hidden_size, num_folds
                                ,bidirectional, lr, num_iterations)
-        pred[pred<0.] = 0.
+
         preds.append(pred)
         gts.append(gt)
     return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
 
 appliance = "hvac"
-cell_type="GRU"
-hidden_size=100
-num_layers=1
-bidirectional=False
-lr =1e-1
-num_iterations = 200
+cell_type="GRU" # One of GRU, LSTM, RNN
+hidden_size=100 # [20, 50, 100, 150]
+num_layers=1  # [1, 2, 3, 4]
+bidirectional=False # True or False
+lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
+num_iterations = 20 #200, 400, 600, 800
 
 p = disagg(appliance, cell_type, hidden_size, num_layers,
                 bidirectional, lr, num_iterations)
