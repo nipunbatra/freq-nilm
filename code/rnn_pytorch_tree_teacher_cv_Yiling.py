@@ -120,7 +120,7 @@ def disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterat
 		params = [inp, p]
 		for a_num, appliance in enumerate(ORDER):
 			params.append(out_train[a_num])
-
+		print(params)
 		pred = a(*params)
 
 		optimizer.zero_grad()
