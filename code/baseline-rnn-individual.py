@@ -129,5 +129,18 @@ bidirectional=False # True or False
 lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
 num_iterations = 20 #200, 400, 600, 800
 
+appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+hidden_size = int(hidden_size)
+num_layers = int(num_layers)
+lr = float(lr)
+num_iterations = int(num_iterations)
+
 p = disagg(appliance, cell_type, hidden_size, num_layers,
                 bidirectional, lr, num_iterations)
+
+import pickle
+pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
+						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
+
+
+

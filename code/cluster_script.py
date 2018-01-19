@@ -21,12 +21,12 @@ DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
 
-for num_latent in range(1, 51):
-	for lr in [0]:
-		for iters in range(10, 110, 10):
-			OFILE = "{}/sc-disc-{}-{}.out".format(SLURM_OUT, num_latent, iters)
-			EFILE = "{}/sc-disc-{}-{}.err".format(SLURM_OUT, num_latent, iters)
-			SLURM_SCRIPT = "{}/sc-disc-{}-{}.pbs".format(SLURM_OUT, num_latent, iters)
+for num_latent in [35]:
+	for lr in [0.01]:
+		for iters in [60]:
+			OFILE = "{}/{}-{}-{}.out".format(SLURM_OUT, num_latent, lr, iters)
+			EFILE = "{}/{}-{}-{}.err".format(SLURM_OUT, num_latent, lr, iters)
+			SLURM_SCRIPT = "{}/{}-{}-{}.pbs".format(SLURM_OUT, num_latent, lr, iters)
 			CMD = 'python3 baseline-sparse-coding-with-discriminative.py {} {}'.format(num_latent, iters)
 			lines = []
 			lines.append("#!/bin/sh\n")

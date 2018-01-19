@@ -29,7 +29,7 @@ num_layers = int(num_layers)
 num_iterations = int(num_iterations)
 p = float(p)
 num_directions = int(num_directions)
-ORDER = sys.argv[6:len(sys.argv)]
+#ORDER = sys.argv[6:len(sys.argv)]
 
 input_dim = 1
 hidden_size = num_hidden
@@ -176,6 +176,6 @@ ORDER = APPLIANCE_ORDER[1:][::-1]
 lr = 2
 p=0.6
 num_folds=5
-pred, gt = disagg('hvac', hidden_size,
+error = disagg('hvac', hidden_size,
                 num_layers, bidirectional, lr,
                 num_iterations, p)
