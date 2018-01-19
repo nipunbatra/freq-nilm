@@ -72,7 +72,6 @@ class AppliancesRNN(nn.Module):
                                                                        bidirectional))
 
     def forward(self, *args):
-        print(*args)
         agg_current = args[0]
         flag = False
         if np.random.random() > args[1]:
@@ -86,7 +85,7 @@ class AppliancesRNN(nn.Module):
             # print appliance
             # print self.order[appliance]
             # print args[2+appliance]
-            print(getattr(self, "Appliance_" + str(appliance)))
+            #print(getattr(self, "Appliance_" + str(appliance)))
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
             if flag:
                 agg_current = agg_current - self.preds[appliance]
@@ -112,7 +111,7 @@ def disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterat
 
     loss_func = nn.L1Loss()
     a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
-    print(a)
+    #print(a)
     if cuda_av:
         a = a.cuda()
         loss_func = loss_func.cuda()
