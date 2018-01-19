@@ -1,4 +1,3 @@
-from common import APPLIANCES_ORDER
 import sys
 from sklearn.metrics import mean_absolute_error
 from dataloader import APPLIANCE_ORDER, get_train_test
@@ -19,8 +18,8 @@ torch.manual_seed(0)
 np.random.seed(0)
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
-num_hidden = 200
-num_iterations = 200
+num_hidden = 150
+num_iterations = 100
 num_layers = 1
 p = 0.6
 num_directions = 1
@@ -51,23 +50,23 @@ class CustomRNN(nn.Module):
 	def forward(self, x):
 		pred, hidden = self.rnn(x, None)
 		pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
-		pred = torch.clamp(pred, min=0.)
+		#pred = torch.clamp(pred, min=0.)
 		pred = torch.min(pred, x)
 
 		return pred
 
 
 class AppliancesRNN(nn.Module):
-	def __init__(self, input_size, hidden_size, output_size, num_appliance):
+	def __init__(self, hidden_size,num_appliance):
 		super(AppliancesRNN, self).__init__()
 		self.num_appliance = num_appliance
 		self.preds = {}
 		self.order = ORDER
 		for appliance in range(self.num_appliance):
 			if cuda_av:
-				setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size).cuda())
+				setattr(self, "Appliance_" + str(appliance), CustomRNN(1, hidden_size, 1).cuda())
 			else:
-				setattr(self, "Appliance_" + str(appliance), CustomRNN(input_size, hidden_size, output_size))
+				setattr(self, "Appliance_" + str(appliance), CustomRNN(1, hidden_size, 1))
 
 	def forward(self, *args):
 		agg_current = args[0]
@@ -85,7 +84,7 @@ class AppliancesRNN(nn.Module):
 			# print args[2+appliance]
 			self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
 			if flag:
-				agg_current = agg_current - self.preds[appliance]
+				agg_current = agg_current - torch.clamp(self.preds[appliance], min=0.)
 			else:
 				agg_current = agg_current - args[2 + appliance]
 
@@ -107,12 +106,12 @@ def disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterat
 			out_train[a_num] = out_train[a_num].cuda()
 
 	loss_func = nn.L1Loss()
-	a = AppliancesRNN(input_dim, hidden_size, 1, len(ORDER))
+	a = AppliancesRNN(hidden_size,len(ORDER))
 	
 	if cuda_av:
 		a = a.cuda()
 		loss_func = loss_func.cuda()
-	optimizer = torch.optim.Adam(a.parameters(), lr=2)
+	optimizer = torch.optim.Adam(a.parameters(), lr=lr)
 
 	inp = Variable(torch.Tensor(train_aggregate.reshape((train_aggregate.shape[0], -1, 1))).type(torch.FloatTensor), requires_grad=True)
 	for t in range(num_iterations):
@@ -161,7 +160,7 @@ def disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterat
 
 	return prediction_fold, gt_fold
 
-def disagg(appliance, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
+def disagg( hidden_size, num_layers, bidirectional, lr, num_iterations, p):
 	from sklearn.metrics import mean_absolute_error
 	preds = []
 	gts = []
@@ -173,9 +172,11 @@ def disagg(appliance, hidden_size, num_layers, bidirectional, lr, num_iterations
 	return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
 
 ORDER = APPLIANCE_ORDER[1:][::-1]
-lr = 2
+#ORDER = APPLIANCE_ORDER[1:]
+
+lr = 3
 p=0.6
 num_folds=5
-error = disagg('hvac', hidden_size,
+error = disagg(hidden_size,
                 num_layers, bidirectional, lr,
                 num_iterations, p)
