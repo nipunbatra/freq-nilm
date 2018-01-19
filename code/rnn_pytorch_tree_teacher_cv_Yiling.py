@@ -178,8 +178,8 @@ def disagg(hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
 
 
-#ORDER = APPLIANCE_ORDER[1:][::-1]
-ORDER = APPLIANCE_ORDER[1:]
+ORDER = APPLIANCE_ORDER[1:][::-1]
+#ORDER = APPLIANCE_ORDER[1:]
 
 
 cell_type = "GRU"
@@ -201,4 +201,4 @@ p = 0.6
 num_folds = 5
 fold_num = 0
 
-# pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
