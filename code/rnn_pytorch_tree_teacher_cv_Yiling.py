@@ -77,6 +77,7 @@ class AppliancesRNN(nn.Module):
 			# print appliance
 			# print self.order[appliance]
 			# print args[2+appliance]
+			print(getattr(self, "Appliance_" + str(appliance)))
 			self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
 			if flag:
 				agg_current = agg_current - self.preds[appliance]
