@@ -183,7 +183,7 @@ ORDER = APPLIANCE_ORDER[1:]
 
 
 cell_type = "GRU"
-num_hidden = 120
+num_hidden = 80
 num_iterations = 300
 num_layers = 2
 p = 0.6
