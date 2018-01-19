@@ -178,14 +178,14 @@ def disagg(hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
 
 
-ORDER = APPLIANCE_ORDER[1:][::-1]
-# ORDER = APPLIANCE_ORDER[1:]
+#ORDER = APPLIANCE_ORDER[1:][::-1]
+ORDER = APPLIANCE_ORDER[1:]
 
 
 cell_type = "GRU"
 num_hidden = 120
-num_iterations = 100
-num_layers = 1
+num_iterations = 300
+num_layers = 2
 p = 0.6
 num_directions = 2
 
@@ -196,7 +196,7 @@ if num_directions == 1:
     bidirectional = False
 else:
     bidirectional = True
-lr = 3
+lr = 1
 p = 0.6
 num_folds = 5
 fold_num = 0
