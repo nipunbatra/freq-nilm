@@ -10,63 +10,58 @@ from torch.autograd import Variable
 cuda_av = False
 if torch.cuda.is_available():
 	cuda_av = True
-	dtype = torch.cuda.FloatTensor
-else:
-	dtype = torch.FloatTensor
+
 
 torch.manual_seed(0)
 np.random.seed(0)
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
-num_hidden = 150
-num_iterations = 100
-num_layers = 1
-p = 0.6
-num_directions = 1
-num_hidden = int(num_hidden)
-num_layers = int(num_layers)
-num_iterations = int(num_iterations)
-p = float(p)
-num_directions = int(num_directions)
-#ORDER = sys.argv[6:len(sys.argv)]
 
-input_dim = 1
-hidden_size = num_hidden
-num_layers = num_layers
-if num_directions == 1:
-	bidirectional = False
-else:
-	bidirectional = True
 
 
 class CustomRNN(nn.Module):
-	def __init__(self, input_size, hidden_size, output_size):
-		super(CustomRNN, self).__init__()
-		self.rnn = nn.GRU(input_size=input_size, hidden_size=hidden_size,
-						  num_layers=num_layers, batch_first=True,
-						  dropout=0.1, bidirectional=bidirectional)
-		self.linear = nn.Linear(hidden_size * num_directions, output_size, )
+    def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
+        super(CustomRNN, self).__init__()
+        torch.manual_seed(0)
 
-	def forward(self, x):
-		pred, hidden = self.rnn(x, None)
-		pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
-		#pred = torch.clamp(pred, min=0.)
-		pred = torch.min(pred, x)
+        if bidirectional:
+            self.num_directions = 2
+        else:
+            self.num_directions = 1
+        if cell_type=="RNN":
+            self.rnn = nn.RNN(input_size=1, hidden_size=hidden_size,
+                   num_layers=num_layers, batch_first=True,
+                   bidirectional=bidirectional)
+        elif cell_type=="GRU":
+            self.rnn = nn.GRU(input_size=1, hidden_size=hidden_size,
+                              num_layers=num_layers, batch_first=True,
+                              bidirectional=bidirectional)
+        else:
+            self.rnn = nn.LSTM(input_size=1, hidden_size=hidden_size,
+                              num_layers=num_layers, batch_first=True,
+                              bidirectional=bidirectional)
 
-		return pred
+        self.linear = nn.Linear(hidden_size*self.num_directions, 1 )
+        self.act = nn.ReLU()
 
 
 class AppliancesRNN(nn.Module):
-	def __init__(self, hidden_size,num_appliance):
+	def __init__(self, cell_type, hidden_size, num_layers, bidirectional, num_appliance):
 		super(AppliancesRNN, self).__init__()
 		self.num_appliance = num_appliance
 		self.preds = {}
 		self.order = ORDER
 		for appliance in range(self.num_appliance):
 			if cuda_av:
-				setattr(self, "Appliance_" + str(appliance), CustomRNN(1, hidden_size, 1).cuda())
+				setattr(self, "Appliance_" + str(appliance), CustomRNN(cell_type,
+                                                                       hidden_size,
+                                                                       num_layers,
+                                                                       bidirectional).cuda())
 			else:
-				setattr(self, "Appliance_" + str(appliance), CustomRNN(1, hidden_size, 1))
+				setattr(self, "Appliance_" + str(appliance), CustomRNN(cell_type,
+                                                                       hidden_size,
+                                                                       num_layers,
+                                                                       bidirectional))
 
 	def forward(self, *args):
 		agg_current = args[0]
@@ -84,7 +79,7 @@ class AppliancesRNN(nn.Module):
 			# print args[2+appliance]
 			self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
 			if flag:
-				agg_current = agg_current - torch.clamp(self.preds[appliance], min=0.)
+				agg_current = agg_current - self.preds[appliance]
 			else:
 				agg_current = agg_current - args[2 + appliance]
 
@@ -106,7 +101,7 @@ def disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterat
 			out_train[a_num] = out_train[a_num].cuda()
 
 	loss_func = nn.L1Loss()
-	a = AppliancesRNN(hidden_size,len(ORDER))
+	a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
 	
 	if cuda_av:
 		a = a.cuda()
@@ -174,9 +169,26 @@ def disagg( hidden_size, num_layers, bidirectional, lr, num_iterations, p):
 ORDER = APPLIANCE_ORDER[1:][::-1]
 #ORDER = APPLIANCE_ORDER[1:]
 
+
+cell_type = "GRU"
+num_hidden = 150
+num_iterations = 100
+num_layers = 1
+p = 0.6
+num_directions = 1
+
+
+input_dim = 1
+hidden_size = num_hidden
+num_layers = num_layers
+if num_directions == 1:
+	bidirectional = False
+else:
+	bidirectional = True
 lr = 3
 p=0.6
 num_folds=5
-error = disagg(hidden_size,
-                num_layers, bidirectional, lr,
-                num_iterations, p)
+fold_num = 0
+
+#pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+
