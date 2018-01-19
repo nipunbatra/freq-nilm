@@ -44,6 +44,15 @@ class CustomRNN(nn.Module):
         self.linear = nn.Linear(hidden_size*self.num_directions, 1 )
         self.act = nn.ReLU()
 
+	def forward(self, x):
+		pred, hidden = self.rnn(x, None)
+		pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
+		# pred = self.act(pred)
+		# pred = torch.clamp(pred, min=0.)
+		pred = self.act(pred)
+		pred = torch.min(pred, x)
+		return pred
+
 
 class AppliancesRNN(nn.Module):
 	def __init__(self, cell_type, hidden_size, num_layers, bidirectional, num_appliance):
