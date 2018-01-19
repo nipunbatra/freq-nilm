@@ -186,7 +186,7 @@ cell_type = "GRU"
 num_hidden = 60
 num_iterations = 300
 num_layers = 2
-p = 0.6
+p = 0.2
 num_directions = 2
 
 input_dim = 1
@@ -202,3 +202,5 @@ num_folds = 5
 fold_num = 0
 
 pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+
+{appliance:mean_absolute_error(gt[appliance_num], pred[appliance_num]) for appliance_num, appliance in enumerate(ORDER)}
