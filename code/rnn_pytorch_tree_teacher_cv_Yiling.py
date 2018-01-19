@@ -183,11 +183,11 @@ ORDER = APPLIANCE_ORDER[1:][::-1]
 
 
 cell_type = "GRU"
-num_hidden = 150
+num_hidden = 120
 num_iterations = 100
 num_layers = 1
 p = 0.6
-num_directions = 1
+num_directions = 2
 
 input_dim = 1
 hidden_size = num_hidden
