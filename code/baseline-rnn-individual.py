@@ -40,6 +40,7 @@ class CustomRNN(nn.Module):
         pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
         #pred = self.act(pred)
         #pred = torch.clamp(pred, min=0.)
+        pred = self.act(pred)
         pred = torch.min(pred, x)
         return pred
 
