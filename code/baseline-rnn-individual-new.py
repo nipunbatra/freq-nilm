@@ -54,7 +54,7 @@ else:
 gts = []
 preds = []
 
-def disagg_fold(fold_num, appliance, cell_type, hidden_size,
+def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
                 num_layers, bidirectional, lr,
                 num_iterations):
     torch.manual_seed(0)
@@ -80,7 +80,12 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
 
     optimizer = torch.optim.Adam(r.parameters(), lr=lr)
 
-    for t in range(num_iterations):
+    test_inp = Variable(torch.Tensor(test_aggregate), requires_grad=False)
+    test_y = Variable(torch.Tensor(test_appliance), requires_grad=False)
+
+    prediction_fold = {}
+
+    for t in range(1, num_iterations+1):
 
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         train_y = Variable(torch.Tensor(train_appliance))
@@ -96,30 +101,41 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
         loss.backward()
         optimizer.step()
 
-    test_inp = Variable(torch.Tensor(test_aggregate), requires_grad=False)
-    test_y = Variable(torch.Tensor(test_appliance), requires_grad=False)
-    if cuda_av:
-        test_inp = test_inp.cuda()
-    pred = r(test_inp)
-    #pred[pred<0.] = 0.
-    pred = torch.clamp(pred, min=0.)
-    if cuda_av:
-        prediction_fold = pred.cpu().data.numpy()
-    else:
-        prediction_fold = pred.data.numpy()
+        if t%200 == 0 and t != 0:
+            if cuda_av:
+                test_inp = test_inp.cuda()
+            pred_test = r(test_inp)
+            pred_test = torch.clamp(pred_test, min=0.)
+            if cuda_av:
+                prediction_fold[t] = pred_test.cpu().data.numpy()
+            else:
+                prediction_fold[t] = pred_test.data.numpy()
+
     return prediction_fold, test_appliance
 
-def disagg(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
+def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
     from sklearn.metrics import mean_absolute_error
-    preds = []
+    preds = {}
     gts = []
+    error = {}
+
+    for iters in range(200, num_iterations+1, 200):
+        preds[iters] = []
+
     for cur_fold in range(num_folds):
-        pred, gt = disagg_fold(cur_fold, appliance, cell_type, hidden_size, num_layers
+        pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers
                                ,bidirectional, lr, num_iterations)
 
-        preds.append(pred)
+        for iters in range(200, num_iterations+1, 200):
+            preds[iters].append(pred[iters])
+        # preds.append(pred)
         gts.append(gt)
-    return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
+
+    for iters in range(200, num_iterations+1, 200):
+        error[iters] = mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds[iters]).flatten())
+
+    # return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
+    return error
 
 appliance = "hvac"
 cell_type="GRU" # One of GRU, LSTM, RNN
