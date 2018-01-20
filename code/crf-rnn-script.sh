@@ -1,6 +1,6 @@
 #!bin/bash
 
-for appliance in 'hvac'
+for appliance in 'mw'
 do
 	echo $appliance
 	for cell_type in 'GRU' 'LSTM' 'RNN'
