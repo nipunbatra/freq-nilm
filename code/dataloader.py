@@ -3,7 +3,7 @@ from sklearn.model_selection import KFold
 
 np.random.seed(0)
 
-tensor = np.load('../2015-5appliances.numpy.npy')
+tensor = np.load('../2015-5appliances-true-agg.npy')
 num_homes = tensor.shape[0]
 APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
 
