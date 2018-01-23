@@ -96,7 +96,7 @@ def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
 
         optimizer.zero_grad()
         loss = loss_func(pred, train_y)
-        if t % 5 == 0:
+        if t % 100 == 0:
             print(t, loss.data[0])
         loss.backward()
         optimizer.step()
@@ -123,10 +123,8 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
         preds[iters] = []
 
     for cur_fold in range(num_folds):
-        pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers
-                               ,bidirectional, lr, num_iterations)
-
-        for iters in range(200, num_iterations+1, 200):
+	pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+	for iters in range(200, num_iterations+1, 200):
             preds[iters].append(pred[iters])
         # preds.append(pred)
         gts.append(gt)
@@ -137,13 +135,13 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
     # return mean_absolute_error(np.concatenate(gts).flatten(), np.concatenate(preds).flatten())
     return error
 
-appliance = "hvac"
-cell_type="GRU" # One of GRU, LSTM, RNN
-hidden_size=100 # [20, 50, 100, 150]
-num_layers=1  # [1, 2, 3, 4]
-bidirectional=False # True or False
-lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
-num_iterations = 20 #200, 400, 600, 800
+#appliance = "hvac"
+#cell_type="GRU" # One of GRU, LSTM, RNN
+#hidden_size=100 # [20, 50, 100, 150]
+#num_layers=1  # [1, 2, 3, 4]
+#bidirectional=False # True or False
+#lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
+#num_iterations = 20 #200, 400, 600, 800
 
 appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
 hidden_size = int(hidden_size)
@@ -151,8 +149,7 @@ num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 
-p = disagg(appliance, cell_type, hidden_size, num_layers,
-                bidirectional, lr, num_iterations)
+p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
 import pickle
 pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
