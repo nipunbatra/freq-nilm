@@ -126,8 +126,8 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
         print ("cur_fold: ", cur_fold)
         pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 	
-    for iters in range(200, num_iterations+1, 200):
-        preds[iters].append(pred[iters])
+        for iters in range(200, num_iterations+1, 200):
+            preds[iters].append(pred[iters])
         # preds.append(pred)
         gts.append(gt)
 
