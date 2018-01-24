@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-import pandas as pd
+# import pandas as pd
 from dataloader import APPLIANCE_ORDER, get_train_test
 from tensor_custom_core import stf_4dim, stf_4dim_time
 import torch
@@ -8,6 +8,26 @@ import torch.nn as nn
 from torch.autograd import Variable
 torch.manual_seed(0)
 np.random.seed(0)
+
+
+np.random.seed(0)
+
+tensor = np.load('../aug_data_168.npy')
+num_homes = tensor.shape[0]
+APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
+
+
+def get_train_test(num_folds=5, fold_num=0):
+    """
+
+    :param num_folds: number of folds
+    :param fold_num: which fold to return
+    :return:
+    """
+    k = KFold(n_splits=num_folds)
+    train, test = list(k.split(range(0, num_homes)))[fold_num]
+    return tensor[train, :, :, :], tensor[test, :, :, :]
+
 
 
 class CustomRNN(nn.Module):
@@ -154,7 +174,7 @@ num_iterations = int(num_iterations)
 p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
 import pickle
-pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
+pickle.dump(p, open("./baseline/rnn-individual-baseline-result-aug/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
 						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
 
 
