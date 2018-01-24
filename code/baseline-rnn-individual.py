@@ -92,7 +92,7 @@ def disagg_fold(fold_num, appliance, cell_type, hidden_size,
 
         optimizer.zero_grad()
         loss = loss_func(pred, train_y)
-        if t % 5 == 0:
+        if t % 50 == 0:
             print(t, loss.data[0])
         loss.backward()
         optimizer.step()
