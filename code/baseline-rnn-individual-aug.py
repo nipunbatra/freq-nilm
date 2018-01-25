@@ -13,23 +13,7 @@ np.random.seed(0)
 
 np.random.seed(0)
 
-tensor = np.load('../aug_data_168.npy')
-num_homes = tensor.shape[0]
-APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
-
-
-def get_train_test(num_folds=5, fold_num=0):
-    """
-
-    :param num_folds: number of folds
-    :param fold_num: which fold to return
-    :return:
-    """
-    k = KFold(n_splits=num_folds)
-    train, test = list(k.split(range(0, num_homes)))[fold_num]
-    return tensor[train, :, :, :], tensor[test, :, :, :]
-
-
+aug_data = np.load('../aug_data_weight_random.npy')
 
 class CustomRNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
@@ -75,13 +59,14 @@ else:
 gts = []
 preds = []
 
-def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
-                num_layers, bidirectional, lr,
-                num_iterations):
+def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,num_layers, bidirectional, lr,num_iterations):
     torch.manual_seed(0)
 
     appliance_num = APPLIANCE_ORDER.index(appliance)
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+
+    train = np.vstack([train, aug_data[:num_aug]])
+
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
 
@@ -166,7 +151,8 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 #lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
 #num_iterations = 20 #200, 400, 600, 800
 
-appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+num_aug, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+num_aug = int(num_aug)
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
 lr = float(lr)
