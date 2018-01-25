@@ -1,7 +1,6 @@
 import sys
 import numpy as np
-# import pandas as pd
-from sklearn.model_selection import KFold
+import pandas as pd
 from dataloader import APPLIANCE_ORDER, get_train_test
 from tensor_custom_core import stf_4dim, stf_4dim_time
 import torch
@@ -10,10 +9,6 @@ from torch.autograd import Variable
 torch.manual_seed(0)
 np.random.seed(0)
 
-
-np.random.seed(0)
-
-aug_data = np.load('../aug_data_weight_random.npy')
 
 class CustomRNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
@@ -59,20 +54,19 @@ else:
 gts = []
 preds = []
 
-def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,num_layers, bidirectional, lr,num_iterations):
+def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
+                num_layers, bidirectional, lr,
+                num_iterations):
     torch.manual_seed(0)
 
     appliance_num = APPLIANCE_ORDER.index(appliance)
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+    train_aggregate = train[:, 0, :, :].reshape(train.shape[0], -1, 1)
+    test_aggregate = test[:, 0, :, :].reshape(test.shape[0], -1, 1)
 
-    train = np.vstack([train, aug_data[:num_aug]])
-
-    train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
-    test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
-
-    train_appliance = train[:, appliance_num, :, :].reshape(-1, 24, 1)
-    test_appliance = test[:, appliance_num, :, :].reshape(-1, 24, 1)
-    gts.append(test_appliance.reshape(-1, 24))
+    train_appliance = train[:, appliance_num, :, :].reshape(train.shape[0], -1, 1)
+    test_appliance = test[:, appliance_num, :, :].reshape(test.shape[0], -1, 1)
+    # gts.append(test_appliance.reshape(-1, 24))
     loss_func = nn.L1Loss()
     r = CustomRNN(cell_type, hidden_size, num_layers, bidirectional)
 
@@ -151,8 +145,7 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 #lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
 #num_iterations = 20 #200, 400, 600, 800
 
-num_aug, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
-num_aug = int(num_aug)
+appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
 lr = float(lr)
@@ -161,7 +154,7 @@ num_iterations = int(num_iterations)
 p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
 import pickle
-pickle.dump(p, open("./baseline/rnn-individual-baseline-result-aug/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
+pickle.dump(p, open("./baseline/rnn-individual-baseline-result-long/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
 						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
 
 
