@@ -166,6 +166,7 @@ gts = []
 num_folds_run = 5
 for fold_num in range(num_folds_run):
     print("-"*40)
+    sys.stdout.flush()
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
@@ -219,6 +220,7 @@ for fold_num in range(num_folds_run):
         loss = sum(losses)/len(ORDER)
         if t % 20 == 0:
             print(t, loss.data[0])
+            sys.stdout.flush()
 
         loss.backward()
         optimizer.step()
@@ -265,6 +267,8 @@ for appliance_num, appliance in enumerate(ORDER):
 err = {}
 for appliance in ORDER:
     print(appliance)
+    sys.stdout.flush()
     err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
 
 print(pd.Series(err))
+sys.stdout.flush()
