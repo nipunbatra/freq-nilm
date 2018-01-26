@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append("../code/")
 from sklearn.metrics import mean_absolute_error
 from dataloader import APPLIANCE_ORDER, get_train_test
@@ -15,8 +16,8 @@ if torch.cuda.is_available():
 torch.manual_seed(0)
 np.random.seed(0)
 
+weight_appliance = {'mw': 1, 'dw': 1, 'dr': 1, 'fridge': 1, 'hvac': 1}
 
-weight_appliance = {'mw':1, 'dw':1, 'dr':1,'fridge':1, 'hvac':1}
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
 
@@ -25,29 +26,46 @@ class CustomRNN(nn.Module):
     def __init__(self):
         super(CustomRNN, self).__init__()
         torch.manual_seed(0)
+        self.bn_0 = nn.BatchNorm1d(24)
+        self.lin_1 = nn.Linear(24, 50)
+        self.d_1 = nn.Dropout(p=0.1)
+        self.bn_1 = nn.BatchNorm1d(50)
+        self.lin_2 = nn.Linear(50, 100)
+        self.d_2 = nn.Dropout(p=0.1)
+        self.bn_2 = nn.BatchNorm1d(100)
+        self.lin_3 = nn.Linear(100, 24)
 
-      
-        self.lin_1 = nn.Linear(24, 100)
-        self.lin_2 = nn.Linear(100, 24)
-        self.bn = nn.BatchNorm1d(100)
-        #self.lin_3 = nn.Linear(48, 24)
-        
-        
+        self.bn_3 = nn.BatchNorm1d(24)
+        # self.lin_3 = nn.Linear(48, 24)
+
         self.act_1 = nn.ReLU()
         self.act_2 = nn.ReLU()
-        #self.act_3 = nn.ReLU()
+        self.act_3 = nn.ReLU()
+        # self.act_3 = nn.ReLU()
 
     def forward(self, x):
-        
+        #print(x.size())
+        #x = self.bn_0(x)
         pred = self.lin_1(x)
+        pred = self.d_1(pred)
+        #print(pred.size())
         pred = self.act_1(pred)
-        pred = self.bn(pred)
+        #print(pred.size())
+        pred = self.bn_1(pred)
+        #print(pred.size())
         pred = self.lin_2(pred)
+        pred = self.d_2(pred)
+        #print(pred.size())
         pred = self.act_2(pred)
-        
-        
+        #print(pred.size())
+        pred = self.bn_2(pred)
+        #print(pred.size())
+        pred = self.lin_3(pred)
+        pred = self.act_3(pred)
+        #pred = self.bn_3(pred)
+
         #pred = torch.clamp(pred, min=0.)
-        #pred = self.act(pred)
+        # pred = self.act(pred)
         pred = torch.min(pred, x)
         return pred
 
@@ -78,7 +96,7 @@ class AppliancesRNN(nn.Module):
             # print appliance
             # print self.order[appliance]
             # print args[2+appliance]
-            #print(getattr(self, "Appliance_" + str(appliance)))
+            # print(getattr(self, "Appliance_" + str(appliance)))
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
             if flag:
                 agg_current = agg_current - self.preds[appliance]
@@ -87,107 +105,25 @@ class AppliancesRNN(nn.Module):
 
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
-#ORDER = APPLIANCE_ORDER[1:][::-1]
+
+# ORDER = APPLIANCE_ORDER[1:][::-1]
 
 
-num_hidden = 120
-num_iterations = 300
-num_layers = 1
-num_directions = 1
-
-input_dim = 1
-hidden_size = num_hidden
-num_layers = num_layers
-if num_directions == 1:
-    bidirectional = False
-else:
-    bidirectional = True
-lr = 0.5
+lr = 1
 p = 0.1
 num_folds = 5
+fold_num = 0
+num_iterations = 1000
 
 torch.manual_seed(0)
 
-ORDER = APPLIANCE_ORDER[1:][:3]
-ORDER = ['dw','fridge','dr','hvac']
-#ORDER = ['fridge']
-ORDER = ['dw']
-case = 4
-num_aug = 50
-
-
-preds = {}
-gts = {}
-
-for appliance in ORDER:
-    preds[appliance] = []
-    gts[appliance] = []
-
-
-def augmented_data(train, num_aug, case):
-    
-    if num_aug == 0:
-        return train
-
-    if case == 1:
-        new = []
-        for i in range(num_aug):
-            index = random.sample(list(np.arange(len(train))), 2)
-        #     print index
-            new_sample = 0.5*train[index[0], :, :, :] + 0.5*train[index[1], :, :, :]
-            new.append(new_sample)
-        new = np.array(new)
-
-    if case == 2:
-        new = np.zeros((num_aug, 6, 112, 24))
-        for i in range(num_aug):
-            home_agg = np.zeros((112,24))
-            for appliance in range(1,6):
-                index = np.random.choice(list(range(len(train))))
-                new[i, appliance, :, :] = train.copy()[index, appliance, : :]
-                home_agg += train.copy()[index, appliance, :, :]
-            new[i, 0, :, :] = home_agg
-
-    if case == 3:
-        new = []
-        for i in range(num_aug):
-            index = np.random.choice(list(range(len(train))))
-            noise = np.random.normal(0,1,112*24*5).reshape(5, 112, 24)
-            new_sample = train.copy()[index]
-            new_sample[1:] = new_sample[1:] + noise
-            new_sample[0] = 0 
-            for j in range(1, 6):
-                new_sample[0] += new_sample[j]
-            new.append(new_sample)
-        new = np.array(new)
-
-    if case == 4:
-        new = []
-        for i in range(num_aug):
-            index = np.random.choice(list(range(len(train))))
-            days = random.sample(list(np.arange(len(train))), 2)
-            appliance_num = random.sample([3,4,5], 1)
-
-            new_sample = train.copy()[index]
-            new_sample[appliance_num, days[0], :] = new_sample[appliance_num, days[1], :].copy()
-
-            new.append(new_sample)
-        new = np.array(new) 
-
-    return np.vstack([train, new])
-
-
-for fold_num in range(num_folds):
-
+preds = []
+gts = []
+for fold_num in range(5):
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
-
-    train = augmented_data(train, num_aug, case)
-
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
-
-
-
+    ORDER = APPLIANCE_ORDER[1:][:][::-1]
     out_train = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_train[a_num] = Variable(
@@ -204,19 +140,19 @@ for fold_num in range(num_folds):
 
     loss_func = nn.L1Loss()
     a = AppliancesRNN(num_appliance=len(ORDER))
-
+    # for param in a.parameters():
+    #    param.data = param.data.abs()
+    # print(a)
     if cuda_av:
         a = a.cuda()
         loss_func = loss_func.cuda()
     optimizer = torch.optim.Adam(a.parameters(), lr=lr)
-
     inp = Variable(torch.Tensor(train_aggregate.reshape((train_aggregate.shape[0], -1))).type(torch.FloatTensor),
                    requires_grad=True)
-
     for t in range(num_iterations):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
-        ot =  torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        ot = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         if cuda_av:
             inp = inp.cuda()
             out = out.cuda()
@@ -229,17 +165,17 @@ for fold_num in range(num_folds):
         pred = a(*params)
 
         optimizer.zero_grad()
-        pred_split = torch.split(pred, pred.size(0)//len(ORDER))
+        pred_split = torch.split(pred, pred.size(0) // len(ORDER))
 
-        losses= [loss_func(pred_split[appliance_num], out_train[appliance_num])*weight_appliance[appliance] for appliance_num, appliance in enumerate(ORDER)]
-        
-        loss = sum(losses)
-        if t % 100 == 0:
+        losses = [loss_func(pred_split[appliance_num], out_train[appliance_num]) * weight_appliance[appliance] for
+                  appliance_num, appliance in enumerate(ORDER)]
+
+        loss = sum(losses)/len(ORDER)
+        if t % 10 == 0:
             print(t, loss.data[0])
 
         loss.backward()
         optimizer.step()
-
 
     test_inp = Variable(torch.Tensor(test_aggregate), requires_grad=False)
     if cuda_av:
@@ -262,13 +198,27 @@ for fold_num in range(num_folds):
     gt_fold = [None for x in range(len(ORDER))]
     for appliance_num, appliance in enumerate(ORDER):
         gt_fold[appliance_num] = test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(test_aggregate.shape[0], -1,
-                                                                                             1).reshape(-1, 24)
+                                                                                         1).reshape(-1, 24)
 
+    preds.append(prediction_fold)
+    gts.append(gt_fold)
 
-    for appliance_num, appliance in enumerate(ORDER):
-        preds[appliance].append(prediction_fold[appliance_num])
-        gts[appliance].append(gt_fold[appliance_num])
+prediction_flatten = {}
+gt_flatten = {}
+for appliance_num, appliance in enumerate(ORDER):
+    prediction_flatten[appliance] = []
+    gt_flatten[appliance] = []
 
+for appliance_num, appliance in enumerate(ORDER):
+    for fold in range(5):
+        prediction_flatten[appliance].append(preds[fold][appliance_num])
+        gt_flatten[appliance].append(gts[fold][appliance_num])
+    gt_flatten[appliance] = np.concatenate(gt_flatten[appliance])
+    prediction_flatten[appliance] = np.concatenate(prediction_flatten[appliance])
+
+err = {}
 for appliance in ORDER:
-    print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
+    print(appliance)
+    err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
 
+print(pd.Series(err))
