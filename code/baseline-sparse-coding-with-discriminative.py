@@ -26,7 +26,8 @@ def discriminative(num_latent, num_iterations):
     return np.concatenate(out)
 
 
-tensor = np.load('../2015-5appliances.numpy.npy')
+tensor = np.load('../2015-5appliances-true-agg.npy')
+
 from sklearn.metrics import mean_absolute_error
 
 num_latent, num_iterations = sys.argv[1:]
@@ -45,6 +46,6 @@ pred = discriminative(num_latent, num_iterations)
 pred = np.minimum(pred, tensor[:, 0:1, :,:])
 err_disc = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
-
+np.save("./baseline/baseline-sc-disc-set2-result/baseline-sc-disc-{}-{}.npy".format(num_latent, num_iterations), err_disc)
 import pickle
-pickle.dump(err_disc, open("./baseline-sc-disc-{}-{}.pkl".format(num_latent, num_iterations), 'wb'))
+#pickle.dump(err_disc, open("./baseline/baseline-sc-disc-set2-result/baseline-sc-disc-{}-{}.pkl".format(num_latent, num_iterations), 'wb'))

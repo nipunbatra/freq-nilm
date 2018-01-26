@@ -1,4 +1,4 @@
-from create_matrix import create_matrix_region_appliance_year
+#from create_matrix import create_matrix_region_appliance_year
 from subprocess import Popen
 import os
 
@@ -21,9 +21,9 @@ DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
 
-for num_latent in [35]:
+for num_latent in range(1, 51):
 	for lr in [0.01]:
-		for iters in [60]:
+		for iters in range(10, 110, 10):
 			OFILE = "{}/{}-{}-{}.out".format(SLURM_OUT, num_latent, lr, iters)
 			EFILE = "{}/{}-{}-{}.err".format(SLURM_OUT, num_latent, lr, iters)
 			SLURM_SCRIPT = "{}/{}-{}-{}.pbs".format(SLURM_OUT, num_latent, lr, iters)
