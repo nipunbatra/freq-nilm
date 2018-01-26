@@ -112,7 +112,7 @@ torch.manual_seed(0)
 ORDER = APPLIANCE_ORDER[1:][:3]
 ORDER = ['dw','fridge','dr','hvac']
 #ORDER = ['fridge']
-ORDER = ['dr']
+#ORDER = ['dr']
 
 for fold_num in range(num_folds):
 
@@ -168,7 +168,7 @@ for fold_num in range(num_folds):
         losses= [loss_func(pred_split[appliance_num], out_train[appliance_num])*weight_appliance[appliance] for appliance_num, appliance in enumerate(ORDER)]
         
         loss = sum(losses)
-        if t % 1 == 0:
+        if t % 100 == 0:
             print(t, loss.data[0])
 
         loss.backward()
