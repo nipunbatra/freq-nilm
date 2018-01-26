@@ -1,13 +1,30 @@
 import sys
 import numpy as np
 import pandas as pd
-from dataloader import APPLIANCE_ORDER, get_train_test
+# from dataloader import APPLIANCE_ORDER, get_train_test
 from tensor_custom_core import stf_4dim, stf_4dim_time
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
 torch.manual_seed(0)
 np.random.seed(0)
+
+# get tensor
+tensor = np.load('../2015-5appliances-true-agg.npy')
+num_homes = tensor.shape[0]
+APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
+
+
+def get_train_test(num_folds=5, fold_num=0):
+    """
+
+    :param num_folds: number of folds
+    :param fold_num: which fold to return
+    :return:
+    """
+    k = KFold(n_splits=num_folds)
+    train, test = list(k.split(range(0, num_homes)))[fold_num]
+    return tensor[train, :, :, :], tensor[test, :, :, :]
 
 
 class CustomRNN(nn.Module):
@@ -54,9 +71,7 @@ else:
 gts = []
 preds = []
 
-def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
-                num_layers, bidirectional, lr,
-                num_iterations):
+def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,num_layers, bidirectional, lr, num_iterations):
     torch.manual_seed(0)
 
     appliance_num = APPLIANCE_ORDER.index(appliance)
