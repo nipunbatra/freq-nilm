@@ -154,7 +154,7 @@ class AppliancesRNN(nn.Module):
 
 
 lr = 0.1
-p = 0.1
+p = 0.6
 num_folds = 5
 fold_num = 0
 num_iterations = 1000
@@ -170,7 +170,8 @@ for fold_num in range(num_folds_run):
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
-    ORDER = APPLIANCE_ORDER[1:][:][::-1]
+    #ORDER = APPLIANCE_ORDER[1:][:][::-1]
+    ORDER = ['mw','dw','fridge','dr','hvac']
     out_train = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_train[a_num] = Variable(
@@ -186,7 +187,7 @@ for fold_num in range(num_folds_run):
             out_test[a_num] = out_test[a_num].cuda()
 
     loss_func = nn.L1Loss()
-    a = AppliancesRNN(cell_type='GRU', hidden_size=100, num_layers=1, bidirectional=False, num_appliance=len(ORDER))
+    a = AppliancesRNN(cell_type='GRU', hidden_size=100, num_layers=2, bidirectional=True, num_appliance=len(ORDER))
     for param in a.parameters():
         param.data = param.data.abs()
     # print(a)
