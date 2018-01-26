@@ -105,18 +105,84 @@ else:
 lr = 0.5
 p = 0.1
 num_folds = 5
-fold_num = 0
 
 torch.manual_seed(0)
 
 ORDER = APPLIANCE_ORDER[1:][:3]
 ORDER = ['dw','fridge','dr','hvac']
 #ORDER = ['fridge']
-ORDER = ['dr']
+ORDER = ['dw']
+case = 4
+num_aug = 50
+
+
+preds = {}
+gts = {}
+
+for appliance in ORDER:
+    preds[appliance] = []
+    gts[appliance] = []
+
+
+def augmented_data(train, num_aug, case):
+    
+    if num_aug == 0:
+        return train
+
+    if case == 1:
+        new = []
+        for i in range(num_aug):
+            index = random.sample(list(np.arange(len(train))), 2)
+        #     print index
+            new_sample = 0.5*train[index[0], :, :, :] + 0.5*train[index[1], :, :, :]
+            new.append(new_sample)
+        new = np.array(new)
+
+    if case == 2:
+        new = np.zeros((num_aug, 6, 112, 24))
+        for i in range(num_aug):
+            home_agg = np.zeros((112,24))
+            for appliance in range(1,6):
+                index = np.random.choice(list(range(len(train))))
+                new[i, appliance, :, :] = train.copy()[index, appliance, : :]
+                home_agg += train.copy()[index, appliance, :, :]
+            new[i, 0, :, :] = home_agg
+
+    if case == 3:
+        new = []
+        for i in range(num_aug):
+            index = np.random.choice(list(range(len(train))))
+            noise = np.random.normal(0,1,112*24*5).reshape(5, 112, 24)
+            new_sample = train.copy()[index]
+            new_sample[1:] = new_sample[1:] + noise
+            new_sample[0] = 0 
+            for j in range(1, 6):
+                new_sample[0] += new_sample[j]
+            new.append(new_sample)
+        new = np.array(new)
+
+    if case == 4:
+        new = []
+        for i in range(num_aug):
+            index = np.random.choice(list(range(len(train))))
+            days = random.sample(list(np.arange(len(train))), 2)
+            appliance_num = random.sample([3,4,5], 1)
+
+            new_sample = train.copy()[index]
+            new_sample[appliance_num, days[0], :] = new_sample[appliance_num, days[1], :].copy()
+
+            new.append(new_sample)
+        new = np.array(new) 
+
+    return np.vstack([train, new])
+
 
 for fold_num in range(num_folds):
 
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+
+    train = augmented_data(train, num_aug, case)
+
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
 
@@ -168,7 +234,7 @@ for fold_num in range(num_folds):
         losses= [loss_func(pred_split[appliance_num], out_train[appliance_num])*weight_appliance[appliance] for appliance_num, appliance in enumerate(ORDER)]
         
         loss = sum(losses)
-        if t % 1 == 0:
+        if t % 100 == 0:
             print(t, loss.data[0])
 
         loss.backward()
@@ -198,5 +264,11 @@ for fold_num in range(num_folds):
         gt_fold[appliance_num] = test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(test_aggregate.shape[0], -1,
                                                                                              1).reshape(-1, 24)
 
-    for i in range(len(ORDER)):
-        print (ORDER[i], mean_absolute_error(prediction_fold[i], gt_fold[i]))
+
+    for appliance_num, appliance in enumerate(ORDER):
+        preds[appliance].append(prediction_fold[appliance_num])
+        gts[appliance].append(gt_fold[appliance_num])
+
+for appliance in ORDER:
+    print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
+
