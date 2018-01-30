@@ -139,7 +139,7 @@ def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr,
 
         optimizer.zero_grad()
         loss = loss_func(pred, out)
-        if t % 1 == 0:
+        if t % 100 == 0:
             print(t, loss.data[0])
 
         loss.backward()
