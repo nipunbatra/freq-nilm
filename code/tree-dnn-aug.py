@@ -90,30 +90,41 @@ class AppliancesRNN(nn.Module):
 #ORDER = APPLIANCE_ORDER[1:][::-1]
 
 
-num_hidden = 120
-num_iterations = 300
-num_layers = 1
-num_directions = 1
+# num_hidden = 120
+# num_iterations = 300
+# num_layers = 1
+# num_directions = 1
 
-input_dim = 1
-hidden_size = num_hidden
-num_layers = num_layers
-if num_directions == 1:
-    bidirectional = False
-else:
-    bidirectional = True
-lr = 0.5
-p = 0.1
+# input_dim = 1
+# hidden_size = num_hidden
+# num_layers = num_layers
+# if num_directions == 1:
+#     bidirectional = False
+# else:
+#     bidirectional = True
+# lr = 0.5
+# p = 0.1
+# num_folds = 5
+
 num_folds = 5
+hidden_size, num_layers, bidirectional, lr, num_iterations, p, num_aug = sys.argv[1:8]
+ORDER = sys.argv[8:len(sys.argv)]
+hidden_size = int(hidden_size)
+num_layers = int(num_layers)
+lr = float(lr)
+num_iterations = int(num_iterations)
+p = float(p)
+num_aug = int(num_aug)
+
 
 torch.manual_seed(0)
 
-ORDER = APPLIANCE_ORDER[1:][:3]
-ORDER = ['dw','fridge','dr','hvac']
+# ORDER = APPLIANCE_ORDER[1:][:3]
+# ORDER = ['mw', 'dw','fridge','dr','hvac']
 #ORDER = ['fridge']
-ORDER = ['dw']
-case = 4
-num_aug = 50
+# ORDER = ['dw']
+# case = 4
+# num_aug = 0
 
 
 preds = {}
