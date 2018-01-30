@@ -14,6 +14,7 @@ if torch.cuda.is_available():
 torch.manual_seed(0)
 np.random.seed(0)
 
+appliance_contri = {'hvac':0.83003428, 'fridge':0.0827564, 'dr':0.06381463, 'dw':0.01472098, 'mw':0.00867371}
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
 
@@ -97,7 +98,7 @@ class AppliancesRNN(nn.Module):
 
 def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     # print (fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-    print (ORDER)
+    # print (ORDER)
     torch.manual_seed(0)
 
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
@@ -136,8 +137,8 @@ def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr,
 
         optimizer.zero_grad()
         loss = loss_func(pred, out)
-        if t % 1 == 0:
-            print(t, loss.data[0])
+        # if t % 1 == 0:
+        #     print(t, loss.data[0])
 
         loss.backward()
         optimizer.step()
@@ -172,13 +173,14 @@ def disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations
     from sklearn.metrics import mean_absolute_error
     preds = {}
     gts = {}
+    error = {}
 
     for appliance_num, appliance in enumerate(ORDER):
         preds[appliance] = []
         gts[appliance] = []
 
     for cur_fold in range(num_folds):
-        print (cur_fold, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+        # print (cur_fold, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
         pred, gt = disagg_fold(cur_fold, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
         # pred[pred<0.] = 0.
         for appliance_num, appliance in enumerate(ORDER):
@@ -186,9 +188,8 @@ def disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations
                 gts[appliance].append(gt[appliance_num])
     for appliance in ORDER:
         print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
-
-
-
+        error[appliance] = mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten())
+    return error
 
 cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:8]
 hidden_size = int(hidden_size)
@@ -196,14 +197,49 @@ num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 p = float(p)
-ORDER = sys.argv[8:len(sys.argv)]
+# ORDER = sys.argv[8:len(sys.argv)]
+
+# stage one: run 5 iterations:
+order_candidate = {}
+for appliance in APPLIANCE_ORDER[1:]:
+    print (appliance)
+    ORDER = appliance.split()
+    error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+    print (error)
+    order_candidate[appliance] = error[appliance]/appliance_contri[appliance]
+    print (order_candidate)
+
+k = 3
+top_k = pd.Series(order_candidate).nsmallest(k).to_dict()
+
+for j in range(4):
+    order_candidate = {}
+    for order, e in top_k.items():
+        for appliance in APPLIANCE_ORDER[1:]:
+            if appliance in order:
+                continue
+            
+            new_order = order + " " + appliance
+            ORDER = new_order.split()
+            new_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+
+            order_candidate[new_order] = 0
+            for a in ORDER:
+                order_candidate[new_order] += new_error[a]/appliance_contri[a]
+    top_k = pd.Series(order_candidate).nsmallest(k).to_dict()
+
+best_order = pd.Series(order_candidate).idxmin()
+ORDER = best_order.split()
+best_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+result = {}
+result[best_order] = best_error
+
+np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}.npy".format(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p))
 
 
-input_dim = 1
-num_folds = 5
 
-# pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-# {appliance:mean_absolute_error(gt[appliance_num], pred[appliance_num]) for appliance_num, appliance in enumerate(ORDER)}
+
+
+
