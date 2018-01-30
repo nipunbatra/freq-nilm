@@ -32,5 +32,7 @@ pred = np.minimum(pred, tensor[:, 0:1, :, :])
 err_stf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
+np.save("./baseline/stf-baseline-set1-result/baseline-stf-{}-{}-{}.npy".format(num_latent, lr, iters), err_stf)
+
 import pickle
-pickle.dump(err_stf, open("./baseline-stf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))
+#ipickle.dump(err_stf, open("./baseline-stf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))

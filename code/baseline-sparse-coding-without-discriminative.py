@@ -19,7 +19,8 @@ def non_discriminative(num_latent):
         out.append(pred)
     return np.concatenate(out)
 
-tensor = np.load('../2015-5appliances.numpy.npy')
+tensor = np.load('../2015-5appliances-true-agg.npy')
+
 
 err_non_disc ={}
 gt = tensor[:, 1:, :, :]
@@ -30,6 +31,5 @@ for num_latent in range(1, 50):
     pred = np.minimum(pred, tensor[:, 0:1, :,:])
     err_non_disc[num_latent] = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
+np.save("./baseline/baseline-sparse-coding-non-disc-set2.npy", err_non_disc)
 
-import pickle
-pickle.dump(err_non_disc, open("./baseline-sparse-coding-non-disc.pkl", 'wb'))

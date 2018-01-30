@@ -6,6 +6,7 @@ from tensor_custom_core import stf_4dim, stf_4dim_time
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+from sklearn.model_selection import KFold
 torch.manual_seed(0)
 np.random.seed(0)
 
@@ -168,9 +169,11 @@ num_iterations = int(num_iterations)
 
 p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
+np.save("./baseline/rnn-individual-baseline-set2-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.npy".format(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), p)
+
 import pickle
-pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
-						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
+#pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
+#						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
 
 
 

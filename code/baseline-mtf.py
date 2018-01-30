@@ -23,7 +23,7 @@ def mtf(r=2, lr=1, num_iter=100):
     return np.concatenate(out)
 
 
-tensor = np.load('../2015-5appliances.numpy.npy')
+tensor = np.load('../2015-5appliances-true-agg.npy')
 from sklearn.metrics import mean_absolute_error
 
 gt = tensor[:, 1:, :, :]
@@ -37,7 +37,7 @@ pred = mtf(num_latent, lr, iters)
 pred = np.minimum(pred, tensor[:, 0:1, :, :])
 err_mtf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
 	                                                           gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
-
+np.save("./baseline/mtf-baseline-set2-result/baseline-mtf-{}-{}-{}.npy".format(num_latent, lr, iters), err_mtf)
 import pickle
-pickle.dump(err_mtf, open("./baseline-mtf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))
+#pickle.dump(err_mtf, open("./baseline-mtf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))
 # pickle.dump(err_mtf, open("./baseline-mtf.pkl", 'wb'))
