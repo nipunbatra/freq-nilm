@@ -2,12 +2,29 @@ import sys
 
 sys.path.append("../code/")
 from sklearn.metrics import mean_absolute_error
-from dataloader import APPLIANCE_ORDER, get_train_test
+#ifrom dataloader import APPLIANCE_ORDER, get_train_test
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+from sklearn.model_selection import KFold
+
+tensor = np.load('../2015-5appliances-true-agg.npy')
+num_homes = tensor.shape[0]
+APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
+
+def get_train_test(num_folds=5, fold_num=0):
+    """
+
+    :param num_folds: number of folds
+    :param fold_num: which fold to return
+    :return:
+    """
+    k = KFold(n_splits=num_folds)
+    train, test = list(k.split(range(0, num_homes)))[fold_num]
+    return tensor[train, :, :, :], tensor[test, :, :, :]
+
 
 cuda_av = False
 if torch.cuda.is_available():
@@ -108,14 +125,21 @@ class AppliancesRNN(nn.Module):
 
 # ORDER = APPLIANCE_ORDER[1:][::-1]
 
+lr, num_iterations = sys.argv[1:3]
+lr = float(lr)
+num_iterations = int(num_iterations)
 
-lr = 1
-p = 0.1
+ORDER = sys.argv[3:]
+
+#lr = 1
+p = 0
 num_folds = 5
-fold_num = 0
-num_iterations = 1000
+#fold_num = 0
+#num_iterations = 1000
 
 torch.manual_seed(0)
+
+#ORDER = ['hvac']
 
 preds = []
 gts = []
@@ -123,7 +147,7 @@ for fold_num in range(5):
     train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
-    ORDER = APPLIANCE_ORDER[1:][:][::-1]
+    #ORDER = APPLIANCE_ORDER[1:][:][::-1]
     out_train = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_train[a_num] = Variable(
@@ -220,5 +244,8 @@ err = {}
 for appliance in ORDER:
     print(appliance)
     err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
+
+np.save("./baseline/dnn-set2-result/dnn-{}-{}-{}.npy".format(num_iterations, lr, ORDER), err)
+
 
 print(pd.Series(err))

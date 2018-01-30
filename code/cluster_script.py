@@ -21,13 +21,13 @@ DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
 
-for num_latent in range(1, 51):
-	for lr in [0.01]:
-		for iters in range(10, 110, 10):
+for num_latent in range(1, 21):
+	for lr in [0.01, 0.1, 1, 2]:
+		for iters in range(100, 2500, 400):
 			OFILE = "{}/{}-{}-{}.out".format(SLURM_OUT, num_latent, lr, iters)
 			EFILE = "{}/{}-{}-{}.err".format(SLURM_OUT, num_latent, lr, iters)
 			SLURM_SCRIPT = "{}/{}-{}-{}.pbs".format(SLURM_OUT, num_latent, lr, iters)
-			CMD = 'python3 baseline-sparse-coding-with-discriminative.py {} {}'.format(num_latent, iters)
+			CMD = 'python3 baseline-stf.py {} {} {}'.format(num_latent, lr, iters)
 			lines = []
 			lines.append("#!/bin/sh\n")
 			lines.append('#SBATCH --time=1-16:0:00\n')

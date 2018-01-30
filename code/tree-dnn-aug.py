@@ -126,7 +126,7 @@ torch.manual_seed(0)
 # case = 4
 # num_aug = 0
 
-
+case = 1
 preds = {}
 gts = {}
 
