@@ -230,6 +230,7 @@ for j in range(4):
             order_candidate[new_order] = 0
             for a in ORDER:
                 order_candidate[new_order] += new_error[a]/appliance_contri[a]
+            print (new_order, order_candidate[new_order])
     top_k = pd.Series(order_candidate).nsmallest(k).to_dict()
 
 best_order = pd.Series(order_candidate).idxmin()
@@ -238,7 +239,7 @@ best_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_i
 result = {}
 result[best_order] = best_error
 
-np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}.npy".format(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p))
+np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}.npy".format(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
 
 
 

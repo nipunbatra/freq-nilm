@@ -1,0 +1,381 @@
+nohup: ignoring input
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+hvac
+hvac 870.548352617
+{'hvac': 870.54835261663027}
+{'hvac': 1048.8101197659335}
+fridge
+fridge 86.7957522576
+{'fridge': 86.795752257560508}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682}
+dr
+dr 66.9294258049
+{'dr': 66.929425804880026}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096}
+dw
+dw 15.4395102012
+{'dw': 15.43951020120803}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109}
+mw
+mw 9.09707779131
+{'mw': 9.0970777913095713}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109, 'mw': 1048.8104618795846}
+dw 15.4395102012
+hvac 870.548352617
+dw 15.4395102012
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dr 66.9294258049
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+hvac 870.548352617
+fridge 86.7957522576
+hvac 870.548352617
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+mw 9.09707779131
+Traceback (most recent call last):
+  File "rnn-tree-greedy.py", line 225, in <module>
+    new_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 184, in disagg
+    pred, gt = disagg_fold(cur_fold, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 136, in disagg_fold
+    pred = a(*params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 90, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 48, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+hvac
+hvac 870.548352617
+{'hvac': 870.54835261663027}
+{'hvac': 1048.8101197659335}
+fridge
+fridge 86.7957522576
+{'fridge': 86.795752257560508}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682}
+dr
+dr 66.9294258049
+{'dr': 66.929425804880026}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096}
+dw
+dw 15.4395102012
+{'dw': 15.43951020120803}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109}
+mw
+mw 9.09707779131
+{'mw': 9.0970777913095713}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109, 'mw': 1048.8104618795846}
+dw 15.4395102012
+hvac 870.548352617
+dw 15.4395102012
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dr 66.9294258049
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+hvac 870.548352617
+fridge 86.7957522576
+hvac 870.548352617
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+mw 9.09707779131
+Traceback (most recent call last):
+  File "rnn-tree-greedy.py", line 225, in <module>
+    new_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 184, in disagg
+    pred, gt = disagg_fold(cur_fold, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 136, in disagg_fold
+    pred = a(*params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 90, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 48, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+hvac
+hvac 870.548352617
+{'hvac': 870.54835261663027}
+{'hvac': 1048.8101197659335}
+fridge
+fridge 86.7957522576
+{'fridge': 86.795752257560508}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682}
+dr
+dr 66.9294258049
+{'dr': 66.929425804880026}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096}
+dw
+dw 15.4395102012
+{'dw': 15.43951020120803}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109}
+mw
+mw 9.09707779131
+{'mw': 9.0970777913095713}
+{'hvac': 1048.8101197659335, 'fridge': 1048.8101495178682, 'dr': 1048.8100582089096, 'dw': 1048.8099434418109, 'mw': 1048.8104618795846}
+dw 15.4395102012
+hvac 870.548352617
+dw 15.4395102012
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dr 66.9294258049
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+hvac 870.548352617
+fridge 86.7957522576
+hvac 870.548352617
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+dw 15.4395102012
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+fridge 86.7957522576
+dr 66.9294258049
+dw 15.4395102012
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+fridge 86.7957522576
+dw 15.4395102012
+dr 66.9294258049
+hvac 870.548352617
+mw 9.09707779131
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+fridge 86.7957522576
+dw 15.4395102012
+hvac 870.548352617
+dr 66.9294258049
+mw 9.09707779131
+Traceback (most recent call last):
+  File "rnn-tree-greedy.py", line 225, in <module>
+    new_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 184, in disagg
+    pred, gt = disagg_fold(cur_fold, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-tree-greedy.py", line 136, in disagg_fold
+    pred = a(*params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 90, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-tree-greedy.py", line 48, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+crf-1.sh: line 8:  1533 Terminated              CUDA_VISIBLE_DEVICES=1 python rnn-tree-greedy.py LSTM 50 2 True 1 800 0
+crf-1.sh: error reading input file: Stale file handle
