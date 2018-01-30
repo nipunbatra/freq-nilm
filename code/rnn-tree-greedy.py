@@ -114,6 +114,9 @@ def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr,
 
     loss_func = nn.L1Loss()
     a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
+    # prevent negative
+    for param in a.parameters():
+        param.data = param.data.abs()
     #print(a)
     if cuda_av:
         a = a.cuda()
@@ -197,6 +200,7 @@ num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 p = float(p)
+num_folds = 5
 # ORDER = sys.argv[8:len(sys.argv)]
 
 # stage one: run 5 iterations:
