@@ -95,12 +95,12 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
+def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     # print (fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
     print (ORDER)
     torch.manual_seed(0)
 
-    train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
 
@@ -171,7 +171,7 @@ def disagg_fold(fold_num, cell_type, hidden_size, num_layers, bidirectional, lr,
     return prediction_fold, gt_fold
 
 
-def disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
+def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     from sklearn.metrics import mean_absolute_error
     preds = {}
     gts = {}
@@ -182,7 +182,7 @@ def disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations
 
     for cur_fold in range(num_folds):
         print (cur_fold, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-        pred, gt = disagg_fold(cur_fold, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+        pred, gt = disagg_fold(cur_fold, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
         # pred[pred<0.] = 0.
         for appliance_num, appliance in enumerate(ORDER):
                 preds[appliance].append(pred[appliance_num])
@@ -193,7 +193,8 @@ def disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations
 
 
 
-cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:8]
+dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:8]
+dataset = int(dataset)
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
 lr = float(lr)
@@ -201,12 +202,11 @@ num_iterations = int(num_iterations)
 p = float(p)
 ORDER = sys.argv[8:len(sys.argv)]
 
+train, test = get_train_test(dataset, 5, 0)
 
 input_dim = 1
 num_folds = 5
 
-# pred, gt = disagg_fold(fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-# {appliance:mean_absolute_error(gt[appliance_num], pred[appliance_num]) for appliance_num, appliance in enumerate(ORDER)}
