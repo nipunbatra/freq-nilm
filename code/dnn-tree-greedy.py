@@ -19,6 +19,7 @@ torch.manual_seed(0)
 np.random.seed(0)
 
 weight_appliance = {'mw': 1, 'dw': 1, 'dr': 1, 'fridge': 1, 'hvac': 1}
+appliance_contri = {'hvac':0.83003428, 'fridge':0.0827564, 'dr':0.06381463, 'dw':0.01472098, 'mw':0.00867371}
 
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
@@ -117,7 +118,7 @@ class AppliancesRNN(nn.Module):
 torch.manual_seed(0)
 
 #ORDER = ['hvac']
-def disagg_dnn(dataset, lr, num_iterations, p, num_folds):
+def disagg(dataset, lr, num_iterations, p, num_folds):
     preds = []
     gts = []
     for fold_num in range(num_folds):
@@ -172,7 +173,7 @@ def disagg_dnn(dataset, lr, num_iterations, p, num_folds):
                       appliance_num, appliance in enumerate(ORDER)]
 
             loss = sum(losses)/len(ORDER)
-            if t % 10 == 0:
+            if t % 100 == 0:
                 print(t, loss.data[0])
 
             loss.backward()
@@ -272,4 +273,3 @@ result[best_order] = best_error
 np.save("./baseline/dnn-tree-greedy/{}-{}-{}.npy".format(dataset, lr, num_iterations, p), result)
 
 
-print(pd.Series(err))
