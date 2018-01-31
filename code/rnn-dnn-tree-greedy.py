@@ -157,26 +157,20 @@ class AppliancesRNN(nn.Module):
 # p = 0.6
 num_folds = 5
 # fold_num = 0
-num_iterations = 800
+#num_iterations = 800
 
 torch.manual_seed(0)
 
 
-num_folds_run = 5
+# num_folds_run = 5
 
-dataset. cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:]
-dataset = int(datset)
-hidden_size = int(hidden_size)
-num_layers = int(num_layers)
-lr = float(lr)
-num_iterations = int(num_iterations)
-p = float(p)
+
 # ORDER = sys.argv[6:len(sys.argv)]
 
 def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     preds = []
     gts = []
-    for fold_num in range(num_folds_run):
+    for fold_num in range(num_folds):
         print("-"*40)
         sys.stdout.flush()
         train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
@@ -271,7 +265,7 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
         gt_flatten[appliance] = []
 
     for appliance_num, appliance in enumerate(ORDER):
-        for fold in range(num_folds_run):
+        for fold in range(num_folds):
             prediction_flatten[appliance].append(preds[fold][appliance_num])
             gt_flatten[appliance].append(gts[fold][appliance_num])
         gt_flatten[appliance] = np.concatenate(gt_flatten[appliance])
@@ -282,8 +276,52 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
         print(appliance)
         sys.stdout.flush()
         err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
+    return err
 
-print(pd.Series(err))
-sys.stdout.flush()
 
-# np.save("./baseline/tree-rnn-dnn/{}-{}-{}-{}-{}-{}".format(cell_type, hidden_size, num_layers, bidirectional, lr, ORDER), err)
+dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:]
+dataset = int(dataset)
+hidden_size = int(hidden_size)
+num_layers = int(num_layers)
+lr = float(lr)
+num_iterations = int(num_iterations)
+p = float(p)
+
+
+
+order_candidate = {}
+for appliance in APPLIANCE_ORDER[1:]:
+    print (appliance)
+    ORDER = appliance.split()
+    error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+    print (error)
+    order_candidate[appliance] = error[appliance]/appliance_contri[appliance]
+    print (order_candidate)
+
+k = 3
+top_k = pd.Series(order_candidate).nsmallest(k).to_dict()
+
+for j in range(4):
+    order_candidate = {}
+    for order, e in top_k.items():
+        for appliance in APPLIANCE_ORDER[1:]:
+            if appliance in order:
+                continue
+            
+            new_order = order + " " + appliance
+            ORDER = new_order.split()
+            new_error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+
+            order_candidate[new_order] = 0
+            for a in ORDER:
+                order_candidate[new_order] += new_error[a]/appliance_contri[a]
+            print (new_order, order_candidate[new_order])
+    top_k = pd.Series(order_candidate).nsmallest(k).to_dict()
+
+best_order = pd.Series(order_candidate).idxmin()
+ORDER = best_order.split()
+best_error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+result = {}
+result[best_order] = best_error
+
+np.save("./baseline/rnn-dnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}-{}".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
