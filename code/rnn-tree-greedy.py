@@ -194,7 +194,7 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
         error[appliance] = mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten())
     return error
 
-dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:8]
+dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:9]
 dataset = int(dataset)
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
@@ -209,7 +209,7 @@ order_candidate = {}
 for appliance in APPLIANCE_ORDER[1:]:
     print (appliance)
     ORDER = appliance.split()
-    error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+    error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
     print (error)
     order_candidate[appliance] = error[appliance]/appliance_contri[appliance]
     print (order_candidate)
@@ -226,7 +226,7 @@ for j in range(4):
             
             new_order = order + " " + appliance
             ORDER = new_order.split()
-            new_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+            new_error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
             order_candidate[new_order] = 0
             for a in ORDER:
@@ -236,11 +236,11 @@ for j in range(4):
 
 best_order = pd.Series(order_candidate).idxmin()
 ORDER = best_order.split()
-best_error = disagg(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+best_error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 result = {}
 result[best_order] = best_error
 
-np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}.npy".format(cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
+np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
 
 
 

@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 import pandas as pd
-# from dataloader import APPLIANCE_ORDER, get_train_test
+from dataloader import APPLIANCE_ORDER, get_train_test
 from tensor_custom_core import stf_4dim, stf_4dim_time
 import torch
 import torch.nn as nn
@@ -11,21 +11,21 @@ torch.manual_seed(0)
 np.random.seed(0)
 
 # get tensor
-tensor = np.load('../2015-5appliances-true-agg.npy')
-num_homes = tensor.shape[0]
-APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
+#tensor = np.load('../2015-5appliances-true-agg.npy')
+#num_homes = tensor.shape[0]
+#APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
 
 
-def get_train_test(num_folds=5, fold_num=0):
-    """
-
-    :param num_folds: number of folds
-    :param fold_num: which fold to return
-    :return:
-    """
-    k = KFold(n_splits=num_folds)
-    train, test = list(k.split(range(0, num_homes)))[fold_num]
-    return tensor[train, :, :, :], tensor[test, :, :, :]
+#def get_train_test(num_folds=5, fold_num=0):
+#    """
+#
+#    :param num_folds: number of folds
+#    :param fold_num: which fold to return
+#    :return:
+#    """
+#    k = KFold(n_splits=num_folds)
+#    train, test = list(k.split(range(0, num_homes)))[fold_num]
+#    return tensor[train, :, :, :], tensor[test, :, :, :]
 
 
 class CustomRNN(nn.Module):
@@ -72,11 +72,11 @@ else:
 gts = []
 preds = []
 
-def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,num_layers, bidirectional, lr, num_iterations):
+def disagg_fold_new(fold_num, appliance,dataset, cell_type, hidden_size,num_layers, bidirectional, lr, num_iterations):
     torch.manual_seed(0)
 
     appliance_num = APPLIANCE_ORDER.index(appliance)
-    train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
 
@@ -129,7 +129,7 @@ def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,num_layers, bidi
 
     return prediction_fold, test_appliance
 
-def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
+def disagg_new(appliance, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
     from sklearn.metrics import mean_absolute_error
     preds = {}
     gts = []
@@ -140,7 +140,7 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 
     for cur_fold in range(num_folds):
         print ("cur_fold: ", cur_fold)
-        pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+        pred, gt = disagg_fold_new(cur_fold, appliance, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 	
         for iters in range(200, num_iterations+1, 200):
             preds[iters].append(pred[iters])
@@ -161,13 +161,14 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 #lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
 #num_iterations = 20 #200, 400, 600, 800
 
-appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+dataset = int(dataset)
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 
-p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+p = disagg_new(appliance,dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
 np.save("./baseline/rnn-individual-baseline-set2-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.npy".format(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), p)
 
