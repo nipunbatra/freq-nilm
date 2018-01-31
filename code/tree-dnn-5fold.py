@@ -2,28 +2,13 @@ import sys
 
 sys.path.append("../code/")
 from sklearn.metrics import mean_absolute_error
-#ifrom dataloader import APPLIANCE_ORDER, get_train_test
+ifrom dataloader import APPLIANCE_ORDER, get_train_test
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
 from sklearn.model_selection import KFold
-
-tensor = np.load('../2015-5appliances-true-agg.npy')
-num_homes = tensor.shape[0]
-APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
-
-def get_train_test(num_folds=5, fold_num=0):
-    """
-
-    :param num_folds: number of folds
-    :param fold_num: which fold to return
-    :return:
-    """
-    k = KFold(n_splits=num_folds)
-    train, test = list(k.split(range(0, num_homes)))[fold_num]
-    return tensor[train, :, :, :], tensor[test, :, :, :]
 
 
 cuda_av = False
@@ -125,11 +110,12 @@ class AppliancesRNN(nn.Module):
 
 # ORDER = APPLIANCE_ORDER[1:][::-1]
 
-lr, num_iterations = sys.argv[1:3]
+dataset, lr, num_iterations = sys.argv[1:4]
+dataset = int(dataset)
 lr = float(lr)
 num_iterations = int(num_iterations)
 
-ORDER = sys.argv[3:]
+ORDER = sys.argv[4:]
 
 #lr = 1
 p = 0
@@ -144,7 +130,7 @@ torch.manual_seed(0)
 preds = []
 gts = []
 for fold_num in range(5):
-    train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(-1, 24)
     test_aggregate = test[:, 0, :, :].reshape(-1, 24)
     #ORDER = APPLIANCE_ORDER[1:][:][::-1]
@@ -245,7 +231,7 @@ for appliance in ORDER:
     print(appliance)
     err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
 
-np.save("./baseline/dnn-set2-result/dnn-{}-{}-{}.npy".format(num_iterations, lr, ORDER), err)
+np.save("./baseline/dnn-set{}-result/dnn-{}-{}-{}.npy".format(dataset, num_iterations, lr, ORDER), err)
 
 
 print(pd.Series(err))
