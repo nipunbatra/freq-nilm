@@ -118,7 +118,7 @@ fold_num = 0
 
 torch.manual_seed(0)
 
-train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+train, test = get_train_test(2, num_folds=num_folds, fold_num=fold_num)
 train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
 test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
 
@@ -132,6 +132,9 @@ for a_num, appliance in enumerate(ORDER):
 loss_func = nn.L1Loss()
 a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
 #print(a)
+for param in a.parameters():
+	param.data = param.data.abs()
+
 if cuda_av:
     a = a.cuda()
     loss_func = loss_func.cuda()
