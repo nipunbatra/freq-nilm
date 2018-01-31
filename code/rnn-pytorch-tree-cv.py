@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from dataloader import APPLIANCE_ORDER, get_train_test
 num_folds = 5
-train, test = get_train_test(num_folds=num_folds, fold_num=0)
+train, test = get_train_test(1, num_folds=num_folds, fold_num=0)
 
 train_agg = train[:, 0, :].reshape(-1, 24)
 test_agg = test[:, 0, :].reshape(-1, 24)

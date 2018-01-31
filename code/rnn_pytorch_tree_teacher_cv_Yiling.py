@@ -48,7 +48,7 @@ class CustomRNN(nn.Module):
         pred = self.linear(pred).view(pred.data.shape[0], -1, 1)
         # pred = self.act(pred)
         # pred = torch.clamp(pred, min=0.)
-        pred = self.act(pred)
+        #pred = self.act(pred)
         pred = torch.min(pred, x)
         return pred
 
@@ -114,8 +114,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     loss_func = nn.L1Loss()
     a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
     # prevent negative
-    for param in a.parameters():
-        param.data = param.data.abs()
+    #for param in a.parameters():
+    #    param.data = param.data.abs()
     #print(a)
     if cuda_av:
         a = a.cuda()
