@@ -190,7 +190,6 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
     for appliance in ORDER:
         print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
 
-
 ataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:9]
 dataset = int(dataset)
 hidden_size = int(hidden_size)
