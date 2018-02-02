@@ -170,7 +170,9 @@ num_iterations = int(num_iterations)
 
 p = disagg_new(appliance,dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
-np.save("./baseline/rnn-individual-baseline-set2-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.npy".format(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), p)
+print (p)
+
+np.save("./baseline/rnn-individual-baseline-set{}-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), p)
 
 import pickle
 #pickle.dump(p, open("./baseline/rnn-individual-baseline-result/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,

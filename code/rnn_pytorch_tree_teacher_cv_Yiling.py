@@ -209,3 +209,5 @@ num_folds = 5
 
 error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 print (error)
+
+np.save("./baseline/rnn-tree/{}-{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error)

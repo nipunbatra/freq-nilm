@@ -23,26 +23,35 @@ weight_appliance = {'mw': 1, 'dw': 1, 'dr': 1, 'fridge': 1, 'hvac': 1}
 
 
 class CustomRNN(nn.Module):
-    def __init__(self, size, num_layer):
+    def __init__(self, size1, size2, size3):
         super(CustomRNN, self).__init__()
         torch.manual_seed(0)
-	self.sizes = size
-	self.num_layer = num_layer
+        
         self.bn_0 = nn.BatchNorm1d(24)
-        self.lin_1 = nn.Linear(24, 50)
-        self.d_1 = nn.Dropout(p=0.1)
-        self.bn_1 = nn.BatchNorm1d(50)
-        self.lin_2 = nn.Linear(50, 100)
-        self.d_2 = nn.Dropout(p=0.1)
-        self.bn_2 = nn.BatchNorm1d(100)
-        self.lin_3 = nn.Linear(100, 24)
 
-        self.bn_3 = nn.BatchNorm1d(24)
+        self.lin_1 = nn.Linear(24, size1)
+        self.d_1 = nn.Dropout(p=0.1)
+        self.bn_1 = nn.BatchNorm1d(size1)
+
+        self.lin_2 = nn.Linear(size1, size2)
+        self.d_2 = nn.Dropout(p=0.1)
+        self.bn_2 = nn.BatchNorm1d(size2)
+
+        self.lin_3 = nn.Linear(size2, size3)
+        self.d_3 = nn.Dropout(p=0.1)
+        self.bn_3 = nn.BatchNorm1d(size3)
+
+        self.lin_4 = nn.Linear(size3, 24)
+        self.bn_4 = nn.BatchNorm1d(24)
+
+
+
         # self.lin_3 = nn.Linear(48, 24)
 
         self.act_1 = nn.ReLU()
         self.act_2 = nn.ReLU()
         self.act_3 = nn.ReLU()
+        self.act_4 = nn.ReLU()
         # self.act_3 = nn.ReLU()
 
     def forward(self, x):
@@ -63,7 +72,12 @@ class CustomRNN(nn.Module):
         pred = self.bn_2(pred)
         #print(pred.size())
         pred = self.lin_3(pred)
+        pred = self.d_3(pred)
         pred = self.act_3(pred)
+        pred = self.bn_3(pred)
+
+        pred = self.lin_4(pred)
+        pred = self.act_4(pred)
         #pred = self.bn_3(pred)
 
         #pred = torch.clamp(pred, min=0.)
@@ -73,16 +87,16 @@ class CustomRNN(nn.Module):
 
 
 class AppliancesRNN(nn.Module):
-    def __init__(self, num_appliance, size, num_layer):
+    def __init__(self, size1, size2, size3, num_appliance):
         super(AppliancesRNN, self).__init__()
         self.num_appliance = num_appliance
         self.preds = {}
         self.order = ORDER
         for appliance in range(self.num_appliance):
             if cuda_av:
-                setattr(self, "Appliance_" + str(appliance), CustomRNN(size, num_layer).cuda())
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(size1, size2, size3).cuda())
             else:
-                setattr(self, "Appliance_" + str(appliance), CustomRNN(size, num_layer))
+                setattr(self, "Appliance_" + str(appliance), CustomRNN(size1, size2, size3))
 
     def forward(self, *args):
         agg_current = args[0]
@@ -110,13 +124,15 @@ class AppliancesRNN(nn.Module):
 
 # ORDER = APPLIANCE_ORDER[1:][::-1]
 
-dataset, size, num_layer, lr, num_iterations = sys.argv[1:3]
-size = int(size)
-num_layer = int(num_layer)
+dataset, size1, size2, size3, lr, num_iterations = sys.argv[1:7]
+dataset = int(dataset)
+size1 = int(size1)
+size2 = int(size2)
+size3 = int(size3)
 lr = float(lr)
 num_iterations = int(num_iterations)
 
-ORDER = sys.argv[3:]
+ORDER = sys.argv[7:]
 
 p = 0
 num_folds = 5
@@ -147,7 +163,7 @@ for fold_num in range(5):
             out_test[a_num] = out_test[a_num].cuda()
 
     loss_func = nn.L1Loss()
-    a = AppliancesRNN(num_appliance=len(ORDER), size, num_layer)
+    a = AppliancesRNN(size1, size2, size3, len(ORDER))
     # for param in a.parameters():
     #    param.data = param.data.abs()
     # print(a)
@@ -179,8 +195,8 @@ for fold_num in range(5):
                   appliance_num, appliance in enumerate(ORDER)]
 
         loss = sum(losses)/len(ORDER)
-        if t % 10 == 0:
-            print(t, loss.data[0])
+        #if t % 10 == 0:
+        #    print(t, loss.data[0])
 
         loss.backward()
         optimizer.step()
