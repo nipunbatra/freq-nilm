@@ -175,7 +175,7 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
     from sklearn.metrics import mean_absolute_error
     preds = {}
     gts = {}
-
+    error = {}
     for appliance_num, appliance in enumerate(ORDER):
         preds[appliance] = []
         gts[appliance] = []
@@ -189,7 +189,8 @@ def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_i
                 gts[appliance].append(gt[appliance_num])
     for appliance in ORDER:
         print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
-
+        error[appliance] = mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten())
+    return error
 
 
 
