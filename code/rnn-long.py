@@ -58,8 +58,8 @@ else:
 fold_num = 0
 num_folds = 5
 cell_type="GRU"
-hidden_size = 50
-lr = 1
+hidden_size = 150
+lr = 0.1
 bidirectional = True
 appliance = "hvac"
 
@@ -85,7 +85,7 @@ if cuda_av:
 
 optimizer = torch.optim.Adam(r.parameters(), lr=lr)
 
-num_iterations = 100
+num_iterations = 200
 for t in range(num_iterations):
 
     inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
@@ -94,10 +94,10 @@ for t in range(num_iterations):
         inp = inp.cuda()
         train_y = train_y.cuda()
     pred = r(inp)
-    print(pred.std().data[0], pred.mean().data[0])
+    #print(pred.std().data[0], pred.mean().data[0])
     optimizer.zero_grad()
     loss = loss_func(pred, train_y)
-    if t % 1 == 0:
+    if t % 5 == 0:
         print(t, loss.data[0])
     loss.backward()
     optimizer.step()
