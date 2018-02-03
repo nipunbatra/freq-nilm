@@ -54,13 +54,13 @@ else:
 gts = []
 preds = []
 
-def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
+def disagg_fold_new(fold_num, dataset, appliance, cell_type, hidden_size,
                 num_layers, bidirectional, lr,
                 num_iterations):
     torch.manual_seed(0)
 
     appliance_num = APPLIANCE_ORDER.index(appliance)
-    train, test = get_train_test(num_folds=num_folds, fold_num=fold_num)
+    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train_aggregate = train[:, 0, :, :].reshape(train.shape[0], -1, 1)
     test_aggregate = test[:, 0, :, :].reshape(test.shape[0], -1, 1)
 
@@ -113,7 +113,7 @@ def disagg_fold_new(fold_num, appliance, cell_type, hidden_size,
 
     return prediction_fold, test_appliance
 
-def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
+def disagg_new(dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations):
     from sklearn.metrics import mean_absolute_error
     preds = {}
     gts = []
@@ -124,7 +124,7 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 
     for cur_fold in range(num_folds):
         print ("cur_fold: ", cur_fold)
-        pred, gt = disagg_fold_new(cur_fold, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+        pred, gt = disagg_fold_new(cur_fold, dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 	
         for iters in range(200, num_iterations+1, 200):
             preds[iters].append(pred[iters])
@@ -145,17 +145,18 @@ def disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr,
 #lr =1 # 1e-3, 1e-2, 1e-1, 1, 2
 #num_iterations = 20 #200, 400, 600, 800
 
-appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations = sys.argv[1:]
+dataset = int(dataset)
 hidden_size = int(hidden_size)
 num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 
-p = disagg_new(appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
+p = disagg_new(dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations)
 
-import pickle
-pickle.dump(p, open("./baseline/rnn-individual-baseline-result-long/rnn-individual-{}-{}-{}-{}-{}-{}-{}.pkl".format(appliance,
-						cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), "wb"))
+print (p)
+np.save("./baseline/rnn-individual-baseline-result-long/{}-rnn-individual-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, appliance, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations), p)
+
 
 
 
