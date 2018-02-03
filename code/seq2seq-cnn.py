@@ -23,7 +23,7 @@ weight_appliance = {'mw':1, 'dw':1, 'dr':1,'fridge':1, 'hvac':1}
 appliance="hvac"
 cell_type = "GRU"
 num_hidden = 120
-num_iterations = 500
+num_iterations = 5000
 num_layers = 1
 num_directions = 1
 
