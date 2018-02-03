@@ -130,8 +130,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         if cuda_av:
             inp = inp.cuda()
             out = out.cuda()
-	#gradually reduced teacher signal
-	p = 1 - t*1.0/num_iterations
+	    # gradually reduced teacher signal
+        p = 1 - t*1.0/num_iterations
         params = [inp, p]
         for a_num, appliance in enumerate(ORDER):
             params.append(out_train[a_num])
