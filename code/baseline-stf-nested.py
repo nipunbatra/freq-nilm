@@ -54,7 +54,7 @@ def nested_stf():
         pred = np.einsum("Hr, Ar, Dr, Tr ->HADT", H, A, D, T)[len(train):, 1:, :, :]
         out.append(pred)
 
-    return np.concacd tenate(out)
+    return np.concatenate(out)
 
 
 dataset= sys.argv[1]
@@ -72,7 +72,7 @@ pred = np.minimum(pred, tensor[:, 0:1, :, :])
 err_stf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
-np.save("../../baseline/stf-nested/baseline-stf-{}.npy".format(dataset), err_stf)
+np.save("./baseline/stf-nested/baseline-stf-{}.npy".format(dataset), err_stf)
 
 # import pickle
 #ipickle.dump(err_stf, open("./baseline-stf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))
