@@ -217,14 +217,12 @@ num_folds = 5
 train_fold, valid_fold, error = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
 import json
-with open('./rnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), 'w') as outfile:
-    json.dump(valid_fold, outfile)
+np.save('./baseline/rnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
+#    jon.dump(valid_fold, outfile)
 
-with open('./rnn-nested-cv/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), 'w') as outfile:
-    json.dump(error, outfile)
+np.save('./baseline/rnn-nested-cv/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error) 
 
-with open('./rnn-nested-cv/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), 'w') as outfile:
-    json.dump(train_fold, outfile)
+np.save('./baseline/rnn-nested-cv/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold) 
 
 
 
