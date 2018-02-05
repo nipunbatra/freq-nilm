@@ -21,7 +21,7 @@ np.random.seed(0)
 
 # tensor = np.load('../2015-5appliances.numpy.npy')
 
-APPLIANCE_ORDER = ['true aggregate', 'aggregate' 'hvac', 'fridge', 'dr', 'dw', 'mw']
+APPLIANCE_ORDER = ['true aggregate', 'aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
 
 
 def get_train_test(dataset, num_folds=5, fold_num=0):
@@ -238,4 +238,4 @@ num_folds = 5
 error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 print (error)
 
-np.save("./baseline/rnn-tree/{}-{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error)
+np.save("./baseline/rnn-agg-tree/{}-{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error)
