@@ -111,7 +111,7 @@ class AppliancesRNN(nn.Module):
 
 # ORDER = APPLIANCE_ORDER[1:][::-1]
 
-dataset, lr, num_iterations = sys.argv[1:4]
+cur_fold, dataset, lr, num_iterations = sys.argv[1:4]
 dataset = int(dataset)
 lr = float(lr)
 num_iterations = int(num_iterations)
@@ -130,7 +130,7 @@ torch.manual_seed(0)
 
 preds = []
 gts = []
-for fold_num in range(1):
+for fold_num in [cur_fold]]:
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
@@ -223,7 +223,7 @@ for appliance_num, appliance in enumerate(ORDER):
     gt_flatten[appliance] = []
 
 for appliance_num, appliance in enumerate(ORDER):
-    for fold in range(5):
+    for fold in [cur_fold]]:
         prediction_flatten[appliance].append(preds[fold][appliance_num])
         gt_flatten[appliance].append(gts[fold][appliance_num])
     gt_flatten[appliance] = np.concatenate(gt_flatten[appliance])
