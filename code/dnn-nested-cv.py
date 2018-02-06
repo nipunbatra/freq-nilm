@@ -227,7 +227,7 @@ ORDER = sys.argv[6:]
 
 num_folds = 5
 
-train_fold, test_fold, error = disagg_fold(fold_num, dataset, lr, num_iterations, p)
+train_fold, valid_fold, error = disagg_fold(fold_num, dataset, lr, num_iterations, p)
 
 np.save('./baseline/dnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, lr, num_iterations, p, ORDER), valid_fold)
 
