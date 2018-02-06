@@ -24,7 +24,8 @@ weight_appliance = {'mw': 1, 'dw': 1, 'dr': 1, 'fridge': 1, 'hvac': 1}
 
 # num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
 
-
+num_folds = 5
+torch.manual_seed(0)
 class CustomRNN(nn.Module):
     def __init__(self):
         super(CustomRNN, self).__init__()
@@ -109,28 +110,8 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-# ORDER = APPLIANCE_ORDER[1:][::-1]
+def disagg_fold(fold_num, dataset, lr, num_iterations, p):
 
-cur_fold, dataset, lr, num_iterations = sys.argv[1:4]
-dataset = int(dataset)
-lr = float(lr)
-num_iterations = int(num_iterations)
-
-ORDER = sys.argv[4:]
-
-#lr = 1
-p = 0
-num_folds = 5
-#fold_num = 0
-#num_iterations = 1000
-
-torch.manual_seed(0)
-
-#ORDER = ['hvac']
-
-preds = []
-gts = []
-for fold_num in [cur_fold]]:
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
@@ -190,6 +171,18 @@ for fold_num in [cur_fold]]:
         loss.backward()
         optimizer.step()
 
+    train_pred = torch.clamp(pred, min=0.)
+    train_pred = torch.split(train_pred, train_aggregate.shape[0])
+    train_fold = [None for x in range(len(ORDER))]
+    if cuda_av:
+        for appliance_num, appliance in enumerate(ORDER):
+            train_fold[appliance_num] = train_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
+    else:
+        for appliance_num, appliance in enumerate(ORDER):
+            train_fold[appliance_num] = train_pred[appliance_num].data.numpy().reshape(-1, 24)
+
+
+    # test one validation set
     valid_inp = Variable(torch.Tensor(valid_aggregate), requires_grad=False)
     if cuda_av:
         valid_inp = valid_inp.cuda()
@@ -200,41 +193,46 @@ for fold_num in [cur_fold]]:
     pr = a(*params)
     pr = torch.clamp(pr, min=0.)
     valid_pred = torch.split(pr, valid_aggregate.shape[0])
-    prediction_fold = [None for x in range(len(ORDER))]
-
+    valid_fold = [None for x in range(len(ORDER))]
     if cuda_av:
         for appliance_num, appliance in enumerate(ORDER):
-            prediction_fold[appliance_num] = valid_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
+            valid_fold[appliance_num] = valid_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
     else:
         for appliance_num, appliance in enumerate(ORDER):
-            prediction_fold[appliance_num] = valid_pred[appliance_num].data.numpy().reshape(-1, 24)
+            valid_fold[appliance_num] = valid_pred[appliance_num].data.numpy().reshape(-1, 24)
+    
+    # store gound truth of validation set
     gt_fold = [None for x in range(len(ORDER))]
     for appliance_num, appliance in enumerate(ORDER):
-        gt_fold[appliance_num] = valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(valid_aggregate.shape[0], -1,
-                                                                                         1).reshape(-1, 24)
+        gt_fold[appliance_num] = valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(valid_aggregate.shape[0], -1, 
+                                                                                        1).reshape(-1, 24)
 
-    preds.append(prediction_fold)
-    gts.append(gt_fold)
+    # calcualte the error of validation set
+    error = {}
+    for appliance_num, appliance in enumerate(ORDER):
+        error[appliance] = mean_absolute_error(valid_fold[appliance_num], gt_fold[appliance_num])
 
-prediction_flatten = {}
-gt_flatten = {}
-for appliance_num, appliance in enumerate(ORDER):
-    prediction_flatten[appliance] = []
-    gt_flatten[appliance] = []
-
-for appliance_num, appliance in enumerate(ORDER):
-    for fold in [cur_fold]]:
-        prediction_flatten[appliance].append(preds[fold][appliance_num])
-        gt_flatten[appliance].append(gts[fold][appliance_num])
-    gt_flatten[appliance] = np.concatenate(gt_flatten[appliance])
-    prediction_flatten[appliance] = np.concatenate(prediction_flatten[appliance])
-
-err = {}
-for appliance in ORDER:
-    print(appliance)
-    err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
-
-# np.save("./baseline/dnn-set{}-result/dnn-{}-{}-{}.npy".format(dataset, num_iterations, lr, ORDER), err)
+    return train_fold, valid_fold, error
 
 
-print(pd.Series(err))
+fold_num, dataset, lr, num_iterations, p = sys.argv[1:6]
+dataset = int(dataset)
+lr = float(lr)
+fold_num = int(fold_num)
+num_iterations = int(num_iterations)
+p = float(p)
+
+ORDER = sys.argv[6:]
+
+
+num_folds = 5
+
+train_fold, test_fold, error = disagg_fold(fold_num, dataset, lr, num_iterations, p)
+
+np.save('./baseline/dnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, lr, num_iterations, p, ORDER), valid_fold)
+
+np.save('./baseline/dnn-nested-cv/valid-error-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset,  lr, num_iterations, p, ORDER), error) 
+
+np.save('./baseline/dnn-nested-cv/train-pred-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset,  lr, num_iterations, p, ORDER), train_fold) 
+
+
