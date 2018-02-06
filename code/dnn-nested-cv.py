@@ -1,4 +1,6 @@
 import sys
+
+# sys.path.append("../code/")
 from sklearn.metrics import mean_absolute_error
 from dataloader import APPLIANCE_ORDER, get_train_test
 import numpy as np
@@ -6,6 +8,9 @@ import pandas as pd
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+from sklearn.model_selection import KFold
+from sklearn.model_selection import train_test_split
+
 
 cuda_av = False
 if torch.cuda.is_available():
@@ -104,29 +109,38 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-def disagg_fold(fold_num, dataset, lr, num_iterations, p):
+# ORDER = APPLIANCE_ORDER[1:][::-1]
 
-    torch.manual_seed(0)
+dataset, lr, num_iterations = sys.argv[1:4]
+dataset = int(dataset)
+lr = float(lr)
+num_iterations = int(num_iterations)
 
-    num_folds=5
+ORDER = sys.argv[4:]
+
+#lr = 1
+p = 0
+num_folds = 5
+#fold_num = 0
+#num_iterations = 1000
+
+torch.manual_seed(0)
+
+#ORDER = ['hvac']
+
+preds = []
+gts = []
+for fold_num in range(1):
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
-    from sklearn.model_selection import train_test_split
     train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
-
-    train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
-    valid_aggregate = valid[:, 0, :, :].reshape(-1, 24, 1)
-    test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
-
-
-    print (train.shape)
-    print (valid.shape)
-    print (test.shape)
-
+    train_aggregate = train[:, 0, :, :].reshape(-1, 24)
+    valid_aggregate = valid[:, 0, :, :].reshape(-1, 24)
+    #ORDER = APPLIANCE_ORDER[1:][:][::-1]
     out_train = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_train[a_num] = Variable(
-            torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train_aggregate.shape[0], -1, 1))))
+            torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train_aggregate.shape[0], -1))))
         if cuda_av:
             out_train[a_num] = out_train[a_num].cuda()
 
@@ -137,7 +151,6 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
         if cuda_av:
             out_valid[a_num] = out_valid[a_num].cuda()
 
-
     loss_func = nn.L1Loss()
     a = AppliancesRNN(num_appliance=len(ORDER))
     # for param in a.parameters():
@@ -147,7 +160,6 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
         a = a.cuda()
         loss_func = loss_func.cuda()
     optimizer = torch.optim.Adam(a.parameters(), lr=lr)
-    
     inp = Variable(torch.Tensor(train_aggregate.reshape((train_aggregate.shape[0], -1))).type(torch.FloatTensor),
                    requires_grad=True)
     for t in range(num_iterations):
@@ -178,19 +190,6 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
         loss.backward()
         optimizer.step()
 
-    # store training prediction
-    train_pred = torch.clamp(pred, min=0.)
-    train_pred = torch.split(train_pred, train_aggregate.shape[0])
-    train_fold = [None for x in range(len(ORDER))]
-    if cuda_av:
-        for appliance_num, appliance in enumerate(ORDER):
-            train_fold[appliance_num] = train_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
-    else:
-        for appliance_num, appliance in enumerate(ORDER):
-            train_fold[appliance_num] = train_pred[appliance_num].data.numpy().reshape(-1, 24)
-
-
-    # test one validation set
     valid_inp = Variable(torch.Tensor(valid_aggregate), requires_grad=False)
     if cuda_av:
         valid_inp = valid_inp.cuda()
@@ -201,41 +200,41 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
     pr = a(*params)
     pr = torch.clamp(pr, min=0.)
     valid_pred = torch.split(pr, valid_aggregate.shape[0])
-    valid_fold = [None for x in range(len(ORDER))]
+    prediction_fold = [None for x in range(len(ORDER))]
+
     if cuda_av:
         for appliance_num, appliance in enumerate(ORDER):
-            valid_fold[appliance_num] = valid_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
+            prediction_fold[appliance_num] = valid_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
     else:
         for appliance_num, appliance in enumerate(ORDER):
-            valid_fold[appliance_num] = valid_pred[appliance_num].data.numpy().reshape(-1, 24)
-    
-    # store gound truth of validation set
+            prediction_fold[appliance_num] = valid_pred[appliance_num].data.numpy().reshape(-1, 24)
     gt_fold = [None for x in range(len(ORDER))]
     for appliance_num, appliance in enumerate(ORDER):
-        gt_fold[appliance_num] = valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(valid_aggregate.shape[0], -1, 
-                                                                                        1).reshape(-1, 24)
+        gt_fold[appliance_num] = valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(valid_aggregate.shape[0], -1,
+                                                                                         1).reshape(-1, 24)
 
-    # calcualte the error of validation set
-    error = {}
-    for appliance_num, appliance in enumerate(ORDER):
-        error[appliance] = mean_absolute_error(valid_fold[appliance_num], gt_fold[appliance_num])
-    
-    return train_fold, valid_fold, error
+    preds.append(prediction_fold)
+    gts.append(gt_fold)
+
+prediction_flatten = {}
+gt_flatten = {}
+for appliance_num, appliance in enumerate(ORDER):
+    prediction_flatten[appliance] = []
+    gt_flatten[appliance] = []
+
+for appliance_num, appliance in enumerate(ORDER):
+    for fold in range(5):
+        prediction_flatten[appliance].append(preds[fold][appliance_num])
+        gt_flatten[appliance].append(gts[fold][appliance_num])
+    gt_flatten[appliance] = np.concatenate(gt_flatten[appliance])
+    prediction_flatten[appliance] = np.concatenate(prediction_flatten[appliance])
+
+err = {}
+for appliance in ORDER:
+    print(appliance)
+    err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
+
+# np.save("./baseline/dnn-set{}-result/dnn-{}-{}-{}.npy".format(dataset, num_iterations, lr, ORDER), err)
 
 
-fold_num, dataset, lr, num_iterations, p = sys.argv[1:6]
-fold_num = int(fold_num)
-dataset = int(dataset)
-lr = float(lr)
-num_iterations = int(num_iterations)
-p = float(p)
-ORDER = sys.argv[6:len(sys.argv)]
-
-input_dim = 1
-num_folds = 5
-
-train_fold, valid_fold, error = disagg_fold(fold_num, dataset, lr, num_iterations, p)
-np.save('./baseline/dnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, lr, num_iterations, p, ORDER), valid_fold)
-np.save('./baseline/dnn-nested-cv/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, lr, num_iterations, p, ORDER), error) 
-np.save('./baseline/dnn-nested-cv/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, lr, num_iterations, p, ORDER), train_fold) 
-
+print(pd.Series(err))
