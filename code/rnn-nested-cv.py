@@ -15,9 +15,6 @@ torch.manual_seed(0)
 np.random.seed(0)
 
 
-# num_hidden, num_iterations, num_layers, p, num_directions = sys.argv[1:6]
-
-
 class CustomRNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
         super(CustomRNN, self).__init__()
@@ -103,7 +100,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     num_folds=5
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
     from sklearn.model_selection import train_test_split
-    train, valid = train_test_split(train, test_size=0.2)
+    train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
 
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
@@ -218,16 +215,7 @@ train_fold, valid_fold, error = disagg_fold(fold_num, dataset, cell_type, hidden
 
 import json
 np.save('./baseline/rnn-nested-cv/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
-#    jon.dump(valid_fold, outfile)
 
 np.save('./baseline/rnn-nested-cv/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error) 
 
 np.save('./baseline/rnn-nested-cv/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold) 
-
-
-
-
-# error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-# print (error)
-
-# np.save("./baseline/rnn-tree/{}-{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), error)
