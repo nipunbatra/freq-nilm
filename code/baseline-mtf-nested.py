@@ -29,7 +29,7 @@ def nested_stf():
                     valid_copy[:, 1:, :, :] =np.NaN
                     train_valid = np.concatenate([train, valid_copy])
                     H, A, D, T = stf_4dim_time(tensor=train_valid, r=r, lr=lr, num_iter=num_iter)
-                    pred = np.einsum("Hr, Ar, Dr, Tr ->HADT", H, A, D, T)[len(train):, 1:, :, :]
+                    pred = np.einsum("Hr, Ar, Dr, ATr -> HADT", H, A, D, T)[len(train):, 1:, :, :]
                     valid_error[cur_fold][r][lr][num_iter] = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        valid_gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
@@ -54,7 +54,7 @@ def nested_stf():
         pred = np.einsum("Hr, Ar, Dr, Tr ->HADT", H, A, D, T)[len(train):, 1:, :, :]
         out.append(pred)
 
-    return np.concacd tenate(out)
+    return np.concatenate(out)
 
 
 dataset= sys.argv[1]
@@ -72,7 +72,7 @@ pred = np.minimum(pred, tensor[:, 0:1, :, :])
 err_stf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
-np.save("../../baseline/mtf-nested/baseline-mtf-{}.npy".format(dataset), err_stf)
+np.save("./baseline/mtf-nested/baseline-mtf-{}.npy".format(dataset), err_stf)
 
 # import pickle
 #ipickle.dump(err_stf, open("./baseline-stf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))
