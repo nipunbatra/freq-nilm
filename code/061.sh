@@ -1,11 +1,36 @@
 #!bin/bash
 
+appliance='fridge'
+fold=4
 
-CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac fridge dr dw
-CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac fridge dw dr
-CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dr fridge dw
-CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dr dw fridge
-CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dw fridge dr
+for dataset in 1 2
+do
+	for cell_type in 'GRU' 'LSTM' 'RNN'
+	do
+		for hidden_size in 20 50 100
+		do
+			for num_layers in 1 2 3 4
+			do
+				for bidirectional in 'True' 'False'
+				do
+					for lr in 0.01 0.1 1
+					do
+						for iterations in 1000 2000 3000
+						do
+							CUDA_VISIBLE_DEVICES=1 python rnn-nested-cv.py $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
+						done
+					done
+				done
+			done
+		done
+	done
+done
+
+# CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac fridge dr dw
+# CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac fridge dw dr
+# CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dr fridge dw
+# CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dr dw fridge
+# CUDA_VISIBLE_DEVICES=1 python rnn_pytorch_tree_teacher_cv_Yiling.py 2 LSTM 100 1 False 1 5000 0 mw hvac dw fridge dr
 
 
 
