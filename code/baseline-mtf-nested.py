@@ -12,7 +12,7 @@ num_folds = 5
 def nested_stf(dataset, cur_fold, r, lr, num_iter):
 
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=cur_fold)
-    train, valid = train_test_split(train, test_size=0.2)
+    train, valid = train_test_split(train, test_size=0.2, random_state=0)
     valid_gt = valid[:, 1:, :, :]
 
 
