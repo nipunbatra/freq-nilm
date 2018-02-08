@@ -18,7 +18,7 @@ do
 						for iterations in 3000
 						do
 						    echo $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
-							CUDA_VISIBLE_DEVICES=2 python rnn-nested-cv.py $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
+							CUDA_VISIBLE_DEVICES=2 python rnn-nested-cv-new.py $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
 						done
 					done
 				done
@@ -45,7 +45,7 @@ do
                             for iterations in 3000
                             do
                                 echo $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
-                                CUDA_VISIBLE_DEVICES=2 python rnn-nested-cv.py $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
+                                CUDA_VISIBLE_DEVICES=2 python rnn-nested-cv-new.py $fold $dataset $cell_type $hidden_size $num_layers $bidirectional $lr $iterations 0 $appliance
                             done
                         done
                     done
