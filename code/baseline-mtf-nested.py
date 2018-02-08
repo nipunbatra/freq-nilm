@@ -21,7 +21,7 @@ def nested_stf(dataset, cur_fold, r, lr, num_iter):
     train_valid = np.concatenate([train, valid_copy])
     H, A, D, T = stf_4dim_time(tensor=train_valid, r=r, lr=lr, num_iter=num_iter)
     pred = np.einsum("Hr, Ar, Dr, ATr -> HADT", H, A, D, T)[len(train):, 1:, :, :]
-    valid_error[cur_fold][r][lr][num_iter] = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
+    valid_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
                                                                        valid_gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
     
     return pred, valid_error
