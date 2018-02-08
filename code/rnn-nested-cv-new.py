@@ -155,7 +155,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
         optimizer.zero_grad()
         loss = loss_func(pred, out)
-        if t % 100 == 0:
+        if t % 100 == 1:
             print(t, loss.data[0])
 
         if t%1000 == 0 and t!=0:
