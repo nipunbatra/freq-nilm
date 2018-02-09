@@ -10,7 +10,7 @@ do
             for iters in 1000 2000 3000
             do
                 echo $appliance $fold $dataset $lr $iters
-                CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $num_iterations 0 $appliance
+                CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $iters 0 $appliance
             done
         done
     done
