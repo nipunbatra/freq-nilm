@@ -113,10 +113,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
     loss_func = nn.L1Loss()
     a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
-    # prevent negative
-    # for param in a.parameters():
-    #     param.data = param.data.abs()
-    #print(a)
+
     if cuda_av:
         a = a.cuda()
         loss_func = loss_func.cuda()
@@ -171,37 +168,21 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     return prediction_fold, gt_fold
 
 
-def disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
-    from sklearn.metrics import mean_absolute_error
-    preds = {}
-    gts = {}
 
+from sklearn.metrics import mean_absolute_error
+preds = {}
+gts = {}
+num_folds=5
+
+for appliance_num, appliance in enumerate(ORDER):
+    preds[appliance] = []
+    gts[appliance] = []
+
+for cur_fold in range(num_folds):
+    print (cur_fold, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+    pred, gt = disagg_fold(cur_fold, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
     for appliance_num, appliance in enumerate(ORDER):
-        preds[appliance] = []
-        gts[appliance] = []
-
-    for cur_fold in range(num_folds):
-        print (cur_fold, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-        pred, gt = disagg_fold(cur_fold, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-        # pred[pred<0.] = 0.
-        for appliance_num, appliance in enumerate(ORDER):
-                preds[appliance].append(pred[appliance_num])
-                gts[appliance].append(gt[appliance_num])
-    for appliance in ORDER:
-        print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
-
-ataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:9]
-dataset = int(dataset)
-hidden_size = int(hidden_size)
-num_layers = int(num_layers)
-lr = float(lr)
-num_iterations = int(num_iterations)
-p = float(p)
-ORDER = sys.argv[9:len(sys.argv)]
-
-
-input_dim = 1
-num_folds = 5
-
-
-error = disagg(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+            preds[appliance].append(pred[appliance_num])
+            gts[appliance].append(gt[appliance_num])
+for appliance in ORDER:
+    print (appliance, mean_absolute_error(np.concatenate(gts[appliance]).flatten(), np.concatenate(preds[appliance]).flatten()))
