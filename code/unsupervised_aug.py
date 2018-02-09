@@ -70,15 +70,15 @@ def augmented_data(train, num_aug, case, test=None, select=False):
         return train
     
     if select:
-        train = selective(train, test)
+        selected_train = selective(train, test)
 
     new = []
 
     if case == 1:
-        new = aug_random(train, num_aug)
+        new = aug_random(selected_train, num_aug)
     if case == 2:
-        new = aug_appliance(train, num_aug)
+        new = aug_appliance(selected_train, num_aug)
     if case == 3:
-        new = aug_noise(train, num_aug)
+        new = aug_noise(selected_train, num_aug)
 
     return np.vstack([train, new])
