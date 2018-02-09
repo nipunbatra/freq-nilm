@@ -17,11 +17,11 @@
 
 # hvac fold 0
 
-appliance='hvac fridge dr'
+appliance='fridge hvac dw'
 #fold=0
-for fold in 0 1 2 3
+for fold in 1
 do
-    for dataset in 1
+    for dataset in 2
     do
         for cell_type in 'GRU' 'LSTM' 'RNN'
         do

@@ -6,11 +6,13 @@ do
 	do
 		for num_latent in {1..50}
 		do
+			echo $dataset $fold_num $num_latent
 			python baseline-sc-without-disc-nested.py $dataset $fold_num $num_latent
-			for num_iters in {10..100..10}
-			do
-				python baseline-sc-with-disc-nested.py $dataset $fold_num $num_latent $num_iters
-			done
+		#	for num_iters in {10..100..10}	
+		#	do
+		#		echo $num_iters
+		#		python baseline-sc-with-disc-nested.py $dataset $fold_num $num_latent $num_iters
+		#	done
 		done
 	done
 done

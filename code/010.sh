@@ -17,9 +17,9 @@
 
 # hvac fold 0
 
-appliance='hvac fridge'
+appliance='fridge hvac dw dr mw'
 #fold=0
-for fold in 0 2 4
+for fold in 0
 do
     for dataset in 1
     do
@@ -29,6 +29,16 @@ do
             do
                 for num_layers in 1 2 3
                 do
+                    if [ $hidden_size -eq 100 -a $num_layers -eq 2 ]
+                    then
+                        continue
+                    fi
+
+                    if [ $hidden_size -eq 100 -a $num_layers -eq 3 ]
+                    then
+                        continue
+                    fi
+
                     for bidirectional in 'True'
                     do
                         for lr in 0.01 0.1 1
