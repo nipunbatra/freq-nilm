@@ -102,8 +102,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     # from sklearn.model_selection import train_test_split
     # train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
-    valid = train[0.8*len(train):].copy()
-    train = train[:0.8 * len(train)].copy()
+    valid = train[int(0.8*len(train)):].copy()
+    train = train[:int(0.8 * len(train))].copy()
 
 
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
