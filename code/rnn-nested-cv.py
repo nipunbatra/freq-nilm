@@ -161,6 +161,9 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     for t in range(num_iterations):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+
         if cuda_av:
             inp = inp.cuda()
             out = out.cuda()
