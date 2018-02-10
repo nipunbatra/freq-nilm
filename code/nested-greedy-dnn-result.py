@@ -202,7 +202,7 @@ for dataset in [1]:
 
         lr = best_params[dataset][cur_fold]['lr']
         num_iter = best_params[dataset][cur_fold]['iters']
-        ORDER = best_params[dataset][cur_fold]['ORDER']
+        ORDER = best_params[dataset][cur_fold]['ORDER'].split()
         print(dataset, cur_fold, lr, num_iter, ORDER)
 
         pred_fold, gt_fold = dnn_fold(dataset, cur_fold, lr, num_iter, 0)
