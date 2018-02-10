@@ -132,7 +132,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     out_test = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_test[a_num] = Variable(
-            torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((test_aggregate.shape[0], -1, 1))))
+            torch.Tensor(test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((test_aggregate.shape[0], -1, 1))))
         if cuda_av:
             out_test[a_num] = out_test[a_num].cuda()
 
