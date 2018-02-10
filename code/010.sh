@@ -1,20 +1,26 @@
 #!bin/bash
 
-appliance='fridge hvac dr dw mw'
-for fold in 0
+p=0.2
+for random_seed in {1..10}
 do
-    for dataset in 1
-    do
-        for lr in 0.01 0.1 1
-        do
-            for iters in 1000 2000 3000
-            do
-                echo $appliance $fold $dataset $lr $iters
-                CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $iters 0 $appliance
-            done
-        done
-    done
+    CUDA_VISIBLE_DEVICES=0 python rnn-tree-p.py $p $random_seed
 done
+
+# appliance='fridge hvac dr dw mw'
+# for fold in 0
+# do
+#     for dataset in 1
+#     do
+#         for lr in 0.01 0.1 1
+#         do
+#             for iters in 1000 2000 3000
+#             do
+#                 echo $appliance $fold $dataset $lr $iters
+#                 CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $iters 0 $appliance
+#             done
+#         done
+#     done
+# done
 
 
 
