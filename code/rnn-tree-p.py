@@ -12,7 +12,8 @@ if torch.cuda.is_available():
     cuda_av = True
 
 torch.manual_seed(0)
-np.random.seed(0)
+#np.random.seed(1)
+
 
 
 class CustomRNN(nn.Module):
@@ -171,8 +172,10 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 best_params = np.load("./baseline/greedy_rnn_params.npy").item()
 num_folds=5
 
-p = sys.argv[1]
+p, random_seed = sys.argv[1:]
 p = float(p)
+random_seed = int(random_seed)
+np.random.seed(random_seed)
 
 for dataset in [1]:
 
@@ -214,5 +217,5 @@ for dataset in [1]:
         err[appliance] = mean_absolute_error(gt_flatten[appliance], prediction_flatten[appliance])
     print(err)
 
-    np.save("./baseline/learning_p/pred-{}.npy".format(p), prediction_flatten)
-    np.save("./baseline/learning_p/error-{}.npy".format(p), err)
+    np.save("./baseline/learning_p/pred-{}-{}.npy".format(p, random_seed), prediction_flatten)
+    np.save("./baseline/learning_p/error-{}-{}.npy".format(p, random_seed), err)

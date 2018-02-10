@@ -1,6 +1,6 @@
 #!bin/bash
 
-appliance='hvac fridge'
+appliance='fridge hvac dr dw mw'
 for fold in 0
 do
     for dataset in 1

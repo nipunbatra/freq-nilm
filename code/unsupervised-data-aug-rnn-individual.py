@@ -225,6 +225,6 @@ for num_aug in [num_augs]:
             err[app] = mean_absolute_error(gt_flatten[app], prediction_flatten[app])
         print(err)
 
-        np.save("./baseline/rnn-aug-pred-{}-{}-{}.npy".format(dataset, appliance, num_aug), prediction_flatten)
-        np.save("./baseline/rnn-aug-error-{}-{}-{}.npy".format(dataset, appliance, num_aug), err)
+        np.save("./baseline/aug_data/rnn-aug-pred-{}-{}-{}.npy".format(dataset, appliance, num_aug), prediction_flatten)
+        np.save("./baseline/aug_data/rnn-aug-error-{}-{}-{}.npy".format(dataset, appliance, num_aug), err)
 
