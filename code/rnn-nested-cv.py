@@ -190,8 +190,6 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
                 valid_params.append(None)
             valid_pr = a(*valid_params)
             valid_loss = loss_func(valid_pr, valid_out)
-            # valid_pr = torch.clamp(valid_pr, min=0.)
-            # valid_pred[t] = valid_pr
 
             if cuda_av:
                 test_inp = test_inp.cuda()
@@ -200,12 +198,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
                 test_params.append(None)
             test_pr = a(*test_params)
             test_loss = loss_func(test_pr, test_out)
-            # test_pr = torch.clamp(test_pr, min=0.)
-            # test_pred[t] = test_pr
 
-            # train_pr = pred
-            # train_pr = torch.clamp(train_pr, min=0.)
-            # train_pred[t] = train_pr
 
             if t % 1000 == 0:
                 valid_pr = torch.clamp(valid_pr, min=0.)

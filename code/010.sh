@@ -1,10 +1,39 @@
 #!bin/bash
 
-p=0.2
-for random_seed in {1..10}
-do
-    CUDA_VISIBLE_DEVICES=0 python rnn-tree-p.py $p $random_seed
-done
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge dr dw mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge dr mw dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge dw dr mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge dw mw dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge mw dr dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac fridge mw dw dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr fridge dw mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr fridge mw dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr dw fridge mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr dw mw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr mw fridge dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dr mw dw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw fridge dr mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw fridge mw dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw dr fridge mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw dr mw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw mw fridge dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac dw mw dr fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw fridge dr dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw fridge dw dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw dr fridge dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw dr dw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw dw fridge dr
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 hvac mw dw dr fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 fridge hvac dr dw mw
+
+
+
+
+# p=0.2
+# for random_seed in {1..10}
+# do
+#     CUDA_VISIBLE_DEVICES=0 python rnn-tree-p.py $p $random_seed
+# done
 
 # appliance='fridge hvac dr dw mw'
 # for fold in 0

@@ -1,20 +1,46 @@
 #!bin/bash
 
-appliance='fridge hvac dr mw dw'
-for fold in 1
-do
-    for dataset in 1
-    do
-        for lr in 0.01 0.1 1
-        do
-            for iters in 1000 2000 3000
-            do
-                echo $appliance $fold $dataset $lr $iters
-                CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $iters 0 $appliance
-            done
-        done
-    done
-done
+
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr hvac dw fridge mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr hvac dw mw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr hvac mw fridge dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr hvac mw dw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge hvac dw mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge hvac mw dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge dw hvac mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge dw mw hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge mw hvac dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr fridge mw dw hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw hvac fridge mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw hvac mw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw fridge hvac mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw fridge mw hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw mw hvac fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr dw mw fridge hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw hvac fridge dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw hvac dw fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw fridge hvac dw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw fridge dw hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw dw hvac fridge
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dr mw dw fridge hvac
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dw hvac fridge dr mw
+CUDA_VISIBLE_DEVICES=0 python rnn-nested-cv.py 0 1 GRU 50 1 True 0.1 2000 0 dw hvac fridge mw dr
+
+# appliance='fridge hvac dr mw dw'
+# for fold in 1
+# do
+#     for dataset in 1
+#     do
+#         for lr in 0.01 0.1 1
+#         do
+#             for iters in 1000 2000 3000
+#             do
+#                 echo $appliance $fold $dataset $lr $iters
+#                 CUDA_VISIBLE_DEVICES=0 python dnn-nested-cv.py $fold $dataset $lr $iters 0 $appliance
+#             done
+#         done
+#     done
+# done
 
 
 
