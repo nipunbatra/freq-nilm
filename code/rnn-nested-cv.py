@@ -195,7 +195,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
             test_pr = a(*test_params)
             test_loss = loss_func(test_pr, test_out)
 
-            print ("Round:", t, "Training Error:", loss, "Validation Error:", valid_loss, "Test Error:", test_loss)
+            print ("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
 
 
 
