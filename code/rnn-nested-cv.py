@@ -99,8 +99,11 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
     num_folds=5
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
-    from sklearn.model_selection import train_test_split
-    train, valid = train_test_split(train, test_size=0.2, random_state=0)
+    # from sklearn.model_selection import train_test_split
+    # train, valid = train_test_split(train, test_size=0.2, random_state=0)
+
+    valid = train[0.8*len(train):].copy()
+    train = train[:0.8 * len(train)].copy()
 
 
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
@@ -119,6 +122,20 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         if cuda_av:
             out_train[a_num] = out_train[a_num].cuda()
 
+    out_valid = [None for temp in range(len(ORDER))]
+    for a_num, appliance in enumerate(ORDER):
+        out_valid[a_num] = Variable(
+            torch.Tensor(valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((valid_aggregate.shape[0], -1, 1))))
+        if cuda_av:
+            out_valid[a_num] = out_valid[a_num].cuda()
+
+    out_test = [None for temp in range(len(ORDER))]
+    for a_num, appliance in enumerate(ORDER):
+        out_test[a_num] = Variable(
+            torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((test_aggregate.shape[0], -1, 1))))
+        if cuda_av:
+            out_test[a_num] = out_test[a_num].cuda()
+
     loss_func = nn.L1Loss()
     a = AppliancesRNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
     # prevent negative
@@ -132,6 +149,15 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
     inp = Variable(torch.Tensor(train_aggregate.reshape((train_aggregate.shape[0], -1, 1))).type(torch.FloatTensor),
                    requires_grad=True)
+
+    valid_inp = Variable(torch.Tensor(valid_aggregate), requires_grad=False)
+    if cuda_av:
+        valid_inp = valid_inp.cuda()
+
+    test_inp = Variable(torch.Tensor(test_aggregate), requires_grad=False)
+    if cuda_av:
+        test_inp = test_inp.cuda()
+
     for t in range(num_iterations):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
@@ -148,7 +174,27 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         optimizer.zero_grad()
         loss = loss_func(pred, out)
         if t % 100 == 0:
-            print(t, loss.data[0])
+            # print(t, loss.data[0])
+
+            if cuda_av:
+                valid_inp = valid_inp.cuda()
+            valid_params = [valid_inp, -2]
+            for i in range(len(ORDER)):
+                valid_params.append(None)
+            valid_pr = a(*valid_params)
+            valid_loss = loss_func(valid_pr, valid_out)
+
+            if cuda_av:
+                test_inp = test_inp.cuda()
+            test_params = [test_inp, -2]
+            for i in range(len(ORDER)):
+                test_params.append(None)
+            test_pr = a(*test_params)
+            test_loss = loss_func(test_pr, test_out)
+
+            print ("Round:", t, "Training Error:", loss, "Validation Error:", valid_loss, "Test Error:", test_loss)
+
+
 
         loss.backward()
         optimizer.step()
