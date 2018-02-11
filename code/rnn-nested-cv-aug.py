@@ -293,8 +293,10 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
 
 fold_num, dataset, num_aug, case = sys.argv[1:10]
-# fold_num = int(fold_num)
-# dataset = int(dataset)
+fold_num = int(fold_num)
+dataset = int(dataset)
+num_aug = int(num_aug)
+case = int(case)
 # hidden_size = int(hidden_size)
 # num_layers = int(num_layers)
 # lr = float(lr)
