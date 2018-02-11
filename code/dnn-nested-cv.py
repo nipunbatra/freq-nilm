@@ -137,6 +137,13 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
         if cuda_av:
             out_valid[a_num] = out_valid[a_num].cuda()
 
+    out_test = [None for temp in range(len(ORDER))]
+    for a_num, appliance in enumerate(ORDER):
+        out_test[a_num] = Variable(
+            torch.Tensor(test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((test_aggregate.shape[0], -1, 1))))
+        if cuda_av:
+            out_test[a_num] = out_test[a_num].cuda()
+
     loss_func = nn.L1Loss()
     a = AppliancesRNN(num_appliance=len(ORDER))
     # for param in a.parameters():
@@ -167,6 +174,9 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         ot = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+
         if cuda_av:
             inp = inp.cuda()
             out = out.cuda()
