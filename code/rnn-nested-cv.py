@@ -161,6 +161,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     valid_pred = {}
     train_pred = {}
     test_pred = {}
+    test_losses = {}
+    valid_losses = {}
 
     for t in range(1, num_iterations+1):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
@@ -199,6 +201,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
             test_pr = a(*test_params)
             test_loss = loss_func(test_pr, test_out)
 
+            test_losses[t] = test_loss
+            valid_losses[t] = valid_loss
 
             if t % 1000 == 0:
                 valid_pr = torch.clamp(valid_pr, min=0.)
@@ -278,7 +282,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         for appliance_num, appliance in enumerate(ORDER):
             test_error[t][appliance] = mean_absolute_error(test_fold[t][appliance_num], test_gt_fold[appliance_num])
 
-    return train_fold, valid_fold, test_fold, valid_error, test_error
+    return train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses
 
 
 fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:10]
@@ -294,11 +298,13 @@ ORDER = sys.argv[10:len(sys.argv)]
 input_dim = 1
 num_folds = 5
 
-train_fold, valid_fold, test_fold, valid_error, test_error = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
 np.save('./baseline/rnn-tree-order/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
 np.save('./baseline/rnn-tree-order/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
 np.save('./baseline/rnn-tree-order/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
 np.save('./baseline/rnn-tree-order/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
 np.save('./baseline/rnn-tree-order/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
+np.save('./baseline/rnn-tree-order/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
+np.save('./baseline/rnn-tree-order/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
 
