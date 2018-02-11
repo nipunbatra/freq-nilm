@@ -8,8 +8,12 @@ import torch.nn as nn
 from torch.autograd import Variable
 from unsupervised_aug import augmented_data
 
-from sklearn.model_selection import KFold
 
+cuda_av = False
+if torch.cuda.is_available():
+    cuda_av = True
+
+torch.manual_seed(0)
 np.random.seed(0)
 
 
