@@ -303,7 +303,7 @@ num_folds = 5
 
 # stage one: run 5 iterations:
 order_candidate = {}
-for appliance in APPLIANCE_ORDER[1:3]:
+for appliance in APPLIANCE_ORDER[1:]:
     print(appliance)
     ORDER = appliance.split()
     train_fold, valid_fold, test_fold, valid_error, test_error, valida_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
@@ -316,9 +316,9 @@ import pandas as pd
 sum_error = pd.Series(order_candidate).sum()
 # error_contri = order_candidate/sum_error
 error_contri = {}
-for appliance in APPLIANCE_ORDER[1:3]:
+for appliance in APPLIANCE_ORDER[1:]:
     error_contri[appliance] = order_candidate[appliance]/sum_error
-for appliance in APPLIANCE_ORDER[1:3]:
+for appliance in APPLIANCE_ORDER[1:]:
     order_candidate[appliance] = order_candidate[appliance]/error_contri[appliance]
 
 k = 3
@@ -327,7 +327,7 @@ top_k = pd.Series(order_candidate).nsmallest(5).to_dict()
 for j in range(4):
     order_candidate = {}
     for order, e in top_k.items():
-        for appliance in APPLIANCE_ORDER[1:3]:
+        for appliance in APPLIANCE_ORDER[1:]:
             if appliance in order:
                 continue
             
@@ -349,7 +349,7 @@ best_error = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, 
 result = {}
 result[best_order] = best_error
 
-np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}-{}.npy".format(dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
+np.save("./baseline/rnn-tree-greedy/{}-{}-{}-{}-{}-{}-{}-{}-{}.npy".format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p), result)
 
 
 
