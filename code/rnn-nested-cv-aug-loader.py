@@ -13,34 +13,8 @@ from sklearn.model_selection import KFold
 np.random.seed(0)
 
 
-cuda_av = False
-if torch.cuda.is_available():
-    cuda_av = True
-
-torch.manual_seed(0)
-np.random.seed(0)
-
-APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
 
 
-def get_train_test(dataset, num_folds=5, fold_num=0):
-    """
-
-    :param num_folds: number of folds
-    :param fold_num: which fold to return
-    :return:
-    """
-
-    if dataset == 1:
-        tensor = np.load('2015-5appliances.numpy.npy')
-    if dataset == 2:
-        tensor = np.load('2015-5appliances-true-agg.npy')
-
-    num_homes = tensor.shape[0]
-
-    k = KFold(n_splits=num_folds)
-    train, test = list(k.split(range(0, num_homes)))[fold_num]
-    return tensor[train, :, :, :], tensor[test, :, :, :]
 
 
 class CustomRNN(nn.Module):
@@ -137,7 +111,6 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     train = augmented_data(train, num_aug, case, valid)
     print(train.shape[0])
 
-    # train_loader = torch.utils.data.DataLoader(train, batch_size=20)
 
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
     valid_aggregate = valid[:, 0, :, :].reshape(-1, 24, 1)
@@ -198,8 +171,9 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     valid_losses = {}
 
     for t in range(1, num_iterations+1):
-        inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
-        out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+        idx_train = Variable(torch.LongTensor(np.random.choice(range(train_aggregate.shape[0])),50, replace=True))
+        inp = Variable(torch.Tensor(train_aggregate), requires_grad=True).index_select(0, idx_train)
+        out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)]).index_select(0, idx_train)
         valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
 

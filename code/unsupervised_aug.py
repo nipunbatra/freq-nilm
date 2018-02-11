@@ -3,34 +3,39 @@ import random
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def aug_random(train, num_aug):
+num = 1000
+
+def aug_random(train, test, num_aug):
     print("random")
     new = []
-    for i in range(num_aug):
+    for i in range(num):
         index = random.sample(list(np.arange(len(train))), 2)
         new_sample = 0.5*train[index[0], :, :, :] + 0.5*train[index[1], :, :, :]
         new.append(new_sample)
+
     new = np.array(new)
+    new = aug_sim(new, test, num_aug)
     return new
 
 
-def aug_appliance(train, num_aug):
+def aug_appliance(train, test, num_aug):
     print("appliance")
-    new = np.zeros((num_aug, 6, 112, 24))
-    for i in range(num_aug):
+    new = np.zeros((num, 6, 112, 24))
+    for i in range(num):
         home_agg = np.zeros((112, 24))
         for appliance in range(1, 6):
             index = np.random.choice(list(range(len(train))))
             new[i, appliance, :, :] = train.copy()[index, appliance, : :]
             home_agg += train.copy()[index, appliance, :, :]
         new[i, 0, :, :] = home_agg
+    new = aug_sim(new, test, num_aug)
     return new
 
 
-def aug_noise(train, num_aug):
+def aug_noise(train, test, num_aug):
     print("noise")
     new = []
-    for i in range(num_aug):
+    for i in range(num):
         index = np.random.choice(list(range(len(train))))
         noise = np.random.normal(0, 1, 112*24*5).reshape(5, 112, 24)
         new_sample = train.copy()[index]
@@ -39,7 +44,10 @@ def aug_noise(train, num_aug):
         for j in range(1, 6):
             new_sample[0] += new_sample[j]
         new.append(new_sample)
+
     new = np.array(new)
+    new = aug_sim(new, test, num_aug)
+
     return new
 
 
@@ -73,12 +81,12 @@ def augmented_data(train, num_aug, case, test):
     new = []
 
     if case == 1:
-        new = aug_random(train, num_aug)
+        new = aug_random(train, test, num_aug)
     if case == 2:
-        new = aug_appliance(train, num_aug)
+        new = aug_appliance(train, test, num_aug)
     if case == 3:
-        new = aug_noise(train, num_aug)
-    if case == 4:
-        new = aug_sim(train, test, num_aug)
+        new = aug_noise(train, test, num_aug)
+    # if case == 4:
+    #     new = aug_sim(train, test, num_aug)
 
     return np.vstack([train, new])
