@@ -201,8 +201,9 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
             test_pr = a(*test_params)
             test_loss = loss_func(test_pr, test_out)
 
-            test_losses[t] = test_loss
-            valid_losses[t] = valid_loss
+            test_losses[t] = test_loss.data[0]
+            valid_losses[t] = valid_loss.data[0]
+            # np.save("./baseline/p_50_loss")
 
             if t % 1000 == 0:
                 valid_pr = torch.clamp(valid_pr, min=0.)
