@@ -1,6 +1,6 @@
 import sys
 from sklearn.metrics import mean_absolute_error
-# from dataloader import APPLIANCE_ORDER, get_train_test
+from dataloader import APPLIANCE_ORDER, get_train_test
 import numpy as np
 import pandas as pd
 import torch
