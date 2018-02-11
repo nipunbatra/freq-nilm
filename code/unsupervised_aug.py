@@ -67,6 +67,7 @@ def aug_sim(train, test, num_aug):
 def augmented_data(train, num_aug, case, test):
     
     if num_aug == 0:
+        print("no augmentation data")
         return train
 
     new = []
