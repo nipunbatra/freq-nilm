@@ -303,7 +303,7 @@ num_folds = 5
 
 # stage one: run 5 iterations:
 order_candidate = {}
-for appliance in APPLIANCE_ORDER[1:]:
+for appliance in APPLIANCE_ORDER[1:3]:
     print(appliance)
     ORDER = appliance.split()
     train_fold, valid_fold, test_fold, valid_error, test_error, valida_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
