@@ -175,15 +175,16 @@ def disagg_fold(num_aug, case, fold_num, dataset, cell_type, hidden_size, num_la
 
 best_params = np.load("../code/baseline/best_param_nested_rnn.npy").item()
 
-num_augs, a = sys.argv[1:]
+num_augs, case, a = sys.argv[1:]
 num_augs = int(num_augs)
+case = int(case)
 
 # ORDER = ['hvac']
 num_folds = 5
 dataset = 1
 p = 0
 
-case = 1
+# case = 1
 
 for num_aug in [num_augs]:
     for appliance in [a]:
