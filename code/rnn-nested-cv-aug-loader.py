@@ -176,15 +176,18 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
     for t in range(1, num_iterations+1):
         idx_train = Variable(torch.LongTensor(np.random.choice(range(train_aggregate.shape[0]), 50, replace=True)))
-        # idx_train = Variable(torch.LongTensor(np.random.choice(range(train_aggregate.shape[0])),50, replace=True))
-        inp = Variable(torch.Tensor(train_aggregate), requires_grad=True).index_select(0, idx_train)
-        out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)]).index_select(0, idx_train)
+        inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
+        out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
 
         if cuda_av:
-            inp = inp.cuda()
-            out = out.cuda()
+            idx_train = idx_train.cuda()
+            inp = inp.cuda().index_select(0, idx_train)
+            out = out.cuda().index_select(0, idx_train)
+        else:
+            inp = inp.index_select(0, idx_train)
+            out = out.index_select(0, idx_train)
 
         params = [inp, p]
         for a_num, appliance in enumerate(ORDER):
