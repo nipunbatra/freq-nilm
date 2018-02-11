@@ -303,7 +303,7 @@ num_folds = 5
 
 # stage one: run 5 iterations:
 order_candidate = {}
-for appliance in APPLIANCE_ORDER[1:3]:
+for appliance in APPLIANCE_ORDER[1:]:
     print(appliance)
     ORDER = appliance.split()
     train_fold, valid_fold, test_fold, valid_error, test_error, valida_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
@@ -314,8 +314,12 @@ for appliance in APPLIANCE_ORDER[1:3]:
 
 import pandas as pd
 sum_error = pd.Series(order_candidate).sum()
-error_contri = order_candidate/sum_error
-
+# error_contri = order_candidate/sum_error
+error_contri = {}
+for appliance in APPLIANCE_ORDER[1:]:
+    error_contri[appliance] = order_candidate[appliance]/sum_error
+for appliance in APPLIANCE_ORDER[1:]:
+    order_candidate[appliance] = order_candidate[appliance]/error_contri[appliance]
 
 k = 3
 top_k = pd.Series(order_candidate).nsmallest(5).to_dict()
