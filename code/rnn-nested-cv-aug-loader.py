@@ -1,12 +1,16 @@
 import sys
 from sklearn.metrics import mean_absolute_error
-from dataloader import APPLIANCE_ORDER, get_train_test
+# from dataloader import APPLIANCE_ORDER, get_train_test
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
 from unsupervised_aug import augmented_data
+
+from sklearn.model_selection import KFold
+
+np.random.seed(0)
 
 
 cuda_av = False
@@ -16,9 +20,27 @@ if torch.cuda.is_available():
 torch.manual_seed(0)
 np.random.seed(0)
 
+APPLIANCE_ORDER = ['aggregate', 'hvac', 'fridge', 'dr', 'dw', 'mw']
 
 
+def get_train_test(dataset, num_folds=5, fold_num=0):
+    """
 
+    :param num_folds: number of folds
+    :param fold_num: which fold to return
+    :return:
+    """
+
+    if dataset == 1:
+        tensor = np.load('../2015-5appliances.numpy.npy')
+    if dataset == 2:
+        tensor = np.load('../2015-5appliances-true-agg.npy')
+
+    num_homes = tensor.shape[0]
+
+    k = KFold(n_splits=num_folds)
+    train, test = list(k.split(range(0, num_homes)))[fold_num]
+    return tensor[train, :, :, :], tensor[test, :, :, :]
 
 
 class CustomRNN(nn.Module):
@@ -115,6 +137,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     train = augmented_data(train, num_aug, case, valid)
     print(train.shape[0])
 
+    # train_loader = torch.utils.data.DataLoader(train, batch_size=20)
 
     train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
     valid_aggregate = valid[:, 0, :, :].reshape(-1, 24, 1)
@@ -175,29 +198,32 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     valid_losses = {}
 
     for t in range(1, num_iterations+1):
-        idx_train = Variable(torch.LongTensor(np.random.choice(range(train_aggregate.shape[0]), 50, replace=True)))
+        idx_train = Variable(torch.LongTensor(np.random.choice(range(train_aggregate.shape[0]),50, replace=True)))
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
-        out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
+
         valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
 
         if cuda_av:
             idx_train = idx_train.cuda()
+            out = torch.cat([out_train[appliance_num].index_select(0, idx_train) for appliance_num, appliance in enumerate(ORDER)])
             inp = inp.cuda().index_select(0, idx_train)
-            out = out.cuda().index_select(0, idx_train)
+            out = out.cuda()
         else:
             inp = inp.index_select(0, idx_train)
-            out = out.index_select(0, idx_train)
+            out = torch.cat([out_train[appliance_num].index_select(0, idx_train) for appliance_num, appliance in enumerate(ORDER)])
+
 
         params = [inp, p]
         for a_num, appliance in enumerate(ORDER):
+            #print(out_train[a_num].size())
+            #print(out_train[a_num].index_select(0, idx_train).size())
             params.append(out_train[a_num].index_select(0, idx_train))
         # print(params)
         pred = a(*params)
-
-        print("inp size:", inp.size())
-        print("out size:", out.size())
-        print("pred size:", pred.size())
+        #print(*params)
+        #print(params[0].size())
+        #print(pred.size(), out.size())
 
         optimizer.zero_grad()
         loss = loss_func(pred, out)
@@ -323,7 +349,7 @@ bidirectional = True
 lr = 0.1
 num_iterations = 2000
 p = 0
-orders = np.load("../code/baseline/rnn-greedy2-orders.npy").item()
+orders = np.load("./baseline/rnn-greedy2-orders.npy").item()
 ORDER = orders[fold_num].split()
 
 
