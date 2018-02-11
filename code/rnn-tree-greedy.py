@@ -290,7 +290,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     return train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses
 
 
-fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:9]
+fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p = sys.argv[1:]
 fold_num = int(fold_num)
 dataset = int(dataset)
 hidden_size = int(hidden_size)
