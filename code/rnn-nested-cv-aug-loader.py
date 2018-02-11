@@ -181,8 +181,6 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         valid_out = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         test_out = torch.cat([out_test[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
 
-
-
         if cuda_av:
             idx_train = idx_train.cuda()
             inp = inp.cuda().index_select(0, idx_train)
@@ -193,7 +191,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
         params = [inp, p]
         for a_num, appliance in enumerate(ORDER):
-            params.append(out_train[a_num])
+            params.append(out_train[a_num].index_select(0, idx_train))
         # print(params)
         pred = a(*params)
 
