@@ -43,7 +43,7 @@ def aug_noise(train, num_aug):
     return new
 
 
-def selective(train, test):
+def aug_sim(train, test, num_aug):
 
     test_aggregate = test[:, 0, :, :]
     train_aggregate = train[:, 0, :, :]
@@ -58,27 +58,26 @@ def selective(train, test):
     
     train_max = similarity.max(axis=1)
     
-    k = int(0.5*len(train_aggregate))
-    index = np.argpartition(train_max, -k)[-k:]
+    # k = int(0.5*len(train_aggregate))
+    index = np.argpartition(train_max, -num_aug)[-num_aug:]
     
     return train[index]
 
 
-def augmented_data(train, num_aug, case, test=None, select=False):
+def augmented_data(train, num_aug, case, test):
     
     if num_aug == 0:
         return train
-    
-    if select:
-        selected_train = selective(train, test)
 
     new = []
 
     if case == 1:
-        new = aug_random(selected_train, num_aug)
+        new = aug_random(train, num_aug)
     if case == 2:
-        new = aug_appliance(selected_train, num_aug)
+        new = aug_appliance(train, num_aug)
     if case == 3:
-        new = aug_noise(selected_train, num_aug)
+        new = aug_noise(train, num_aug)
+    if case == 4:
+        new = aug_sim(train, test, num_aug)
 
     return np.vstack([train, new])
