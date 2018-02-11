@@ -170,7 +170,7 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
     test_losses = {}
     valid_losses = {}
 
-    for t in range(num_iterations):
+    for t in range(1, num_iterations+1):
         inp = Variable(torch.Tensor(train_aggregate), requires_grad=True)
         out = torch.cat([out_train[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
         ot = torch.cat([out_valid[appliance_num] for appliance_num, appliance in enumerate(ORDER)])
