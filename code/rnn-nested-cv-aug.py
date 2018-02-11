@@ -319,6 +319,8 @@ num_folds = 5
 
 train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, num_aug, case)
 
+print(test_error)
+
 np.save('./baseline/aug_data/valid-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), valid_fold)
 np.save('./baseline/aug_data/valid-error-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), valid_error)
 np.save('./baseline/aug_data/train-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), train_fold)
