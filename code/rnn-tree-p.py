@@ -93,7 +93,7 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
+def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, reduced):
     # print (fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
     print (ORDER)
     torch.manual_seed(0)
@@ -128,6 +128,8 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         if cuda_av:
             inp = inp.cuda()
             out = out.cuda()
+        if reduced:
+            p = 1 - t * 1.0 / num_iterations
 
         params = [inp, p]
         for a_num, appliance in enumerate(ORDER):
@@ -170,9 +172,10 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
 
 
 best_params = np.load("./baseline/greedy_rnn_params.npy").item()
+orders = np.load("./baseline/nn-greedy2-orders.npy").item()
 num_folds=5
 
-p, random_seed = sys.argv[1:]
+p, reduced, random_seed = sys.argv[1:]
 p = float(p)
 random_seed = int(random_seed)
 np.random.seed(random_seed)
@@ -185,16 +188,24 @@ for dataset in [1]:
 
         # print (appliance, fold_num)
 
-        cell_type = best_params[dataset][fold_num]['cell_type']
-        hidden_size = best_params[dataset][fold_num]['hidden_size']
-        num_layers = best_params[dataset][fold_num]['num_layers']
-        bidirectional = best_params[dataset][fold_num]['bidirectional']
-        lr = best_params[dataset][fold_num]['lr']
-        num_iterations = best_params[dataset][fold_num]['iters']
-        ORDER = best_params[dataset][fold_num]['ORDER'].split()
+        # cell_type = best_params[dataset][fold_num]['cell_type']
+        # hidden_size = best_params[dataset][fold_num]['hidden_size']
+        # num_layers = best_params[dataset][fold_num]['num_layers']
+        # bidirectional = best_params[dataset][fold_num]['bidirectional']
+        # lr = best_params[dataset][fold_num]['lr']
+        # num_iterations = best_params[dataset][fold_num]['iters']
+        # ORDER = best_params[dataset][fold_num]['ORDER'].split()
+
+        cell_type = 'GRU'
+        hidden_size = 50
+        num_layers = 1
+        bidirectional = True
+        lr = 0.1
+        num_iterations = 2000
+        ORDER = orders[fold_num].split()
 
         print (cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, ORDER)
-        pred_fold, gt_fold = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+        pred_fold, gt_fold = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, reduced)
         preds.append(pred_fold)
         gts.append(gt_fold)
 
