@@ -265,15 +265,15 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         optimizer.step()
 
     # store training prediction
-    train_pred = torch.clamp(pred, min=0.)
-    train_pred = torch.split(train_pred, train_aggregate.shape[0])
+    # train_pred = torch.clamp(pred, min=0.)
+    # train_pred = torch.split(train_pred, train_aggregate.shape[0])
     train_fold = [None for x in range(len(ORDER))]
-    if cuda_av:
-        for appliance_num, appliance in enumerate(ORDER):
-            train_fold[appliance_num] = train_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
-    else:
-        for appliance_num, appliance in enumerate(ORDER):
-            train_fold[appliance_num] = train_pred[appliance_num].data.numpy().reshape(-1, 24)
+    # if cuda_av:
+    #     for appliance_num, appliance in enumerate(ORDER):
+    #         train_fold[appliance_num] = train_pred[appliance_num].cpu().data.numpy().reshape(-1, 24)
+    # else:
+    #     for appliance_num, appliance in enumerate(ORDER):
+    #         train_fold[appliance_num] = train_pred[appliance_num].data.numpy().reshape(-1, 24)
 
 
             # test one validation set
@@ -362,7 +362,7 @@ print(test_error)
 
 np.save('./baseline/aug_data/valid-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), valid_fold)
 np.save('./baseline/aug_data/valid-error-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), valid_error)
-np.save('./baseline/aug_data/train-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), train_fold)
+# np.save('./baseline/aug_data/train-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), train_fold)
 np.save('./baseline/aug_data/test-pred-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), test_fold)
 np.save('./baseline/aug_data/test-error-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), test_error)
 np.save('./baseline/aug_data/test-losses-{}-{}-{}-{}'.format(fold_num, dataset, num_aug, case), test_losses)
