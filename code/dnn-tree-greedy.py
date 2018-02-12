@@ -304,6 +304,8 @@ def disagg_fold(fold_num, dataset, lr, num_iterations, p):
 
 
 fold_num, dataset, lr, num_iterations, p = sys.argv[1:]
+fold_num = int(fold_num)
+dataset = int(dataset)
 
 num_folds = 5
 # ORDER = sys.argv[8:len(sys.argv)]
