@@ -1,5 +1,5 @@
 import autograd.numpy as np
-from autograd import grad
+from autograd import multigrad
 import sys
 
 def set_known(A, W):
@@ -18,9 +18,10 @@ def stf_4dim_time_day(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
         pred = np.einsum('Hr, Ar, ADr, ATr ->HADT', home, appliance, day, hour)
         mask = ~np.isnan(tensor)
         error = (pred - tensor)[mask].flatten()
+
         return np.sqrt((error ** 2).mean())
 
-    mg = grad(cost, argnum=args_num)
+    mg = multigrad(cost, argnums=args_num)
     sizes = [(x, r) for x in tensor.shape]
     # ADr
     sizes[-2] = (tensor.shape[1], tensor.shape[-2], r)
@@ -78,9 +79,10 @@ def stf_4dim_time(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
         pred = np.einsum('Hr, Ar, Dr, ATr ->HADT', home, appliance, day, hour)
         mask = ~np.isnan(tensor)
         error = (pred - tensor)[mask].flatten()
+
         return np.sqrt((error ** 2).mean())
 
-    mg = grad(cost, argnum=args_num)
+    mg = multigrad(cost, argnums=args_num)
     sizes = [(x, r) for x in tensor.shape]
     sizes[-1] = (tensor.shape[1], tensor.shape[-1], r)
     home = np.random.rand(*sizes[0])
@@ -96,6 +98,7 @@ def stf_4dim_time(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
     # GD procedure
     for i in range(num_iter):
         del_home, del_appliance, del_day, del_hour = mg(tensor, home, appliance, day, hour)
+        print("here")
 
         sum_home += eps + np.square(del_home)
         lr_home = np.divide(lr, np.sqrt(sum_home))
