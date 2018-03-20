@@ -1,0 +1,13 @@
+nohup: ignoring input
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'dr', 'dw', 'mw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'dr', 'mw', 'dw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'dw', 'dr', 'mw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'dw', 'mw', 'dr']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'mw', 'dr', 'dw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'fridge', 'mw', 'dw', 'dr']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'fridge', 'dw', 'mw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'fridge', 'mw', 'dw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'dw', 'fridge', 'mw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'dw', 'mw', 'fridge']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'mw', 'fridge', 'dw']
+2 0 LSTM 100 3 0.001 3000 0.0 ['hvac', 'dr', 'mw', 'dw', 'fridge']

@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+import os
 from torch.autograd import Variable
 
 cuda_av = False
@@ -94,7 +95,7 @@ class AppliancesRNN(nn.Module):
 
 def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     # print (fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
-    print (ORDER)
+    #print (ORDER)
     torch.manual_seed(0)
 
     num_folds=5
@@ -111,9 +112,9 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
 
 
-    print (train.shape)
-    print (valid.shape)
-    print (test.shape)
+    #print (train.shape)
+    #print (valid.shape)
+    #print (test.shape)
 
     out_train = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
@@ -222,7 +223,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
                 train_pr = torch.clamp(train_pr, min=0.)
                 train_pred[t] = train_pr
 
-            print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+            #print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
 
         loss.backward()
         optimizer.step()
@@ -304,6 +305,7 @@ num_iterations = int(num_iterations)
 p = float(p)
 ORDER = sys.argv[10:len(sys.argv)]
 
+print(dataset, fold_num, cell_type, hidden_size, num_layers, lr, num_iterations, p, ORDER)
 input_dim = 1
 num_folds = 5
 
@@ -311,16 +313,16 @@ folder = "{}/{}/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, cell_type, hidde
 
 train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-directory = os.path.expanduser('~/git/baseline/{}'.format(folder))
+directory = os.path.expanduser('../../baseline/rnn-tree-order-new/{}'.format(folder))
 if not os.path.exists(directory):
     os.makedirs(directory)
-filename = os.path.join(directory, name + '.pkl')
+#filename = os.path.join(directory, name + '.pkl')
 
-np.save('~/git/baseline/rnn-tree-order/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
-np.save('~/git/baseline/rnn-tree-order/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
-# np.save('./baseline/rnn-tree-order/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
-np.save('~/git/baseline/rnn-tree-order/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
-np.save('~/git/baseline/rnn-tree-order/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
-np.save('~/git/baseline/rnn-tree-order/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
-np.save('~/git/baseline/rnn-tree-order/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
+np.save('../../baseline/rnn-tree-order-new/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
+np.save('../../baseline/rnn-tree-order-new/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
+# np.save('./baseline/rnn-tree-order-new/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
+np.save('../../baseline/rnn-tree-order-new/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
+np.save('../../baseline/rnn-tree-order-new/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
+np.save('../../baseline/rnn-tree-order-new/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
+np.save('../../baseline/rnn-tree-order-new/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
 

@@ -26,3 +26,14 @@ def get_train_test(dataset, num_folds=5, fold_num=0):
     k = KFold(n_splits=num_folds)
     train, test = list(k.split(range(0, num_homes)))[fold_num]
     return tensor[train, :, :, :], tensor[test, :, :, :]
+
+
+def get_train_test_tensor(tensor, num_folds=5, fold_num=0):
+    
+    num_homes= tensor.shape[0]
+    
+    k = KFold(n_splits=num_folds)
+    train, test = list(k.split(range(0, num_homes)))[fold_num]
+    return tensor[train, :, :, :], tensor[test, :, :, :]
+    
+    
