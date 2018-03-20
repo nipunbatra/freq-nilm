@@ -9539,3 +9539,573 @@ Traceback (most recent call last):
   File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
     fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
 RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'hvac', 'dr', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'hvac', 'mw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'dr', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'dr', 'mw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'mw', 'hvac', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'fridge', 'mw', 'dr', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'hvac', 'fridge', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'hvac', 'mw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'fridge', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'fridge', 'mw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'mw', 'hvac', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'dr', 'mw', 'fridge', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'hvac', 'fridge', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'hvac', 'dr', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'fridge', 'hvac', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'fridge', 'dr', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'dr', 'hvac', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['dw', 'mw', 'dr', 'fridge', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+2 3 LSTM 50 4 0.1 3000 0.0 ['mw', 'hvac', 'fridge', 'dr', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 314, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 202, in disagg_fold
+    valid_pr = a(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 87, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 45, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 169, in forward
+    output, hidden = func(input, self.all_weights, hx)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 385, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 328, in _do_forward
+    flat_output = super(NestedIOFunction, self)._do_forward(*flat_input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/autograd/function.py", line 350, in forward
+    result = self.forward_extended(*nested_tensors)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 294, in forward_extended
+    cudnn.rnn.forward(self, input, hx, weight, output, hy)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 291, in forward
+    fn.reserve = torch.cuda.ByteTensor(reserve_size.value)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
