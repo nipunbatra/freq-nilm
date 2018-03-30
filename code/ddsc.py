@@ -20,8 +20,8 @@ def nnls_autograd(A, B, num_iter=300, eps=1e-8, lr=4):
     from autograd import grad
 
     def cost(A, B, x):
-
-        error = A @ x - B
+        #error = A@x - B
+        error = np.dot(A, x) - B
         return np.sqrt((error ** 2).mean())
 
     mg = grad(cost, argnum=2)
@@ -29,7 +29,7 @@ def nnls_autograd(A, B, num_iter=300, eps=1e-8, lr=4):
     M, N = B.shape
     r = A.shape[1]
     x = np.abs(np.random.randn(r, N))
-
+   
     sum_x = np.zeros_like(x)
 
     for i in range(num_iter):
@@ -43,6 +43,7 @@ def nnls_autograd(A, B, num_iter=300, eps=1e-8, lr=4):
         if i % 10 == 0:
             # print(cost(A, B, x), i)
             sys.stdout.flush()
+        
 
     return x
 

@@ -98,7 +98,6 @@ def stf_4dim_time(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
     # GD procedure
     for i in range(num_iter):
         del_home, del_appliance, del_day, del_hour = mg(tensor, home, appliance, day, hour)
-        print("here")
 
         sum_home += eps + np.square(del_home)
         lr_home = np.divide(lr, np.sqrt(sum_home))
@@ -139,7 +138,7 @@ def stf_4dim(tensor, r, random_seed=0, num_iter=100, eps=1e-8, lr=1):
         error = (pred - tensor)[mask].flatten()
         return np.sqrt((error ** 2).mean())
 
-    mg = grad(cost, argnum=args_num)
+    mg = multigrad(cost, argnums=args_num)
     sizes = [(x, r) for x in tensor.shape]
     home = np.random.rand(*sizes[0])
     appliance = np.random.rand(*sizes[1])

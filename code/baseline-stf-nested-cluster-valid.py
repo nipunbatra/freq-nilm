@@ -34,15 +34,8 @@ def nested_stf(tensor, cur_fold, r, lr, num_iter):
                                                        valid_gt[:, i, :, :].flatten()) for i in range(valid_pred.shape[1])}
 
     #for test data
-    test_copy = test.copy()
-    test_copy[:, 1:, :, :] =np.NaN
-    train_test = np.concatenate([train, test_copy])
-    H, A, D, T = stf_4dim(tensor=train_test, r=r, lr=lr, num_iter=num_iter)
-    test_pred = np.einsum("Hr, Ar, Dr, Tr ->HADT", H, A, D, T)[len(train):, 1:, :, :]
-    test_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(test_pred[:, i,:,:].flatten(), 
-                                                       test_gt[:, i, :, :].flatten()) for i in range(test_pred.shape[1])}
     
-    return valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt
+    return valid_pred, valid_error, valid_gt
 
 
 dataset, cluster, cur_fold, r, lr, num_iter= sys.argv[1:]
@@ -55,7 +48,7 @@ num_iter = int(num_iter)
 tensor = np.load('../2015-5appliances-true-agg-c{}.npy'.format(cluster))
 
 
-valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = nested_stf(tensor, cur_fold, r, lr, num_iter)
+valid_pred, valid_error, valid_gt = nested_stf(tensor, cur_fold, r, lr, num_iter)
 # pred = np.minimum(pred, tensor[:, 0:1, :, :])
 # err_stf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
 #                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
@@ -63,13 +56,6 @@ valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = nested_stf(t
 np.save("./baseline/stf-cluster/valid/stf-pred-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), valid_pred)
 np.save("./baseline/stf-cluster/valid/stf-error-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), valid_error)
 np.save("./baseline/stf-cluster/valid/stf-gt-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), valid_gt)
-
-
-
-np.save("./baseline/stf-cluster/test/stf-test-pred-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), test_pred)
-np.save("./baseline/stf-cluster/test/stf-test-error-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), test_error)
-np.save("./baseline/stf-cluster/test/stf-test-gt-{}-{}-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, r, lr, num_iter), test_gt)
-
 
 # import pickle
 #ipickle.dump(err_stf, open("./baseline-stf-{}-{}-{}.pkl".format(num_latent, lr, iters), 'wb'))

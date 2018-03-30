@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 import pandas as pd
-from dataloader import APPLIANCE_ORDER, get_train_test
+from dataloader import APPLIANCE_ORDER, get_train_test_tensor
 from ddsc import SparseCoding, reshape_for_sc
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
@@ -12,7 +12,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     out = []
     # valid_error
     # for cur_fold in range(5):
-    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=cur_fold)
+    train, test = get_train_test_tensor(tensor, num_folds=num_folds, fold_num=cur_fold)
     #train, valid = train_test_split(train, test_size=0.2, random_state=0)
     valid = train[int(0.8*len(train)):].copy()
     train = train[:int(0.8 * len(train))].copy()
@@ -45,18 +45,25 @@ def non_discriminative(dataset, cur_fold, num_latent):
 
     test_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(test_pred[:, i,:,:].flatten(), 
                                                                        test_gt[:, i, :, :].flatten()) for i in range(test_pred.shape[1])}
+    # out.append(pred)
 
-    return valid_pred, valid_error, test_pred, test_error
+    return valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt
 
-dataset, cur_fold, num_latent = sys.argv[1:]
+dataset, cluster, cur_fold, num_latent = sys.argv[1:]
 dataset = int(dataset)
+clsuter = int(cluster)
 cur_fold = int(cur_fold)
 num_latent = int(num_latent)
 
-valid_pred, valid_error, test_pred, test_error = non_discriminative(dataset, cur_fold, num_latent)
+tensor = np.load('../2015-5appliances-true-agg-c{}.npy'.format(cluster))
 
-np.save("./baseline/sc-non-nested/{}/sc-non-valid-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_pred)
-np.save("./baseline/sc-non-nested/{}/sc-non-valid-error-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_error)
+valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = non_discriminative(tensor, cur_fold, num_latent)
 
-np.save("./baseline/sc-non-nested/{}/sc-non-test-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), test_pred)
-np.save("./baseline/sc-non-nested/{}/sc-non-test-error-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), test_error)
+np.save("./baseline/sc-non-nested-cluster/sc-non-pred-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), valid_pred)
+np.save("./baseline/sc-non-nested-cluster/sc-non-error-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), valid_error)
+np.save("./baseline/sc-non-nested-cluster/sc-non-gt-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), valid_gt)
+
+np.save("./baseline/sc-non-nested-cluster/sc-non-test-pred-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), test_pred)
+np.save("./baseline/sc-non-nested-cluster/sc-non-test-error-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), test_error)
+np.save("./baseline/sc-non-nested-cluster/sc-non-test-gt-{}-{}-{}-{}.npy".format(dataset, cluster, cur_fold, num_latent), test_gt)
+

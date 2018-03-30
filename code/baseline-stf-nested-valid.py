@@ -34,15 +34,9 @@ def nested_stf(dataset, cur_fold, r, lr, num_iter):
                                                        valid_gt[:, i, :, :].flatten()) for i in range(valid_pred.shape[1])}
 
     #for test data
-    test_copy = test.copy()
-    test_copy[:, 1:, :, :] =np.NaN
-    train_test = np.concatenate([train, test_copy])
-    H, A, D, T = stf_4dim(tensor=train_test, r=r, lr=lr, num_iter=num_iter)
-    test_pred = np.einsum("Hr, Ar, Dr, Tr ->HADT", H, A, D, T)[len(train):, 1:, :, :]
-    test_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(test_pred[:, i,:,:].flatten(), 
-                                                       test_gt[:, i, :, :].flatten()) for i in range(test_pred.shape[1])}
+   
     
-    return valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt
+    return valid_pred, valid_error, valid_gt
 
 
 
@@ -54,14 +48,10 @@ lr = float(lr)
 num_iter = int(num_iter)
 
 
-valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = nested_stf(dataset, cur_fold, r, lr, num_iter)
+valid_pred, valid_error, valid_gt = nested_stf(dataset, cur_fold, r, lr, num_iter)
 # pred = np.minimum(pred, tensor[:, 0:1, :, :])
 # err_stf = {APPLIANCE_ORDER[i+1]:mean_absolute_error(pred[:, i,:,:].flatten(), 
 #                                                                        gt[:, i, :, :].flatten()) for i in range(pred.shape[1])}
 
 np.save("./baseline/stf/{}/valid/stf-pred-{}-{}-{}-{}-{}.npy".format(dataset,dataset, cur_fold, r, lr, num_iter), valid_pred)
 np.save("./baseline/stf/{}/valid/stf-error-{}-{}-{}-{}-{}.npy".format(dataset,dataset, cur_fold, r, lr, num_iter), valid_error)
-
-
-np.save("./baseline/stf/{}/test/stf-test-pred-{}-{}-{}-{}-{}.npy".format(dataset,dataset, cur_fold, r, lr, num_iter), test_pred)
-np.save("./baseline/stf/{}/test/stf-test-error-{}-{}-{}-{}-{}.npy".format(dataset,dataset,cur_fold, r, lr, num_iter), test_error)

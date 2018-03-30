@@ -1,6 +1,6 @@
 import sys
 from sklearn.metrics import mean_absolute_error
-from dataloader import APPLIANCE_ORDER, get_train_test
+from dataloader import APPLIANCE_ORDER, get_train_test_tensor
 import numpy as np
 import pandas as pd
 import torch
@@ -93,13 +93,13 @@ class AppliancesRNN(nn.Module):
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
 
-def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
+def disagg_fold(fold_num, tensor, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     # print (fold_num, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
     #print (ORDER)
     torch.manual_seed(0)
 
     num_folds=5
-    train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
+    train, test = get_train_test_tensor(tensor, num_folds=num_folds, fold_num=fold_num)
     # from sklearn.model_selection import train_test_split
     # train, valid = train_test_split(train, test_size=0.2, random_state=0)
 
@@ -295,7 +295,7 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     return train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses
 
 
-dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, fold_num = sys.argv[1:10]
+dataset, cluster, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, fold_num = sys.argv[1:11]
 fold_num = int(fold_num)
 dataset = int(dataset)
 hidden_size = int(hidden_size)
@@ -303,26 +303,23 @@ num_layers = int(num_layers)
 lr = float(lr)
 num_iterations = int(num_iterations)
 p = float(p)
-ORDER = sys.argv[10:len(sys.argv)]
+ORDER = sys.argv[11:len(sys.argv)]
 
-print(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER)
+print(dataset, cluster, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER)
 input_dim = 1
 num_folds = 5
 
-folder = "{}/{}/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+tensor = np.load('../2015-5appliances-true-agg-c{}.npy'.format(cluster))
 
-train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-directory = os.path.expanduser('../../baseline/rnn-tree-order-new/{}'.format(folder))
-if not os.path.exists(directory):
-    os.makedirs(directory)
-#filename = os.path.join(directory, name + '.pkl')
+train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, tensor, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-np.save('../../baseline/rnn-tree-order-new/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
+
+np.save('./baseline/rnn-tree-cluster/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
+np.save('./baseline/rnn-tree-cluster/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
 # np.save('./baseline/rnn-tree-order-new/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
-np.save('../../baseline/rnn-tree-order-new/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
-np.save('../../baseline/rnn-tree-order-new/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
+np.save('./baseline/rnn-tree-cluster/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
+np.save('./baseline/rnn-tree-cluster/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
+np.save('./baseline/rnn-tree-cluster/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
+np.save('./baseline/rnn-tree-cluster/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(cluster, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
 
