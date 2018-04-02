@@ -20,6 +20,10 @@ def get_train_test(dataset, num_folds=5, fold_num=0):
     	tensor = np.load('../2015-5appliances.numpy.npy')
     if dataset == 2:
     	tensor = np.load('../2015-5appliances-true-agg.npy')
+    if dataset == 3:
+        tensor = np.load('../2015-5appliances-subtract-true-agg.npy')
+    if dataset == 4:
+        tensor = np.load('../2015-5appliances-sum-true-agg.npy')
 
     num_homes = tensor.shape[0]
     
