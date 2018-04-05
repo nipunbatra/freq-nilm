@@ -20,8 +20,8 @@ MAX_NUM_MY_JOBS = 500
 DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 for dataset in [3]:
-	for cur_fold in range(4, 5):
-		for num_latent in range(1, 21):
+	for cur_fold in range(5):
+		for num_latent in range(17, 21):
 			for lr in [0.01, 0.1 ,1 ,2]:
 				for iters in range(100, 2600, 400):
 					OFILE = "{}/{}-{}-{}-{}-{}.out".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
