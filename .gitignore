@@ -101,7 +101,12 @@ ENV/
 .ropeproject
 
 /notebooks/hourly.pkl
+<<<<<<< HEAD
 /code/baseline/
 /code/~/
+=======
+>>>>>>> c41b6f2cf1f6432de3ea78923c219dca3f490316
 all.h5
 idea/
+
+/code/baseline/

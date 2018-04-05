@@ -107,3 +107,4 @@ nohup: ignoring input
 3 1 GRU 50 2 True 0.001 3000 0.0 ['dr', 'mw', 'dw', 'fridge', 'hvac']
 3 1 GRU 50 2 True 0.001 3000 0.0 ['dw', 'hvac', 'fridge', 'dr', 'mw']
 3 1 GRU 50 2 True 0.001 3000 0.0 ['dw', 'hvac', 'fridge', 'mw', 'dr']
+3 1 GRU 50 2 True 0.001 3000 0.0 ['dw', 'hvac', 'dr', 'fridge', 'mw']
