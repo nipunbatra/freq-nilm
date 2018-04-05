@@ -123,3 +123,4 @@ nohup: ignoring input
 3 1 RNN 50 2 True 0.001 3000 0.0 ['dw', 'fridge', 'mw', 'hvac', 'dr']
 3 1 RNN 50 2 True 0.001 3000 0.0 ['dw', 'fridge', 'mw', 'dr', 'hvac']
 3 1 RNN 50 2 True 0.001 3000 0.0 ['dw', 'dr', 'hvac', 'fridge', 'mw']
+3 1 RNN 50 2 True 0.001 3000 0.0 ['dw', 'dr', 'hvac', 'mw', 'fridge']

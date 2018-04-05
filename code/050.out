@@ -145,3 +145,4 @@ nohup: ignoring input
 3 2 LSTM 20 2 True 0.01 3000 0.0 ['dw', 'dr', 'fridge', 'hvac', 'mw']
 3 2 LSTM 20 2 True 0.01 3000 0.0 ['dw', 'dr', 'fridge', 'mw', 'hvac']
 3 2 LSTM 20 2 True 0.01 3000 0.0 ['dw', 'dr', 'mw', 'hvac', 'fridge']
+3 2 LSTM 20 2 True 0.01 3000 0.0 ['dw', 'dr', 'mw', 'fridge', 'hvac']
