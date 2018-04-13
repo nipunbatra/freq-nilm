@@ -8,6 +8,9 @@ from dataloader import APPLIANCE_ORDER, get_train_test
 import os
 import sys
 
+torch.manual_seed(0)
+np.random.seed(0)
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -52,6 +55,7 @@ appliance_index = APPLIANCE_ORDER.index(appliance)
 lr = float(lr)
 iterations = int(iterations)
 num_folds = 5
+print(dataset, fold_num, appliance, lr, iterations)
 
 # prepare the data
 train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
@@ -116,10 +120,10 @@ directory = "./baseline/cnn-individual/{}/{}/{}/{}".format(dataset, fold_num, lr
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-np.save("{}/train-pred-{}".format(appliance), pred)
-np.save("{}/train-loss-{}".format(appliance), loss)
-np.save("{}/test-pred-{}".format(appliance), test_pr)
-np.save("{}/test-loss-{}".format(appliance), test_loss)
+np.save("{}/train-pred-{}".format(directory, appliance), pred)
+np.save("{}/train-loss-{}".format(directory, appliance), loss)
+np.save("{}/test-pred-{}".format(directory, appliance), test_pr)
+np.save("{}/test-loss-{}".format(directory, appliance), test_loss)
 
 
 
