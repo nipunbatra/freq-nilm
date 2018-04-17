@@ -1,0 +1,451 @@
+nohup: ignoring input
+1 3 0.01 20000 0.0 ['mw, fridge, dr, dw, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, fridge, dr, dw, hvac' is not in list
+1 3 0.01 20000 0.0 ['mw, fridge, dw, hvac, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, fridge, dw, hvac, dr' is not in list
+1 3 0.01 20000 0.0 ['mw, fridge, dw, dr, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, fridge, dw, dr, hvac' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, hvac, fridge, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, hvac, fridge, dw' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, hvac, dw, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, hvac, dw, fridge' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, fridge, hvac, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, fridge, hvac, dw' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, fridge, dw, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, fridge, dw, hvac' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, dw, hvac, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, dw, hvac, fridge' is not in list
+1 3 0.01 20000 0.0 ['mw, dr, dw, fridge, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dr, dw, fridge, hvac' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, hvac, fridge, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, hvac, fridge, dr' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, hvac, dr, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, hvac, dr, fridge' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, fridge, hvac, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, fridge, hvac, dr' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, fridge, dr, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, fridge, dr, hvac' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, dr, hvac, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, dr, hvac, fridge' is not in list
+1 3 0.01 20000 0.0 ['mw, dw, dr, fridge, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'mw, dw, dr, fridge, hvac' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, dr, dw, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, dr, dw, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, dr, mw, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, dr, mw, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, dw, dr, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, dw, dr, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, dw, mw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, dw, mw, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, mw, dr, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, mw, dr, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, fridge, mw, dw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, fridge, mw, dw, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, fridge, dw, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, fridge, dw, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, fridge, mw, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, fridge, mw, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, dw, fridge, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, dw, fridge, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, dw, mw, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, dw, mw, fridge' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, mw, fridge, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, mw, fridge, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dr, mw, dw, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dr, mw, dw, fridge' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, fridge, dr, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, fridge, dr, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, fridge, mw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, fridge, mw, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, dr, fridge, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, dr, fridge, mw' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, dr, mw, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, dr, mw, fridge' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, mw, fridge, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, mw, fridge, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, dw, mw, dr, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, dw, mw, dr, fridge' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, fridge, dr, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, fridge, dr, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, fridge, dw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, fridge, dw, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, dr, fridge, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, dr, fridge, dw' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, dr, dw, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, dr, dw, fridge' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, dw, fridge, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, dw, fridge, dr' is not in list
+1 4 0.01 20000 0.0 ['hvac, mw, dw, dr, fridge']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'hvac, mw, dw, dr, fridge' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, dr, dw, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, dr, dw, mw' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, dr, mw, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, dr, mw, dw' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, dw, dr, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, dw, dr, mw' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, dw, mw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, dw, mw, dr' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, mw, dr, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, mw, dr, dw' is not in list
+1 4 0.01 20000 0.0 ['fridge, hvac, mw, dw, dr']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, hvac, mw, dw, dr' is not in list
+1 4 0.01 20000 0.0 ['fridge, dr, hvac, dw, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, dr, hvac, dw, mw' is not in list
+1 4 0.01 20000 0.0 ['fridge, dr, hvac, mw, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, dr, hvac, mw, dw' is not in list
+1 4 0.01 20000 0.0 ['fridge, dr, dw, hvac, mw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, dr, dw, hvac, mw' is not in list
+1 4 0.01 20000 0.0 ['fridge, dr, dw, mw, hvac']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, dr, dw, mw, hvac' is not in list
+1 4 0.01 20000 0.0 ['fridge, dr, mw, hvac, dw']
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 114, in disagg_fold
+    out_train, out_valid, out_test = preprocess(train, valid, test)
+  File "cnn-tree.py", line 86, in preprocess
+    torch.Tensor(train[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((train.shape[0], 1, -1, 24))))
+ValueError: 'fridge, dr, mw, hvac, dw' is not in list

@@ -313,16 +313,16 @@ folder = "{}/{}/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, cell_type, hidde
 
 train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
-directory = os.path.expanduser('../../baseline/rnn-tree-order-new/{}'.format(folder))
+directory = os.path.expanduser('./baseline/rnn-tree/{}'.format(folder))
 if not os.path.exists(directory):
     os.makedirs(directory)
 #filename = os.path.join(directory, name + '.pkl')
 
-np.save('../../baseline/rnn-tree-order-new/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
+np.save('./baseline/rnn-tree/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
+np.save('./baseline/rnn-tree/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
 # np.save('./baseline/rnn-tree-order-new/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
-np.save('../../baseline/rnn-tree-order-new/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
-np.save('../../baseline/rnn-tree-order-new/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
-np.save('../../baseline/rnn-tree-order-new/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
+np.save('./baseline/rnn-tree/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
+np.save('./baseline/rnn-tree/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
+np.save('./baseline/rnn-tree/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
+np.save('./baseline/rnn-tree/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
 
