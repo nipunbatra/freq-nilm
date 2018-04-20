@@ -327,7 +327,7 @@ fold_num = int(fold_num)
 
 print(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER)
 
-train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 
 directory = "./baseline/cnn-rnn-tree/{}/{}/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
 if not os.path.exists(directory):
