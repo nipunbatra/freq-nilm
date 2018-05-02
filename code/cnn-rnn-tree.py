@@ -198,12 +198,11 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
         train_out = train_out.cuda()
             
     for t in range(1, num_iterations+1):
-      
+        print("iterations:", t)
         pred = model(*params)
         optimizer.zero_grad()
         loss = loss_func(pred, train_out)
-
-        if t % 500 == 0:
+        if t % 1000 == 0:
 
             if cuda_av:
                 valid_inp = valid_inp.cuda()
@@ -226,7 +225,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
             train_losses[t] = loss.data[0]
             # np.save("./baseline/p_50_loss")
 
-            if t % 500 == 0:
+            if t % 1000 == 0:
                 valid_pr = torch.clamp(valid_pr, min=0.)
                 valid_pred[t] = valid_pr
                 test_pr = torch.clamp(test_pr, min=0.)
@@ -242,7 +241,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
 
     train_fold = [None for x in range(len(ORDER))]
     train_fold = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1, 1000):
         train_pred[t] = torch.split(train_pred[t], train_aggregate.shape[0])
         train_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
@@ -253,7 +252,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
                 train_fold[t][appliance_num] = train_pred[t][appliance_num].data.numpy().reshape(-1, 24)
                 
     valid_fold = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1, 1000):
         valid_pred[t] = torch.split(valid_pred[t], valid_aggregate.shape[0])
         valid_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
@@ -264,7 +263,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
                 valid_fold[t][appliance_num] = valid_pred[t][appliance_num].data.numpy().reshape(-1, 24)
 
     test_fold = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1,1000):
         test_pred[t] = torch.split(test_pred[t], test_aggregate.shape[0])
         test_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
@@ -295,19 +294,19 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
 
     # calcualte the error of validation set
     train_error = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1, 1000):
         train_error[t] = {}
         for appliance_num, appliance in enumerate(ORDER):
             train_error[t][appliance] = mean_absolute_error(train_fold[t][appliance_num], train_gt_fold[appliance_num])
 
     valid_error = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1, 1000):
         valid_error[t] = {}
         for appliance_num, appliance in enumerate(ORDER):
             valid_error[t][appliance] = mean_absolute_error(valid_fold[t][appliance_num], valid_gt_fold[appliance_num])
 
     test_error = {}
-    for t in range(500, num_iterations + 1, 500):
+    for t in range(1000, num_iterations + 1, 1000):
         test_error[t] = {}
         for appliance_num, appliance in enumerate(ORDER):
             test_error[t][appliance] = mean_absolute_error(test_fold[t][appliance_num], test_gt_fold[appliance_num])
