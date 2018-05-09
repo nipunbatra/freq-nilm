@@ -14,7 +14,6 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 sys.path.append('../code/')
-%matplotlib inline
 import itertools
 from pathlib import Path
 
@@ -80,8 +79,9 @@ def calculate_tf_valid_error(method, threshold):
 
 	        for num_latent in range(1, 21):
 	        	errors[dataset][cur_fold][num_latent] = {}
-	            for lr in [0.01, 0.1, 1, 2]:
-	            	errors[dataset][cur_fold][num_latent][lr] = {}
+                for lr in [0.01, 0.1, 1, 2]:
+                    lr = float(lr)
+                    errors[dataset][cur_fold][num_latent][lr] = {}
 	                for iters in range(100, 2600, 400):
 	                	errors[dataset][cur_fold][num_latent][lr][iters] = {}
 	                    cur_error = 0
@@ -224,7 +224,7 @@ for appliance in ['hvac', 'fridge', 'dr', 'dw', 'mw']:
     threshold[appliance] = 0.1*mean
 
 x = sys.argv[1]
-directory = "./baseline/{}".format(x)
+directory = "./baseline/new_metric/{}".format(x)
 
 if not os.path.exists(directory):
     os.makedirs(directory)
@@ -232,7 +232,9 @@ if not os.path.exists(directory):
 np.save("{}/on_threshold.txt".format(directory), ON_THRESHOLD)
 np.save("{}/threshold.txt".format(directory), threshold)
 
+print("calculate stf errors")
 stf_errors, stf_best_error, stf_best_param = calculate_tf_valid_error('stf', threshold)
+print("calculate mtf errors")
 mtf_errors, mtf_best_error, mtf_best_param = calculate_tf_valid_error('mtf', threshold)
 
 cnn_ind_errors = {}
@@ -242,9 +244,11 @@ cnn_tree_errors = {}
 cnn_tree_best_error = {}
 cnn_tree_best_param = {}
 for dataset in [1, 3]:
+	print("calculate cnn ind on dataset {}".format(dataset))
 	cnn_ind_errors[dataset], cnn_ind_best_error[dataset], cnn_ind_best_param[dataset] = calculate_cnn_valid_error(dataset, threshold)
+	print("calculate cnn tree on dataset {}".format(dataset))
 	cnn_tree_errors[dataset], cnn_tree_best_error[dataset], cnn_tree_best_param[dataset] = calculate_cnn_tree_valid_error(dataset, threshold)
-
+print("save results")
 np.save("{}/stf_errors.npy".format(directory), stf_errors)
 np.save("{}/stf_best_error.npy".format(directory), stf_best_error)
 np.save("{}/stf_best_param.npy".format(directory), stf_best_param)
