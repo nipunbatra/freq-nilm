@@ -45,75 +45,75 @@ def calculate_error(pred, gt, threshold):
     return error, overall
 
 def calculate_tf_valid_error(method, threshold):
-	# load the results
-	r = {}
-	mean_r = {}
-	for dataset in [1, 3]:
-	    r[dataset] = {}
-	    mean_r[dataset] = {}
-	    for cur_fold in range(5):
-	        r[dataset][cur_fold] = {}
-	        mean_r[dataset][cur_fold] = {}
-	        for num_latent in range(1, 21):
-	            r[dataset][cur_fold][num_latent] = {}
-	            mean_r[dataset][cur_fold][num_latent] = {}
-	            for lr in [0.01, 0.1 ,1 ,2]:
-	                lr = float(lr)
-	                r[dataset][cur_fold][num_latent][lr] = {}
-	                mean_r[dataset][cur_fold][num_latent][lr] = {}
-	                for iters in range(100, 2600, 400):
-	                    r[dataset][cur_fold][num_latent][lr][iters] = np.load("../code/baseline/{}/{}/valid/{}-pred-{}-{}-{}-{}-{}.npy".format(method, dataset, method, dataset, cur_fold, num_latent, lr, iters))
+    # load the results
+    r = {}
+    mean_r = {}
+    for dataset in [1, 3]:
+        r[dataset] = {}
+        mean_r[dataset] = {}
+        for cur_fold in range(5):
+            r[dataset][cur_fold] = {}
+            mean_r[dataset][cur_fold] = {}
+            for num_latent in range(1, 21):
+                r[dataset][cur_fold][num_latent] = {}
+                mean_r[dataset][cur_fold][num_latent] = {}
+                for lr in [0.01, 0.1 ,1 ,2]:
+                    lr = float(lr)
+                    r[dataset][cur_fold][num_latent][lr] = {}
+                    mean_r[dataset][cur_fold][num_latent][lr] = {}
+                    for iters in range(100, 2600, 400):
+                        r[dataset][cur_fold][num_latent][lr][iters] = np.load("../code/baseline/{}/{}/valid/{}-pred-{}-{}-{}-{}-{}.npy".format(method, dataset, method, dataset, cur_fold, num_latent, lr, iters))
 
-	# calculate error
-	error = {}
-	best_p = {}
-	errors = {}
-	for dataset in [1, 3]:
-	    error[dataset] = {}
-	    errors[dataset] = {}
-	    best_p[dataset] = {}
-	    for cur_fold in range(5):
-	        error[dataset][cur_fold] = np.inf
-	        errors[dataset][cur_fold] = {}
-	        best_p[dataset][cur_fold] = {}
+    # calculate error
+    error = {}
+    best_p = {}
+    errors = {}
+    for dataset in [1, 3]:
+        error[dataset] = {}
+        errors[dataset] = {}
+        best_p[dataset] = {}
+        for cur_fold in range(5):
+            error[dataset][cur_fold] = np.inf
+            errors[dataset][cur_fold] = {}
+            best_p[dataset][cur_fold] = {}
 
-	        for num_latent in range(1, 21):
-	        	errors[dataset][cur_fold][num_latent] = {}
+            for num_latent in range(1, 21):
+                errors[dataset][cur_fold][num_latent] = {}
                 for lr in [0.01, 0.1, 1, 2]:
                     lr = float(lr)
                     errors[dataset][cur_fold][num_latent][lr] = {}
-	                for iters in range(100, 2600, 400):
-	                	errors[dataset][cur_fold][num_latent][lr][iters] = {}
-	                    cur_error = 0
-	                    for idx, appliance in enumerate(APPLIANCE_ORDER[1:-1]):
+                    for iters in range(100, 2600, 400):
+                        errors[dataset][cur_fold][num_latent][lr][iters] = {}
+                        cur_error = 0
+                        for idx, appliance in enumerate(APPLIANCE_ORDER[1:-1]):
 
-	                    	errors[dataset][cur_fold][num_latent][lr][iters][appliance] = onoff_error(r[dataset][cur_fold][num_latent][lr][iters][:, idx].reshape(-1, 1), 
-	                                                        valid_gt[cur_fold][appliance].reshape(-1, 1), threshold[cur_fold][appliance])
-	                    	
-	                        cur_error += errors[dataset][cur_fold][num_latent][lr][iters][appliance]
-	                    if cur_error < error[dataset][cur_fold]:
-	                        error[dataset][cur_fold] = cur_error
-	                        best_p[dataset][cur_fold]['num_latent'] = num_latent
-	                        best_p[dataset][cur_fold]['lr'] = lr
-	                        best_p[dataset][cur_fold]['iters'] = iters                
+                            errors[dataset][cur_fold][num_latent][lr][iters][appliance] = onoff_error(r[dataset][cur_fold][num_latent][lr][iters][:, idx].reshape(-1, 1), 
+                                                            valid_gt[cur_fold][appliance].reshape(-1, 1), threshold[cur_fold][appliance])
+                            
+                            cur_error += errors[dataset][cur_fold][num_latent][lr][iters][appliance]
+                        if cur_error < error[dataset][cur_fold]:
+                            error[dataset][cur_fold] = cur_error
+                            best_p[dataset][cur_fold]['num_latent'] = num_latent
+                            best_p[dataset][cur_fold]['lr'] = lr
+                            best_p[dataset][cur_fold]['iters'] = iters                
 
-	return errors, error, best_p
+    return errors, error, best_p
 
 def calculate_cnn_valid_error(dataset, threshold):
-	cnn_individual_valid_pred = {}
-	for fold_num in range(5):
-	    cnn_individual_valid_pred[fold_num] = {}
-	    for appliance in ['hvac', 'fridge', 'dr', 'dw', 'mw']:
-	        cnn_individual_valid_pred[fold_num][appliance] = {}
-	        for lr in [0.001, 0.01, 0.1]:
-	            cnn_individual_valid_pred[fold_num][appliance][lr] = {}
-	            for iters in [200000]:
-	            
-	                directory = "../code/baseline/cnn-tree/{}/{}/{}/{}/0.0/".format(dataset, fold_num, lr, iters)
-	                filename = "valid-pred-[\'{}\'].npy".format(appliance)
-	                
-	                full_path = directory + filename
-	                my_file = Path(full_path)
+    cnn_individual_valid_pred = {}
+    for fold_num in range(5):
+        cnn_individual_valid_pred[fold_num] = {}
+        for appliance in ['hvac', 'fridge', 'dr', 'dw', 'mw']:
+            cnn_individual_valid_pred[fold_num][appliance] = {}
+            for lr in [0.001, 0.01, 0.1]:
+                cnn_individual_valid_pred[fold_num][appliance][lr] = {}
+                for iters in [200000]:
+                
+                    directory = "../code/baseline/cnn-tree/{}/{}/{}/{}/0.0/".format(dataset, fold_num, lr, iters)
+                    filename = "valid-pred-[\'{}\'].npy".format(appliance)
+                    
+                    full_path = directory + filename
+                    my_file = Path(full_path)
                     k = np.load(full_path).item()
 
                     for it in range(1000, 200000+1, 1000):
@@ -121,52 +121,52 @@ def calculate_cnn_valid_error(dataset, threshold):
     cnn_errors = {}
     cnn_individual_best_param = {}
     min_error = {}
-	for fold_num in range(5):
-	    cnn_individual_best_param[fold_num] = {}
-	    cnn_errors[fold_num] = {}
-	    min_error[fold_num] = {}
-	    for appliance in ['hvac', 'fridge', 'dr', 'dw', 'mw']:
-	        cnn_individual_best_param[fold_num][appliance] = {}
-	        cnn_errors[fold_num][appliance] = {}
-	        min_error[fold_num][appliance] = np.inf
-	        for lr in [0.001, 0.01, 0.1]:
-	        	cnn_errors[fold_num][appliance][lr] = {}
-	            for it in range(1000, 200000+1, 1000):
-	                error = onoff_error(cnn_individual_valid_pred[fold_num][appliance][lr][it].reshape(-1, 24), valid_gt[fold_num][appliance].reshape(-1, 24), threshold[appliance])
-	                cnn_errors[fold_num][appliance][lr][it] = error
-	                if error < min_error[fold_num][appliance]:
-	                    cnn_individual_best_param[fold_num][appliance]['lr'] = lr
-	                    cnn_individual_best_param[fold_num][appliance]['iters'] = it
-	                    min_error[fold_num][appliance] = error
+    for fold_num in range(5):
+        cnn_individual_best_param[fold_num] = {}
+        cnn_errors[fold_num] = {}
+        min_error[fold_num] = {}
+        for appliance in ['hvac', 'fridge', 'dr', 'dw', 'mw']:
+            cnn_individual_best_param[fold_num][appliance] = {}
+            cnn_errors[fold_num][appliance] = {}
+            min_error[fold_num][appliance] = np.inf
+            for lr in [0.001, 0.01, 0.1]:
+                cnn_errors[fold_num][appliance][lr] = {}
+                for it in range(1000, 200000+1, 1000):
+                    error = onoff_error(cnn_individual_valid_pred[fold_num][appliance][lr][it].reshape(-1, 24), valid_gt[fold_num][appliance].reshape(-1, 24), threshold[appliance])
+                    cnn_errors[fold_num][appliance][lr][it] = error
+                    if error < min_error[fold_num][appliance]:
+                        cnn_individual_best_param[fold_num][appliance]['lr'] = lr
+                        cnn_individual_best_param[fold_num][appliance]['iters'] = it
+                        min_error[fold_num][appliance] = error
 
-	return cnn_errors, min_error, cnn_individual_best_param
+    return cnn_errors, min_error, cnn_individual_best_param
 
-	# calculate gt
+    # calculate gt
 
 def calculate_cnn_tree_valid_error(dataset, threshold):
 
-	cnn_tree_valid_pred = {}
-	num_iterations = 20000
+    cnn_tree_valid_pred = {}
+    num_iterations = 20000
 
-	for fold_num in range(5):
-	    cnn_tree_valid_pred[fold_num] = {}
-	    for lr in [0.01]:
-	        cnn_tree_valid_pred[fold_num][lr] = {}
-	        for order in list(itertools.permutations(['hvac', 'fridge', 'dr', 'dw', 'mw'])):
-	            
-	            if order[0] == 'hvac':
-	                continue
-	            
-	            cnn_tree_valid_pred[fold_num][lr][order] = {}
+    for fold_num in range(5):
+        cnn_tree_valid_pred[fold_num] = {}
+        for lr in [0.01]:
+            cnn_tree_valid_pred[fold_num][lr] = {}
+            for order in list(itertools.permutations(['hvac', 'fridge', 'dr', 'dw', 'mw'])):
+                
+                if order[0] == 'hvac':
+                    continue
+                
+                cnn_tree_valid_pred[fold_num][lr][order] = {}
 
 
-	            o = "\', \'".join(str(x) for x in order)
-	            directory = "../code/baseline/cnn-tree/{}/{}/{}/20000/0.0/".format(dataset, fold_num, lr)
-	            filename = "valid-pred-[\'{}\'].npy".format(o)
+                o = "\', \'".join(str(x) for x in order)
+                directory = "../code/baseline/cnn-tree/{}/{}/{}/20000/0.0/".format(dataset, fold_num, lr)
+                filename = "valid-pred-[\'{}\'].npy".format(o)
 
-	            full_path = directory + filename
-	            my_file = Path(full_path)
-	            
+                full_path = directory + filename
+                my_file = Path(full_path)
+                
                 k = np.load(full_path).item()
                 for it in range(1000, 20001, 1000):
                     cnn_tree_valid_pred[fold_num][lr][order][it] = {}
@@ -176,28 +176,28 @@ def calculate_cnn_tree_valid_error(dataset, threshold):
     cnn_tree_best_param = {}
     cnn_tree_errors = {}
     min_error = {}
-	for fold_num in range(5):
-	    cnn_tree_best_param[fold_num] = {}
-	    min_error[fold_num] = np.inf
-	    cnn_tree_errors[fold_num] = {}
-	    for lr in [0.01]:
-	    	cnn_tree_errors[fold_num][lr] = {}
-	        for order in list(itertools.permutations(['hvac', 'fridge', 'dr', 'dw', 'mw'])):
-	            if order[0] == 'hvac':
-	                continue
-	            cnn_tree_errors[fold_num][lr][order] = {}
-	            for it in range(1000, 20001, 1000):
-	                error = 0
-	                cnn_tree_errors[fold_num][lr][order][it] = {}
-	                for idx, appliance in enumerate(order):
-	                	cnn_tree_errors[fold_num][lr][order][it][appliance] = onoff_error(cnn_tree_valid_pred[fold_num][lr][order][it][appliance].reshape(-1, 24),
-	                                                valid_gt[fold_num][appliance].reshape(-1, 24), threshold[appliance])
-	                	error += cnn_tree_errors[fold_num][lr][order][it][appliance]
-	                if error < min_error[fold_num]:
-	                    min_error[fold_num] = error
-	                    cnn_tree_best_param[fold_num]['lr'] = lr
-	                    cnn_tree_best_param[fold_num]['order'] = order
-	                    cnn_tree_best_param[fold_num]['iters'] = it
+    for fold_num in range(5):
+        cnn_tree_best_param[fold_num] = {}
+        min_error[fold_num] = np.inf
+        cnn_tree_errors[fold_num] = {}
+        for lr in [0.01]:
+            cnn_tree_errors[fold_num][lr] = {}
+            for order in list(itertools.permutations(['hvac', 'fridge', 'dr', 'dw', 'mw'])):
+                if order[0] == 'hvac':
+                    continue
+                cnn_tree_errors[fold_num][lr][order] = {}
+                for it in range(1000, 20001, 1000):
+                    error = 0
+                    cnn_tree_errors[fold_num][lr][order][it] = {}
+                    for idx, appliance in enumerate(order):
+                        cnn_tree_errors[fold_num][lr][order][it][appliance] = onoff_error(cnn_tree_valid_pred[fold_num][lr][order][it][appliance].reshape(-1, 24),
+                                                    valid_gt[fold_num][appliance].reshape(-1, 24), threshold[appliance])
+                        error += cnn_tree_errors[fold_num][lr][order][it][appliance]
+                    if error < min_error[fold_num]:
+                        min_error[fold_num] = error
+                        cnn_tree_best_param[fold_num]['lr'] = lr
+                        cnn_tree_best_param[fold_num]['order'] = order
+                        cnn_tree_best_param[fold_num]['iters'] = it
 
     return cnn_tree_errors, min_error, cnn_tree_best_param        
                     
@@ -244,10 +244,10 @@ cnn_tree_errors = {}
 cnn_tree_best_error = {}
 cnn_tree_best_param = {}
 for dataset in [1, 3]:
-	print("calculate cnn ind on dataset {}".format(dataset))
-	cnn_ind_errors[dataset], cnn_ind_best_error[dataset], cnn_ind_best_param[dataset] = calculate_cnn_valid_error(dataset, threshold)
-	print("calculate cnn tree on dataset {}".format(dataset))
-	cnn_tree_errors[dataset], cnn_tree_best_error[dataset], cnn_tree_best_param[dataset] = calculate_cnn_tree_valid_error(dataset, threshold)
+    print("calculate cnn ind on dataset {}".format(dataset))
+    cnn_ind_errors[dataset], cnn_ind_best_error[dataset], cnn_ind_best_param[dataset] = calculate_cnn_valid_error(dataset, threshold)
+    print("calculate cnn tree on dataset {}".format(dataset))
+    cnn_tree_errors[dataset], cnn_tree_best_error[dataset], cnn_tree_best_param[dataset] = calculate_cnn_tree_valid_error(dataset, threshold)
 print("save results")
 np.save("{}/stf_errors.npy".format(directory), stf_errors)
 np.save("{}/stf_best_error.npy".format(directory), stf_best_error)
