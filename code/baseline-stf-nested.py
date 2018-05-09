@@ -21,6 +21,7 @@ def nested_stf(dataset, cur_fold, r, lr, num_iter):
     
     valid_gt = valid[:, 1:, :, :]
     test_gt = test[:, 1:, :, :]
+    print(test_gt.shape)
 
 
     # print ("fold: ", cur_fold, " num_latent: ", r, " lr: ", lr, " num_iter: ", num_iter)
