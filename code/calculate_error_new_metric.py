@@ -236,6 +236,10 @@ print("calculate stf errors")
 stf_errors, stf_best_error, stf_best_param = calculate_tf_valid_error('stf', threshold)
 print("calculate mtf errors")
 mtf_errors, mtf_best_error, mtf_best_param = calculate_tf_valid_error('mtf', threshold)
+print("stf")
+print(stf_best_param)
+print("mtf")
+print(mtf_best_param)
 
 cnn_ind_errors = {}
 cnn_ind_best_error = {}
