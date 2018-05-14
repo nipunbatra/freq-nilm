@@ -46,4 +46,16 @@ def get_train_test_tensor(tensor, num_folds=5, fold_num=0):
     train, test = list(k.split(range(0, num_homes)))[fold_num]
     return tensor[train, :, :, :], tensor[test, :, :, :]
     
+
+def create_fake_homes(train, num_homes, num_appliance):
+    fake_home = np.zeros((num_homes, 7, 112, 24))
+    homd_id = np.random.choice(14, num_homes, False)
     
+    for i in range(num_homes):
+        fake_home[i] = train[home_id[i]]
+        app_id = np.random.choice([1, 2, 3 ,4, 5], num_appliance, False)
+        for j in range(num_appliance):
+            permu = np.random.permutation(range(8))
+            for k in range(8):
+                fake_home[i][app_id[j]][k*14:(k+1)*14] = train[home_id[i]][app_id[j]][d[k]*14:(d[k]+1)*14]
+    return fake_home
