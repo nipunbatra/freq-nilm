@@ -20,13 +20,13 @@ MAX_NUM_MY_JOBS = 200
 DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
-for dataset in [1, 2]:
+for dataset in [3]:
 	for cur_fold in range(5):
 		for num_latent in range(1, 51):
 			for lr in [0.01]:
 				for iters in range(10, 11, 10):
-					OFILE = "{}/{}-{}-{}-{}-{}-{}.out".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
-					EFILE = "{}/{}-{}-{}-{}-{}-{}.err".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
+					OFILE = "{}/{}-{}-{}-{}-{}-{}.out".format(SLURM_OUT, dataset, dataset,cur_fold, num_latent, lr, iters)
+					EFILE = "{}/{}-{}-{}-{}-{}-{}.err".format(SLURM_OUT, dataset, dataset,cur_fold, num_latent, lr, iters)
 					SLURM_SCRIPT = "{}/sc{}-{}-{}-{}-{}.pbs".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
 					#CMD = 'python3 baseline-mtf-nested.py {} {} {} {} {}'.format(dataset, cur_fold, num_latent, lr, iters)
 					CMD = 'python3 baseline-sc-without-disc-nested.py {} {} {}'.format(dataset, cur_fold, num_latent)

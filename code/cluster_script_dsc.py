@@ -20,7 +20,7 @@ MAX_NUM_MY_JOBS = 200
 DELAY_NUM_JOBS_EXCEEDED = 10
 import time
 
-for dataset in [1, 2]:
+for dataset in [3]:
 	for cur_fold in range(5):
 		for num_latent in range(1, 51):
 			for lr in [0.01]:

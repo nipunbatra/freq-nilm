@@ -36,7 +36,6 @@ def onoff_error(pred, gt, threshold):
     return (pd.Series(error).mean())
 
 def calculate_error(pred, gt, threshold):
-    def calculate_error(pred, gt, threshold):
     error = {}
     overall = {}
     num_homes = {}

@@ -1,0 +1,376 @@
+nohup: ignoring input
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'mw', 'residual', 'fridge']
+Round: 500 Training Error: 168.45535278320312 Validation Error: 169.20603942871094 Test Error: 181.0913543701172
+Round: 1000 Training Error: 160.07421875 Validation Error: 167.98741149902344 Test Error: 181.45252990722656
+Round: 1500 Training Error: 153.73806762695312 Validation Error: 163.90771484375 Test Error: 177.5385284423828
+Round: 2000 Training Error: 149.87606811523438 Validation Error: 163.92530822753906 Test Error: 176.96615600585938
+Round: 2500 Training Error: 147.8888702392578 Validation Error: 164.27491760253906 Test Error: 179.1148681640625
+Round: 3000 Training Error: 150.8094482421875 Validation Error: 163.6888885498047 Test Error: 177.55206298828125
+Round: 3500 Training Error: 146.65438842773438 Validation Error: 167.02622985839844 Test Error: 179.2781219482422
+Round: 4000 Training Error: 133.95989990234375 Validation Error: 167.5886993408203 Test Error: 179.3238983154297
+Round: 4500 Training Error: 143.92562866210938 Validation Error: 168.15170288085938 Test Error: 179.67453002929688
+Round: 5000 Training Error: 143.22903442382812 Validation Error: 169.2596435546875 Test Error: 181.45782470703125
+Round: 5500 Training Error: 143.55226135253906 Validation Error: 165.90980529785156 Test Error: 179.46470642089844
+Round: 6000 Training Error: 144.4920196533203 Validation Error: 161.8394317626953 Test Error: 174.48451232910156
+Round: 6500 Training Error: 141.99098205566406 Validation Error: 169.39830017089844 Test Error: 178.9903106689453
+Round: 7000 Training Error: 144.84002685546875 Validation Error: 167.60549926757812 Test Error: 178.8919219970703
+Round: 7500 Training Error: 130.59263610839844 Validation Error: 167.59559631347656 Test Error: 178.76736450195312
+Round: 8000 Training Error: 142.9104461669922 Validation Error: 162.9491729736328 Test Error: 176.4646453857422
+Round: 8500 Training Error: 141.15023803710938 Validation Error: 168.53416442871094 Test Error: 179.0799102783203
+Round: 9000 Training Error: 144.08465576171875 Validation Error: 164.87010192871094 Test Error: 176.3036651611328
+Round: 9500 Training Error: 130.4005584716797 Validation Error: 166.895263671875 Test Error: 175.5485076904297
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.2 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 142.21823120117188 Validation Error: 153.30401611328125 Test Error: 171.79733276367188
+Round: 1000 Training Error: 173.57330322265625 Validation Error: 150.43812561035156 Test Error: 168.30714416503906
+Round: 1500 Training Error: 124.6364517211914 Validation Error: 143.73475646972656 Test Error: 163.28982543945312
+Round: 2000 Training Error: 117.32665252685547 Validation Error: 139.8109588623047 Test Error: 162.6377716064453
+Round: 2500 Training Error: 114.43489074707031 Validation Error: 141.628173828125 Test Error: 162.79861450195312
+Round: 3000 Training Error: 111.94840240478516 Validation Error: 138.61669921875 Test Error: 163.2162322998047
+Round: 3500 Training Error: 110.36308288574219 Validation Error: 141.3788299560547 Test Error: 162.4250946044922
+Round: 4000 Training Error: 110.54371643066406 Validation Error: 141.8481903076172 Test Error: 164.78524780273438
+Round: 4500 Training Error: 109.06637573242188 Validation Error: 142.5834197998047 Test Error: 163.97557067871094
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 144.21023559570312 Validation Error: 156.07301330566406 Test Error: 172.19639587402344
+Round: 1000 Training Error: 169.14080810546875 Validation Error: 152.00933837890625 Test Error: 172.15760803222656
+Round: 1500 Training Error: 127.30065155029297 Validation Error: 150.1693115234375 Test Error: 169.975830078125
+Round: 2000 Training Error: 163.02227783203125 Validation Error: 144.60427856445312 Test Error: 164.0116729736328
+Round: 2500 Training Error: 160.86000061035156 Validation Error: 142.874755859375 Test Error: 160.99130249023438
+Round: 3000 Training Error: 114.78952026367188 Validation Error: 143.82334899902344 Test Error: 161.9846649169922
+Round: 3500 Training Error: 114.15141296386719 Validation Error: 145.6793212890625 Test Error: 164.75575256347656
+Round: 4000 Training Error: 114.67770385742188 Validation Error: 143.01759338378906 Test Error: 166.5260009765625
+Round: 4500 Training Error: 112.64169311523438 Validation Error: 145.92247009277344 Test Error: 159.83531188964844
+Round: 5000 Training Error: 155.44642639160156 Validation Error: 143.82781982421875 Test Error: 166.75843811035156
+Round: 5500 Training Error: 110.32015991210938 Validation Error: 143.53543090820312 Test Error: 163.60548400878906
+Round: 6000 Training Error: 112.20291137695312 Validation Error: 143.45208740234375 Test Error: 159.5615997314453
+Round: 6500 Training Error: 109.41854858398438 Validation Error: 143.3059539794922 Test Error: 163.85617065429688
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+5 2 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 170.19276428222656 Validation Error: 163.15545654296875 Test Error: 180.8673858642578
+Round: 1000 Training Error: 161.77365112304688 Validation Error: 167.14491271972656 Test Error: 177.96006774902344
+Round: 1500 Training Error: 156.48257446289062 Validation Error: 160.66307067871094 Test Error: 176.5384979248047
+Round: 2000 Training Error: 153.0565948486328 Validation Error: 154.71243286132812 Test Error: 174.78968811035156
+Round: 2500 Training Error: 150.20025634765625 Validation Error: 152.11557006835938 Test Error: 175.46482849121094
+Round: 3000 Training Error: 149.38287353515625 Validation Error: 154.9241485595703 Test Error: 173.0114288330078
+Round: 3500 Training Error: 162.13003540039062 Validation Error: 156.4130859375 Test Error: 176.01107788085938
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 154, in disagg_fold
+    loss = loss_func(pred, train_out)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/loss.py", line 72, in forward
+    reduce=self.reduce)
+RuntimeError: std::bad_alloc: out of memory
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.2 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 142.62417602539062 Validation Error: 155.66970825195312 Test Error: 172.32762145996094
+Round: 1000 Training Error: 175.5831756591797 Validation Error: 150.7590789794922 Test Error: 168.08518981933594
+Round: 1500 Training Error: 125.4883041381836 Validation Error: 143.43426513671875 Test Error: 165.64434814453125
+Round: 2000 Training Error: 117.46881103515625 Validation Error: 136.7450714111328 Test Error: 160.2153778076172
+Round: 2500 Training Error: 112.81560516357422 Validation Error: 137.03146362304688 Test Error: 159.23895263671875
+Round: 3000 Training Error: 111.26807403564453 Validation Error: 135.94781494140625 Test Error: 159.8139190673828
+Round: 3500 Training Error: 109.56704711914062 Validation Error: 135.36947631835938 Test Error: 160.99034118652344
+Round: 4000 Training Error: 108.98904418945312 Validation Error: 136.3585662841797 Test Error: 160.25579833984375
+Round: 4500 Training Error: 109.59617614746094 Validation Error: 136.26710510253906 Test Error: 160.18954467773438
+Round: 5000 Training Error: 107.275146484375 Validation Error: 137.08224487304688 Test Error: 159.57150268554688
+Round: 5500 Training Error: 108.40636444091797 Validation Error: 136.32388305664062 Test Error: 158.53807067871094
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 163, in disagg_fold
+    valid_pr = model(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 145.73770141601562 Validation Error: 160.4994659423828 Test Error: 172.37301635742188
+Round: 1000 Training Error: 169.2633056640625 Validation Error: 155.67625427246094 Test Error: 172.17648315429688
+Round: 1500 Training Error: 128.1571502685547 Validation Error: 153.06005859375 Test Error: 171.3552703857422
+Round: 2000 Training Error: 163.32167053222656 Validation Error: 145.3926239013672 Test Error: 163.61082458496094
+Round: 2500 Training Error: 161.48292541503906 Validation Error: 144.80726623535156 Test Error: 163.80075073242188
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 163, in disagg_fold
+    valid_pr = model(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/activation.py", line 43, in forward
+    return F.threshold(input, self.threshold, self.value, self.inplace)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 168.050048828125 Validation Error: 165.89059448242188 Test Error: 182.5403594970703
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+5 2 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 140.85653686523438 Validation Error: 159.98843383789062 Test Error: 171.58277893066406
+Round: 1000 Training Error: 176.544921875 Validation Error: 154.75474548339844 Test Error: 169.87091064453125
+Round: 1500 Training Error: 119.89059448242188 Validation Error: 143.90574645996094 Test Error: 164.44639587402344
+Round: 2000 Training Error: 111.81364440917969 Validation Error: 139.97787475585938 Test Error: 158.77410888671875
+Round: 2500 Training Error: 110.03934478759766 Validation Error: 140.6964111328125 Test Error: 160.265380859375
+Round: 3000 Training Error: 108.3011703491211 Validation Error: 138.77581787109375 Test Error: 160.0218048095703
+Round: 3500 Training Error: 111.34248352050781 Validation Error: 138.03001403808594 Test Error: 160.72836303710938
+Round: 4000 Training Error: 109.9965591430664 Validation Error: 139.83251953125 Test Error: 162.177734375
+Round: 4500 Training Error: 109.45538330078125 Validation Error: 140.22103881835938 Test Error: 161.85411071777344
+Round: 5000 Training Error: 107.51271057128906 Validation Error: 138.96913146972656 Test Error: 161.88894653320312
+Round: 5500 Training Error: 107.66316986083984 Validation Error: 140.81326293945312 Test Error: 163.110595703125
+Round: 6000 Training Error: 107.26948547363281 Validation Error: 138.89202880859375 Test Error: 158.8206329345703
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 154, in disagg_fold
+    loss = loss_func(pred, train_out)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/loss.py", line 72, in forward
+    reduce=self.reduce)
+RuntimeError: std::bad_alloc: out of memory
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 145.8820343017578 Validation Error: 154.6369171142578 Test Error: 175.891845703125
+Round: 1000 Training Error: 171.09718322753906 Validation Error: 153.03778076171875 Test Error: 175.6808624267578
+Round: 1500 Training Error: 142.03465270996094 Validation Error: 149.34158325195312 Test Error: 171.57955932617188
+Round: 2000 Training Error: 174.18775939941406 Validation Error: 142.5618133544922 Test Error: 154.5062713623047
+Round: 2500 Training Error: 165.67764282226562 Validation Error: 139.1228485107422 Test Error: 161.98974609375
+Round: 3000 Training Error: 117.43648529052734 Validation Error: 140.60595703125 Test Error: 157.91310119628906
+Round: 3500 Training Error: 115.61369323730469 Validation Error: 139.80360412597656 Test Error: 162.94873046875
+Round: 4000 Training Error: 116.41280364990234 Validation Error: 138.25479125976562 Test Error: 163.16571044921875
+Round: 4500 Training Error: 116.97382354736328 Validation Error: 137.98829650878906 Test Error: 158.74700927734375
+Round: 5000 Training Error: 160.40078735351562 Validation Error: 143.10939025878906 Test Error: 160.8382110595703
+Round: 5500 Training Error: 112.58859252929688 Validation Error: 140.96859741210938 Test Error: 161.711669921875
+Round: 6000 Training Error: 112.84394836425781 Validation Error: 143.8450164794922 Test Error: 162.08450317382812
+Round: 6500 Training Error: 112.32130432128906 Validation Error: 139.9966583251953 Test Error: 164.05348205566406
+Round: 7000 Training Error: 110.58606719970703 Validation Error: 139.7658233642578 Test Error: 158.86587524414062
+Round: 7500 Training Error: 109.73943328857422 Validation Error: 139.95980834960938 Test Error: 159.78225708007812
+Round: 8000 Training Error: 111.7782974243164 Validation Error: 137.47503662109375 Test Error: 161.3822784423828
+Round: 8500 Training Error: 155.74168395996094 Validation Error: 139.2836456298828 Test Error: 160.2235107421875
+Round: 9000 Training Error: 111.51773071289062 Validation Error: 139.61984252929688 Test Error: 161.52630615234375
+Round: 9500 Training Error: 108.54366302490234 Validation Error: 137.43707275390625 Test Error: 158.94680786132812
+Round: 10000 Training Error: 155.03575134277344 Validation Error: 139.9556121826172 Test Error: 158.32418823242188
+Round: 10500 Training Error: 154.41383361816406 Validation Error: 139.07534790039062 Test Error: 158.0543975830078
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 163, in disagg_fold
+    valid_pr = model(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.8 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 168.8121795654297 Validation Error: 172.21499633789062 Test Error: 179.62628173828125
+Round: 1000 Training Error: 159.55531311035156 Validation Error: 167.89161682128906 Test Error: 179.27505493164062
+Round: 1500 Training Error: 154.86355590820312 Validation Error: 159.18673706054688 Test Error: 178.94593811035156
+Round: 2000 Training Error: 151.50669860839844 Validation Error: 160.4404296875 Test Error: 177.2852325439453
+Round: 2500 Training Error: 149.61805725097656 Validation Error: 159.173828125 Test Error: 177.1416473388672
+Round: 3000 Training Error: 190.2081298828125 Validation Error: 180.0458984375 Test Error: 195.90325927734375
+Round: 3500 Training Error: 174.33798217773438 Validation Error: 167.4166259765625 Test Error: 187.10914611816406
+Round: 4000 Training Error: 152.95147705078125 Validation Error: 166.45355224609375 Test Error: 184.0040740966797
+Round: 4500 Training Error: 168.03736877441406 Validation Error: 165.50978088378906 Test Error: 180.96804809570312
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'fridge', 'residual', 'dw']
+Round: 500 Training Error: 140.86293029785156 Validation Error: 157.0251922607422 Test Error: 172.95555114746094
+Round: 1000 Training Error: 176.82322692871094 Validation Error: 155.96917724609375 Test Error: 172.8479766845703
+Round: 1500 Training Error: 120.85539245605469 Validation Error: 145.8502960205078 Test Error: 167.71214294433594
+Round: 2000 Training Error: 112.34994506835938 Validation Error: 141.42088317871094 Test Error: 162.6242218017578
+Round: 2500 Training Error: 109.95459747314453 Validation Error: 139.3096466064453 Test Error: 161.45005798339844
+Round: 3000 Training Error: 108.85997772216797 Validation Error: 139.7268829345703 Test Error: 161.4562225341797
+Round: 3500 Training Error: 108.21218872070312 Validation Error: 138.83177185058594 Test Error: 162.5271759033203
+Round: 4000 Training Error: 108.1366195678711 Validation Error: 139.59352111816406 Test Error: 161.35093688964844
+Round: 4500 Training Error: 107.63142395019531 Validation Error: 138.87245178222656 Test Error: 161.37893676757812
+Round: 5000 Training Error: 106.11328125 Validation Error: 138.57826232910156 Test Error: 161.11859130859375
+Round: 5500 Training Error: 108.06608581542969 Validation Error: 140.44094848632812 Test Error: 167.89471435546875
+Round: 6000 Training Error: 105.5352783203125 Validation Error: 137.85745239257812 Test Error: 164.23983764648438
+Round: 6500 Training Error: 109.52235412597656 Validation Error: 136.08204650878906 Test Error: 165.10885620117188
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 2 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'fridge', 'residual', 'dw']
+Round: 500 Training Error: 150.0349578857422 Validation Error: 155.22752380371094 Test Error: 177.38104248046875
+Round: 1000 Training Error: 168.70944213867188 Validation Error: 153.3924560546875 Test Error: 170.5267333984375
+Round: 1500 Training Error: 129.841796875 Validation Error: 147.4696807861328 Test Error: 171.137939453125
+Round: 2000 Training Error: 176.2427978515625 Validation Error: 152.13973999023438 Test Error: 169.85775756835938
+Round: 2500 Training Error: 170.7288360595703 Validation Error: 145.2012481689453 Test Error: 165.4940948486328
+Round: 3000 Training Error: 121.54925537109375 Validation Error: 144.79888916015625 Test Error: 162.1160125732422
+Round: 3500 Training Error: 121.55795288085938 Validation Error: 142.7134246826172 Test Error: 167.81234741210938
+Round: 4000 Training Error: 120.46038818359375 Validation Error: 140.03460693359375 Test Error: 161.71334838867188
+Round: 4500 Training Error: 116.81587219238281 Validation Error: 139.43626403808594 Test Error: 163.15835571289062
+Round: 5000 Training Error: 162.56236267089844 Validation Error: 138.36203002929688 Test Error: 166.57130432128906
+Round: 5500 Training Error: 116.13196563720703 Validation Error: 139.0110321044922 Test Error: 162.37783813476562
+Round: 6000 Training Error: 115.58174133300781 Validation Error: 139.1276092529297 Test Error: 158.45584106445312
+Round: 6500 Training Error: 115.01349639892578 Validation Error: 144.37815856933594 Test Error: 163.3134002685547
+Round: 7000 Training Error: 112.9293212890625 Validation Error: 140.34934997558594 Test Error: 162.7537841796875
+Round: 7500 Training Error: 112.9821548461914 Validation Error: 139.15261840820312 Test Error: 161.92190551757812
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 163, in disagg_fold
+    valid_pr = model(*valid_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
