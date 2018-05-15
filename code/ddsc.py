@@ -72,7 +72,7 @@ class SparseCoding:
         As_per_appliance = As_learnt.reshape(self.N, self.num_latent)
         out = []
         for appliance_num in range(self.N):
-            out.append(self.Bs[appliance_num] @ As_per_appliance[appliance_num])
+            out.append(self.Bs[appliance_num]@As_per_appliance[appliance_num])
         return np.array(out)
 
     def disaggregate(self, X_test):
