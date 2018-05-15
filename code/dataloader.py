@@ -49,7 +49,7 @@ def get_train_test_tensor(tensor, num_folds=5, fold_num=0):
 
 def create_fake_homes(train, num_homes, num_appliance):
     fake_home = np.zeros((num_homes, 7, 112, 24))
-    homd_id = np.random.choice(14, num_homes, False)
+    home_id = np.random.choice(14, num_homes, False)
     
     for i in range(num_homes):
         fake_home[i] = train[home_id[i]]
@@ -57,5 +57,5 @@ def create_fake_homes(train, num_homes, num_appliance):
         for j in range(num_appliance):
             permu = np.random.permutation(range(8))
             for k in range(8):
-                fake_home[i][app_id[j]][k*14:(k+1)*14] = train[home_id[i]][app_id[j]][d[k]*14:(d[k]+1)*14]
+                fake_home[i][app_id[j]][k*14:(k+1)*14] = train[home_id[i]][app_id[j]][permu[k]*14:(permu[k]+1)*14]
     return fake_home

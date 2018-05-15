@@ -1,5 +1,4 @@
 #!bin/bash
-
 while true
 do
 	now=$(date)

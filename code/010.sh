@@ -1,74 +1,4 @@
 #!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw fridge residual mw dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw fridge residual mw dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw fridge residual mw dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr fridge mw residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr fridge mw residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr fridge mw residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr fridge residual mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr fridge residual mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr fridge residual mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr mw fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr mw fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr mw fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr mw residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr mw residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr mw residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr residual fridge mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr residual fridge mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr residual fridge mw 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw dr residual mw fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw dr residual mw fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw dr residual mw fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw fridge dr residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw mw fridge dr residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw mw fridge dr residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw fridge residual dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw mw fridge residual dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw mw fridge residual dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw dr fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw mw dr fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw mw dr fridge residual 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw dr residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw mw dr residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw mw dr residual fridge 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw residual fridge dr 
-#!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac dw mw residual fridge dr 
-#!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac dw mw residual fridge dr 
 #!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac dw mw residual dr fridge 
@@ -289,8 +219,6 @@ CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual fridg
 #!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual fridge mw dw dr 
 #!bin/bash 
-CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual dr fridge mw dw 
-#!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual dr fridge mw dw 
 #!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual dr fridge mw dw 
@@ -298,3 +226,75 @@ CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual dr fr
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual dr dw fridge mw 
 #!bin/bash 
 CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual dr dw fridge mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw fridge dr dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual mw fridge dw dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual mw fridge dw dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw fridge dw dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual mw dr fridge dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual mw dr fridge dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw dr fridge dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual mw dr dw fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual mw dr dw fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw dr dw fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual mw dw fridge dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual mw dw fridge dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw dw fridge dr 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 hvac residual mw dw dr fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 hvac residual mw dw dr fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 hvac residual mw dw dr fridge 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr dw mw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr dw mw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr dw mw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr dw residual mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr dw residual mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr dw residual mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr mw dw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr mw dw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr mw dw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr mw residual dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr mw residual dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr mw residual dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr residual dw mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr residual dw mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr residual dw mw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dr residual mw dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dr residual mw dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.8 0 fridge hvac dr residual mw dw 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.2 0 fridge hvac dw dr mw residual 
+#!bin/bash 
+CUDA_VISIBLE_DEVICES=0 python cnn-tree.py 5 0.01 20000 0.4 0 fridge hvac dw dr mw residual 
