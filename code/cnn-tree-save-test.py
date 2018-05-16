@@ -283,12 +283,12 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 
 
-np.save('{}/valid-pred-{}.npy'.format(directory, ORDER), valid_fold)
-np.save('{}/valid-error-{}.npy'.format(directory, ORDER), valid_error)
+#np.save('{}/valid-pred-{}.npy'.format(directory, ORDER), valid_fold)
+#np.save('{}/valid-error-{}.npy'.format(directory, ORDER), valid_error)
 #np.save('{}/valid-losses-{}.npy'.format(directory, ORDER), valid_losses)
 #np.save('{}/train-pred-{}.npy'.format(directory, ORDER), train_fold)
 #np.save('{}/train-error-{}.npy'.format(directory, ORDER), train_error)
 #np.save('{}/train-losses-{}.npy'.format(directory, ORDER), train_losses)
-#np.save('{}/test-pred-{}.npy'.format(directory, ORDER), test_fold)
+np.save('{}/test-pred-{}.npy'.format(directory, ORDER), test_fold)
 np.save('{}/test-error-{}.npy'.format(directory, ORDER), test_error)
 #np.save('{}/test-losses-{}.npy'.format(directory, ORDER), test_losses)

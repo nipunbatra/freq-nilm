@@ -4204,3 +4204,1439 @@ Traceback (most recent call last):
   File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
     return f(input, weight, bias)
 RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'mw', 'fridge', 'residual']
+Round: 500 Training Error: 137.93600463867188 Validation Error: 193.895263671875 Test Error: 158.73553466796875
+Round: 1000 Training Error: 159.6362762451172 Validation Error: 189.3563690185547 Test Error: 152.1595458984375
+Round: 1500 Training Error: 121.6048355102539 Validation Error: 187.3216094970703 Test Error: 151.7872772216797
+Round: 2000 Training Error: 153.75076293945312 Validation Error: 180.6796875 Test Error: 144.9259033203125
+Round: 2500 Training Error: 152.61566162109375 Validation Error: 181.12811279296875 Test Error: 145.11297607421875
+Round: 3000 Training Error: 107.27478790283203 Validation Error: 180.63241577148438 Test Error: 143.4499969482422
+Round: 3500 Training Error: 109.45758056640625 Validation Error: 178.45089721679688 Test Error: 138.62733459472656
+Round: 4000 Training Error: 106.77041625976562 Validation Error: 180.59226989746094 Test Error: 142.52699279785156
+Round: 4500 Training Error: 105.81112670898438 Validation Error: 181.81057739257812 Test Error: 147.02182006835938
+Round: 5000 Training Error: 146.65269470214844 Validation Error: 181.6057891845703 Test Error: 144.94979858398438
+Round: 5500 Training Error: 103.78417205810547 Validation Error: 181.61444091796875 Test Error: 145.12527465820312
+Round: 6000 Training Error: 104.39603424072266 Validation Error: 183.44326782226562 Test Error: 149.2166290283203
+Round: 6500 Training Error: 103.75335693359375 Validation Error: 180.75592041015625 Test Error: 145.39718627929688
+Round: 7000 Training Error: 102.39555358886719 Validation Error: 179.55514526367188 Test Error: 141.52281188964844
+Round: 7500 Training Error: 101.51911163330078 Validation Error: 179.60118103027344 Test Error: 141.33416748046875
+Round: 8000 Training Error: 102.53990936279297 Validation Error: 186.65774536132812 Test Error: 152.85813903808594
+Round: 8500 Training Error: 144.90386962890625 Validation Error: 180.23098754882812 Test Error: 144.26605224609375
+Round: 9000 Training Error: 103.16981506347656 Validation Error: 181.0557403564453 Test Error: 144.44212341308594
+Round: 9500 Training Error: 100.27176666259766 Validation Error: 178.9100341796875 Test Error: 139.8590850830078
+Round: 10000 Training Error: 145.7724609375 Validation Error: 178.3043212890625 Test Error: 139.10836791992188
+Round: 10500 Training Error: 144.389892578125 Validation Error: 181.40711975097656 Test Error: 144.3717041015625
+Round: 11000 Training Error: 144.4732208251953 Validation Error: 179.0110626220703 Test Error: 140.83416748046875
+Round: 11500 Training Error: 100.86573028564453 Validation Error: 179.2631072998047 Test Error: 139.36578369140625
+Round: 12000 Training Error: 102.52079010009766 Validation Error: 178.7440185546875 Test Error: 137.3345947265625
+Round: 12500 Training Error: 144.2961883544922 Validation Error: 179.3232421875 Test Error: 140.83392333984375
+Round: 13000 Training Error: 144.63037109375 Validation Error: 177.71165466308594 Test Error: 135.16766357421875
+Round: 13500 Training Error: 99.63098907470703 Validation Error: 181.15232849121094 Test Error: 139.5417022705078
+Round: 14000 Training Error: 143.3191680908203 Validation Error: 181.97628784179688 Test Error: 142.1670684814453
+Round: 14500 Training Error: 142.74488830566406 Validation Error: 180.6997833251953 Test Error: 138.9179229736328
+Round: 15000 Training Error: 141.68470764160156 Validation Error: 182.86279296875 Test Error: 140.97018432617188
+Round: 15500 Training Error: 100.84249114990234 Validation Error: 183.84228515625 Test Error: 143.61012268066406
+Round: 16000 Training Error: 148.76010131835938 Validation Error: 188.41448974609375 Test Error: 149.96832275390625
+Round: 16500 Training Error: 100.90145874023438 Validation Error: 186.5755615234375 Test Error: 145.32925415039062
+Round: 17000 Training Error: 99.63191986083984 Validation Error: 180.08755493164062 Test Error: 140.21920776367188
+Round: 17500 Training Error: 99.1139144897461 Validation Error: 185.1814422607422 Test Error: 143.79408264160156
+Round: 18000 Training Error: 99.72195434570312 Validation Error: 184.56411743164062 Test Error: 143.9456329345703
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'mw', 'fridge', 'residual']
+Round: 500 Training Error: 159.05978393554688 Validation Error: 198.1745147705078 Test Error: 166.64085388183594
+Round: 1000 Training Error: 148.13717651367188 Validation Error: 196.35801696777344 Test Error: 164.35353088378906
+Round: 1500 Training Error: 142.7606201171875 Validation Error: 194.51138305664062 Test Error: 162.39031982421875
+Round: 2000 Training Error: 139.93955993652344 Validation Error: 196.64727783203125 Test Error: 164.31369018554688
+Round: 2500 Training Error: 138.2594451904297 Validation Error: 194.84609985351562 Test Error: 161.89300537109375
+Round: 3000 Training Error: 139.08700561523438 Validation Error: 191.54367065429688 Test Error: 157.2107696533203
+Round: 3500 Training Error: 137.1932830810547 Validation Error: 194.94854736328125 Test Error: 160.58892822265625
+Round: 4000 Training Error: 122.53601837158203 Validation Error: 196.1792755126953 Test Error: 160.37982177734375
+Round: 4500 Training Error: 135.7587127685547 Validation Error: 194.01959228515625 Test Error: 158.1331787109375
+Round: 5000 Training Error: 134.44732666015625 Validation Error: 197.05441284179688 Test Error: 165.31658935546875
+Round: 5500 Training Error: 134.5909423828125 Validation Error: 198.87576293945312 Test Error: 166.42431640625
+Round: 6000 Training Error: 136.86172485351562 Validation Error: 193.14321899414062 Test Error: 158.16433715820312
+Round: 6500 Training Error: 132.6248779296875 Validation Error: 198.2510528564453 Test Error: 166.5557098388672
+Round: 7000 Training Error: 134.15777587890625 Validation Error: 191.34857177734375 Test Error: 153.5738525390625
+Round: 7500 Training Error: 119.7804183959961 Validation Error: 198.511474609375 Test Error: 159.81251525878906
+Round: 8000 Training Error: 132.39236450195312 Validation Error: 192.94345092773438 Test Error: 157.01853942871094
+Round: 8500 Training Error: 130.35089111328125 Validation Error: 196.0177459716797 Test Error: 161.41098022460938
+Round: 9000 Training Error: 132.78131103515625 Validation Error: 195.32986450195312 Test Error: 160.0432891845703
+Round: 9500 Training Error: 117.87848663330078 Validation Error: 199.6614532470703 Test Error: 159.84906005859375
+Round: 10000 Training Error: 131.2897186279297 Validation Error: 192.81817626953125 Test Error: 153.92417907714844
+Round: 10500 Training Error: 129.22900390625 Validation Error: 199.29055786132812 Test Error: 162.2670135498047
+Round: 11000 Training Error: 130.7511444091797 Validation Error: 194.66720581054688 Test Error: 159.5687713623047
+Round: 11500 Training Error: 133.421630859375 Validation Error: 194.2786102294922 Test Error: 151.28277587890625
+Round: 12000 Training Error: 130.9250030517578 Validation Error: 196.24819946289062 Test Error: 160.43063354492188
+Round: 12500 Training Error: 127.16264343261719 Validation Error: 199.3291015625 Test Error: 160.62619018554688
+Round: 13000 Training Error: 127.129150390625 Validation Error: 198.91360473632812 Test Error: 160.68954467773438
+Round: 13500 Training Error: 126.97066497802734 Validation Error: 199.9999542236328 Test Error: 159.5141143798828
+Round: 14000 Training Error: 128.9156036376953 Validation Error: 197.06166076660156 Test Error: 157.14662170410156
+Round: 14500 Training Error: 127.23101806640625 Validation Error: 195.32081604003906 Test Error: 156.33255004882812
+Round: 15000 Training Error: 127.3251953125 Validation Error: 201.4549560546875 Test Error: 160.22813415527344
+Round: 15500 Training Error: 111.87445068359375 Validation Error: 197.60267639160156 Test Error: 157.29635620117188
+Round: 16000 Training Error: 128.87808227539062 Validation Error: 197.32208251953125 Test Error: 157.42025756835938
+Round: 16500 Training Error: 114.10179138183594 Validation Error: 195.8673095703125 Test Error: 154.85968017578125
+Round: 17000 Training Error: 128.76846313476562 Validation Error: 197.51632690429688 Test Error: 157.25192260742188
+Round: 17500 Training Error: 116.85283660888672 Validation Error: 198.73211669921875 Test Error: 162.98385620117188
+Round: 18000 Training Error: 129.36102294921875 Validation Error: 197.6993865966797 Test Error: 159.7803955078125
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'dw', 'mw', 'residual', 'fridge']
+Round: 500 Training Error: 133.9090118408203 Validation Error: 190.7909393310547 Test Error: 152.9266815185547
+Round: 1000 Training Error: 163.1027069091797 Validation Error: 185.53033447265625 Test Error: 145.87408447265625
+Round: 1500 Training Error: 113.64315795898438 Validation Error: 178.38803100585938 Test Error: 136.18653869628906
+Round: 2000 Training Error: 104.90504455566406 Validation Error: 176.13201904296875 Test Error: 136.2545166015625
+Round: 2500 Training Error: 103.85578918457031 Validation Error: 176.97451782226562 Test Error: 136.999755859375
+Round: 3000 Training Error: 102.42611694335938 Validation Error: 177.15296936035156 Test Error: 137.7401123046875
+Round: 3500 Training Error: 100.72454833984375 Validation Error: 177.27005004882812 Test Error: 138.12518310546875
+Round: 4000 Training Error: 101.79322052001953 Validation Error: 177.08682250976562 Test Error: 136.828369140625
+Round: 4500 Training Error: 102.5298843383789 Validation Error: 177.77130126953125 Test Error: 136.9865264892578
+Round: 5000 Training Error: 99.28868865966797 Validation Error: 178.19235229492188 Test Error: 139.36744689941406
+Round: 5500 Training Error: 100.7921142578125 Validation Error: 177.091064453125 Test Error: 139.70436096191406
+Round: 6000 Training Error: 99.36106872558594 Validation Error: 181.91879272460938 Test Error: 144.46910095214844
+Round: 6500 Training Error: 99.93245697021484 Validation Error: 180.0149383544922 Test Error: 147.89479064941406
+Round: 7000 Training Error: 101.64984893798828 Validation Error: 179.0758819580078 Test Error: 139.9736785888672
+Round: 7500 Training Error: 103.5821304321289 Validation Error: 181.2739715576172 Test Error: 140.32455444335938
+Round: 8000 Training Error: 99.69776153564453 Validation Error: 188.01904296875 Test Error: 144.0174102783203
+Round: 8500 Training Error: 150.82826232910156 Validation Error: 184.3936309814453 Test Error: 141.27691650390625
+Round: 9000 Training Error: 99.43649291992188 Validation Error: 186.9223175048828 Test Error: 144.8250732421875
+Round: 9500 Training Error: 99.43172454833984 Validation Error: 188.94845581054688 Test Error: 145.3082275390625
+Round: 10000 Training Error: 111.06585693359375 Validation Error: 177.5597381591797 Test Error: 139.46400451660156
+Round: 10500 Training Error: 149.3676300048828 Validation Error: 177.7513427734375 Test Error: 142.02224731445312
+Round: 11000 Training Error: 99.22941589355469 Validation Error: 177.62289428710938 Test Error: 143.7220001220703
+Round: 11500 Training Error: 99.46854400634766 Validation Error: 180.2151641845703 Test Error: 146.0622100830078
+Round: 12000 Training Error: 98.25534057617188 Validation Error: 179.03225708007812 Test Error: 144.26951599121094
+Round: 12500 Training Error: 149.00657653808594 Validation Error: 181.72837829589844 Test Error: 149.78480529785156
+Round: 13000 Training Error: 147.98812866210938 Validation Error: 180.5873260498047 Test Error: 148.78594970703125
+Round: 13500 Training Error: 145.2491455078125 Validation Error: 188.30917358398438 Test Error: 150.19215393066406
+Round: 14000 Training Error: 137.42385864257812 Validation Error: 186.16555786132812 Test Error: 149.7617645263672
+Round: 14500 Training Error: 160.92178344726562 Validation Error: 181.9606170654297 Test Error: 147.71546936035156
+Round: 15000 Training Error: 158.291748046875 Validation Error: 180.63821411132812 Test Error: 143.7093048095703
+Round: 15500 Training Error: 109.22422790527344 Validation Error: 180.20045471191406 Test Error: 142.0362091064453
+Round: 16000 Training Error: 107.07250213623047 Validation Error: 180.4499969482422 Test Error: 140.4615936279297
+Round: 16500 Training Error: 108.30244445800781 Validation Error: 180.0082244873047 Test Error: 138.0165252685547
+Round: 17000 Training Error: 117.0171890258789 Validation Error: 182.83717346191406 Test Error: 142.48336791992188
+Round: 17500 Training Error: 107.30738067626953 Validation Error: 180.3603973388672 Test Error: 135.87887573242188
+Round: 18000 Training Error: 106.5750961303711 Validation Error: 180.71380615234375 Test Error: 134.9604034423828
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'mw', 'residual', 'fridge']
+Round: 500 Training Error: 136.74029541015625 Validation Error: 192.15744018554688 Test Error: 153.86805725097656
+Round: 1000 Training Error: 158.112060546875 Validation Error: 190.04092407226562 Test Error: 152.63372802734375
+Round: 1500 Training Error: 119.15364837646484 Validation Error: 185.9857635498047 Test Error: 147.35142517089844
+Round: 2000 Training Error: 152.78009033203125 Validation Error: 181.4868927001953 Test Error: 143.06736755371094
+Round: 2500 Training Error: 153.91236877441406 Validation Error: 180.5834197998047 Test Error: 140.5369873046875
+Round: 3000 Training Error: 121.32819366455078 Validation Error: 183.0810089111328 Test Error: 143.76576232910156
+Round: 3500 Training Error: 109.49394989013672 Validation Error: 179.1954803466797 Test Error: 138.655029296875
+Round: 4000 Training Error: 108.86502075195312 Validation Error: 180.51852416992188 Test Error: 140.91226196289062
+Round: 4500 Training Error: 106.29670715332031 Validation Error: 180.87423706054688 Test Error: 142.61891174316406
+Round: 5000 Training Error: 146.7079315185547 Validation Error: 183.1318817138672 Test Error: 143.5274200439453
+Round: 5500 Training Error: 106.14007568359375 Validation Error: 180.95375061035156 Test Error: 140.63002014160156
+Round: 6000 Training Error: 104.72827911376953 Validation Error: 182.20907592773438 Test Error: 143.08779907226562
+Round: 6500 Training Error: 104.73257446289062 Validation Error: 181.6067352294922 Test Error: 140.78001403808594
+Round: 7000 Training Error: 103.83236694335938 Validation Error: 180.8527069091797 Test Error: 140.95957946777344
+Round: 7500 Training Error: 102.84529113769531 Validation Error: 181.90550231933594 Test Error: 142.9931182861328
+Round: 8000 Training Error: 103.55947875976562 Validation Error: 184.00152587890625 Test Error: 145.89620971679688
+Round: 8500 Training Error: 143.45716857910156 Validation Error: 183.82093811035156 Test Error: 143.872314453125
+Round: 9000 Training Error: 104.0748519897461 Validation Error: 184.3736572265625 Test Error: 145.7250518798828
+Round: 9500 Training Error: 101.85163879394531 Validation Error: 181.10906982421875 Test Error: 140.6293487548828
+Round: 10000 Training Error: 143.33216857910156 Validation Error: 181.71197509765625 Test Error: 141.218994140625
+Round: 10500 Training Error: 142.45668029785156 Validation Error: 183.49917602539062 Test Error: 144.03976440429688
+Round: 11000 Training Error: 144.16053771972656 Validation Error: 182.8740234375 Test Error: 141.38717651367188
+Round: 11500 Training Error: 101.16083526611328 Validation Error: 182.97406005859375 Test Error: 142.13995361328125
+Round: 12000 Training Error: 103.3012924194336 Validation Error: 182.13601684570312 Test Error: 140.9950408935547
+Round: 12500 Training Error: 143.24569702148438 Validation Error: 186.46092224121094 Test Error: 141.7940673828125
+Round: 13000 Training Error: 143.4794464111328 Validation Error: 184.37118530273438 Test Error: 142.26890563964844
+Round: 13500 Training Error: 100.61751556396484 Validation Error: 184.57534790039062 Test Error: 142.7658233642578
+Round: 14000 Training Error: 141.1710968017578 Validation Error: 184.59877014160156 Test Error: 142.85765075683594
+Round: 14500 Training Error: 143.3115234375 Validation Error: 182.0879669189453 Test Error: 140.99147033691406
+Round: 15000 Training Error: 150.73800659179688 Validation Error: 181.03001403808594 Test Error: 139.7259979248047
+Round: 15500 Training Error: 100.61126708984375 Validation Error: 185.65342712402344 Test Error: 145.6815948486328
+Round: 16000 Training Error: 144.9834747314453 Validation Error: 186.93560791015625 Test Error: 149.22386169433594
+Round: 16500 Training Error: 99.52642822265625 Validation Error: 186.3346405029297 Test Error: 148.2196502685547
+Round: 17000 Training Error: 106.65596771240234 Validation Error: 187.099853515625 Test Error: 149.03231811523438
+Round: 17500 Training Error: 100.29826354980469 Validation Error: 184.40545654296875 Test Error: 144.5340118408203
+Round: 18000 Training Error: 98.90584564208984 Validation Error: 185.8064727783203 Test Error: 147.44541931152344
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'mw', 'residual', 'fridge']
+Round: 500 Training Error: 159.7552947998047 Validation Error: 197.90219116210938 Test Error: 161.4220733642578
+Round: 1000 Training Error: 149.3597412109375 Validation Error: 196.4357452392578 Test Error: 163.13870239257812
+Round: 1500 Training Error: 144.5720672607422 Validation Error: 197.11488342285156 Test Error: 161.49716186523438
+Round: 2000 Training Error: 140.99598693847656 Validation Error: 195.52780151367188 Test Error: 161.7642822265625
+Round: 2500 Training Error: 140.13636779785156 Validation Error: 197.48965454101562 Test Error: 166.0959014892578
+Round: 3000 Training Error: 139.7069854736328 Validation Error: 192.31834411621094 Test Error: 159.3544464111328
+Round: 3500 Training Error: 137.97894287109375 Validation Error: 193.70223999023438 Test Error: 160.4058074951172
+Round: 4000 Training Error: 124.29997253417969 Validation Error: 197.1397247314453 Test Error: 163.63206481933594
+Round: 4500 Training Error: 135.66725158691406 Validation Error: 197.75225830078125 Test Error: 164.96934509277344
+Round: 5000 Training Error: 135.276123046875 Validation Error: 197.57066345214844 Test Error: 165.30702209472656
+Round: 5500 Training Error: 135.79856872558594 Validation Error: 196.68800354003906 Test Error: 161.6343536376953
+Round: 6000 Training Error: 136.4739990234375 Validation Error: 195.51058959960938 Test Error: 160.3986053466797
+Round: 6500 Training Error: 134.6785430908203 Validation Error: 198.68307495117188 Test Error: 162.85604858398438
+Round: 7000 Training Error: 135.32550048828125 Validation Error: 193.81369018554688 Test Error: 159.6732635498047
+Round: 7500 Training Error: 120.97828674316406 Validation Error: 197.21566772460938 Test Error: 163.07273864746094
+Round: 8000 Training Error: 136.0963592529297 Validation Error: 194.28326416015625 Test Error: 159.36273193359375
+Round: 8500 Training Error: 133.49684143066406 Validation Error: 196.86688232421875 Test Error: 160.60923767089844
+Round: 9000 Training Error: 140.60031127929688 Validation Error: 196.29550170898438 Test Error: 156.21971130371094
+Round: 9500 Training Error: 121.38213348388672 Validation Error: 197.95643615722656 Test Error: 161.80520629882812
+Round: 10000 Training Error: 135.44351196289062 Validation Error: 192.61410522460938 Test Error: 155.85556030273438
+Round: 10500 Training Error: 134.3994903564453 Validation Error: 196.35585021972656 Test Error: 156.86874389648438
+Round: 11000 Training Error: 131.80264282226562 Validation Error: 194.4971160888672 Test Error: 156.10604858398438
+Round: 11500 Training Error: 135.34739685058594 Validation Error: 191.0164794921875 Test Error: 151.45729064941406
+Round: 12000 Training Error: 136.5307159423828 Validation Error: 193.2154998779297 Test Error: 153.26516723632812
+Round: 12500 Training Error: 128.33677673339844 Validation Error: 197.84695434570312 Test Error: 159.2705078125
+Round: 13000 Training Error: 129.36380004882812 Validation Error: 195.19863891601562 Test Error: 158.06976318359375
+Round: 13500 Training Error: 128.1878204345703 Validation Error: 196.33685302734375 Test Error: 157.22695922851562
+Round: 14000 Training Error: 129.83755493164062 Validation Error: 194.26718139648438 Test Error: 155.3590087890625
+Round: 14500 Training Error: 127.7112045288086 Validation Error: 196.8240966796875 Test Error: 158.76914978027344
+Round: 15000 Training Error: 127.1624755859375 Validation Error: 198.78961181640625 Test Error: 160.15501403808594
+Round: 15500 Training Error: 121.87792205810547 Validation Error: 203.1029510498047 Test Error: 161.0928497314453
+Round: 16000 Training Error: 135.7921905517578 Validation Error: 189.70709228515625 Test Error: 153.1824951171875
+Round: 16500 Training Error: 119.85198974609375 Validation Error: 191.00839233398438 Test Error: 153.58981323242188
+Round: 17000 Training Error: 131.26771545410156 Validation Error: 194.89141845703125 Test Error: 154.9646453857422
+Round: 17500 Training Error: 119.98979949951172 Validation Error: 194.27484130859375 Test Error: 156.21673583984375
+Round: 18000 Training Error: 129.27828979492188 Validation Error: 192.87693786621094 Test Error: 153.09268188476562
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 133.6370849609375 Validation Error: 191.82879638671875 Test Error: 154.57090759277344
+Round: 1000 Training Error: 163.3240203857422 Validation Error: 187.84344482421875 Test Error: 150.5408935546875
+Round: 1500 Training Error: 115.21633911132812 Validation Error: 182.75218200683594 Test Error: 145.20040893554688
+Round: 2000 Training Error: 107.09037780761719 Validation Error: 178.82537841796875 Test Error: 139.44175720214844
+Round: 2500 Training Error: 104.34479522705078 Validation Error: 180.87271118164062 Test Error: 141.36416625976562
+Round: 3000 Training Error: 102.71434020996094 Validation Error: 181.00723266601562 Test Error: 142.28134155273438
+Round: 3500 Training Error: 102.007080078125 Validation Error: 181.3080596923828 Test Error: 141.8269805908203
+Round: 4000 Training Error: 103.75419616699219 Validation Error: 181.88995361328125 Test Error: 142.44918823242188
+Round: 4500 Training Error: 101.99507141113281 Validation Error: 184.29002380371094 Test Error: 144.4796905517578
+Round: 5000 Training Error: 101.22537994384766 Validation Error: 183.44802856445312 Test Error: 144.16053771972656
+Round: 5500 Training Error: 101.97038269042969 Validation Error: 183.79225158691406 Test Error: 142.0715789794922
+Round: 6000 Training Error: 99.58773803710938 Validation Error: 182.98353576660156 Test Error: 143.33880615234375
+Round: 6500 Training Error: 106.97830963134766 Validation Error: 179.55332946777344 Test Error: 138.17123413085938
+Round: 7000 Training Error: 98.86666107177734 Validation Error: 182.59202575683594 Test Error: 142.03611755371094
+Round: 7500 Training Error: 101.47821807861328 Validation Error: 183.79676818847656 Test Error: 145.12998962402344
+Round: 8000 Training Error: 98.1191635131836 Validation Error: 182.3886260986328 Test Error: 142.61968994140625
+Round: 8500 Training Error: 151.72274780273438 Validation Error: 182.29225158691406 Test Error: 141.00999450683594
+Round: 9000 Training Error: 98.68360137939453 Validation Error: 184.23892211914062 Test Error: 144.76812744140625
+Round: 9500 Training Error: 99.62242126464844 Validation Error: 183.58926391601562 Test Error: 141.94854736328125
+Round: 10000 Training Error: 98.79570007324219 Validation Error: 184.26553344726562 Test Error: 145.1219482421875
+Round: 10500 Training Error: 149.90777587890625 Validation Error: 183.78176879882812 Test Error: 143.73741149902344
+Round: 11000 Training Error: 98.59573364257812 Validation Error: 182.079833984375 Test Error: 141.62203979492188
+Round: 11500 Training Error: 97.54963684082031 Validation Error: 184.23585510253906 Test Error: 144.4374237060547
+Round: 12000 Training Error: 98.58480834960938 Validation Error: 180.5218048095703 Test Error: 138.4488525390625
+Round: 12500 Training Error: 149.1714324951172 Validation Error: 183.31053161621094 Test Error: 142.21534729003906
+Round: 13000 Training Error: 150.110107421875 Validation Error: 183.672119140625 Test Error: 144.45018005371094
+Round: 13500 Training Error: 96.82014465332031 Validation Error: 183.16693115234375 Test Error: 142.59542846679688
+Round: 14000 Training Error: 97.40097045898438 Validation Error: 182.38880920410156 Test Error: 141.50860595703125
+Round: 14500 Training Error: 147.36990356445312 Validation Error: 183.3873748779297 Test Error: 143.1963653564453
+Round: 15000 Training Error: 147.6624298095703 Validation Error: 184.38467407226562 Test Error: 143.17681884765625
+Round: 15500 Training Error: 96.6620101928711 Validation Error: 182.56373596191406 Test Error: 141.3186492919922
+Round: 16000 Training Error: 96.46244812011719 Validation Error: 183.14146423339844 Test Error: 142.45692443847656
+Round: 16500 Training Error: 98.67093658447266 Validation Error: 186.2093963623047 Test Error: 142.96937561035156
+Round: 17000 Training Error: 105.66097259521484 Validation Error: 184.5487518310547 Test Error: 144.4092254638672
+Round: 17500 Training Error: 96.6780776977539 Validation Error: 185.74732971191406 Test Error: 143.44390869140625
+Round: 18000 Training Error: 97.95899963378906 Validation Error: 185.33953857421875 Test Error: 144.0826873779297
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 137.60655212402344 Validation Error: 194.49134826660156 Test Error: 155.57913208007812
+Round: 1000 Training Error: 157.65066528320312 Validation Error: 190.2296905517578 Test Error: 154.08023071289062
+Round: 1500 Training Error: 123.41885375976562 Validation Error: 188.73988342285156 Test Error: 150.63706970214844
+Round: 2000 Training Error: 151.04180908203125 Validation Error: 182.30250549316406 Test Error: 147.41250610351562
+Round: 2500 Training Error: 149.66607666015625 Validation Error: 180.23593139648438 Test Error: 142.2738800048828
+Round: 3000 Training Error: 114.0807876586914 Validation Error: 185.0935516357422 Test Error: 147.10284423828125
+Round: 3500 Training Error: 108.73060607910156 Validation Error: 182.91232299804688 Test Error: 143.1432342529297
+Round: 4000 Training Error: 108.43951416015625 Validation Error: 183.634765625 Test Error: 146.69180297851562
+Round: 4500 Training Error: 106.63452911376953 Validation Error: 184.60623168945312 Test Error: 147.68490600585938
+Round: 5000 Training Error: 146.218017578125 Validation Error: 186.07901000976562 Test Error: 150.29629516601562
+Round: 5500 Training Error: 106.1295394897461 Validation Error: 184.21604919433594 Test Error: 144.3698272705078
+Round: 6000 Training Error: 106.64116668701172 Validation Error: 187.7709197998047 Test Error: 152.29269409179688
+Round: 6500 Training Error: 104.29684448242188 Validation Error: 185.8612823486328 Test Error: 146.9213409423828
+Round: 7000 Training Error: 103.68453216552734 Validation Error: 185.628173828125 Test Error: 147.9365234375
+Round: 7500 Training Error: 103.55152893066406 Validation Error: 185.96641540527344 Test Error: 145.9028778076172
+Round: 8000 Training Error: 105.3358383178711 Validation Error: 186.64459228515625 Test Error: 150.83041381835938
+Round: 8500 Training Error: 143.63792419433594 Validation Error: 186.2113494873047 Test Error: 149.02142333984375
+Round: 9000 Training Error: 104.48164367675781 Validation Error: 187.8173828125 Test Error: 150.1107635498047
+Round: 9500 Training Error: 102.14318084716797 Validation Error: 186.84719848632812 Test Error: 148.7870635986328
+Round: 10000 Training Error: 142.77427673339844 Validation Error: 186.49737548828125 Test Error: 149.01559448242188
+Round: 10500 Training Error: 142.41571044921875 Validation Error: 188.13026428222656 Test Error: 151.031005859375
+Round: 11000 Training Error: 141.27769470214844 Validation Error: 187.19369506835938 Test Error: 148.61488342285156
+Round: 11500 Training Error: 102.19970703125 Validation Error: 185.71954345703125 Test Error: 144.2628173828125
+Round: 12000 Training Error: 101.47824096679688 Validation Error: 186.3451385498047 Test Error: 146.39414978027344
+Round: 12500 Training Error: 143.78416442871094 Validation Error: 189.46994018554688 Test Error: 151.74571228027344
+Round: 13000 Training Error: 143.37704467773438 Validation Error: 185.00465393066406 Test Error: 146.17129516601562
+Round: 13500 Training Error: 101.7732925415039 Validation Error: 189.67135620117188 Test Error: 152.32879638671875
+Round: 14000 Training Error: 141.12208557128906 Validation Error: 187.60137939453125 Test Error: 150.07981872558594
+Round: 14500 Training Error: 141.7712860107422 Validation Error: 189.46737670898438 Test Error: 152.11590576171875
+Round: 15000 Training Error: 141.28274536132812 Validation Error: 186.43234252929688 Test Error: 148.04666137695312
+Round: 15500 Training Error: 102.81523132324219 Validation Error: 185.69927978515625 Test Error: 144.7875518798828
+Round: 16000 Training Error: 142.32276916503906 Validation Error: 190.29408264160156 Test Error: 153.34072875976562
+Round: 16500 Training Error: 101.64175415039062 Validation Error: 189.46823120117188 Test Error: 150.7686767578125
+Round: 17000 Training Error: 104.73329162597656 Validation Error: 189.0216064453125 Test Error: 148.12649536132812
+Round: 17500 Training Error: 101.23123168945312 Validation Error: 187.8656768798828 Test Error: 148.45787048339844
+Round: 18000 Training Error: 101.55164337158203 Validation Error: 186.81886291503906 Test Error: 147.1577606201172
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'residual', 'fridge', 'mw']
+Round: 500 Training Error: 159.08128356933594 Validation Error: 199.42953491210938 Test Error: 165.41082763671875
+Round: 1000 Training Error: 148.23931884765625 Validation Error: 199.21034240722656 Test Error: 167.14425659179688
+Round: 1500 Training Error: 143.81207275390625 Validation Error: 196.69468688964844 Test Error: 160.1407012939453
+Round: 2000 Training Error: 139.81321716308594 Validation Error: 198.38194274902344 Test Error: 161.9288787841797
+Round: 2500 Training Error: 138.942138671875 Validation Error: 197.060791015625 Test Error: 161.8302764892578
+Round: 3000 Training Error: 139.7169647216797 Validation Error: 193.27609252929688 Test Error: 158.22760009765625
+Round: 3500 Training Error: 139.71798706054688 Validation Error: 195.63555908203125 Test Error: 159.77178955078125
+Round: 4000 Training Error: 124.16592407226562 Validation Error: 195.052978515625 Test Error: 159.46018981933594
+Round: 4500 Training Error: 135.25607299804688 Validation Error: 197.86582946777344 Test Error: 163.99758911132812
+Round: 5000 Training Error: 134.65081787109375 Validation Error: 198.00108337402344 Test Error: 163.6234130859375
+Round: 5500 Training Error: 134.5054931640625 Validation Error: 195.83859252929688 Test Error: 161.68994140625
+Round: 6000 Training Error: 136.0231170654297 Validation Error: 196.12750244140625 Test Error: 161.12289428710938
+Round: 6500 Training Error: 133.37449645996094 Validation Error: 201.10130310058594 Test Error: 166.1441192626953
+Round: 7000 Training Error: 134.48377990722656 Validation Error: 197.46554565429688 Test Error: 163.6114501953125
+Round: 7500 Training Error: 120.8707275390625 Validation Error: 195.9710693359375 Test Error: 162.80496215820312
+Round: 8000 Training Error: 133.31825256347656 Validation Error: 195.37855529785156 Test Error: 160.58560180664062
+Round: 8500 Training Error: 132.15692138671875 Validation Error: 199.06951904296875 Test Error: 165.64019775390625
+Round: 9000 Training Error: 132.5316162109375 Validation Error: 194.67457580566406 Test Error: 159.33404541015625
+Round: 9500 Training Error: 122.38590240478516 Validation Error: 198.15219116210938 Test Error: 160.466552734375
+Round: 10000 Training Error: 132.8336944580078 Validation Error: 190.87477111816406 Test Error: 156.7018280029297
+Round: 10500 Training Error: 129.89254760742188 Validation Error: 196.53091430664062 Test Error: 159.30160522460938
+Round: 11000 Training Error: 130.983154296875 Validation Error: 195.09947204589844 Test Error: 158.23187255859375
+Round: 11500 Training Error: 130.71241760253906 Validation Error: 195.50759887695312 Test Error: 156.1457977294922
+Round: 12000 Training Error: 131.9676055908203 Validation Error: 192.999755859375 Test Error: 158.40084838867188
+Round: 12500 Training Error: 128.11354064941406 Validation Error: 195.79232788085938 Test Error: 158.42674255371094
+Round: 13000 Training Error: 130.18511962890625 Validation Error: 194.58868408203125 Test Error: 159.76661682128906
+Round: 13500 Training Error: 128.1401824951172 Validation Error: 196.52841186523438 Test Error: 158.0946502685547
+Round: 14000 Training Error: 128.86669921875 Validation Error: 201.90431213378906 Test Error: 166.8501739501953
+Round: 14500 Training Error: 128.8405303955078 Validation Error: 201.2851104736328 Test Error: 166.2056427001953
+Round: 15000 Training Error: 127.82965850830078 Validation Error: 204.83087158203125 Test Error: 169.50657653808594
+Round: 15500 Training Error: 120.87570190429688 Validation Error: 202.01715087890625 Test Error: 163.22032165527344
+Round: 16000 Training Error: 128.8376007080078 Validation Error: 196.92604064941406 Test Error: 164.54498291015625
+Round: 16500 Training Error: 114.56891632080078 Validation Error: 195.72930908203125 Test Error: 161.86700439453125
+Round: 17000 Training Error: 130.0813751220703 Validation Error: 200.55677795410156 Test Error: 161.09117126464844
+Round: 17500 Training Error: 118.29021453857422 Validation Error: 199.4940643310547 Test Error: 162.84347534179688
+Round: 18000 Training Error: 134.17056274414062 Validation Error: 194.6525115966797 Test Error: 155.17623901367188
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 133.1700897216797 Validation Error: 190.16693115234375 Test Error: 154.98135375976562
+Round: 1000 Training Error: 161.9833984375 Validation Error: 185.0583953857422 Test Error: 148.86094665527344
+Round: 1500 Training Error: 112.64170837402344 Validation Error: 181.36276245117188 Test Error: 144.04022216796875
+Round: 2000 Training Error: 106.17423248291016 Validation Error: 177.71937561035156 Test Error: 138.81942749023438
+Round: 2500 Training Error: 104.49044799804688 Validation Error: 177.65939331054688 Test Error: 137.7358856201172
+Round: 3000 Training Error: 102.58096313476562 Validation Error: 177.00067138671875 Test Error: 137.52151489257812
+Round: 3500 Training Error: 100.70687866210938 Validation Error: 177.90179443359375 Test Error: 138.5526885986328
+Round: 4000 Training Error: 101.83074951171875 Validation Error: 177.04568481445312 Test Error: 137.7390899658203
+Round: 4500 Training Error: 100.6408920288086 Validation Error: 178.285888671875 Test Error: 138.41204833984375
+Round: 5000 Training Error: 100.96981048583984 Validation Error: 178.69627380371094 Test Error: 139.501708984375
+Round: 5500 Training Error: 102.29908752441406 Validation Error: 180.15484619140625 Test Error: 140.4231414794922
+Round: 6000 Training Error: 98.86237335205078 Validation Error: 179.5850372314453 Test Error: 140.4575958251953
+Round: 6500 Training Error: 100.14616394042969 Validation Error: 177.6441650390625 Test Error: 138.36068725585938
+Round: 7000 Training Error: 98.13359832763672 Validation Error: 178.35655212402344 Test Error: 139.27027893066406
+Round: 7500 Training Error: 99.83990478515625 Validation Error: 179.31800842285156 Test Error: 140.1154022216797
+Round: 8000 Training Error: 98.22991943359375 Validation Error: 179.1175537109375 Test Error: 140.0645294189453
+Round: 8500 Training Error: 149.3732452392578 Validation Error: 180.4821014404297 Test Error: 143.95411682128906
+Round: 9000 Training Error: 99.13838958740234 Validation Error: 181.61175537109375 Test Error: 143.31591796875
+Round: 9500 Training Error: 99.06948852539062 Validation Error: 180.9230194091797 Test Error: 142.142333984375
+Round: 10000 Training Error: 97.89026641845703 Validation Error: 180.35568237304688 Test Error: 142.38165283203125
+Round: 10500 Training Error: 148.4754638671875 Validation Error: 181.51296997070312 Test Error: 143.9480438232422
+Round: 11000 Training Error: 99.47659301757812 Validation Error: 181.8294677734375 Test Error: 144.77679443359375
+Round: 11500 Training Error: 97.9013671875 Validation Error: 183.2696990966797 Test Error: 146.94680786132812
+Round: 12000 Training Error: 97.07705688476562 Validation Error: 179.8456268310547 Test Error: 141.66419982910156
+Round: 12500 Training Error: 147.4633331298828 Validation Error: 183.79379272460938 Test Error: 144.96163940429688
+Round: 13000 Training Error: 148.0950469970703 Validation Error: 181.83966064453125 Test Error: 142.98243713378906
+Round: 13500 Training Error: 97.77471160888672 Validation Error: 182.95828247070312 Test Error: 145.45863342285156
+Round: 14000 Training Error: 97.0738754272461 Validation Error: 184.52874755859375 Test Error: 144.30410766601562
+Round: 14500 Training Error: 145.34671020507812 Validation Error: 183.71937561035156 Test Error: 145.41127014160156
+Round: 15000 Training Error: 145.86773681640625 Validation Error: 184.7504119873047 Test Error: 145.42457580566406
+Round: 15500 Training Error: 97.38697052001953 Validation Error: 182.53135681152344 Test Error: 143.30032348632812
+Round: 16000 Training Error: 95.99789428710938 Validation Error: 185.720947265625 Test Error: 146.86940002441406
+Round: 16500 Training Error: 99.12603759765625 Validation Error: 182.26766967773438 Test Error: 141.4375457763672
+Round: 17000 Training Error: 101.15625 Validation Error: 184.4783935546875 Test Error: 145.63720703125
+Round: 17500 Training Error: 97.73869323730469 Validation Error: 186.4776153564453 Test Error: 145.2144317626953
+Round: 18000 Training Error: 99.06086730957031 Validation Error: 187.07229614257812 Test Error: 146.8631591796875
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 138.4242401123047 Validation Error: 192.86328125 Test Error: 153.61256408691406
+Round: 1000 Training Error: 159.0142059326172 Validation Error: 189.23886108398438 Test Error: 151.44070434570312
+Round: 1500 Training Error: 120.16130065917969 Validation Error: 187.51055908203125 Test Error: 148.17855834960938
+Round: 2000 Training Error: 153.7102813720703 Validation Error: 182.83546447753906 Test Error: 144.07435607910156
+Round: 2500 Training Error: 152.03001403808594 Validation Error: 185.79974365234375 Test Error: 148.0369873046875
+Round: 3000 Training Error: 108.31451416015625 Validation Error: 182.3504638671875 Test Error: 143.5677490234375
+Round: 3500 Training Error: 108.31497192382812 Validation Error: 180.786376953125 Test Error: 139.05111694335938
+Round: 4000 Training Error: 108.66736602783203 Validation Error: 181.42567443847656 Test Error: 140.0233917236328
+Round: 4500 Training Error: 106.34176635742188 Validation Error: 181.0790557861328 Test Error: 140.02392578125
+Round: 5000 Training Error: 147.00621032714844 Validation Error: 182.15122985839844 Test Error: 142.57403564453125
+Round: 5500 Training Error: 105.31009674072266 Validation Error: 181.58526611328125 Test Error: 139.76602172851562
+Round: 6000 Training Error: 105.978515625 Validation Error: 183.95639038085938 Test Error: 143.421875
+Round: 6500 Training Error: 105.11617279052734 Validation Error: 183.77761840820312 Test Error: 141.76876831054688
+Round: 7000 Training Error: 103.62811279296875 Validation Error: 184.8157196044922 Test Error: 143.0287322998047
+Round: 7500 Training Error: 103.46089172363281 Validation Error: 186.21934509277344 Test Error: 144.24038696289062
+Round: 8000 Training Error: 105.11896514892578 Validation Error: 184.42654418945312 Test Error: 143.28842163085938
+Round: 8500 Training Error: 143.908935546875 Validation Error: 186.1400909423828 Test Error: 145.1661834716797
+Round: 9000 Training Error: 104.05862426757812 Validation Error: 186.65760803222656 Test Error: 147.5910186767578
+Round: 9500 Training Error: 102.96614837646484 Validation Error: 182.76812744140625 Test Error: 142.04464721679688
+Round: 10000 Training Error: 143.59243774414062 Validation Error: 183.86422729492188 Test Error: 143.36627197265625
+Round: 10500 Training Error: 143.3633270263672 Validation Error: 187.68161010742188 Test Error: 146.83676147460938
+Round: 11000 Training Error: 143.0129852294922 Validation Error: 182.8583984375 Test Error: 143.1122589111328
+Round: 11500 Training Error: 101.79280853271484 Validation Error: 184.21841430664062 Test Error: 142.6544189453125
+Round: 12000 Training Error: 101.52874755859375 Validation Error: 182.78396606445312 Test Error: 139.5985107421875
+Round: 12500 Training Error: 142.343505859375 Validation Error: 187.97447204589844 Test Error: 147.4088897705078
+Round: 13000 Training Error: 146.08908081054688 Validation Error: 188.68017578125 Test Error: 148.4547119140625
+Round: 13500 Training Error: 102.994140625 Validation Error: 184.6217803955078 Test Error: 144.55702209472656
+Round: 14000 Training Error: 145.7892608642578 Validation Error: 194.29464721679688 Test Error: 154.92027282714844
+Round: 14500 Training Error: 140.40647888183594 Validation Error: 188.1519317626953 Test Error: 148.6224365234375
+Round: 15000 Training Error: 141.97348022460938 Validation Error: 185.73634338378906 Test Error: 146.4789581298828
+Round: 15500 Training Error: 101.35681915283203 Validation Error: 189.24618530273438 Test Error: 149.92584228515625
+Round: 16000 Training Error: 144.25416564941406 Validation Error: 189.5294647216797 Test Error: 150.10595703125
+Round: 16500 Training Error: 100.9048843383789 Validation Error: 190.71209716796875 Test Error: 152.11294555664062
+Round: 17000 Training Error: 104.41361236572266 Validation Error: 184.7066192626953 Test Error: 146.1563720703125
+Round: 17500 Training Error: 101.05426788330078 Validation Error: 185.3654022216797 Test Error: 144.82452392578125
+Round: 18000 Training Error: 101.04286193847656 Validation Error: 185.21145629882812 Test Error: 144.36080932617188
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'dw', 'residual', 'mw', 'fridge']
+Round: 500 Training Error: 159.88699340820312 Validation Error: 197.8029022216797 Test Error: 165.1463623046875
+Round: 1000 Training Error: 149.5352020263672 Validation Error: 198.4185791015625 Test Error: 165.28561401367188
+Round: 1500 Training Error: 144.3303680419922 Validation Error: 191.62759399414062 Test Error: 159.18104553222656
+Round: 2000 Training Error: 140.1452178955078 Validation Error: 194.15077209472656 Test Error: 160.18531799316406
+Round: 2500 Training Error: 139.15609741210938 Validation Error: 193.71104431152344 Test Error: 160.40676879882812
+Round: 3000 Training Error: 138.92141723632812 Validation Error: 192.81515502929688 Test Error: 158.89381408691406
+Round: 3500 Training Error: 138.40235900878906 Validation Error: 198.08944702148438 Test Error: 161.26275634765625
+Round: 4000 Training Error: 123.5099105834961 Validation Error: 197.33529663085938 Test Error: 162.3550262451172
+Round: 4500 Training Error: 136.4633331298828 Validation Error: 197.09959411621094 Test Error: 161.60252380371094
+Round: 5000 Training Error: 134.74099731445312 Validation Error: 197.97900390625 Test Error: 163.2100067138672
+Round: 5500 Training Error: 136.3084259033203 Validation Error: 198.0675506591797 Test Error: 161.49513244628906
+Round: 6000 Training Error: 136.1564483642578 Validation Error: 194.52615356445312 Test Error: 157.8216094970703
+Round: 6500 Training Error: 133.64064025878906 Validation Error: 197.4540557861328 Test Error: 163.43148803710938
+Round: 7000 Training Error: 135.6822052001953 Validation Error: 192.85781860351562 Test Error: 158.06796264648438
+Round: 7500 Training Error: 119.84616088867188 Validation Error: 195.07090759277344 Test Error: 158.9282684326172
+Round: 8000 Training Error: 136.49685668945312 Validation Error: 195.0295867919922 Test Error: 158.69473266601562
+Round: 8500 Training Error: 132.10708618164062 Validation Error: 194.6614990234375 Test Error: 158.69964599609375
+Round: 9000 Training Error: 133.3671875 Validation Error: 195.937744140625 Test Error: 158.63084411621094
+Round: 9500 Training Error: 119.65336608886719 Validation Error: 196.34095764160156 Test Error: 159.91162109375
+Round: 10000 Training Error: 134.48851013183594 Validation Error: 187.46080017089844 Test Error: 151.3402862548828
+Round: 10500 Training Error: 131.58827209472656 Validation Error: 193.2181396484375 Test Error: 156.18968200683594
+Round: 11000 Training Error: 130.35296630859375 Validation Error: 195.57823181152344 Test Error: 159.64112854003906
+Round: 11500 Training Error: 134.9110565185547 Validation Error: 191.0990753173828 Test Error: 157.16500854492188
+Round: 12000 Training Error: 133.81430053710938 Validation Error: 189.63009643554688 Test Error: 152.67686462402344
+Round: 12500 Training Error: 127.85619354248047 Validation Error: 197.09805297851562 Test Error: 162.3543243408203
+Round: 13000 Training Error: 130.94813537597656 Validation Error: 192.7106170654297 Test Error: 156.50738525390625
+Round: 13500 Training Error: 128.67410278320312 Validation Error: 193.7739715576172 Test Error: 159.36068725585938
+Round: 14000 Training Error: 129.7397003173828 Validation Error: 199.76321411132812 Test Error: 160.10389709472656
+Round: 14500 Training Error: 127.31771087646484 Validation Error: 196.42579650878906 Test Error: 160.47300720214844
+Round: 15000 Training Error: 127.27169799804688 Validation Error: 199.96897888183594 Test Error: 164.01617431640625
+Round: 15500 Training Error: 116.16987609863281 Validation Error: 194.24472045898438 Test Error: 158.52813720703125
+Round: 16000 Training Error: 134.3226318359375 Validation Error: 198.8970489501953 Test Error: 165.89503479003906
+Round: 16500 Training Error: 113.3331527709961 Validation Error: 195.69883728027344 Test Error: 164.98265075683594
+Round: 17000 Training Error: 128.07591247558594 Validation Error: 199.13563537597656 Test Error: 163.06716918945312
+Round: 17500 Training Error: 115.14591217041016 Validation Error: 197.0896759033203 Test Error: 163.29605102539062
+Round: 18000 Training Error: 132.093505859375 Validation Error: 202.91416931152344 Test Error: 169.7107391357422
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 133.54937744140625 Validation Error: 191.1779327392578 Test Error: 155.2689666748047
+Round: 1000 Training Error: 164.0617218017578 Validation Error: 186.41111755371094 Test Error: 147.13510131835938
+Round: 1500 Training Error: 111.84723663330078 Validation Error: 179.4570770263672 Test Error: 139.69906616210938
+Round: 2000 Training Error: 120.41798400878906 Validation Error: 179.18360900878906 Test Error: 139.64334106445312
+Round: 2500 Training Error: 111.11369323730469 Validation Error: 178.7254180908203 Test Error: 138.62832641601562
+Round: 3000 Training Error: 107.55452728271484 Validation Error: 179.10440063476562 Test Error: 139.036376953125
+Round: 3500 Training Error: 104.5291748046875 Validation Error: 179.3860321044922 Test Error: 138.47389221191406
+Round: 4000 Training Error: 104.04170227050781 Validation Error: 180.17323303222656 Test Error: 140.38885498046875
+Round: 4500 Training Error: 103.17657470703125 Validation Error: 180.44761657714844 Test Error: 139.68511962890625
+Round: 5000 Training Error: 108.61605834960938 Validation Error: 180.49142456054688 Test Error: 139.31752014160156
+Round: 5500 Training Error: 103.86351013183594 Validation Error: 182.86708068847656 Test Error: 141.54913330078125
+Round: 6000 Training Error: 101.6468276977539 Validation Error: 183.58241271972656 Test Error: 144.3430633544922
+Round: 6500 Training Error: 101.74649047851562 Validation Error: 178.566650390625 Test Error: 135.5919647216797
+Round: 7000 Training Error: 100.37071228027344 Validation Error: 182.30247497558594 Test Error: 142.48577880859375
+Round: 7500 Training Error: 101.16748046875 Validation Error: 180.53636169433594 Test Error: 139.696044921875
+Round: 8000 Training Error: 108.51737213134766 Validation Error: 186.6145782470703 Test Error: 142.33139038085938
+Round: 8500 Training Error: 159.77401733398438 Validation Error: 183.05506896972656 Test Error: 138.7157745361328
+Round: 9000 Training Error: 104.77507019042969 Validation Error: 185.92184448242188 Test Error: 141.13677978515625
+Round: 9500 Training Error: 105.18267822265625 Validation Error: 183.85569763183594 Test Error: 140.7852020263672
+Round: 10000 Training Error: 104.01023864746094 Validation Error: 179.74400329589844 Test Error: 138.73170471191406
+Round: 10500 Training Error: 156.05099487304688 Validation Error: 180.56687927246094 Test Error: 140.61427307128906
+Round: 11000 Training Error: 102.4296646118164 Validation Error: 181.2971649169922 Test Error: 141.76927185058594
+Round: 11500 Training Error: 101.84708404541016 Validation Error: 179.49925231933594 Test Error: 139.92132568359375
+Round: 12000 Training Error: 102.87459564208984 Validation Error: 188.93309020996094 Test Error: 151.80088806152344
+Round: 12500 Training Error: 152.700439453125 Validation Error: 184.10780334472656 Test Error: 146.249267578125
+Round: 13000 Training Error: 153.9005126953125 Validation Error: 182.52110290527344 Test Error: 145.237548828125
+Round: 13500 Training Error: 100.17512512207031 Validation Error: 181.07083129882812 Test Error: 142.2813720703125
+Round: 14000 Training Error: 100.50670623779297 Validation Error: 183.3688201904297 Test Error: 143.805419921875
+Round: 14500 Training Error: 153.80921936035156 Validation Error: 191.76776123046875 Test Error: 155.53073120117188
+Round: 15000 Training Error: 151.64566040039062 Validation Error: 185.5426788330078 Test Error: 148.35499572753906
+Round: 15500 Training Error: 99.1567153930664 Validation Error: 181.986083984375 Test Error: 144.51458740234375
+Round: 16000 Training Error: 98.85167694091797 Validation Error: 181.48953247070312 Test Error: 145.1206512451172
+Round: 16500 Training Error: 102.70401763916016 Validation Error: 180.27398681640625 Test Error: 143.176025390625
+Round: 17000 Training Error: 103.4188003540039 Validation Error: 184.29067993164062 Test Error: 147.95545959472656
+Round: 17500 Training Error: 98.54509735107422 Validation Error: 182.69981384277344 Test Error: 147.444580078125
+Round: 18000 Training Error: 98.7178955078125 Validation Error: 186.60879516601562 Test Error: 152.17649841308594
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 137.4486541748047 Validation Error: 192.19778442382812 Test Error: 155.19314575195312
+Round: 1000 Training Error: 158.1076202392578 Validation Error: 189.13287353515625 Test Error: 155.11524963378906
+Round: 1500 Training Error: 120.27070617675781 Validation Error: 186.5460205078125 Test Error: 152.25550842285156
+Round: 2000 Training Error: 165.7841796875 Validation Error: 190.69261169433594 Test Error: 158.64682006835938
+Round: 2500 Training Error: 159.6963348388672 Validation Error: 183.7061309814453 Test Error: 147.6479949951172
+Round: 3000 Training Error: 116.07538604736328 Validation Error: 185.13511657714844 Test Error: 146.9939422607422
+Round: 3500 Training Error: 113.92598724365234 Validation Error: 182.43902587890625 Test Error: 140.63230895996094
+Round: 4000 Training Error: 114.55579376220703 Validation Error: 185.82254028320312 Test Error: 143.6542205810547
+Round: 4500 Training Error: 110.83027648925781 Validation Error: 181.99478149414062 Test Error: 137.38307189941406
+Round: 5000 Training Error: 152.77894592285156 Validation Error: 183.87977600097656 Test Error: 139.8350830078125
+Round: 5500 Training Error: 108.08558654785156 Validation Error: 183.1754913330078 Test Error: 140.18096923828125
+Round: 6000 Training Error: 107.37360382080078 Validation Error: 181.5133514404297 Test Error: 137.3451385498047
+Round: 6500 Training Error: 106.2668228149414 Validation Error: 185.10353088378906 Test Error: 140.10943603515625
+Round: 7000 Training Error: 104.88670349121094 Validation Error: 183.2168731689453 Test Error: 138.13577270507812
+Round: 7500 Training Error: 105.40665435791016 Validation Error: 183.48846435546875 Test Error: 139.65811157226562
+Round: 8000 Training Error: 104.88873291015625 Validation Error: 178.88565063476562 Test Error: 132.4203338623047
+Round: 8500 Training Error: 146.97605895996094 Validation Error: 183.09463500976562 Test Error: 135.48008728027344
+Round: 9000 Training Error: 104.14286804199219 Validation Error: 180.51219177246094 Test Error: 134.055419921875
+Round: 9500 Training Error: 102.54926300048828 Validation Error: 181.68748474121094 Test Error: 135.53907775878906
+Round: 10000 Training Error: 148.49781799316406 Validation Error: 181.84767150878906 Test Error: 134.5890655517578
+Round: 10500 Training Error: 146.52462768554688 Validation Error: 183.89073181152344 Test Error: 137.42665100097656
+Round: 11000 Training Error: 146.55894470214844 Validation Error: 181.54727172851562 Test Error: 134.63722229003906
+Round: 11500 Training Error: 103.55094146728516 Validation Error: 184.0865020751953 Test Error: 136.9320526123047
+Round: 12000 Training Error: 102.8678207397461 Validation Error: 182.80868530273438 Test Error: 135.98829650878906
+Round: 12500 Training Error: 146.14175415039062 Validation Error: 186.97044372558594 Test Error: 140.82046508789062
+Round: 13000 Training Error: 144.8972930908203 Validation Error: 185.28591918945312 Test Error: 139.6819305419922
+Round: 13500 Training Error: 103.13934326171875 Validation Error: 182.35397338867188 Test Error: 137.1792755126953
+Round: 14000 Training Error: 145.3846435546875 Validation Error: 185.74615478515625 Test Error: 139.59579467773438
+Round: 14500 Training Error: 145.0218505859375 Validation Error: 185.28343200683594 Test Error: 138.6269989013672
+Round: 15000 Training Error: 145.6078338623047 Validation Error: 182.07907104492188 Test Error: 138.20718383789062
+Round: 15500 Training Error: 102.88211059570312 Validation Error: 181.99200439453125 Test Error: 137.02252197265625
+Round: 16000 Training Error: 150.7520294189453 Validation Error: 187.00454711914062 Test Error: 142.9889373779297
+Round: 16500 Training Error: 103.11626434326172 Validation Error: 182.19313049316406 Test Error: 139.4665985107422
+Round: 17000 Training Error: 105.80320739746094 Validation Error: 185.5274200439453 Test Error: 141.71592712402344
+Round: 17500 Training Error: 101.83936309814453 Validation Error: 180.9528045654297 Test Error: 137.7808837890625
+Round: 18000 Training Error: 100.7714614868164 Validation Error: 186.57183837890625 Test Error: 143.21995544433594
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'mw', 'fridge', 'dw', 'residual']
+Round: 500 Training Error: 158.690185546875 Validation Error: 198.01138305664062 Test Error: 167.7010040283203
+Round: 1000 Training Error: 149.1166534423828 Validation Error: 196.89218139648438 Test Error: 167.44161987304688
+Round: 1500 Training Error: 143.72933959960938 Validation Error: 195.67164611816406 Test Error: 164.48568725585938
+Round: 2000 Training Error: 140.20664978027344 Validation Error: 196.4484100341797 Test Error: 166.98992919921875
+Round: 2500 Training Error: 139.15158081054688 Validation Error: 197.82943725585938 Test Error: 168.95542907714844
+Round: 3000 Training Error: 139.17648315429688 Validation Error: 193.3395538330078 Test Error: 161.7335968017578
+Round: 3500 Training Error: 136.75184631347656 Validation Error: 194.38084411621094 Test Error: 163.6281280517578
+Round: 4000 Training Error: 124.96244812011719 Validation Error: 193.2057342529297 Test Error: 160.12220764160156
+Round: 4500 Training Error: 135.2971649169922 Validation Error: 196.8355712890625 Test Error: 166.48306274414062
+Round: 5000 Training Error: 134.18118286132812 Validation Error: 196.96359252929688 Test Error: 169.1725311279297
+Round: 5500 Training Error: 134.5394744873047 Validation Error: 195.587646484375 Test Error: 165.81625366210938
+Round: 6000 Training Error: 136.23004150390625 Validation Error: 195.06105041503906 Test Error: 165.62315368652344
+Round: 6500 Training Error: 132.79107666015625 Validation Error: 197.1353759765625 Test Error: 168.13816833496094
+Round: 7000 Training Error: 133.90623474121094 Validation Error: 195.84312438964844 Test Error: 166.89906311035156
+Round: 7500 Training Error: 118.87140655517578 Validation Error: 195.7638702392578 Test Error: 167.54281616210938
+Round: 8000 Training Error: 133.9759063720703 Validation Error: 195.5984344482422 Test Error: 164.46783447265625
+Round: 8500 Training Error: 131.94952392578125 Validation Error: 196.7126922607422 Test Error: 167.52662658691406
+Round: 9000 Training Error: 136.09552001953125 Validation Error: 195.4705810546875 Test Error: 167.0411834716797
+Round: 9500 Training Error: 120.17647552490234 Validation Error: 195.81216430664062 Test Error: 162.56256103515625
+Round: 10000 Training Error: 133.51907348632812 Validation Error: 194.4837646484375 Test Error: 163.23922729492188
+Round: 10500 Training Error: 132.45433044433594 Validation Error: 193.765869140625 Test Error: 162.64016723632812
+Round: 11000 Training Error: 131.43899536132812 Validation Error: 193.28369140625 Test Error: 160.3556671142578
+Round: 11500 Training Error: 132.38951110839844 Validation Error: 190.74005126953125 Test Error: 155.01205444335938
+Round: 12000 Training Error: 131.50070190429688 Validation Error: 189.8950653076172 Test Error: 155.56210327148438
+Round: 12500 Training Error: 129.71116638183594 Validation Error: 195.49240112304688 Test Error: 160.48336791992188
+Round: 13000 Training Error: 131.51759338378906 Validation Error: 191.7839813232422 Test Error: 156.79025268554688
+Round: 13500 Training Error: 128.0025634765625 Validation Error: 195.7689666748047 Test Error: 163.9961700439453
+Round: 14000 Training Error: 129.01734924316406 Validation Error: 195.5382843017578 Test Error: 164.10218811035156
+Round: 14500 Training Error: 128.84762573242188 Validation Error: 194.6824951171875 Test Error: 160.63543701171875
+Round: 15000 Training Error: 127.50440979003906 Validation Error: 197.65402221679688 Test Error: 161.3516082763672
+Round: 15500 Training Error: 114.3161849975586 Validation Error: 194.26519775390625 Test Error: 155.69297790527344
+Round: 16000 Training Error: 130.02243041992188 Validation Error: 194.68995666503906 Test Error: 159.7977752685547
+Round: 16500 Training Error: 112.24738311767578 Validation Error: 197.17626953125 Test Error: 166.79483032226562
+Round: 17000 Training Error: 128.33438110351562 Validation Error: 197.8404541015625 Test Error: 159.8753662109375
+Round: 17500 Training Error: 114.03634643554688 Validation Error: 196.75942993164062 Test Error: 160.27537536621094
+Round: 18000 Training Error: 126.29447174072266 Validation Error: 199.24362182617188 Test Error: 163.14529418945312
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'fridge', 'residual', 'dw']
+Round: 500 Training Error: 133.64068603515625 Validation Error: 190.93377685546875 Test Error: 154.2407684326172
+Round: 1000 Training Error: 164.4475860595703 Validation Error: 185.7369842529297 Test Error: 148.3609619140625
+Round: 1500 Training Error: 111.43872833251953 Validation Error: 180.88978576660156 Test Error: 142.88714599609375
+Round: 2000 Training Error: 104.44099426269531 Validation Error: 178.49246215820312 Test Error: 139.7415008544922
+Round: 2500 Training Error: 103.0987777709961 Validation Error: 179.21681213378906 Test Error: 140.6072235107422
+Round: 3000 Training Error: 102.02217864990234 Validation Error: 179.27069091796875 Test Error: 140.70150756835938
+Round: 3500 Training Error: 102.08470916748047 Validation Error: 179.19326782226562 Test Error: 141.0092315673828
+Round: 4000 Training Error: 101.06350708007812 Validation Error: 179.6169891357422 Test Error: 142.0560760498047
+Round: 4500 Training Error: 100.20925903320312 Validation Error: 180.32342529296875 Test Error: 143.1830291748047
+Round: 5000 Training Error: 100.01151275634766 Validation Error: 180.12718200683594 Test Error: 143.7326202392578
+Round: 5500 Training Error: 101.5268783569336 Validation Error: 183.41421508789062 Test Error: 146.6865997314453
+Round: 6000 Training Error: 98.62743377685547 Validation Error: 180.64297485351562 Test Error: 143.7613525390625
+Round: 6500 Training Error: 98.61841583251953 Validation Error: 180.32388305664062 Test Error: 143.0625
+Round: 7000 Training Error: 97.70388793945312 Validation Error: 182.4311065673828 Test Error: 146.16824340820312
+Round: 7500 Training Error: 99.15679168701172 Validation Error: 182.20330810546875 Test Error: 145.50772094726562
+Round: 8000 Training Error: 97.6940689086914 Validation Error: 182.531982421875 Test Error: 147.20510864257812
+Round: 8500 Training Error: 150.30780029296875 Validation Error: 183.12376403808594 Test Error: 147.0675811767578
+Round: 9000 Training Error: 97.00174713134766 Validation Error: 182.63900756835938 Test Error: 146.65000915527344
+Round: 9500 Training Error: 98.24905395507812 Validation Error: 181.33074951171875 Test Error: 145.9137420654297
+Round: 10000 Training Error: 98.20321655273438 Validation Error: 183.65328979492188 Test Error: 148.0369110107422
+Round: 10500 Training Error: 151.2347869873047 Validation Error: 181.85174560546875 Test Error: 143.2196044921875
+Round: 11000 Training Error: 98.08076477050781 Validation Error: 184.0809783935547 Test Error: 148.6229248046875
+Round: 11500 Training Error: 96.48446655273438 Validation Error: 186.45077514648438 Test Error: 150.97047424316406
+Round: 12000 Training Error: 97.4781494140625 Validation Error: 188.44866943359375 Test Error: 153.10894775390625
+Round: 12500 Training Error: 147.2584228515625 Validation Error: 190.428955078125 Test Error: 157.39926147460938
+Round: 13000 Training Error: 148.41163635253906 Validation Error: 184.80123901367188 Test Error: 151.7073974609375
+Round: 13500 Training Error: 97.25318145751953 Validation Error: 186.19786071777344 Test Error: 156.9488067626953
+Round: 14000 Training Error: 97.15982055664062 Validation Error: 198.518310546875 Test Error: 163.0612335205078
+Round: 14500 Training Error: 144.95828247070312 Validation Error: 195.57223510742188 Test Error: 165.74774169921875
+Round: 15000 Training Error: 145.3475341796875 Validation Error: 191.92323303222656 Test Error: 161.61181640625
+Round: 15500 Training Error: 95.9403076171875 Validation Error: 194.13861083984375 Test Error: 162.99266052246094
+Round: 16000 Training Error: 96.13733673095703 Validation Error: 195.42837524414062 Test Error: 169.30706787109375
+Round: 16500 Training Error: 98.5462646484375 Validation Error: 191.9088897705078 Test Error: 154.03660583496094
+Round: 17000 Training Error: 102.11628723144531 Validation Error: 215.28639221191406 Test Error: 191.7717742919922
+Round: 17500 Training Error: 95.69934844970703 Validation Error: 192.41017150878906 Test Error: 160.4631805419922
+Round: 18000 Training Error: 98.84691619873047 Validation Error: 194.25442504882812 Test Error: 160.84884643554688
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'fridge', 'residual', 'dw']
+Round: 500 Training Error: 135.8915252685547 Validation Error: 192.8434600830078 Test Error: 154.5120391845703
+Round: 1000 Training Error: 157.93069458007812 Validation Error: 191.76339721679688 Test Error: 154.01084899902344
+Round: 1500 Training Error: 121.25972747802734 Validation Error: 186.94473266601562 Test Error: 148.91004943847656
+Round: 2000 Training Error: 152.5345458984375 Validation Error: 182.58682250976562 Test Error: 145.29046630859375
+Round: 2500 Training Error: 150.09860229492188 Validation Error: 182.06411743164062 Test Error: 146.88050842285156
+Round: 3000 Training Error: 107.10684204101562 Validation Error: 183.0335235595703 Test Error: 145.34765625
+Round: 3500 Training Error: 107.8797607421875 Validation Error: 182.64862060546875 Test Error: 143.1969757080078
+Round: 4000 Training Error: 105.95499420166016 Validation Error: 181.66476440429688 Test Error: 144.6880340576172
+Round: 4500 Training Error: 102.23320007324219 Validation Error: 182.2415313720703 Test Error: 144.2341766357422
+Round: 5000 Training Error: 145.62306213378906 Validation Error: 181.44692993164062 Test Error: 143.09927368164062
+Round: 5500 Training Error: 102.0318603515625 Validation Error: 179.51953125 Test Error: 142.2139129638672
+Round: 6000 Training Error: 103.61851501464844 Validation Error: 180.38253784179688 Test Error: 145.08070373535156
+Round: 6500 Training Error: 100.61786651611328 Validation Error: 181.29359436035156 Test Error: 144.92108154296875
+Round: 7000 Training Error: 101.47825622558594 Validation Error: 181.45240783691406 Test Error: 143.25619506835938
+Round: 7500 Training Error: 101.3790283203125 Validation Error: 182.14183044433594 Test Error: 143.6300811767578
+Round: 8000 Training Error: 100.26080322265625 Validation Error: 183.02699279785156 Test Error: 142.21168518066406
+Round: 8500 Training Error: 141.4066162109375 Validation Error: 184.96144104003906 Test Error: 146.54347229003906
+Round: 9000 Training Error: 100.3189926147461 Validation Error: 186.23619079589844 Test Error: 148.5200653076172
+Round: 9500 Training Error: 99.04705810546875 Validation Error: 186.82566833496094 Test Error: 148.6159210205078
+Round: 10000 Training Error: 142.0258331298828 Validation Error: 188.74034118652344 Test Error: 147.60604858398438
+Round: 10500 Training Error: 147.9317169189453 Validation Error: 182.02920532226562 Test Error: 141.9776611328125
+Round: 11000 Training Error: 143.50270080566406 Validation Error: 185.08477783203125 Test Error: 148.54464721679688
+Round: 11500 Training Error: 102.33546447753906 Validation Error: 184.65792846679688 Test Error: 144.73704528808594
+Round: 12000 Training Error: 104.36104583740234 Validation Error: 190.2226104736328 Test Error: 158.41444396972656
+Round: 12500 Training Error: 141.92523193359375 Validation Error: 185.57656860351562 Test Error: 146.53465270996094
+Round: 13000 Training Error: 145.232666015625 Validation Error: 181.73605346679688 Test Error: 143.4214324951172
+Round: 13500 Training Error: 100.72012329101562 Validation Error: 187.99899291992188 Test Error: 152.09918212890625
+Round: 14000 Training Error: 149.8868865966797 Validation Error: 184.952880859375 Test Error: 144.7753448486328
+Round: 14500 Training Error: 153.08689880371094 Validation Error: 180.71542358398438 Test Error: 140.23240661621094
+Round: 15000 Training Error: 145.57713317871094 Validation Error: 180.35157775878906 Test Error: 142.2946014404297
+Round: 15500 Training Error: 104.97732543945312 Validation Error: 180.09405517578125 Test Error: 141.57125854492188
+Round: 16000 Training Error: 144.90248107910156 Validation Error: 180.5697784423828 Test Error: 141.65419006347656
+Round: 16500 Training Error: 103.56802368164062 Validation Error: 181.47645568847656 Test Error: 140.762939453125
+Round: 17000 Training Error: 102.55528259277344 Validation Error: 184.1751708984375 Test Error: 143.7161407470703
+Round: 17500 Training Error: 103.01116180419922 Validation Error: 181.95323181152344 Test Error: 139.10098266601562
+Round: 18000 Training Error: 101.88290405273438 Validation Error: 184.5143585205078 Test Error: 143.5714111328125
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'mw', 'fridge', 'residual', 'dw']
+Round: 500 Training Error: 159.55838012695312 Validation Error: 197.24325561523438 Test Error: 162.7411346435547
+Round: 1000 Training Error: 148.084228515625 Validation Error: 195.7506561279297 Test Error: 160.91058349609375
+Round: 1500 Training Error: 144.47265625 Validation Error: 193.81491088867188 Test Error: 158.35044860839844
+Round: 2000 Training Error: 139.8711700439453 Validation Error: 194.2810516357422 Test Error: 158.95668029785156
+Round: 2500 Training Error: 139.0889129638672 Validation Error: 193.86683654785156 Test Error: 157.66770935058594
+Round: 3000 Training Error: 140.50204467773438 Validation Error: 192.89625549316406 Test Error: 154.45236206054688
+Round: 3500 Training Error: 139.640869140625 Validation Error: 191.35545349121094 Test Error: 151.84617614746094
+Round: 4000 Training Error: 123.69385528564453 Validation Error: 193.79957580566406 Test Error: 157.52822875976562
+Round: 4500 Training Error: 136.4001922607422 Validation Error: 196.3192596435547 Test Error: 159.10292053222656
+Round: 5000 Training Error: 134.6948699951172 Validation Error: 194.72154235839844 Test Error: 154.78619384765625
+Round: 5500 Training Error: 134.86651611328125 Validation Error: 193.7675018310547 Test Error: 154.79322814941406
+Round: 6000 Training Error: 136.5462188720703 Validation Error: 192.3584747314453 Test Error: 151.46473693847656
+Round: 6500 Training Error: 133.09397888183594 Validation Error: 195.1589813232422 Test Error: 155.67446899414062
+Round: 7000 Training Error: 134.2678680419922 Validation Error: 187.97744750976562 Test Error: 147.85885620117188
+Round: 7500 Training Error: 119.5888671875 Validation Error: 191.3701934814453 Test Error: 150.9751739501953
+Round: 8000 Training Error: 131.87940979003906 Validation Error: 189.2611541748047 Test Error: 150.67910766601562
+Round: 8500 Training Error: 129.9001007080078 Validation Error: 190.39474487304688 Test Error: 151.58526611328125
+Round: 9000 Training Error: 131.38516235351562 Validation Error: 190.5309295654297 Test Error: 149.3902587890625
+Round: 9500 Training Error: 117.11846160888672 Validation Error: 191.1934814453125 Test Error: 154.24342346191406
+Round: 10000 Training Error: 130.9364013671875 Validation Error: 189.3714599609375 Test Error: 148.87445068359375
+Round: 10500 Training Error: 131.34390258789062 Validation Error: 191.1909942626953 Test Error: 148.45013427734375
+Round: 11000 Training Error: 131.71942138671875 Validation Error: 191.63217163085938 Test Error: 155.22593688964844
+Round: 11500 Training Error: 135.587646484375 Validation Error: 191.7534942626953 Test Error: 154.0678253173828
+Round: 12000 Training Error: 129.85145568847656 Validation Error: 188.0585479736328 Test Error: 149.00108337402344
+Round: 12500 Training Error: 127.31492614746094 Validation Error: 195.6154022216797 Test Error: 153.68321228027344
+Round: 13000 Training Error: 127.12528991699219 Validation Error: 193.14076232910156 Test Error: 152.26243591308594
+Round: 13500 Training Error: 127.4422378540039 Validation Error: 193.62977600097656 Test Error: 153.41456604003906
+Round: 14000 Training Error: 129.22702026367188 Validation Error: 192.7877655029297 Test Error: 151.251953125
+Round: 14500 Training Error: 133.64671325683594 Validation Error: 196.8427734375 Test Error: 157.5279998779297
+Round: 15000 Training Error: 132.72625732421875 Validation Error: 195.2918701171875 Test Error: 157.85340881347656
+Round: 15500 Training Error: 115.98624420166016 Validation Error: 194.7172393798828 Test Error: 155.8914794921875
+Round: 16000 Training Error: 132.50039672851562 Validation Error: 194.3455047607422 Test Error: 155.45957946777344
+Round: 16500 Training Error: 113.256591796875 Validation Error: 191.99087524414062 Test Error: 151.5049285888672
+Round: 17000 Training Error: 130.74745178222656 Validation Error: 192.6635284423828 Test Error: 152.04872131347656
+Round: 17500 Training Error: 113.42173767089844 Validation Error: 192.4825439453125 Test Error: 150.6251678466797
+Round: 18000 Training Error: 129.38589477539062 Validation Error: 193.2182159423828 Test Error: 152.3225555419922
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'dw', 'fridge', 'residual']
+Round: 500 Training Error: 133.51499938964844 Validation Error: 192.2474365234375 Test Error: 156.2429962158203
+Round: 1000 Training Error: 163.17591857910156 Validation Error: 189.3603057861328 Test Error: 155.47103881835938
+Round: 1500 Training Error: 114.97071075439453 Validation Error: 182.03811645507812 Test Error: 144.2086181640625
+Round: 2000 Training Error: 110.6028823852539 Validation Error: 179.74432373046875 Test Error: 140.16847229003906
+Round: 2500 Training Error: 106.08291625976562 Validation Error: 179.29864501953125 Test Error: 138.77383422851562
+Round: 3000 Training Error: 105.27262878417969 Validation Error: 180.91404724121094 Test Error: 139.1024627685547
+Round: 3500 Training Error: 103.5604476928711 Validation Error: 179.35394287109375 Test Error: 137.23976135253906
+Round: 4000 Training Error: 103.66991424560547 Validation Error: 178.3966064453125 Test Error: 136.9387664794922
+Round: 4500 Training Error: 103.4870834350586 Validation Error: 179.0699920654297 Test Error: 138.7682647705078
+Round: 5000 Training Error: 101.80785369873047 Validation Error: 178.57022094726562 Test Error: 138.850830078125
+Round: 5500 Training Error: 102.17098236083984 Validation Error: 178.7960662841797 Test Error: 137.21507263183594
+Round: 6000 Training Error: 100.58258819580078 Validation Error: 178.6785430908203 Test Error: 138.32452392578125
+Round: 6500 Training Error: 102.53816223144531 Validation Error: 179.814697265625 Test Error: 139.3740234375
+Round: 7000 Training Error: 99.37531280517578 Validation Error: 179.21316528320312 Test Error: 138.28826904296875
+Round: 7500 Training Error: 101.5864028930664 Validation Error: 178.82484436035156 Test Error: 135.39346313476562
+Round: 8000 Training Error: 98.997802734375 Validation Error: 180.2518768310547 Test Error: 139.51527404785156
+Round: 8500 Training Error: 152.62646484375 Validation Error: 179.7593536376953 Test Error: 137.8098907470703
+Round: 9000 Training Error: 99.4718017578125 Validation Error: 180.43226623535156 Test Error: 139.49644470214844
+Round: 9500 Training Error: 99.42517852783203 Validation Error: 180.81109619140625 Test Error: 139.22650146484375
+Round: 10000 Training Error: 100.95764923095703 Validation Error: 182.50726318359375 Test Error: 139.9420166015625
+Round: 10500 Training Error: 151.40000915527344 Validation Error: 179.17137145996094 Test Error: 136.1533203125
+Round: 11000 Training Error: 100.63026428222656 Validation Error: 181.1604766845703 Test Error: 138.50914001464844
+Round: 11500 Training Error: 98.3864517211914 Validation Error: 181.45339965820312 Test Error: 137.70751953125
+Round: 12000 Training Error: 98.82164001464844 Validation Error: 181.7196502685547 Test Error: 138.8542938232422
+Round: 12500 Training Error: 149.23348999023438 Validation Error: 180.3594207763672 Test Error: 137.43141174316406
+Round: 13000 Training Error: 149.1814422607422 Validation Error: 181.00137329101562 Test Error: 137.5419921875
+Round: 13500 Training Error: 98.82536315917969 Validation Error: 180.6809844970703 Test Error: 137.0240936279297
+Round: 14000 Training Error: 98.46915435791016 Validation Error: 180.65243530273438 Test Error: 137.49742126464844
+Round: 14500 Training Error: 146.51119995117188 Validation Error: 181.187255859375 Test Error: 136.92628479003906
+Round: 15000 Training Error: 147.0650177001953 Validation Error: 180.32875061035156 Test Error: 136.71865844726562
+Round: 15500 Training Error: 98.77093505859375 Validation Error: 179.3157501220703 Test Error: 135.25796508789062
+Round: 16000 Training Error: 97.39588928222656 Validation Error: 180.90713500976562 Test Error: 137.48326110839844
+Round: 16500 Training Error: 100.20124053955078 Validation Error: 179.20541381835938 Test Error: 134.76504516601562
+Round: 17000 Training Error: 100.56867980957031 Validation Error: 182.35696411132812 Test Error: 137.25750732421875
+Round: 17500 Training Error: 97.6755142211914 Validation Error: 181.77969360351562 Test Error: 138.4895477294922
+Round: 18000 Training Error: 98.08737182617188 Validation Error: 182.492919921875 Test Error: 139.1146240234375
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'dw', 'fridge', 'residual']
+Round: 500 Training Error: 142.32504272460938 Validation Error: 194.23060607910156 Test Error: 154.7169189453125
+Round: 1000 Training Error: 157.51393127441406 Validation Error: 191.69329833984375 Test Error: 157.58804321289062
+Round: 1500 Training Error: 122.57902526855469 Validation Error: 187.74815368652344 Test Error: 147.7996368408203
+Round: 2000 Training Error: 173.62783813476562 Validation Error: 193.84690856933594 Test Error: 158.35885620117188
+Round: 2500 Training Error: 161.23634338378906 Validation Error: 188.98834228515625 Test Error: 151.49859619140625
+Round: 3000 Training Error: 117.23831176757812 Validation Error: 186.0087432861328 Test Error: 145.10264587402344
+Round: 3500 Training Error: 115.88054656982422 Validation Error: 186.26315307617188 Test Error: 142.78973388671875
+Round: 4000 Training Error: 114.93905639648438 Validation Error: 181.68878173828125 Test Error: 137.46678161621094
+Round: 4500 Training Error: 112.1726303100586 Validation Error: 180.25399780273438 Test Error: 134.47775268554688
+Round: 5000 Training Error: 151.1901092529297 Validation Error: 182.74659729003906 Test Error: 138.28428649902344
+Round: 5500 Training Error: 108.4718246459961 Validation Error: 181.19239807128906 Test Error: 136.75196838378906
+Round: 6000 Training Error: 107.59712219238281 Validation Error: 182.14561462402344 Test Error: 139.00411987304688
+Round: 6500 Training Error: 106.70130157470703 Validation Error: 182.27816772460938 Test Error: 139.14585876464844
+Round: 7000 Training Error: 106.24341583251953 Validation Error: 179.4935302734375 Test Error: 134.66148376464844
+Round: 7500 Training Error: 105.2514419555664 Validation Error: 180.58639526367188 Test Error: 136.4510040283203
+Round: 8000 Training Error: 105.77120208740234 Validation Error: 181.7533416748047 Test Error: 137.40562438964844
+Round: 8500 Training Error: 145.6598663330078 Validation Error: 182.96600341796875 Test Error: 139.70936584472656
+Round: 9000 Training Error: 104.95291137695312 Validation Error: 179.7132568359375 Test Error: 136.8548126220703
+Round: 9500 Training Error: 102.81401824951172 Validation Error: 181.9741668701172 Test Error: 140.88934326171875
+Round: 10000 Training Error: 144.83770751953125 Validation Error: 182.3754119873047 Test Error: 143.1074981689453
+Round: 10500 Training Error: 146.21607971191406 Validation Error: 184.87765502929688 Test Error: 145.49322509765625
+Round: 11000 Training Error: 143.78271484375 Validation Error: 180.4331817626953 Test Error: 139.78147888183594
+Round: 11500 Training Error: 102.42001342773438 Validation Error: 181.90228271484375 Test Error: 141.57041931152344
+Round: 12000 Training Error: 102.82714080810547 Validation Error: 180.56553649902344 Test Error: 139.55491638183594
+Round: 12500 Training Error: 142.8990478515625 Validation Error: 185.30918884277344 Test Error: 146.10784912109375
+Round: 13000 Training Error: 144.0554962158203 Validation Error: 181.3001708984375 Test Error: 140.907470703125
+Round: 13500 Training Error: 104.27627563476562 Validation Error: 180.4579620361328 Test Error: 139.5301971435547
+Round: 14000 Training Error: 142.40713500976562 Validation Error: 183.2126007080078 Test Error: 143.2223358154297
+Round: 14500 Training Error: 142.25462341308594 Validation Error: 180.97190856933594 Test Error: 140.69956970214844
+Round: 15000 Training Error: 141.68185424804688 Validation Error: 181.16659545898438 Test Error: 139.38348388671875
+Round: 15500 Training Error: 105.02903747558594 Validation Error: 180.33282470703125 Test Error: 138.31866455078125
+Round: 16000 Training Error: 151.20188903808594 Validation Error: 190.0937042236328 Test Error: 156.97891235351562
+Round: 16500 Training Error: 100.42695617675781 Validation Error: 180.631103515625 Test Error: 139.47813415527344
+Round: 17000 Training Error: 101.41910552978516 Validation Error: 183.4927978515625 Test Error: 145.2158203125
+Round: 17500 Training Error: 101.72379302978516 Validation Error: 181.21426391601562 Test Error: 141.14088439941406
+Round: 18000 Training Error: 101.70923614501953 Validation Error: 184.35719299316406 Test Error: 146.07789611816406
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'mw', 'dw', 'fridge', 'residual']
+Round: 500 Training Error: 158.5068817138672 Validation Error: 197.49778747558594 Test Error: 166.392822265625
+Round: 1000 Training Error: 147.32717895507812 Validation Error: 198.6555938720703 Test Error: 170.01974487304688
+Round: 1500 Training Error: 145.41766357421875 Validation Error: 194.70062255859375 Test Error: 161.3590545654297
+Round: 2000 Training Error: 139.2452850341797 Validation Error: 199.26341247558594 Test Error: 169.0143585205078
+Round: 2500 Training Error: 139.09352111816406 Validation Error: 202.07298278808594 Test Error: 170.80845642089844
+Round: 3000 Training Error: 142.5321502685547 Validation Error: 197.21124267578125 Test Error: 167.039306640625
+Round: 3500 Training Error: 140.8883514404297 Validation Error: 195.73167419433594 Test Error: 160.99143981933594
+Round: 4000 Training Error: 125.17810821533203 Validation Error: 200.39620971679688 Test Error: 168.67962646484375
+Round: 4500 Training Error: 136.43714904785156 Validation Error: 198.39163208007812 Test Error: 165.6367950439453
+Round: 5000 Training Error: 135.68276977539062 Validation Error: 199.17333984375 Test Error: 167.9006805419922
+Round: 5500 Training Error: 135.7913055419922 Validation Error: 196.5486297607422 Test Error: 163.8130340576172
+Round: 6000 Training Error: 135.7672576904297 Validation Error: 196.19740295410156 Test Error: 166.05642700195312
+Round: 6500 Training Error: 134.68629455566406 Validation Error: 197.45887756347656 Test Error: 164.55447387695312
+Round: 7000 Training Error: 135.91709899902344 Validation Error: 197.67483520507812 Test Error: 164.98733520507812
+Round: 7500 Training Error: 119.73919677734375 Validation Error: 196.26625061035156 Test Error: 164.62583923339844
+Round: 8000 Training Error: 134.0048828125 Validation Error: 196.43084716796875 Test Error: 164.5442657470703
+Round: 8500 Training Error: 132.34701538085938 Validation Error: 196.84243774414062 Test Error: 165.2925262451172
+Round: 9000 Training Error: 134.12110900878906 Validation Error: 195.08493041992188 Test Error: 163.75790405273438
+Round: 9500 Training Error: 120.02981567382812 Validation Error: 194.64276123046875 Test Error: 163.6939239501953
+Round: 10000 Training Error: 132.49867248535156 Validation Error: 193.05499267578125 Test Error: 158.97894287109375
+Round: 10500 Training Error: 130.80323791503906 Validation Error: 195.63662719726562 Test Error: 164.30862426757812
+Round: 11000 Training Error: 130.8137664794922 Validation Error: 194.1537628173828 Test Error: 157.1757049560547
+Round: 11500 Training Error: 132.12168884277344 Validation Error: 194.574951171875 Test Error: 162.11834716796875
+Round: 12000 Training Error: 133.67674255371094 Validation Error: 189.73068237304688 Test Error: 158.76907348632812
+Round: 12500 Training Error: 127.66419982910156 Validation Error: 197.3966522216797 Test Error: 164.53207397460938
+Round: 13000 Training Error: 128.6486053466797 Validation Error: 195.41148376464844 Test Error: 163.85287475585938
+Round: 13500 Training Error: 128.05775451660156 Validation Error: 195.48385620117188 Test Error: 163.00213623046875
+Round: 14000 Training Error: 129.6326904296875 Validation Error: 194.55746459960938 Test Error: 156.87515258789062
+Round: 14500 Training Error: 127.54129791259766 Validation Error: 194.93853759765625 Test Error: 162.89524841308594
+Round: 15000 Training Error: 128.32383728027344 Validation Error: 196.45010375976562 Test Error: 167.26959228515625
+Round: 15500 Training Error: 123.31866455078125 Validation Error: 200.90475463867188 Test Error: 159.27975463867188
+Round: 16000 Training Error: 127.9660873413086 Validation Error: 193.28199768066406 Test Error: 159.01199340820312
+Round: 16500 Training Error: 113.4316177368164 Validation Error: 193.11239624023438 Test Error: 160.5321807861328
+Round: 17000 Training Error: 128.63278198242188 Validation Error: 191.62538146972656 Test Error: 156.58804321289062
+Round: 17500 Training Error: 116.44961547851562 Validation Error: 195.75411987304688 Test Error: 160.02737426757812
+Round: 18000 Training Error: 127.037109375 Validation Error: 195.72923278808594 Test Error: 161.8619384765625
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'dw', 'residual', 'fridge']
+Round: 500 Training Error: 133.97772216796875 Validation Error: 191.1283416748047 Test Error: 153.02989196777344
+Round: 1000 Training Error: 163.8792266845703 Validation Error: 187.60572814941406 Test Error: 148.79248046875
+Round: 1500 Training Error: 110.51921081542969 Validation Error: 181.8804931640625 Test Error: 142.99331665039062
+Round: 2000 Training Error: 112.33663940429688 Validation Error: 178.59475708007812 Test Error: 138.85012817382812
+Round: 2500 Training Error: 104.82869720458984 Validation Error: 180.89154052734375 Test Error: 139.71871948242188
+Round: 3000 Training Error: 103.34443664550781 Validation Error: 180.9490203857422 Test Error: 139.36842346191406
+Round: 3500 Training Error: 101.7398910522461 Validation Error: 181.18170166015625 Test Error: 139.1624755859375
+Round: 4000 Training Error: 102.29545593261719 Validation Error: 179.9627685546875 Test Error: 139.1319580078125
+Round: 4500 Training Error: 101.2507095336914 Validation Error: 180.98077392578125 Test Error: 140.38705444335938
+Round: 5000 Training Error: 100.34915161132812 Validation Error: 180.82470703125 Test Error: 139.2730712890625
+Round: 5500 Training Error: 101.04368591308594 Validation Error: 180.98944091796875 Test Error: 138.794677734375
+Round: 6000 Training Error: 99.71965026855469 Validation Error: 181.45388793945312 Test Error: 139.76507568359375
+Round: 6500 Training Error: 99.04102325439453 Validation Error: 179.93959045410156 Test Error: 138.2674102783203
+Round: 7000 Training Error: 99.2026596069336 Validation Error: 182.37399291992188 Test Error: 139.79403686523438
+Round: 7500 Training Error: 99.7115249633789 Validation Error: 180.7429656982422 Test Error: 138.71343994140625
+Round: 8000 Training Error: 98.56816101074219 Validation Error: 183.0261688232422 Test Error: 140.92630004882812
+Round: 8500 Training Error: 152.6959991455078 Validation Error: 181.7799835205078 Test Error: 140.01902770996094
+Round: 9000 Training Error: 98.90650939941406 Validation Error: 181.8079376220703 Test Error: 139.8993377685547
+Round: 9500 Training Error: 99.18028259277344 Validation Error: 183.88124084472656 Test Error: 142.2757110595703
+Round: 10000 Training Error: 104.63349151611328 Validation Error: 181.89332580566406 Test Error: 141.97471618652344
+Round: 10500 Training Error: 151.59339904785156 Validation Error: 181.81121826171875 Test Error: 140.239013671875
+Round: 11000 Training Error: 112.29222106933594 Validation Error: 184.06817626953125 Test Error: 141.2615203857422
+Round: 11500 Training Error: 102.41252136230469 Validation Error: 178.63986206054688 Test Error: 136.86114501953125
+Round: 12000 Training Error: 100.56212615966797 Validation Error: 181.1810302734375 Test Error: 139.7697296142578
+Round: 12500 Training Error: 152.03628540039062 Validation Error: 181.85589599609375 Test Error: 141.10958862304688
+Round: 13000 Training Error: 153.97412109375 Validation Error: 179.21148681640625 Test Error: 138.2088623046875
+Round: 13500 Training Error: 99.62117767333984 Validation Error: 180.21827697753906 Test Error: 138.9157257080078
+Round: 14000 Training Error: 98.98918914794922 Validation Error: 181.72752380371094 Test Error: 140.73500061035156
+Round: 14500 Training Error: 149.69749450683594 Validation Error: 181.6566925048828 Test Error: 140.41343688964844
+Round: 15000 Training Error: 150.0641326904297 Validation Error: 182.14431762695312 Test Error: 141.0875701904297
+Round: 15500 Training Error: 98.72665405273438 Validation Error: 180.37294006347656 Test Error: 138.1522216796875
+Round: 16000 Training Error: 97.747802734375 Validation Error: 182.4138641357422 Test Error: 141.09776306152344
+Round: 16500 Training Error: 98.02750396728516 Validation Error: 181.883544921875 Test Error: 141.2209014892578
+Round: 17000 Training Error: 102.99042510986328 Validation Error: 181.80953979492188 Test Error: 141.81378173828125
+Round: 17500 Training Error: 97.72344207763672 Validation Error: 181.44998168945312 Test Error: 139.86622619628906
+Round: 18000 Training Error: 97.51924133300781 Validation Error: 180.84524536132812 Test Error: 139.83399963378906
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'dw', 'residual', 'fridge']
+Round: 500 Training Error: 136.1846160888672 Validation Error: 193.22787475585938 Test Error: 155.30865478515625
+Round: 1000 Training Error: 157.22689819335938 Validation Error: 188.66749572753906 Test Error: 151.39891052246094
+Round: 1500 Training Error: 129.35882568359375 Validation Error: 188.06109619140625 Test Error: 150.22474670410156
+Round: 2000 Training Error: 153.28248596191406 Validation Error: 180.85581970214844 Test Error: 141.69839477539062
+Round: 2500 Training Error: 150.11683654785156 Validation Error: 181.777099609375 Test Error: 143.46629333496094
+Round: 3000 Training Error: 108.08802032470703 Validation Error: 183.01686096191406 Test Error: 143.9593963623047
+Round: 3500 Training Error: 111.50320434570312 Validation Error: 179.18902587890625 Test Error: 138.5039825439453
+Round: 4000 Training Error: 108.73243713378906 Validation Error: 183.7342529296875 Test Error: 142.6444549560547
+Round: 4500 Training Error: 105.70305633544922 Validation Error: 181.74923706054688 Test Error: 141.59219360351562
+Round: 5000 Training Error: 144.90660095214844 Validation Error: 185.26454162597656 Test Error: 144.31961059570312
+Round: 5500 Training Error: 104.1848373413086 Validation Error: 183.68507385253906 Test Error: 142.55348205566406
+Round: 6000 Training Error: 106.20288848876953 Validation Error: 185.81861877441406 Test Error: 148.9693145751953
+Round: 6500 Training Error: 104.00836181640625 Validation Error: 182.2063751220703 Test Error: 141.95028686523438
+Round: 7000 Training Error: 103.08245086669922 Validation Error: 181.00839233398438 Test Error: 144.0688934326172
+Round: 7500 Training Error: 102.32515716552734 Validation Error: 183.1280517578125 Test Error: 148.3531951904297
+Round: 8000 Training Error: 101.55223846435547 Validation Error: 186.0266571044922 Test Error: 150.2286376953125
+Round: 8500 Training Error: 141.25303649902344 Validation Error: 191.3743896484375 Test Error: 155.885986328125
+Round: 9000 Training Error: 101.91302490234375 Validation Error: 194.31407165527344 Test Error: 159.4541778564453
+Round: 9500 Training Error: 101.46745300292969 Validation Error: 198.85874938964844 Test Error: 159.01222229003906
+Round: 10000 Training Error: 142.0568084716797 Validation Error: 185.13645935058594 Test Error: 150.4751434326172
+Round: 10500 Training Error: 145.69921875 Validation Error: 179.08181762695312 Test Error: 142.24749755859375
+Round: 11000 Training Error: 140.17691040039062 Validation Error: 187.02113342285156 Test Error: 153.17291259765625
+Round: 11500 Training Error: 104.0856704711914 Validation Error: 187.28265380859375 Test Error: 150.05410766601562
+Round: 12000 Training Error: 102.87715148925781 Validation Error: 187.20147705078125 Test Error: 153.988037109375
+Round: 12500 Training Error: 140.385986328125 Validation Error: 197.3059844970703 Test Error: 155.13674926757812
+Round: 13000 Training Error: 146.87339782714844 Validation Error: 178.0866241455078 Test Error: 140.62338256835938
+Round: 13500 Training Error: 103.60021209716797 Validation Error: 180.87489318847656 Test Error: 152.6064910888672
+Round: 14000 Training Error: 144.5003204345703 Validation Error: 179.01730346679688 Test Error: 147.9722442626953
+Round: 14500 Training Error: 139.10987854003906 Validation Error: 183.17904663085938 Test Error: 153.2318115234375
+Round: 15000 Training Error: 164.94622802734375 Validation Error: 186.7473907470703 Test Error: 143.6339569091797
+Round: 15500 Training Error: 104.96319580078125 Validation Error: 179.4381561279297 Test Error: 136.173583984375
+Round: 16000 Training Error: 147.60240173339844 Validation Error: 178.67642211914062 Test Error: 137.7052459716797
+Round: 16500 Training Error: 99.85476684570312 Validation Error: 181.02989196777344 Test Error: 140.61891174316406
+Round: 17000 Training Error: 106.8890380859375 Validation Error: 182.45899963378906 Test Error: 142.25669860839844
+Round: 17500 Training Error: 102.92362213134766 Validation Error: 179.51292419433594 Test Error: 142.03131103515625
+Round: 18000 Training Error: 100.45976257324219 Validation Error: 181.20306396484375 Test Error: 145.91783142089844
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.8 ['hvac', 'dr', 'mw', 'dw', 'residual', 'fridge']
+Round: 500 Training Error: 160.9173583984375 Validation Error: 198.64794921875 Test Error: 162.36175537109375
+Round: 1000 Training Error: 149.14585876464844 Validation Error: 198.95596313476562 Test Error: 162.1415557861328
+Round: 1500 Training Error: 144.31442260742188 Validation Error: 195.3532257080078 Test Error: 157.4479217529297
+Round: 2000 Training Error: 141.078369140625 Validation Error: 195.76463317871094 Test Error: 158.9034423828125
+Round: 2500 Training Error: 139.73037719726562 Validation Error: 194.6126708984375 Test Error: 159.0832061767578
+Round: 3000 Training Error: 139.5889434814453 Validation Error: 194.13145446777344 Test Error: 158.58743286132812
+Round: 3500 Training Error: 141.41725158691406 Validation Error: 195.49026489257812 Test Error: 157.59425354003906
+Round: 4000 Training Error: 125.99658203125 Validation Error: 201.7786102294922 Test Error: 167.03782653808594
+Round: 4500 Training Error: 136.78829956054688 Validation Error: 196.5746307373047 Test Error: 156.82643127441406
+Round: 5000 Training Error: 135.91741943359375 Validation Error: 196.50572204589844 Test Error: 157.46885681152344
+Round: 5500 Training Error: 135.8070526123047 Validation Error: 196.19775390625 Test Error: 155.7178955078125
+Round: 6000 Training Error: 135.97119140625 Validation Error: 193.7084503173828 Test Error: 153.253662109375
+Round: 6500 Training Error: 135.33352661132812 Validation Error: 195.18495178222656 Test Error: 155.46055603027344
+Round: 7000 Training Error: 135.64669799804688 Validation Error: 189.01583862304688 Test Error: 151.2644805908203
+Round: 7500 Training Error: 113.24148559570312 Validation Error: 193.35537719726562 Test Error: 154.4257354736328
+Round: 8000 Training Error: 135.3740234375 Validation Error: 189.04612731933594 Test Error: 149.19566345214844
+Round: 8500 Training Error: 133.8031005859375 Validation Error: 191.8944091796875 Test Error: 152.92803955078125
+Round: 9000 Training Error: 134.40264892578125 Validation Error: 191.41485595703125 Test Error: 150.63629150390625
+Round: 9500 Training Error: 115.17340850830078 Validation Error: 196.18307495117188 Test Error: 157.3358154296875
+Round: 10000 Training Error: 133.77867126464844 Validation Error: 194.04379272460938 Test Error: 153.4497833251953
+Round: 10500 Training Error: 133.0881805419922 Validation Error: 197.83358764648438 Test Error: 158.16664123535156
+Round: 11000 Training Error: 134.199951171875 Validation Error: 198.01751708984375 Test Error: 158.08139038085938
+Round: 11500 Training Error: 136.05105590820312 Validation Error: 191.04058837890625 Test Error: 150.90338134765625
+Round: 12000 Training Error: 133.03591918945312 Validation Error: 192.99868774414062 Test Error: 153.1585235595703
+Round: 12500 Training Error: 131.91551208496094 Validation Error: 195.7880096435547 Test Error: 155.04867553710938
+Round: 13000 Training Error: 133.6854705810547 Validation Error: 196.59506225585938 Test Error: 156.10687255859375
+Round: 13500 Training Error: 131.28659057617188 Validation Error: 198.5176544189453 Test Error: 156.74937438964844
+Round: 14000 Training Error: 132.40040588378906 Validation Error: 194.59185791015625 Test Error: 153.4219970703125
+Round: 14500 Training Error: 130.87551879882812 Validation Error: 194.53256225585938 Test Error: 153.42063903808594
+Round: 15000 Training Error: 130.68643188476562 Validation Error: 196.04730224609375 Test Error: 154.49696350097656
+Round: 15500 Training Error: 109.14334106445312 Validation Error: 196.42953491210938 Test Error: 154.04376220703125
+Round: 16000 Training Error: 131.5834197998047 Validation Error: 194.40931701660156 Test Error: 152.6204376220703
+Round: 16500 Training Error: 109.40988159179688 Validation Error: 190.9247589111328 Test Error: 150.3052215576172
+Round: 17000 Training Error: 130.8327178955078 Validation Error: 193.3173065185547 Test Error: 152.04917907714844
+Round: 17500 Training Error: 111.9957275390625 Validation Error: 192.0825653076172 Test Error: 151.0733642578125
+Round: 18000 Training Error: 140.1446533203125 Validation Error: 193.25579833984375 Test Error: 148.37014770507812
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 47, in forward
+    e1 = self.conv1(input)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/conv.py", line 277, in forward
+    self.padding, self.dilation, self.groups)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 90, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.2 ['hvac', 'dr', 'mw', 'residual', 'fridge', 'dw']
+Round: 500 Training Error: 135.00201416015625 Validation Error: 192.18310546875 Test Error: 152.91456604003906
+Round: 1000 Training Error: 164.29469299316406 Validation Error: 188.16371154785156 Test Error: 149.7634735107422
+Round: 1500 Training Error: 117.16986083984375 Validation Error: 182.20388793945312 Test Error: 143.78134155273438
+Round: 2000 Training Error: 106.96880340576172 Validation Error: 179.91168212890625 Test Error: 139.28297424316406
+Round: 2500 Training Error: 104.89848327636719 Validation Error: 181.653076171875 Test Error: 138.2678680419922
+Round: 3000 Training Error: 102.41498565673828 Validation Error: 180.19235229492188 Test Error: 137.45314025878906
+Round: 3500 Training Error: 101.66340637207031 Validation Error: 177.79592895507812 Test Error: 136.12783813476562
+Round: 4000 Training Error: 102.68148040771484 Validation Error: 178.2389678955078 Test Error: 136.47105407714844
+Round: 4500 Training Error: 100.65291595458984 Validation Error: 177.9501190185547 Test Error: 137.02980041503906
+Round: 5000 Training Error: 99.29959106445312 Validation Error: 178.5730743408203 Test Error: 136.99632263183594
+Round: 5500 Training Error: 100.35326385498047 Validation Error: 179.42556762695312 Test Error: 137.90455627441406
+Round: 6000 Training Error: 108.17166900634766 Validation Error: 182.0460968017578 Test Error: 139.3907012939453
+Round: 6500 Training Error: 102.45761108398438 Validation Error: 182.73036193847656 Test Error: 140.53305053710938
+Round: 7000 Training Error: 98.21202850341797 Validation Error: 179.1880340576172 Test Error: 137.7071075439453
+Round: 7500 Training Error: 99.52603912353516 Validation Error: 179.4161834716797 Test Error: 138.65155029296875
+Round: 8000 Training Error: 99.28440856933594 Validation Error: 179.4685516357422 Test Error: 137.6034698486328
+Round: 8500 Training Error: 151.94789123535156 Validation Error: 180.94886779785156 Test Error: 140.34010314941406
+Round: 9000 Training Error: 97.0461196899414 Validation Error: 182.18067932128906 Test Error: 141.7830810546875
+Round: 9500 Training Error: 100.07231140136719 Validation Error: 180.8756561279297 Test Error: 138.5892333984375
+Round: 10000 Training Error: 100.81523132324219 Validation Error: 181.00360107421875 Test Error: 140.40866088867188
+Round: 10500 Training Error: 150.4845733642578 Validation Error: 181.652099609375 Test Error: 141.36805725097656
+Round: 11000 Training Error: 98.55839538574219 Validation Error: 182.92547607421875 Test Error: 141.9761199951172
+Round: 11500 Training Error: 96.99932098388672 Validation Error: 181.8035888671875 Test Error: 140.3342742919922
+Round: 12000 Training Error: 98.3302230834961 Validation Error: 180.06300354003906 Test Error: 136.85513305664062
+Round: 12500 Training Error: 149.578369140625 Validation Error: 182.64932250976562 Test Error: 141.58670043945312
+Round: 13000 Training Error: 149.95513916015625 Validation Error: 180.89024353027344 Test Error: 139.6206817626953
+Round: 13500 Training Error: 97.293212890625 Validation Error: 181.8096160888672 Test Error: 141.1385955810547
+Round: 14000 Training Error: 96.98151397705078 Validation Error: 184.17039489746094 Test Error: 141.95770263671875
+Round: 14500 Training Error: 148.11456298828125 Validation Error: 182.39633178710938 Test Error: 139.88180541992188
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+5 4 0.01 20000 0.4 ['hvac', 'dr', 'mw', 'residual', 'fridge', 'dw']
+Round: 500 Training Error: 137.52516174316406 Validation Error: 193.89576721191406 Test Error: 156.05184936523438
+Round: 1000 Training Error: 157.89418029785156 Validation Error: 189.4071044921875 Test Error: 152.62454223632812
+Round: 1500 Training Error: 120.0106430053711 Validation Error: 186.4922637939453 Test Error: 149.40785217285156
+Round: 2000 Training Error: 151.9210662841797 Validation Error: 182.0924835205078 Test Error: 144.9601287841797
+Round: 2500 Training Error: 150.0224151611328 Validation Error: 180.79539489746094 Test Error: 143.1503143310547
+Round: 3000 Training Error: 107.5908432006836 Validation Error: 182.7941436767578 Test Error: 143.7786407470703
+Round: 3500 Training Error: 110.16337585449219 Validation Error: 184.57391357421875 Test Error: 143.32069396972656
+Round: 4000 Training Error: 107.90762329101562 Validation Error: 182.45611572265625 Test Error: 143.90750122070312
+Round: 4500 Training Error: 103.78816986083984 Validation Error: 183.35499572753906 Test Error: 143.76318359375
+Round: 5000 Training Error: 145.23367309570312 Validation Error: 185.12692260742188 Test Error: 147.50790405273438
+Round: 5500 Training Error: 103.76425170898438 Validation Error: 182.8297119140625 Test Error: 141.91717529296875
+Round: 6000 Training Error: 104.29196166992188 Validation Error: 186.4925537109375 Test Error: 145.39845275878906
+Round: 6500 Training Error: 103.8828353881836 Validation Error: 185.10858154296875 Test Error: 142.60891723632812
+Round: 7000 Training Error: 102.53724670410156 Validation Error: 187.92733764648438 Test Error: 145.22193908691406
+Round: 7500 Training Error: 101.38414001464844 Validation Error: 185.67312622070312 Test Error: 143.57241821289062
+Round: 8000 Training Error: 102.68672180175781 Validation Error: 185.0229034423828 Test Error: 141.3537139892578
+Round: 8500 Training Error: 142.50732421875 Validation Error: 185.3118133544922 Test Error: 144.71401977539062
+Round: 9000 Training Error: 101.89197540283203 Validation Error: 188.32733154296875 Test Error: 145.81442260742188
+Round: 9500 Training Error: 101.15383911132812 Validation Error: 186.27505493164062 Test Error: 145.1200714111328
+Round: 10000 Training Error: 142.07798767089844 Validation Error: 185.91806030273438 Test Error: 145.43600463867188
+Round: 10500 Training Error: 141.65261840820312 Validation Error: 188.59014892578125 Test Error: 147.4772186279297
+Round: 11000 Training Error: 143.29258728027344 Validation Error: 185.3582305908203 Test Error: 145.3690948486328
+Round: 11500 Training Error: 100.70391082763672 Validation Error: 186.7160186767578 Test Error: 145.1320343017578
+Round: 12000 Training Error: 100.65591430664062 Validation Error: 184.0914306640625 Test Error: 145.35206604003906
+Round: 12500 Training Error: 144.35360717773438 Validation Error: 190.27911376953125 Test Error: 152.3395538330078
+Round: 13000 Training Error: 141.56097412109375 Validation Error: 187.84552001953125 Test Error: 147.1916046142578
+Round: 13500 Training Error: 102.0168228149414 Validation Error: 184.52757263183594 Test Error: 143.32896423339844
+Round: 14000 Training Error: 141.40406799316406 Validation Error: 185.80789184570312 Test Error: 144.83811950683594
+Round: 14500 Training Error: 141.07705688476562 Validation Error: 193.6598358154297 Test Error: 147.45556640625
+Traceback (most recent call last):
+  File "cnn-tree.py", line 279, in <module>
+    train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p)
+  File "cnn-tree.py", line 171, in disagg_fold
+    test_pr = model(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 74, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "cnn-tree.py", line 48, in forward
+    bn1 = self.bn1(self.act(e1))
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/batchnorm.py", line 37, in forward
+    self.training, self.momentum, self.eps)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/functional.py", line 1013, in batch_norm
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512386481460/work/torch/lib/THC/generic/THCStorage.cu:58
