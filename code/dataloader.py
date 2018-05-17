@@ -47,9 +47,10 @@ def get_train_test_tensor(tensor, num_folds=5, fold_num=0):
     return tensor[train, :, :, :], tensor[test, :, :, :]
     
 
-def create_fake_homes(train, num_homes, num_appliance):
-    fake_home = np.zeros((num_homes, 7, 112, 24))
-    home_id = np.random.choice(14, num_homes, False)
+def create_fake_homes(train, num_homes, num_appliance, random_seed):
+    np.random.seed(random_seed)
+    fake_home = np.zeros((num_homes, 6, 112, 24))
+    home_id = np.random.choice(train.shape[0], num_homes, True)
     
     for i in range(num_homes):
         fake_home[i] = train[home_id[i]]

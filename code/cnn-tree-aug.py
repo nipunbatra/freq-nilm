@@ -103,13 +103,13 @@ def preprocess(train, valid, test):
 
 	return out_train, out_valid, out_test
 
-def disagg_fold(dataset, fold_num, lr, p, aug_rate):
+def disagg_fold(dataset, fold_num, lr, p, aug_rate, random_seed):
 	train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
 	valid = train[int(0.8*len(train)):].copy()
 	train = train[:int(0.8 * len(train))].copy()
 
 	num_aug = int(aug_rate * train.shape[0])
-	aug_homes = create_fake_homes(train, num_aug, 3)
+	aug_homes = create_fake_homes(train, num_aug, 3, random_seed)
 	train = np.vstack((train, aug_homes))
 
 	train_aggregate = train[:, 0, :, :].reshape(train.shape[0], 1, -1, 24)
@@ -271,30 +271,31 @@ def disagg_fold(dataset, fold_num, lr, p, aug_rate):
 
 
 num_folds = 5
-dataset, lr, num_iterations, p, fold_num, aug_rate = sys.argv[1:7]
-ORDER = sys.argv[7:len(sys.argv)]
+dataset, lr, num_iterations, p, fold_num, aug_rate, random_seed = sys.argv[1:8]
+ORDER = sys.argv[8:len(sys.argv)]
 dataset = int(dataset)
 lr = float(lr)
 num_iterations = int(num_iterations)
 p = float(p)
 fold_num = int(fold_num)
 aug_rate = float(aug_rate)
+random_seed = int(random_seed)
 
 print(dataset, fold_num, lr, num_iterations, p, ORDER)
 
-train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p, aug_rate)
+train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p, aug_rate, random_seed)
 
-directory = "./baseline/cnn-tree-aug/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p)
+directory = "./baseline/cnn-tree-aug/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p, aug_rate, random_seed)
 if not os.path.exists(directory):
     os.makedirs(directory)
 
 
 np.save('{}/valid-pred-{}.npy'.format(directory, ORDER), valid_fold)
 np.save('{}/valid-error-{}.npy'.format(directory, ORDER), valid_error)
-np.save('{}/valid-losses-{}.npy'.format(directory, ORDER), valid_losses)
-np.save('{}/train-pred-{}.npy'.format(directory, ORDER), train_fold)
-np.save('{}/train-error-{}.npy'.format(directory, ORDER), train_error)
-np.save('{}/train-losses-{}.npy'.format(directory, ORDER), train_losses)
+#np.save('{}/valid-losses-{}.npy'.format(directory, ORDER), valid_losses)
+#np.save('{}/train-pred-{}.npy'.format(directory, ORDER), train_fold)
+#np.save('{}/train-error-{}.npy'.format(directory, ORDER), train_error)
+#np.save('{}/train-losses-{}.npy'.format(directory, ORDER), train_losses)
 np.save('{}/test-pred-{}.npy'.format(directory, ORDER), test_fold)
 np.save('{}/test-error-{}.npy'.format(directory, ORDER), test_error)
-np.save('{}/test-losses-{}.npy'.format(directory, ORDER), test_losses)
+#np.save('{}/test-losses-{}.npy'.format(directory, ORDER), test_losses)
