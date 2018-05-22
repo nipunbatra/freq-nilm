@@ -49,7 +49,7 @@ def discriminative(dataset, cur_fold, num_latent, num_iterations):
     test_pred = test_pred.swapaxes(0, 2).swapaxes(1, 2)
     test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 24)
 
-    test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
+    #test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
 
     test_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(test_pred[:, i,:,:].flatten(), 
                                                                        test_gt[:, i, :, :].flatten()) for i in range(test_pred.shape[1])}
@@ -65,6 +65,7 @@ num_latent = int(num_latent)
 num_iterations = int(num_iterations)
 
 valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = discriminative(dataset, cur_fold, num_latent, num_iterations)
+print(test_error)
 
 np.save("./baseline/sc-with-nested/{}/sc-with-valid-pred-{}-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent, num_iterations), valid_pred)
 np.save("./baseline/sc-with-nested/{}/sc-with-valid-error-{}-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent, num_iterations), valid_error)

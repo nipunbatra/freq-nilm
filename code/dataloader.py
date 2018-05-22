@@ -47,16 +47,36 @@ def get_train_test_tensor(tensor, num_folds=5, fold_num=0):
     return tensor[train, :, :, :], tensor[test, :, :, :]
     
 
-def create_fake_homes(train, num_homes, num_appliance, random_seed):
+def create_fake_homes(train, num_homes, num_appliance, random_seed, weeks):
     np.random.seed(random_seed)
     fake_home = np.zeros((num_homes, 6, 112, 24))
     home_id = np.random.choice(train.shape[0], num_homes, True)
+    unit = int(16/weeks)
+    day = weeks*7
     
     for i in range(num_homes):
         fake_home[i] = train[home_id[i]]
         app_id = np.random.choice([1, 2, 3 ,4, 5], num_appliance, False)
         for j in range(num_appliance):
-            permu = np.random.permutation(range(8))
-            for k in range(8):
-                fake_home[i][app_id[j]][k*14:(k+1)*14] = train[home_id[i]][app_id[j]][permu[k]*14:(permu[k]+1)*14]
+            permu = np.random.permutation(range(unit))
+            for k in range(unit):
+                fake_home[i][app_id[j]][k*day:(k+1)*day] = train[home_id[i]][app_id[j]][permu[k]*day:(permu[k]+1)*day]
+    return fake_home
+
+def create_fake_homes_2(train, num_homes, num_appliance, random_seed, weeks):
+    np.random.seed(random_seed)
+    fake_home = np.zeros((num_homes, 6, 112, 24))
+    home_id = np.random.choice(train.shape[0], num_homes, False)
+    unit = int(16/weeks)
+    day = weeks*7    
+
+    for i in range(num_homes):
+        fake_home[i] = train[home_id[i]]
+        app_id = np.random.choice([1, 2, 3 ,4, 5], num_appliance, False)
+        for j in range(num_appliance):
+            
+            for k in range(2):
+                units = np.random.choice(unit, 2, False)
+                fake_home[i][app_id[j]][units[0]*day:(units[0]+1)*day], fake_home[i][app_id[j]][units[1]*day:(units[1]+1)*day] = fake_home[i][app_id[j]][units[1]*day:(units[1]+1)*day], fake_home[i][app_id[j]][units[0]*day:(units[0]+1)*day]
+            
     return fake_home

@@ -6,7 +6,7 @@ from torchvision import datasets,transforms
 import torch.nn.functional as F
 import sys
 sys.path.append("../code/")
-from dataloader import APPLIANCE_ORDER, get_train_test, create_fake_homes
+from dataloader import *
 from sklearn.metrics import mean_absolute_error
 import os
 
@@ -103,13 +103,13 @@ def preprocess(train, valid, test):
 
 	return out_train, out_valid, out_test
 
-def disagg_fold(dataset, fold_num, lr, p, aug_rate, random_seed):
+def disagg_fold(dataset, fold_num, lr, p, aug_rate, week, random_seed):
 	train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
 	valid = train[int(0.8*len(train)):].copy()
 	train = train[:int(0.8 * len(train))].copy()
 
 	num_aug = int(aug_rate * train.shape[0])
-	aug_homes = create_fake_homes(train, num_aug, 3, random_seed)
+	aug_homes = create_fake_homes_2(train, num_aug, 3, random_seed, week)
 	train = np.vstack((train, aug_homes))
 
 	train_aggregate = train[:, 0, :, :].reshape(train.shape[0], 1, -1, 24)
@@ -271,8 +271,8 @@ def disagg_fold(dataset, fold_num, lr, p, aug_rate, random_seed):
 
 
 num_folds = 5
-dataset, lr, num_iterations, p, fold_num, aug_rate, random_seed = sys.argv[1:8]
-ORDER = sys.argv[8:len(sys.argv)]
+dataset, lr, num_iterations, p, fold_num, week, aug_rate, random_seed = sys.argv[1:9]
+ORDER = sys.argv[9:len(sys.argv)]
 dataset = int(dataset)
 lr = float(lr)
 num_iterations = int(num_iterations)
@@ -280,12 +280,13 @@ p = float(p)
 fold_num = int(fold_num)
 aug_rate = float(aug_rate)
 random_seed = int(random_seed)
+week = int(week)
 
 print(dataset, fold_num, lr, num_iterations, p, ORDER)
 
-train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p, aug_rate, random_seed)
+train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset, fold_num, lr, p, aug_rate, week, random_seed)
 
-directory = "./baseline/cnn-tree-aug/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p, aug_rate, random_seed)
+directory = "./baseline/cnn-tree-aug/{}/{}/{}/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p,week, aug_rate,random_seed)
 if not os.path.exists(directory):
     os.makedirs(directory)
 

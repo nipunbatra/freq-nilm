@@ -41,7 +41,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     test_pred = c.disaggregate(test_sc[:, :, 0].swapaxes(0, 1)).swapaxes(0, 2).swapaxes(1, 2)
     test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 24)
 
-    test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
+    #test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
 
     test_error = {APPLIANCE_ORDER[i+1]:mean_absolute_error(test_pred[:, i,:,:].flatten(), 
                                                                        test_gt[:, i, :, :].flatten()) for i in range(test_pred.shape[1])}
