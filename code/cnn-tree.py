@@ -20,16 +20,16 @@ torch.manual_seed(0)
 class CustomCNN(nn.Module):
     def __init__(self):
         super(CustomCNN, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, kernel_size=7, stride=1, padding=2)
-        self.bn1 = nn.BatchNorm2d(20)
+        self.conv1 = nn.Conv2d(1, 16, kernel_size=7, stride=1, padding=2)
+        self.bn1 = nn.BatchNorm2d(16)
 
-        self.conv2 = nn.Conv2d(20, 16, kernel_size=2, stride=2, padding=1)
-        self.bn2 = nn.BatchNorm2d(16)
+        self.conv2 = nn.Conv2d(16, 32, kernel_size=2, stride=2, padding=1)
+        self.bn2 = nn.BatchNorm2d(32)
 
-        self.conv5 = nn.ConvTranspose2d(16, 6, kernel_size=4, stride=2, padding=1)
-        self.bn5 = nn.BatchNorm2d(6)
+        self.conv5 = nn.ConvTranspose2d(32, 16, kernel_size=2, stride=2, padding=1)
+        self.bn5 = nn.BatchNorm2d(16)
 
-        self.conv6 = nn.ConvTranspose2d(6, 1, kernel_size=5, stride=1, padding=2)
+        self.conv6 = nn.ConvTranspose2d(16, 1, kernel_size=7, stride=1, padding=2)
 
         self.act = nn.ReLU()
 

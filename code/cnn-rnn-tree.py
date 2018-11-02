@@ -2,13 +2,14 @@ import torch
 from torch.autograd import Variable
 import numpy as np
 import torch.nn as nn
-from torchvision import datasets,transforms
-import torch.nn.functional as F
+# from torchvision import datasets,transforms
+# import torch.nn.functional as F
 import sys
 sys.path.append("../code/")
 from dataloader import APPLIANCE_ORDER, get_train_test
 from sklearn.metrics import mean_absolute_error
 import os
+
 
 cuda_av = False
 if torch.cuda.is_available():
@@ -16,6 +17,7 @@ if torch.cuda.is_available():
 
 torch.manual_seed(0)
 np.random.seed(0)
+
 
 class CustomRNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional):
@@ -48,37 +50,32 @@ class CustomRNN(nn.Module):
         pred = torch.min(pred, x)
         return pred
 
+
 class CustomCNN(nn.Module):
     def __init__(self):
         super(CustomCNN, self).__init__()
-        self.conv1 = nn.Conv2d(1, 20, kernel_size=7, stride=1, padding=2)
+        self.conv1 = nn.Conv2d(1, 16, kernel_size=7, stride=1, padding=2)
         self.bn1 = nn.BatchNorm2d(20)
 
-        self.conv2 = nn.Conv2d(20, 16, kernel_size=2, stride=2, padding=1)
+        self.conv2 = nn.Conv2d(16, 32, kernel_size=2, stride=2, padding=1)
         self.bn2 = nn.BatchNorm2d(16)
 
-        self.conv3 = nn.Conv2d(16, 64, kernel_size=4, stride=2, padding=1)
-        self.bn3 = nn.BatchNorm2d(64)
-
-        self.conv4 = nn.ConvTranspose2d(64, 16, kernel_size=4, stride=2, padding=1)
-        self.bn4 = nn.BatchNorm2d(16)
-
-        self.conv5 = nn.ConvTranspose2d(16, 6, kernel_size=4, stride=2, padding=1)
+        self.conv5 = nn.ConvTranspose2d(32, 16, kernel_size=2, stride=2, padding=1)
         self.bn5 = nn.BatchNorm2d(6)
 
-        self.conv6 = nn.ConvTranspose2d(6, 1, kernel_size=5, stride=1, padding=2) 
-        
+        self.conv6 = nn.ConvTranspose2d(16, 1, kernel_size=7, stride=1, padding=2)
+        self.bn6 = nn.BatchNorm2d(1)
         self.act = nn.ReLU()
-        
+
     # forward method
     def forward(self, input):
-        
         e1 = self.conv1(input)
         bn1 = self.bn1(self.act(e1))
-        e2 = self.bn2(self.conv2(bn1))        
+        e2 = self.bn2(self.conv2(bn1))
         e5 = self.bn5(self.conv5(e2))
         e6 = self.conv6(e5)
         return e6
+
 
 class AppliancesRNNCNN(nn.Module):
     def __init__(self, cell_type, hidden_size, num_layers, bidirectional, num_appliance):
@@ -92,7 +89,6 @@ class AppliancesRNNCNN(nn.Module):
                     setattr(self, "Appliance_" + str(appliance), CustomRNN(cell_type, hidden_size,
                                                                            num_layers, bidirectional).cuda())
                 else:
-                   
                     setattr(self, "Appliance_" + str(appliance), CustomRNN(cell_type, hidden_size,
                                                                            num_layers, bidirectional))
             else:
@@ -100,7 +96,6 @@ class AppliancesRNNCNN(nn.Module):
                     setattr(self, "Appliance_" + str(appliance), CustomCNN().cuda())
                 else:
                     setattr(self, "Appliance_" + str(appliance), CustomCNN())
-
 
     def forward(self, *args):
         agg_current = args[0]
@@ -115,19 +110,16 @@ class AppliancesRNNCNN(nn.Module):
                 agg_current = agg_current.view(agg_current.shape[0], -1, 1)
             else:
                 agg_current = agg_current.view(agg_current.shape[0], 1, -1, 24)
-            
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
-            
             agg_current = agg_current.view(agg_current.shape[0], 1, -1, 24)
             self.preds[appliance] = self.preds[appliance].view(self.preds[appliance].shape[0], 1, -1, 24)
-            
-            
             if flag:
                 agg_current = agg_current - self.preds[appliance]
             else:
                 agg_current = agg_current - args[2 + appliance]
 
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
+
 
 def preprocess(train, valid, test):
     out_train = [None for temp in range(len(ORDER))]
@@ -143,7 +135,6 @@ def preprocess(train, valid, test):
             torch.Tensor(valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape((valid.shape[0], 1, -1, 24))))
         if cuda_av:
             out_valid[a_num] = out_valid[a_num].cuda()
-            
     out_test = [None for temp in range(len(ORDER))]
     for a_num, appliance in enumerate(ORDER):
         out_test[a_num] = Variable(
@@ -153,16 +144,16 @@ def preprocess(train, valid, test):
 
     return out_train, out_valid, out_test
 
+
 def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p):
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=fold_num)
-    valid = train[int(0.8*len(train)):].copy()
+    valid = train[int(0.8 * len(train)):].copy()
     train = train[:int(0.8 * len(train))].copy()
     train_aggregate = train[:, 0, :, :].reshape(train.shape[0], 1, -1, 24)
     valid_aggregate = valid[:, 0, :, :].reshape(valid.shape[0], 1, -1, 24)
     test_aggregate = test[:, 0, :, :].reshape(test.shape[0], 1, -1, 24)
 
     out_train, out_valid, out_test = preprocess(train, valid, test)
-    
     loss_func = nn.L1Loss()
     model = AppliancesRNNCNN(cell_type, hidden_size, num_layers, bidirectional, len(ORDER))
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -170,7 +161,6 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
     if cuda_av:
         model = model.cuda()
         loss_func = loss_func.cuda()
-
 
     inp = Variable(torch.Tensor(train_aggregate), requires_grad=False)
     valid_inp = Variable(torch.Tensor(valid_aggregate), requires_grad=False)
@@ -196,8 +186,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
 
     if cuda_av:
         train_out = train_out.cuda()
-            
-    for t in range(1, num_iterations+1):
+    for t in range(1, num_iterations + 1):
         print("iterations:", t)
         pred = model(*params)
         optimizer.zero_grad()
@@ -223,7 +212,6 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
             test_losses[t] = test_loss.data[0]
             valid_losses[t] = valid_loss.data[0]
             train_losses[t] = loss.data[0]
-            # np.save("./baseline/p_50_loss")
 
             if t % 1000 == 0:
                 valid_pr = torch.clamp(valid_pr, min=0.)
@@ -250,7 +238,6 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
         else:
             for appliance_num, appliance in enumerate(ORDER):
                 train_fold[t][appliance_num] = train_pred[t][appliance_num].data.numpy().reshape(-1, 24)
-                
     valid_fold = {}
     for t in range(1000, num_iterations + 1, 1000):
         valid_pred[t] = torch.split(valid_pred[t], valid_aggregate.shape[0])
@@ -263,7 +250,7 @@ def disagg_fold(dataset, fold_num, cell_type, hidden_size, num_layers, bidirecti
                 valid_fold[t][appliance_num] = valid_pred[t][appliance_num].data.numpy().reshape(-1, 24)
 
     test_fold = {}
-    for t in range(1000, num_iterations + 1,1000):
+    for t in range(1000, num_iterations + 1, 1000):
         test_pred[t] = torch.split(test_pred[t], test_aggregate.shape[0])
         test_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
