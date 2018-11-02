@@ -1,0 +1,2292 @@
+nohup: ignoring input
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'fridge', 'mw', 'dw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'fridge', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'fridge', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'dw', 'fridge', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'dw', 'mw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'mw', 'fridge', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dr', 'mw', 'dw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'fridge', 'dr', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'fridge', 'mw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'dr', 'fridge', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'dr', 'mw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'mw', 'fridge', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'dw', 'mw', 'dr', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'fridge', 'dr', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'fridge', 'dw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'dr', 'fridge', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'dr', 'dw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'dw', 'fridge', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['hvac', 'residual', 'mw', 'dw', 'dr', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'dw', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'dw', 'residual', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'mw', 'dw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'mw', 'residual', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'residual', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dr', 'residual', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'dr', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'dr', 'residual', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'mw', 'dr', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'mw', 'residual', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'residual', 'dr', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'dw', 'residual', 'mw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'dr', 'dw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'dr', 'residual', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'dw', 'dr', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'dw', 'residual', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'residual', 'dr', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'mw', 'residual', 'dw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'dr', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'dr', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'dw', 'dr', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'dw', 'mw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'mw', 'dr', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'hvac', 'residual', 'mw', 'dw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'dw', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'dw', 'residual', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'mw', 'dw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'mw', 'residual', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'residual', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'hvac', 'residual', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'hvac', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'hvac', 'residual', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirection5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'hvac', 'mw', 'residual']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'hvac', 'residual', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'mw', 'hvac', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'mw', 'residual', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'residual', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'dw', 'residual', 'mw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'hvac', 'dw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'hvac', 'residual', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'dw', 'hvac', 'residual']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'dw', 'residual', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'residual', 'hvac', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'residual', 'dw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'hvac', 'dw', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'hvac', 'mw', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'dw', 'hvac', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'dw', 'mw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'mw', 'hvac', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'mw', 'dw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'mw', 'residual', 'dw', 'hvac', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'mw', 'residual', 'dw', 'fridge', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'fridge', 'dw', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'fridge', 'mw', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'dw', 'fridge', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'dw', 'mw', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'mw', 'fridge', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'mw', 'dw', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'hvac', 'dw', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'hvac', 'mw', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'dw', 'hvac', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'dw', 'mw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'mw', 'hvac', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'mw', 'dw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'hvac', 'fridge', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'hvac', 'mw', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'fridge', 'hvac', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'fridge', 'mw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'mw', 'hvac', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'mw', 'fridge', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'hvac', 'fridge', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'hvac', 'dw', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'fridge', 'hvac', 'dw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'fridge', 'dw', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'dw', 'hvac', 'fridge']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'dw', 'fridge', 'hvac']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'dr', 'mw', 'residual']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'dr', 'residual', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'mw', 'dr', 'residual']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'mw', 'residual', 'dr']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'residual', 'dr', 'mw']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'residual', 'mw', 'dr']
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'dr', 'fridge', 'mw', 'residual']
+rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'dw', 'residual', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'residual', 'hvac', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'mw', 'residual', 'dw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'hvac', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'hvac', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'dw', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'dw', 'mw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'mw', 'hvac', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['fridge', 'dr', 'residual', 'mw', 'dw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'mw', 'residual', 'dw', 'hvac', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'mw', 'residual', 'dw', 'fridge', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'fridge', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'fridge', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'dw', 'fridge', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'dw', 'mw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'mw', 'fridge', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'hvac', 'mw', 'dw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'hvac', 'dw', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'hvac', 'mw', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'dw', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'dw', 'mw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'mw', 'hvac', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'fridge', 'mw', 'dw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'hvac', 'fridge', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'hvac', 'mw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'fridge', 'hvac', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'fridge', 'mw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'mw', 'hvac', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'dw', 'mw', 'fridge', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'hvac', 'fridge', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'hvac', 'dw', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'fridge', 'hvac', 'dw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'fridge', 'dw', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'dw', 'hvac', 'fridge']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dr', 'residual', 'mw', 'dw', 'fridge', 'hvac']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'dr', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'dr', 'residual', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'mw', 'dr', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'mw', 'residual', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'residual', 'dr', 'mw']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'fridge', 'residual', 'mw', 'dr']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory
+5 1 LSTM 50 2 True 0.01 3000 0.0 ['dw', 'hvac', 'dr', 'fridge', 'mw', 'residual']
+Traceback (most recent call last):
+  File "rnn-nested-cv.py", line 316, in <module>
+    train_fold, valid_fold, test_fold, valid_error, test_error, valid_losses, test_losses = disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p)
+  File "rnn-nested-cv.py", line 212, in disagg_fold
+    test_pr = a(*test_params)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 89, in forward
+    self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "rnn-nested-cv.py", line 47, in forward
+    pred, hidden = self.rnn(x, None)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 477, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 192, in forward
+    output, hidden = func(input, self.all_weights, hx, batch_sizes)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 324, in forward
+    return func(input, *fargs, **fkwargs)
+  File "/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/torch/nn/_functions/rnn.py", line 288, in forward
+    dropout_ts)
+RuntimeError: CUDA error: out of memory

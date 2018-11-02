@@ -7,6 +7,8 @@ import torch
 import torch.nn as nn
 import os
 from torch.autograd import Variable
+import warnings
+warnings.filterwarnings("ignore")
 
 cuda_av = False
 if torch.cuda.is_available():
@@ -323,6 +325,6 @@ np.save('./baseline/rnn-tree/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.forma
 # np.save('./baseline/rnn-tree-order-new/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
 np.save('./baseline/rnn-tree/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
 np.save('./baseline/rnn-tree/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
-np.save('./baseline/rnn-tree/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
-np.save('./baseline/rnn-tree/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
+# np.save('./baseline/rnn-tree/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
+# np.save('./baseline/rnn-tree/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)
 

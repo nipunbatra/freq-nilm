@@ -65,10 +65,10 @@ class AppliancesCNN(nn.Module):
             pass
         for appliance in range(self.num_appliance):
             self.preds[appliance] = getattr(self, "Appliance_" + str(appliance))(agg_current)
-            if flag:
-                agg_current = agg_current - self.preds[appliance]
-            else:
-                agg_current = agg_current - args[2 + appliance]
+            # if flag:
+            #     agg_current = agg_current - self.preds[appliance]
+            # else:
+            #     agg_current = agg_current - args[2 + appliance]
 
         return torch.cat([self.preds[a] for a in range(self.num_appliance)])
 
@@ -273,7 +273,7 @@ print(dataset, fold_num, lr, num_iterations, p, ORDER)
 train_fold, valid_fold, test_fold, train_error, valid_error, test_error, train_losses, valid_losses, test_losses = disagg_fold(dataset,
                                                                                                                                fold_num, lr, p)
 
-directory = "./baseline/cnn-tree/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p)
+directory = "./baseline/cnn/{}/{}/{}/{}/{}".format(dataset, fold_num, lr, num_iterations, p)
 if not os.path.exists(directory):
     os.makedirs(directory)
 
