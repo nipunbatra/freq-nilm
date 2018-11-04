@@ -19,7 +19,7 @@ MAX_NUM_MY_JOBS = 500
 # Delay between jobs when we exceed the max. number of jobs we want on the cluster
 DELAY_NUM_JOBS_EXCEEDED = 10
 import time
-for dataset in [3]:
+for dataset in [6]:
 	for cur_fold in range(5):
 		for num_latent in range(17, 21):
 			for lr in [0.01, 0.1 ,1 ,2]:
@@ -27,7 +27,7 @@ for dataset in [3]:
 					OFILE = "{}/{}-{}-{}-{}-{}.out".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
 					EFILE = "{}/{}-{}-{}-{}-{}.err".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
 					SLURM_SCRIPT = "{}/tf-{}-{}-{}-{}-{}.pbs".format(SLURM_OUT, dataset, cur_fold, num_latent, lr, iters)
-					CMD = 'python baseline-stf-nested-valid.py {} {} {} {} {}; python baseline-mtf-nested-valid.py {} {} {} {} {}'.format(dataset, cur_fold, num_latent, lr, iters, dataset, cur_fold, num_latent, lr, iters)
+					CMD = 'python baseline-stf-nested-valid.py {} {} {} {} {}'.format(dataset, cur_fold, num_latent, lr, iters)
 					lines = []
 					lines.append("#!/bin/sh\n")
 					lines.append('#SBATCH --time=1-16:0:00\n')

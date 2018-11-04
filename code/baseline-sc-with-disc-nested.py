@@ -5,6 +5,7 @@ from dataloader import APPLIANCE_ORDER, get_train_test
 from ddsc import SparseCoding, reshape_for_sc
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
+import os
 
 
 
@@ -30,7 +31,7 @@ def discriminative(dataset, cur_fold, num_latent, num_iterations):
                                          num_iter=num_iterations)
     valid_pred = valid_pred[-1, :, :, :]
     valid_pred = valid_pred.swapaxes(0, 2).swapaxes(1, 2)
-    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, 24)
+    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, 8)
     
     valid_pred = np.minimum(valid_pred, valid_gt[:, 0:1, :, :])
 
@@ -47,7 +48,7 @@ def discriminative(dataset, cur_fold, num_latent, num_iterations):
                                          num_iter=num_iterations)
     test_pred = test_pred[-1, :, :, :]
     test_pred = test_pred.swapaxes(0, 2).swapaxes(1, 2)
-    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 24)
+    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 8)
 
     #test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
 
@@ -66,6 +67,10 @@ num_iterations = int(num_iterations)
 
 valid_pred, valid_error, valid_gt, test_pred, test_error, test_gt = discriminative(dataset, cur_fold, num_latent, num_iterations)
 print(test_error)
+
+directory = "./baseline/sc-with-nested/{}/".format(dataset)
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 np.save("./baseline/sc-with-nested/{}/sc-with-valid-pred-{}-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent, num_iterations), valid_pred)
 np.save("./baseline/sc-with-nested/{}/sc-with-valid-error-{}-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent, num_iterations), valid_error)

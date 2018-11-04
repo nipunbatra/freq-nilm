@@ -1,0 +1,358 @@
+nohup: ignoring input
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'dr', 'dw', 'mw']
+Round: 500 Training Error: tensor(220.5684, device='cuda:0') Validation Error: tensor(224.7122, device='cuda:0') Test Error: tensor(304.9751, device='cuda:0')
+Round: 1000 Training Error: tensor(218.6765, device='cuda:0') Validation Error: tensor(231.0679, device='cuda:0') Test Error: tensor(308.3314, device='cuda:0')
+Round: 1500 Training Error: tensor(213.1069, device='cuda:0') Validation Error: tensor(227.0412, device='cuda:0') Test Error: tensor(305.2228, device='cuda:0')
+Round: 2000 Training Error: tensor(210.0866, device='cuda:0') Validation Error: tensor(225.6678, device='cuda:0') Test Error: tensor(305.7013, device='cuda:0')
+Round: 2500 Training Error: tensor(207.7546, device='cuda:0') Validation Error: tensor(226.2008, device='cuda:0') Test Error: tensor(305.6350, device='cuda:0')
+Round: 3000 Training Error: tensor(213.7483, device='cuda:0') Validation Error: tensor(222.7453, device='cuda:0') Test Error: tensor(306.6898, device='cuda:0')
+Round: 3500 Training Error: tensor(208.7269, device='cuda:0') Validation Error: tensor(227.1647, device='cuda:0') Test Error: tensor(309.6131, device='cuda:0')
+Round: 4000 Training Error: tensor(206.6904, device='cuda:0') Validation Error: tensor(230.2168, device='cuda:0') Test Error: tensor(309.9433, device='cuda:0')
+Round: 4500 Training Error: tensor(206.8922, device='cuda:0') Validation Error: tensor(234.3019, device='cuda:0') Test Error: tensor(312.8073, device='cuda:0')
+Round: 5000 Training Error: tensor(211.8384, device='cuda:0') Validation Error: tensor(240.8150, device='cuda:0') Test Error: tensor(315.9117, device='cuda:0')
+Round: 5500 Training Error: tensor(214.8613, device='cuda:0') Validation Error: tensor(223.0799, device='cuda:0') Test Error: tensor(304.1667, device='cuda:0')
+Round: 6000 Training Error: tensor(211.1679, device='cuda:0') Validation Error: tensor(224.2221, device='cuda:0') Test Error: tensor(304.4919, device='cuda:0')
+Round: 6500 Training Error: tensor(211.2618, device='cuda:0') Validation Error: tensor(229.9925, device='cuda:0') Test Error: tensor(308.7536, device='cuda:0')
+Round: 7000 Training Error: tensor(211.2113, device='cuda:0') Validation Error: tensor(247.6928, device='cuda:0') Test Error: tensor(327.8564, device='cuda:0')
+Round: 7500 Training Error: tensor(208.4162, device='cuda:0') Validation Error: tensor(227.4362, device='cuda:0') Test Error: tensor(310.2047, device='cuda:0')
+Round: 8000 Training Error: tensor(210.3495, device='cuda:0') Validation Error: tensor(228.0889, device='cuda:0') Test Error: tensor(311.9964, device='cuda:0')
+Round: 8500 Training Error: tensor(222.8537, device='cuda:0') Validation Error: tensor(224.1400, device='cuda:0') Test Error: tensor(304.6923, device='cuda:0')
+Round: 9000 Training Error: tensor(1659.8545, device='cuda:0') Validation Error: tensor(1693.5236, device='cuda:0') Test Error: tensor(1869.2491, device='cuda:0')
+Round: 9500 Training Error: tensor(220.7391, device='cuda:0') Validation Error: tensor(223.2997, device='cuda:0') Test Error: tensor(305.3738, device='cuda:0')
+Round: 10000 Training Error: tensor(218.5333, device='cuda:0') Validation Error: tensor(223.2272, device='cuda:0') Test Error: tensor(305.2808, device='cuda:0')
+Round: 10500 Training Error: tensor(217.4253, device='cuda:0') Validation Error: tensor(221.8635, device='cuda:0') Test Error: tensor(305.3090, device='cuda:0')
+Round: 11000 Training Error: tensor(215.4453, device='cuda:0') Validation Error: tensor(223.9024, device='cuda:0') Test Error: tensor(306.5108, device='cuda:0')
+Round: 11500 Training Error: tensor(213.3372, device='cuda:0') Validation Error: tensor(225.3071, device='cuda:0') Test Error: tensor(306.7669, device='cuda:0')
+Round: 12000 Training Error: tensor(211.8232, device='cuda:0') Validation Error: tensor(222.3140, device='cuda:0') Test Error: tensor(305.7929, device='cuda:0')
+Round: 12500 Training Error: tensor(210.8656, device='cuda:0') Validation Error: tensor(224.6463, device='cuda:0') Test Error: tensor(307.4729, device='cuda:0')
+Round: 13000 Training Error: tensor(208.9214, device='cuda:0') Validation Error: tensor(223.1299, device='cuda:0') Test Error: tensor(305.9905, device='cuda:0')
+Round: 13500 Training Error: tensor(419.9741, device='cuda:0') Validation Error: tensor(450.8677, device='cuda:0') Test Error: tensor(514.8278, device='cuda:0')
+Round: 14000 Training Error: tensor(210.5112, device='cuda:0') Validation Error: tensor(220.7956, device='cuda:0') Test Error: tensor(304.4318, device='cuda:0')
+Round: 14500 Training Error: tensor(207.6227, device='cuda:0') Validation Error: tensor(221.0958, device='cuda:0') Test Error: tensor(305.6909, device='cuda:0')
+Round: 15000 Training Error: tensor(206.4227, device='cuda:0') Validation Error: tensor(225.1886, device='cuda:0') Test Error: tensor(309.0429, device='cuda:0')
+Round: 15500 Training Error: tensor(213.9357, device='cuda:0') Validation Error: tensor(234.8527, device='cuda:0') Test Error: tensor(316.9651, device='cuda:0')
+Round: 16000 Training Error: tensor(204.7391, device='cuda:0') Validation Error: tensor(225.0437, device='cuda:0') Test Error: tensor(308.8199, device='cuda:0')
+Round: 16500 Training Error: tensor(215.4030, device='cuda:0') Validation Error: tensor(237.1557, device='cuda:0') Test Error: tensor(325.1544, device='cuda:0')
+Round: 17000 Training Error: tensor(203.9707, device='cuda:0') Validation Error: tensor(223.6609, device='cuda:0') Test Error: tensor(309.3302, device='cuda:0')
+Round: 17500 Training Error: tensor(203.0707, device='cuda:0') Validation Error: tensor(225.9240, device='cuda:0') Test Error: tensor(311.0112, device='cuda:0')
+Round: 18000 Training Error: tensor(206.7943, device='cuda:0') Validation Error: tensor(229.8469, device='cuda:0') Test Error: tensor(313.9720, device='cuda:0')
+Round: 18500 Training Error: tensor(211.1147, device='cuda:0') Validation Error: tensor(225.8906, device='cuda:0') Test Error: tensor(308.4760, device='cuda:0')
+Round: 19000 Training Error: tensor(202.8379, device='cuda:0') Validation Error: tensor(226.9348, device='cuda:0') Test Error: tensor(312.0757, device='cuda:0')
+Round: 19500 Training Error: tensor(203.4117, device='cuda:0') Validation Error: tensor(226.4482, device='cuda:0') Test Error: tensor(312.1334, device='cuda:0')
+Round: 20000 Training Error: tensor(202.3636, device='cuda:0') Validation Error: tensor(225.5546, device='cuda:0') Test Error: tensor(311.0516, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'dr', 'mw', 'dw']
+Round: 500 Training Error: tensor(227.0315, device='cuda:0') Validation Error: tensor(230.7780, device='cuda:0') Test Error: tensor(315.2444, device='cuda:0')
+Round: 1000 Training Error: tensor(215.4431, device='cuda:0') Validation Error: tensor(222.7582, device='cuda:0') Test Error: tensor(307.1240, device='cuda:0')
+Round: 1500 Training Error: tensor(214.2865, device='cuda:0') Validation Error: tensor(222.0604, device='cuda:0') Test Error: tensor(305.3898, device='cuda:0')
+Round: 2000 Training Error: tensor(261.9469, device='cuda:0') Validation Error: tensor(268.9955, device='cuda:0') Test Error: tensor(348.5016, device='cuda:0')
+Round: 2500 Training Error: tensor(212.4828, device='cuda:0') Validation Error: tensor(223.8282, device='cuda:0') Test Error: tensor(307.0401, device='cuda:0')
+Round: 3000 Training Error: tensor(210.8429, device='cuda:0') Validation Error: tensor(226.8520, device='cuda:0') Test Error: tensor(307.9793, device='cuda:0')
+Round: 3500 Training Error: tensor(210.2010, device='cuda:0') Validation Error: tensor(227.7863, device='cuda:0') Test Error: tensor(310.0121, device='cuda:0')
+Round: 4000 Training Error: tensor(211.3898, device='cuda:0') Validation Error: tensor(232.6157, device='cuda:0') Test Error: tensor(311.4118, device='cuda:0')
+Round: 4500 Training Error: tensor(208.3109, device='cuda:0') Validation Error: tensor(226.2715, device='cuda:0') Test Error: tensor(308.6971, device='cuda:0')
+Round: 5000 Training Error: tensor(222.8287, device='cuda:0') Validation Error: tensor(334.0035, device='cuda:0') Test Error: tensor(430.9522, device='cuda:0')
+Round: 5500 Training Error: tensor(208.7330, device='cuda:0') Validation Error: tensor(299.6656, device='cuda:0') Test Error: tensor(389.5703, device='cuda:0')
+Round: 6000 Training Error: tensor(208.1855, device='cuda:0') Validation Error: tensor(311.2301, device='cuda:0') Test Error: tensor(405.6154, device='cuda:0')
+Round: 6500 Training Error: tensor(207.1147, device='cuda:0') Validation Error: tensor(303.7830, device='cuda:0') Test Error: tensor(396.4744, device='cuda:0')
+Round: 7000 Training Error: tensor(207.6817, device='cuda:0') Validation Error: tensor(295.1054, device='cuda:0') Test Error: tensor(380.5562, device='cuda:0')
+Round: 7500 Training Error: tensor(206.8795, device='cuda:0') Validation Error: tensor(272.4448, device='cuda:0') Test Error: tensor(358.3645, device='cuda:0')
+Round: 8000 Training Error: tensor(211.7419, device='cuda:0') Validation Error: tensor(265.7061, device='cuda:0') Test Error: tensor(347.0602, device='cuda:0')
+Round: 8500 Training Error: tensor(205.6086, device='cuda:0') Validation Error: tensor(251.5733, device='cuda:0') Test Error: tensor(336.6874, device='cuda:0')
+Round: 9000 Training Error: tensor(208.7059, device='cuda:0') Validation Error: tensor(248.0094, device='cuda:0') Test Error: tensor(334.5403, device='cuda:0')
+Round: 9500 Training Error: tensor(207.8905, device='cuda:0') Validation Error: tensor(245.7807, device='cuda:0') Test Error: tensor(332.1061, device='cuda:0')
+Round: 10000 Training Error: tensor(216.9671, device='cuda:0') Validation Error: tensor(490.3303, device='cuda:0') Test Error: tensor(577.7703, device='cuda:0')
+Round: 10500 Training Error: tensor(210.1532, device='cuda:0') Validation Error: tensor(431.6405, device='cuda:0') Test Error: tensor(520.9170, device='cuda:0')
+Round: 11000 Training Error: tensor(215.7449, device='cuda:0') Validation Error: tensor(350.7256, device='cuda:0') Test Error: tensor(431.3736, device='cuda:0')
+Round: 11500 Training Error: tensor(209.1810, device='cuda:0') Validation Error: tensor(336.3772, device='cuda:0') Test Error: tensor(423.6013, device='cuda:0')
+Round: 12000 Training Error: tensor(211.9538, device='cuda:0') Validation Error: tensor(311.1916, device='cuda:0') Test Error: tensor(401.1356, device='cuda:0')
+Round: 12500 Training Error: tensor(206.4005, device='cuda:0') Validation Error: tensor(310.5040, device='cuda:0') Test Error: tensor(406.9373, device='cuda:0')
+Round: 13000 Training Error: tensor(205.5810, device='cuda:0') Validation Error: tensor(286.4175, device='cuda:0') Test Error: tensor(378.2638, device='cuda:0')
+Round: 13500 Training Error: tensor(264.8270, device='cuda:0') Validation Error: tensor(679.8676, device='cuda:0') Test Error: tensor(780.2749, device='cuda:0')
+Round: 14000 Training Error: tensor(214.6705, device='cuda:0') Validation Error: tensor(986.6028, device='cuda:0') Test Error: tensor(1137.7737, device='cuda:0')
+Round: 14500 Training Error: tensor(224.2327, device='cuda:0') Validation Error: tensor(825.0546, device='cuda:0') Test Error: tensor(915.7600, device='cuda:0')
+Round: 15000 Training Error: tensor(212.2566, device='cuda:0') Validation Error: tensor(868.4306, device='cuda:0') Test Error: tensor(960.2521, device='cuda:0')
+Round: 15500 Training Error: tensor(210.3306, device='cuda:0') Validation Error: tensor(816.5499, device='cuda:0') Test Error: tensor(897.3016, device='cuda:0')
+Round: 16000 Training Error: tensor(208.9782, device='cuda:0') Validation Error: tensor(723.1780, device='cuda:0') Test Error: tensor(799.8282, device='cuda:0')
+Round: 16500 Training Error: tensor(208.5445, device='cuda:0') Validation Error: tensor(641.9927, device='cuda:0') Test Error: tensor(712.4128, device='cuda:0')
+Round: 17000 Training Error: tensor(208.7124, device='cuda:0') Validation Error: tensor(561.0852, device='cuda:0') Test Error: tensor(638.3318, device='cuda:0')
+Round: 17500 Training Error: tensor(208.3484, device='cuda:0') Validation Error: tensor(465.0190, device='cuda:0') Test Error: tensor(557.8421, device='cuda:0')
+Round: 18000 Training Error: tensor(205.7617, device='cuda:0') Validation Error: tensor(398.8727, device='cuda:0') Test Error: tensor(487.9040, device='cuda:0')
+Round: 18500 Training Error: tensor(205.9480, device='cuda:0') Validation Error: tensor(335.5639, device='cuda:0') Test Error: tensor(422.8361, device='cuda:0')
+Round: 19000 Training Error: tensor(207.4970, device='cuda:0') Validation Error: tensor(269.8420, device='cuda:0') Test Error: tensor(356.8188, device='cuda:0')
+Round: 19500 Training Error: tensor(204.8900, device='cuda:0') Validation Error: tensor(336.8933, device='cuda:0') Test Error: tensor(423.8795, device='cuda:0')
+Round: 20000 Training Error: tensor(231.3555, device='cuda:0') Validation Error: tensor(269.9722, device='cuda:0') Test Error: tensor(365.3863, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'dw', 'dr', 'mw']
+Round: 500 Training Error: tensor(234.3269, device='cuda:0') Validation Error: tensor(234.6708, device='cuda:0') Test Error: tensor(316.4650, device='cuda:0')
+Round: 1000 Training Error: tensor(216.1635, device='cuda:0') Validation Error: tensor(227.4723, device='cuda:0') Test Error: tensor(306.4792, device='cuda:0')
+Round: 1500 Training Error: tensor(213.5076, device='cuda:0') Validation Error: tensor(226.1869, device='cuda:0') Test Error: tensor(305.6718, device='cuda:0')
+Round: 2000 Training Error: tensor(241.7129, device='cuda:0') Validation Error: tensor(242.9735, device='cuda:0') Test Error: tensor(324.2256, device='cuda:0')
+Round: 2500 Training Error: tensor(232.8445, device='cuda:0') Validation Error: tensor(227.5281, device='cuda:0') Test Error: tensor(311.6952, device='cuda:0')
+Round: 3000 Training Error: tensor(218.3884, device='cuda:0') Validation Error: tensor(223.1664, device='cuda:0') Test Error: tensor(305.9191, device='cuda:0')
+Round: 3500 Training Error: tensor(215.6304, device='cuda:0') Validation Error: tensor(223.2526, device='cuda:0') Test Error: tensor(307.2384, device='cuda:0')
+Round: 4000 Training Error: tensor(213.9229, device='cuda:0') Validation Error: tensor(223.6619, device='cuda:0') Test Error: tensor(308.9117, device='cuda:0')
+Round: 4500 Training Error: tensor(223.4817, device='cuda:0') Validation Error: tensor(238.4270, device='cuda:0') Test Error: tensor(321.4214, device='cuda:0')
+Round: 5000 Training Error: tensor(218.9739, device='cuda:0') Validation Error: tensor(219.1052, device='cuda:0') Test Error: tensor(304.1961, device='cuda:0')
+Round: 5500 Training Error: tensor(228.2324, device='cuda:0') Validation Error: tensor(227.3523, device='cuda:0') Test Error: tensor(307.6343, device='cuda:0')
+Round: 6000 Training Error: tensor(221.2288, device='cuda:0') Validation Error: tensor(215.2837, device='cuda:0') Test Error: tensor(303.7999, device='cuda:0')
+Round: 6500 Training Error: tensor(302.1081, device='cuda:0') Validation Error: tensor(250.7477, device='cuda:0') Test Error: tensor(362.1007, device='cuda:0')
+Round: 7000 Training Error: tensor(236.8345, device='cuda:0') Validation Error: tensor(231.4493, device='cuda:0') Test Error: tensor(314.7393, device='cuda:0')
+Round: 7500 Training Error: tensor(222.6924, device='cuda:0') Validation Error: tensor(219.0564, device='cuda:0') Test Error: tensor(303.9972, device='cuda:0')
+Round: 8000 Training Error: tensor(235.3978, device='cuda:0') Validation Error: tensor(252.0743, device='cuda:0') Test Error: tensor(323.0359, device='cuda:0')
+Round: 8500 Training Error: tensor(221.1122, device='cuda:0') Validation Error: tensor(231.4303, device='cuda:0') Test Error: tensor(309.6780, device='cuda:0')
+Round: 9000 Training Error: tensor(226.3780, device='cuda:0') Validation Error: tensor(215.6102, device='cuda:0') Test Error: tensor(310.2388, device='cuda:0')
+Round: 9500 Training Error: tensor(230.8268, device='cuda:0') Validation Error: tensor(233.7981, device='cuda:0') Test Error: tensor(321.5919, device='cuda:0')
+Round: 10000 Training Error: tensor(218.7033, device='cuda:0') Validation Error: tensor(236.9996, device='cuda:0') Test Error: tensor(312.4204, device='cuda:0')
+Round: 10500 Training Error: tensor(224.6917, device='cuda:0') Validation Error: tensor(248.5948, device='cuda:0') Test Error: tensor(319.8167, device='cuda:0')
+Round: 11000 Training Error: tensor(211.3333, device='cuda:0') Validation Error: tensor(224.2679, device='cuda:0') Test Error: tensor(306.9306, device='cuda:0')
+Round: 11500 Training Error: tensor(219.3969, device='cuda:0') Validation Error: tensor(220.1480, device='cuda:0') Test Error: tensor(310.1691, device='cuda:0')
+Round: 12000 Training Error: tensor(706.0745, device='cuda:0') Validation Error: tensor(1071.4485, device='cuda:0') Test Error: tensor(894.6983, device='cuda:0')
+Round: 12500 Training Error: tensor(215.8788, device='cuda:0') Validation Error: tensor(221.5266, device='cuda:0') Test Error: tensor(304.9571, device='cuda:0')
+Round: 13000 Training Error: tensor(217.7315, device='cuda:0') Validation Error: tensor(222.7641, device='cuda:0') Test Error: tensor(304.1303, device='cuda:0')
+Round: 13500 Training Error: tensor(211.2091, device='cuda:0') Validation Error: tensor(226.9333, device='cuda:0') Test Error: tensor(308.5611, device='cuda:0')
+Round: 14000 Training Error: tensor(210.0545, device='cuda:0') Validation Error: tensor(230.5482, device='cuda:0') Test Error: tensor(309.8762, device='cuda:0')
+Round: 14500 Training Error: tensor(216.2149, device='cuda:0') Validation Error: tensor(243.9835, device='cuda:0') Test Error: tensor(316.3134, device='cuda:0')
+Round: 15000 Training Error: tensor(213.2715, device='cuda:0') Validation Error: tensor(223.0281, device='cuda:0') Test Error: tensor(305.8456, device='cuda:0')
+Round: 15500 Training Error: tensor(209.9086, device='cuda:0') Validation Error: tensor(223.3765, device='cuda:0') Test Error: tensor(306.1474, device='cuda:0')
+Round: 16000 Training Error: tensor(208.3117, device='cuda:0') Validation Error: tensor(223.9868, device='cuda:0') Test Error: tensor(305.5744, device='cuda:0')
+Round: 16500 Training Error: tensor(237.5560, device='cuda:0') Validation Error: tensor(255.8562, device='cuda:0') Test Error: tensor(330.9673, device='cuda:0')
+Round: 17000 Training Error: tensor(206.7584, device='cuda:0') Validation Error: tensor(223.0827, device='cuda:0') Test Error: tensor(305.5224, device='cuda:0')
+Round: 17500 Training Error: tensor(206.9271, device='cuda:0') Validation Error: tensor(225.3271, device='cuda:0') Test Error: tensor(306.5993, device='cuda:0')
+Round: 18000 Training Error: tensor(207.6902, device='cuda:0') Validation Error: tensor(231.2814, device='cuda:0') Test Error: tensor(308.1379, device='cuda:0')
+Round: 18500 Training Error: tensor(205.9182, device='cuda:0') Validation Error: tensor(228.3303, device='cuda:0') Test Error: tensor(307.2832, device='cuda:0')
+Round: 19000 Training Error: tensor(208.1223, device='cuda:0') Validation Error: tensor(233.8268, device='cuda:0') Test Error: tensor(310.3643, device='cuda:0')
+Round: 19500 Training Error: tensor(211.4602, device='cuda:0') Validation Error: tensor(237.5660, device='cuda:0') Test Error: tensor(312.3301, device='cuda:0')
+Round: 20000 Training Error: tensor(218.4707, device='cuda:0') Validation Error: tensor(227.1056, device='cuda:0') Test Error: tensor(309.3208, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'dw', 'mw', 'dr']
+Round: 500 Training Error: tensor(222.1783, device='cuda:0') Validation Error: tensor(231.2734, device='cuda:0') Test Error: tensor(313.0474, device='cuda:0')
+Round: 1000 Training Error: tensor(214.6067, device='cuda:0') Validation Error: tensor(220.9237, device='cuda:0') Test Error: tensor(305.4067, device='cuda:0')
+Round: 1500 Training Error: tensor(212.2738, device='cuda:0') Validation Error: tensor(224.1252, device='cuda:0') Test Error: tensor(305.7294, device='cuda:0')
+Round: 2000 Training Error: tensor(210.5979, device='cuda:0') Validation Error: tensor(226.5203, device='cuda:0') Test Error: tensor(305.6812, device='cuda:0')
+Round: 2500 Training Error: tensor(210.7135, device='cuda:0') Validation Error: tensor(226.4381, device='cuda:0') Test Error: tensor(306.1991, device='cuda:0')
+Round: 3000 Training Error: tensor(213.6336, device='cuda:0') Validation Error: tensor(221.7216, device='cuda:0') Test Error: tensor(305.1523, device='cuda:0')
+Round: 3500 Training Error: tensor(208.3941, device='cuda:0') Validation Error: tensor(220.2365, device='cuda:0') Test Error: tensor(305.2422, device='cuda:0')
+Round: 4000 Training Error: tensor(220.0013, device='cuda:0') Validation Error: tensor(221.1932, device='cuda:0') Test Error: tensor(305.4556, device='cuda:0')
+Round: 4500 Training Error: tensor(225.0948, device='cuda:0') Validation Error: tensor(234.0379, device='cuda:0') Test Error: tensor(314.0947, device='cuda:0')
+Round: 5000 Training Error: tensor(307.9962, device='cuda:0') Validation Error: tensor(299.3461, device='cuda:0') Test Error: tensor(382.6502, device='cuda:0')
+Round: 5500 Training Error: tensor(221.1838, device='cuda:0') Validation Error: tensor(223.1118, device='cuda:0') Test Error: tensor(304.5987, device='cuda:0')
+Round: 6000 Training Error: tensor(216.3750, device='cuda:0') Validation Error: tensor(223.9671, device='cuda:0') Test Error: tensor(306.0583, device='cuda:0')
+Round: 6500 Training Error: tensor(213.4189, device='cuda:0') Validation Error: tensor(228.1082, device='cuda:0') Test Error: tensor(309.2826, device='cuda:0')
+Round: 7000 Training Error: tensor(256.7641, device='cuda:0') Validation Error: tensor(274.9736, device='cuda:0') Test Error: tensor(351.3788, device='cuda:0')
+Round: 7500 Training Error: tensor(210.5160, device='cuda:0') Validation Error: tensor(231.4296, device='cuda:0') Test Error: tensor(307.3360, device='cuda:0')
+Round: 8000 Training Error: tensor(211.1193, device='cuda:0') Validation Error: tensor(234.8704, device='cuda:0') Test Error: tensor(309.2768, device='cuda:0')
+Round: 8500 Training Error: tensor(214.1059, device='cuda:0') Validation Error: tensor(237.7229, device='cuda:0') Test Error: tensor(314.4748, device='cuda:0')
+Round: 9000 Training Error: tensor(207.8571, device='cuda:0') Validation Error: tensor(231.6580, device='cuda:0') Test Error: tensor(310.0958, device='cuda:0')
+Round: 9500 Training Error: tensor(221.7164, device='cuda:0') Validation Error: tensor(222.7985, device='cuda:0') Test Error: tensor(308.3472, device='cuda:0')
+Round: 10000 Training Error: tensor(210.3163, device='cuda:0') Validation Error: tensor(226.5552, device='cuda:0') Test Error: tensor(306.8432, device='cuda:0')
+Round: 10500 Training Error: tensor(208.9546, device='cuda:0') Validation Error: tensor(227.4587, device='cuda:0') Test Error: tensor(306.8037, device='cuda:0')
+Round: 11000 Training Error: tensor(208.5124, device='cuda:0') Validation Error: tensor(225.4744, device='cuda:0') Test Error: tensor(306.7705, device='cuda:0')
+Round: 11500 Training Error: tensor(281.1670, device='cuda:0') Validation Error: tensor(284.4845, device='cuda:0') Test Error: tensor(366.7191, device='cuda:0')
+Round: 12000 Training Error: tensor(218.7096, device='cuda:0') Validation Error: tensor(217.8519, device='cuda:0') Test Error: tensor(305.0611, device='cuda:0')
+Round: 12500 Training Error: tensor(215.0615, device='cuda:0') Validation Error: tensor(221.7576, device='cuda:0') Test Error: tensor(307.9162, device='cuda:0')
+Round: 13000 Training Error: tensor(219.5470, device='cuda:0') Validation Error: tensor(226.9183, device='cuda:0') Test Error: tensor(313.8765, device='cuda:0')
+Round: 13500 Training Error: tensor(214.0793, device='cuda:0') Validation Error: tensor(228.3714, device='cuda:0') Test Error: tensor(311.0277, device='cuda:0')
+Round: 14000 Training Error: tensor(212.5353, device='cuda:0') Validation Error: tensor(226.9796, device='cuda:0') Test Error: tensor(308.9950, device='cuda:0')
+Round: 14500 Training Error: tensor(211.5642, device='cuda:0') Validation Error: tensor(230.4837, device='cuda:0') Test Error: tensor(311.2235, device='cuda:0')
+Round: 15000 Training Error: tensor(209.1918, device='cuda:0') Validation Error: tensor(228.6406, device='cuda:0') Test Error: tensor(309.1407, device='cuda:0')
+Round: 15500 Training Error: tensor(208.3308, device='cuda:0') Validation Error: tensor(228.4216, device='cuda:0') Test Error: tensor(309.2766, device='cuda:0')
+Round: 16000 Training Error: tensor(208.1948, device='cuda:0') Validation Error: tensor(228.9422, device='cuda:0') Test Error: tensor(309.7820, device='cuda:0')
+Round: 16500 Training Error: tensor(210.3298, device='cuda:0') Validation Error: tensor(226.0202, device='cuda:0') Test Error: tensor(306.6701, device='cuda:0')
+Round: 17000 Training Error: tensor(221.2249, device='cuda:0') Validation Error: tensor(241.2775, device='cuda:0') Test Error: tensor(320.9079, device='cuda:0')
+Round: 17500 Training Error: tensor(207.9932, device='cuda:0') Validation Error: tensor(226.9752, device='cuda:0') Test Error: tensor(307.9257, device='cuda:0')
+Round: 18000 Training Error: tensor(207.5075, device='cuda:0') Validation Error: tensor(228.6137, device='cuda:0') Test Error: tensor(308.0002, device='cuda:0')
+Round: 18500 Training Error: tensor(207.4951, device='cuda:0') Validation Error: tensor(231.6099, device='cuda:0') Test Error: tensor(311.6416, device='cuda:0')
+Round: 19000 Training Error: tensor(209.1566, device='cuda:0') Validation Error: tensor(225.5357, device='cuda:0') Test Error: tensor(307.4965, device='cuda:0')
+Round: 19500 Training Error: tensor(222.2790, device='cuda:0') Validation Error: tensor(230.0220, device='cuda:0') Test Error: tensor(307.7126, device='cuda:0')
+Round: 20000 Training Error: tensor(216.9839, device='cuda:0') Validation Error: tensor(224.1053, device='cuda:0') Test Error: tensor(305.2795, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'mw', 'dr', 'dw']
+Round: 500 Training Error: tensor(220.2212, device='cuda:0') Validation Error: tensor(221.7423, device='cuda:0') Test Error: tensor(307.2306, device='cuda:0')
+Round: 1000 Training Error: tensor(214.3651, device='cuda:0') Validation Error: tensor(221.8701, device='cuda:0') Test Error: tensor(305.7013, device='cuda:0')
+Round: 1500 Training Error: tensor(212.9787, device='cuda:0') Validation Error: tensor(223.7782, device='cuda:0') Test Error: tensor(305.8859, device='cuda:0')
+Round: 2000 Training Error: tensor(214.6167, device='cuda:0') Validation Error: tensor(227.6291, device='cuda:0') Test Error: tensor(308.1204, device='cuda:0')
+Round: 2500 Training Error: tensor(424.5903, device='cuda:0') Validation Error: tensor(410.4263, device='cuda:0') Test Error: tensor(500.8890, device='cuda:0')
+Round: 3000 Training Error: tensor(208.9165, device='cuda:0') Validation Error: tensor(229.9594, device='cuda:0') Test Error: tensor(306.9313, device='cuda:0')
+Round: 3500 Training Error: tensor(210.5083, device='cuda:0') Validation Error: tensor(220.4734, device='cuda:0') Test Error: tensor(303.5252, device='cuda:0')
+Round: 4000 Training Error: tensor(784.6161, device='cuda:0') Validation Error: tensor(842.3091, device='cuda:0') Test Error: tensor(909.7733, device='cuda:0')
+Round: 4500 Training Error: tensor(221.5660, device='cuda:0') Validation Error: tensor(221.2759, device='cuda:0') Test Error: tensor(305.7239, device='cuda:0')
+Round: 5000 Training Error: tensor(319.1192, device='cuda:0') Validation Error: tensor(321.9110, device='cuda:0') Test Error: tensor(381.9238, device='cuda:0')
+Round: 5500 Training Error: tensor(233.4240, device='cuda:0') Validation Error: tensor(230.1219, device='cuda:0') Test Error: tensor(308.6685, device='cuda:0')
+Round: 6000 Training Error: tensor(227.3939, device='cuda:0') Validation Error: tensor(221.7082, device='cuda:0') Test Error: tensor(303.8436, device='cuda:0')
+Round: 6500 Training Error: tensor(246.5783, device='cuda:0') Validation Error: tensor(250.9331, device='cuda:0') Test Error: tensor(329.8303, device='cuda:0')
+Round: 7000 Training Error: tensor(217.4449, device='cuda:0') Validation Error: tensor(233.1356, device='cuda:0') Test Error: tensor(304.2713, device='cuda:0')
+Round: 7500 Training Error: tensor(226.2868, device='cuda:0') Validation Error: tensor(239.6279, device='cuda:0') Test Error: tensor(310.6807, device='cuda:0')
+Round: 8000 Training Error: tensor(215.1282, device='cuda:0') Validation Error: tensor(231.5081, device='cuda:0') Test Error: tensor(302.1151, device='cuda:0')
+Round: 8500 Training Error: tensor(214.3213, device='cuda:0') Validation Error: tensor(239.0632, device='cuda:0') Test Error: tensor(305.8210, device='cuda:0')
+Round: 9000 Training Error: tensor(214.0397, device='cuda:0') Validation Error: tensor(242.3124, device='cuda:0') Test Error: tensor(306.5243, device='cuda:0')
+Round: 9500 Training Error: tensor(213.5968, device='cuda:0') Validation Error: tensor(236.4715, device='cuda:0') Test Error: tensor(307.3486, device='cuda:0')
+Round: 10000 Training Error: tensor(267.2448, device='cuda:0') Validation Error: tensor(264.2567, device='cuda:0') Test Error: tensor(346.9499, device='cuda:0')
+Round: 10500 Training Error: tensor(211.2803, device='cuda:0') Validation Error: tensor(233.5082, device='cuda:0') Test Error: tensor(306.1030, device='cuda:0')
+Round: 11000 Training Error: tensor(210.3026, device='cuda:0') Validation Error: tensor(238.2925, device='cuda:0') Test Error: tensor(307.2160, device='cuda:0')
+Round: 11500 Training Error: tensor(447.6003, device='cuda:0') Validation Error: tensor(480.1741, device='cuda:0') Test Error: tensor(532.8627, device='cuda:0')
+Round: 12000 Training Error: tensor(223.3203, device='cuda:0') Validation Error: tensor(225.6433, device='cuda:0') Test Error: tensor(305.5885, device='cuda:0')
+Round: 12500 Training Error: tensor(228.1324, device='cuda:0') Validation Error: tensor(233.6536, device='cuda:0') Test Error: tensor(315.1582, device='cuda:0')
+Round: 13000 Training Error: tensor(218.4665, device='cuda:0') Validation Error: tensor(225.8985, device='cuda:0') Test Error: tensor(306.2552, device='cuda:0')
+Round: 13500 Training Error: tensor(216.2685, device='cuda:0') Validation Error: tensor(226.7287, device='cuda:0') Test Error: tensor(307.4177, device='cuda:0')
+Round: 14000 Training Error: tensor(213.3173, device='cuda:0') Validation Error: tensor(226.0137, device='cuda:0') Test Error: tensor(305.9339, device='cuda:0')
+Round: 14500 Training Error: tensor(211.9960, device='cuda:0') Validation Error: tensor(227.2478, device='cuda:0') Test Error: tensor(307.0340, device='cuda:0')
+Round: 15000 Training Error: tensor(211.4489, device='cuda:0') Validation Error: tensor(228.1917, device='cuda:0') Test Error: tensor(306.9713, device='cuda:0')
+Round: 15500 Training Error: tensor(211.3259, device='cuda:0') Validation Error: tensor(229.4879, device='cuda:0') Test Error: tensor(308.5179, device='cuda:0')
+Round: 16000 Training Error: tensor(210.5166, device='cuda:0') Validation Error: tensor(235.2450, device='cuda:0') Test Error: tensor(312.8669, device='cuda:0')
+Round: 16500 Training Error: tensor(210.0594, device='cuda:0') Validation Error: tensor(228.0385, device='cuda:0') Test Error: tensor(307.4739, device='cuda:0')
+Round: 17000 Training Error: tensor(209.4480, device='cuda:0') Validation Error: tensor(232.7106, device='cuda:0') Test Error: tensor(310.0329, device='cuda:0')
+Round: 17500 Training Error: tensor(209.1326, device='cuda:0') Validation Error: tensor(231.7678, device='cuda:0') Test Error: tensor(308.5456, device='cuda:0')
+Round: 18000 Training Error: tensor(210.0161, device='cuda:0') Validation Error: tensor(238.6409, device='cuda:0') Test Error: tensor(314.0303, device='cuda:0')
+Round: 18500 Training Error: tensor(268.9990, device='cuda:0') Validation Error: tensor(276.5061, device='cuda:0') Test Error: tensor(365.3581, device='cuda:0')
+Round: 19000 Training Error: tensor(209.8504, device='cuda:0') Validation Error: tensor(230.5549, device='cuda:0') Test Error: tensor(307.2771, device='cuda:0')
+Round: 19500 Training Error: tensor(209.5618, device='cuda:0') Validation Error: tensor(232.6607, device='cuda:0') Test Error: tensor(309.8843, device='cuda:0')
+Round: 20000 Training Error: tensor(208.7534, device='cuda:0') Validation Error: tensor(229.5671, device='cuda:0') Test Error: tensor(308.1765, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'hvac', 'mw', 'dw', 'dr']
+Round: 500 Training Error: tensor(217.0754, device='cuda:0') Validation Error: tensor(221.5885, device='cuda:0') Test Error: tensor(305.1492, device='cuda:0')
+Round: 1000 Training Error: tensor(226.2303, device='cuda:0') Validation Error: tensor(243.0665, device='cuda:0') Test Error: tensor(321.4492, device='cuda:0')
+Round: 1500 Training Error: tensor(212.5360, device='cuda:0') Validation Error: tensor(228.8709, device='cuda:0') Test Error: tensor(308.7844, device='cuda:0')
+Round: 2000 Training Error: tensor(210.5397, device='cuda:0') Validation Error: tensor(234.7977, device='cuda:0') Test Error: tensor(311.6107, device='cuda:0')
+Round: 2500 Training Error: tensor(226.8291, device='cuda:0') Validation Error: tensor(251.1142, device='cuda:0') Test Error: tensor(325.8268, device='cuda:0')
+Round: 3000 Training Error: tensor(208.0039, device='cuda:0') Validation Error: tensor(238.8568, device='cuda:0') Test Error: tensor(313.5124, device='cuda:0')
+Round: 3500 Training Error: tensor(205.9905, device='cuda:0') Validation Error: tensor(236.7723, device='cuda:0') Test Error: tensor(313.1653, device='cuda:0')
+Round: 4000 Training Error: tensor(224.6877, device='cuda:0') Validation Error: tensor(255.2739, device='cuda:0') Test Error: tensor(328.0794, device='cuda:0')
+Round: 4500 Training Error: tensor(205.4692, device='cuda:0') Validation Error: tensor(238.5380, device='cuda:0') Test Error: tensor(313.0921, device='cuda:0')
+Round: 5000 Training Error: tensor(236.9783, device='cuda:0') Validation Error: tensor(243.4471, device='cuda:0') Test Error: tensor(322.6903, device='cuda:0')
+Round: 5500 Training Error: tensor(220.5268, device='cuda:0') Validation Error: tensor(225.6654, device='cuda:0') Test Error: tensor(307.7167, device='cuda:0')
+Round: 6000 Training Error: tensor(242.9044, device='cuda:0') Validation Error: tensor(250.4243, device='cuda:0') Test Error: tensor(330.6915, device='cuda:0')
+Round: 6500 Training Error: tensor(229.2994, device='cuda:0') Validation Error: tensor(244.0515, device='cuda:0') Test Error: tensor(323.8358, device='cuda:0')
+Round: 7000 Training Error: tensor(212.8551, device='cuda:0') Validation Error: tensor(226.8664, device='cuda:0') Test Error: tensor(307.6183, device='cuda:0')
+Round: 7500 Training Error: tensor(458.2938, device='cuda:0') Validation Error: tensor(470.5209, device='cuda:0') Test Error: tensor(534.2257, device='cuda:0')
+Round: 8000 Training Error: tensor(212.1900, device='cuda:0') Validation Error: tensor(226.0309, device='cuda:0') Test Error: tensor(307.9375, device='cuda:0')
+Round: 8500 Training Error: tensor(209.9102, device='cuda:0') Validation Error: tensor(226.3519, device='cuda:0') Test Error: tensor(308.5860, device='cuda:0')
+Round: 9000 Training Error: tensor(223.4667, device='cuda:0') Validation Error: tensor(229.0737, device='cuda:0') Test Error: tensor(313.0477, device='cuda:0')
+Round: 9500 Training Error: tensor(221.7670, device='cuda:0') Validation Error: tensor(231.7000, device='cuda:0') Test Error: tensor(316.3878, device='cuda:0')
+Round: 10000 Training Error: tensor(221.0157, device='cuda:0') Validation Error: tensor(239.0763, device='cuda:0') Test Error: tensor(321.4945, device='cuda:0')
+Round: 10500 Training Error: tensor(362.6679, device='cuda:0') Validation Error: tensor(668.9705, device='cuda:0') Test Error: tensor(774.1315, device='cuda:0')
+Round: 11000 Training Error: tensor(269.7907, device='cuda:0') Validation Error: tensor(275.5102, device='cuda:0') Test Error: tensor(360.2124, device='cuda:0')
+Round: 11500 Training Error: tensor(219.8302, device='cuda:0') Validation Error: tensor(234.8562, device='cuda:0') Test Error: tensor(316.9383, device='cuda:0')
+Round: 12000 Training Error: tensor(268.2634, device='cuda:0') Validation Error: tensor(255.8233, device='cuda:0') Test Error: tensor(350.0220, device='cuda:0')
+Round: 12500 Training Error: tensor(228.4760, device='cuda:0') Validation Error: tensor(229.7701, device='cuda:0') Test Error: tensor(315.1989, device='cuda:0')
+Round: 13000 Training Error: tensor(220.6553, device='cuda:0') Validation Error: tensor(226.0448, device='cuda:0') Test Error: tensor(308.6265, device='cuda:0')
+Round: 13500 Training Error: tensor(226.6570, device='cuda:0') Validation Error: tensor(228.0148, device='cuda:0') Test Error: tensor(313.3352, device='cuda:0')
+Round: 14000 Training Error: tensor(222.5650, device='cuda:0') Validation Error: tensor(223.1583, device='cuda:0') Test Error: tensor(311.1490, device='cuda:0')
+Round: 14500 Training Error: tensor(220.9488, device='cuda:0') Validation Error: tensor(235.7451, device='cuda:0') Test Error: tensor(314.1070, device='cuda:0')
+Round: 15000 Training Error: tensor(212.7694, device='cuda:0') Validation Error: tensor(238.0407, device='cuda:0') Test Error: tensor(315.6644, device='cuda:0')
+Round: 15500 Training Error: tensor(238.0553, device='cuda:0') Validation Error: tensor(245.1372, device='cuda:0') Test Error: tensor(341.4917, device='cuda:0')
+Round: 16000 Training Error: tensor(233.4380, device='cuda:0') Validation Error: tensor(243.8414, device='cuda:0') Test Error: tensor(326.7086, device='cuda:0')
+Round: 16500 Training Error: tensor(212.8862, device='cuda:0') Validation Error: tensor(225.1879, device='cuda:0') Test Error: tensor(307.2706, device='cuda:0')
+Round: 17000 Training Error: tensor(213.8966, device='cuda:0') Validation Error: tensor(224.5270, device='cuda:0') Test Error: tensor(306.2220, device='cuda:0')
+Round: 17500 Training Error: tensor(217.5820, device='cuda:0') Validation Error: tensor(229.0882, device='cuda:0') Test Error: tensor(311.0728, device='cuda:0')
+Round: 18000 Training Error: tensor(211.2483, device='cuda:0') Validation Error: tensor(224.5008, device='cuda:0') Test Error: tensor(305.9975, device='cuda:0')
+Round: 18500 Training Error: tensor(210.8001, device='cuda:0') Validation Error: tensor(225.5744, device='cuda:0') Test Error: tensor(306.8272, device='cuda:0')
+Round: 19000 Training Error: tensor(224.3305, device='cuda:0') Validation Error: tensor(226.7577, device='cuda:0') Test Error: tensor(311.1870, device='cuda:0')
+Round: 19500 Training Error: tensor(218.5493, device='cuda:0') Validation Error: tensor(224.1043, device='cuda:0') Test Error: tensor(306.8677, device='cuda:0')
+Round: 20000 Training Error: tensor(219.4496, device='cuda:0') Validation Error: tensor(226.8576, device='cuda:0') Test Error: tensor(309.2601, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 1.0 20000 0.0 ['fridge', 'dr', 'hvac', 'dw', 'mw']
+Round: 500 Training Error: tensor(221.0228, device='cuda:0') Validation Error: tensor(226.9367, device='cuda:0') Test Error: tensor(305.0795, device='cuda:0')
+Round: 1000 Training Error: tensor(212.2543, device='cuda:0') Validation Error: tensor(227.1480, device='cuda:0') Test Error: tensor(307.3013, device='cuda:0')
+Round: 1500 Training Error: tensor(210.6077, device='cuda:0') Validation Error: tensor(231.2183, device='cuda:0') Test Error: tensor(308.3639, device='cuda:0')
+Round: 2000 Training Error: tensor(209.3468, device='cuda:0') Validation Error: tensor(231.5466, device='cuda:0') Test Error: tensor(310.1388, device='cuda:0')
+Round: 2500 Training Error: tensor(213.4703, device='cuda:0') Validation Error: tensor(226.1248, device='cuda:0') Test Error: tensor(308.7678, device='cuda:0')
+Round: 3000 Training Error: tensor(206.9766, device='cuda:0') Validation Error: tensor(228.6975, device='cuda:0') Test Error: tensor(308.4240, device='cuda:0')
+Round: 3500 Training Error: tensor(205.3586, device='cuda:0') Validation Error: tensor(226.6650, device='cuda:0') Test Error: tensor(307.2123, device='cuda:0')
+Round: 4000 Training Error: tensor(207.6927, device='cuda:0') Validation Error: tensor(233.0837, device='cuda:0') Test Error: tensor(310.9136, device='cuda:0')
+Round: 4500 Training Error: tensor(260.9254, device='cuda:0') Validation Error: tensor(288.2993, device='cuda:0') Test Error: tensor(362.3687, device='cuda:0')
+Round: 5000 Training Error: tensor(207.8791, device='cuda:0') Validation Error: tensor(229.6694, device='cuda:0') Test Error: tensor(306.4838, device='cuda:0')
+Round: 5500 Training Error: tensor(203.8208, device='cuda:0') Validation Error: tensor(231.3241, device='cuda:0') Test Error: tensor(309.3018, device='cuda:0')
+Round: 6000 Training Error: tensor(214.4113, device='cuda:0') Validation Error: tensor(242.0463, device='cuda:0') Test Error: tensor(318.9178, device='cuda:0')
+Round: 6500 Training Error: tensor(202.8388, device='cuda:0') Validation Error: tensor(230.7088, device='cuda:0') Test Error: tensor(308.6530, device='cuda:0')
+Round: 7000 Training Error: tensor(202.9694, device='cuda:0') Validation Error: tensor(231.4099, device='cuda:0') Test Error: tensor(308.6305, device='cuda:0')
+Round: 7500 Training Error: tensor(205.4037, device='cuda:0') Validation Error: tensor(232.7629, device='cuda:0') Test Error: tensor(307.8011, device='cuda:0')
+Round: 8000 Training Error: tensor(203.1783, device='cuda:0') Validation Error: tensor(232.4401, device='cuda:0') Test Error: tensor(307.6758, device='cuda:0')
+Round: 8500 Training Error: tensor(247.8132, device='cuda:0') Validation Error: tensor(296.5289, device='cuda:0') Test Error: tensor(355.3610, device='cuda:0')
+Round: 9000 Training Error: tensor(201.9926, device='cuda:0') Validation Error: tensor(231.0362, device='cuda:0') Test Error: tensor(307.9164, device='cuda:0')
+Round: 9500 Training Error: tensor(209.5373, device='cuda:0') Validation Error: tensor(237.6988, device='cuda:0') Test Error: tensor(315.4761, device='cuda:0')
+Round: 10000 Training Error: tensor(202.9780, device='cuda:0') Validation Error: tensor(233.1559, device='cuda:0') Test Error: tensor(308.9619, device='cuda:0')
+Round: 10500 Training Error: tensor(201.1944, device='cuda:0') Validation Error: tensor(230.5255, device='cuda:0') Test Error: tensor(306.5271, device='cuda:0')
+Round: 11000 Training Error: tensor(206.2458, device='cuda:0') Validation Error: tensor(225.8705, device='cuda:0') Test Error: tensor(304.8708, device='cuda:0')
+Round: 11500 Training Error: tensor(204.3241, device='cuda:0') Validation Error: tensor(226.8046, device='cuda:0') Test Error: tensor(307.4800, device='cuda:0')
+Round: 12000 Training Error: tensor(201.7669, device='cuda:0') Validation Error: tensor(229.1286, device='cuda:0') Test Error: tensor(307.6762, device='cuda:0')
+Round: 12500 Training Error: tensor(200.6393, device='cuda:0') Validation Error: tensor(230.0151, device='cuda:0') Test Error: tensor(308.6558, device='cuda:0')
+Round: 13000 Training Error: tensor(201.3836, device='cuda:0') Validation Error: tensor(231.1516, device='cuda:0') Test Error: tensor(307.9822, device='cuda:0')
+Round: 13500 Training Error: tensor(203.2932, device='cuda:0') Validation Error: tensor(237.1911, device='cuda:0') Test Error: tensor(312.0847, device='cuda:0')
+Round: 14000 Training Error: tensor(200.5163, device='cuda:0') Validation Error: tensor(234.0920, device='cuda:0') Test Error: tensor(308.8015, device='cuda:0')
+Round: 14500 Training Error: tensor(358.8385, device='cuda:0') Validation Error: tensor(316.9842, device='cuda:0') Test Error: tensor(457.5517, device='cuda:0')
+Round: 15000 Training Error: tensor(207.5673, device='cuda:0') Validation Error: tensor(224.3201, device='cuda:0') Test Error: tensor(307.8824, device='cuda:0')
+Round: 15500 Training Error: tensor(204.9702, device='cuda:0') Validation Error: tensor(224.0339, device='cuda:0') Test Error: tensor(306.9185, device='cuda:0')
+Round: 16000 Training Error: tensor(204.8447, device='cuda:0') Validation Error: tensor(225.1768, device='cuda:0') Test Error: tensor(306.5167, device='cuda:0')
+Round: 16500 Training Error: tensor(204.7976, device='cuda:0') Validation Error: tensor(224.2486, device='cuda:0') Test Error: tensor(307.1600, device='cuda:0')
+Round: 17000 Training Error: tensor(201.5149, device='cuda:0') Validation Error: tensor(223.2804, device='cuda:0') Test Error: tensor(304.8020, device='cuda:0')
+Round: 17500 Training Error: tensor(224.3198, device='cuda:0') Validation Error: tensor(232.3036, device='cuda:0') Test Error: tensor(310.1143, device='cuda:0')
+Round: 18000 Training Error: tensor(203.0535, device='cuda:0') Validation Error: tensor(226.0360, device='cuda:0') Test Error: tensor(307.3331, device='cuda:0')
+Round: 18500 Training Error: tensor(201.2457, device='cuda:0') Validation Error: tensor(228.7329, device='cuda:0') Test Error: tensor(308.7150, device='cuda:0')
+Round: 19000 Training Error: tensor(201.4628, device='cuda:0') Validation Error: tensor(227.6363, device='cuda:0') Test Error: tensor(307.7676, device='cuda:0')
+Round: 19500 Training Error: tensor(207.5758, device='cuda:0') Validation Error: tensor(221.8813, device='cuda:0') Test Error: tensor(305.0984, device='cuda:0')
+Round: 20000 Training Error: tensor(200.9271, device='cuda:0') Validation Error: tensor(224.5890, device='cuda:0') Test Error: tensor(305.6581, device='cuda:0')

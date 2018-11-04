@@ -53,6 +53,10 @@ dataset = int(dataset)
 cur_fold = int(cur_fold)
 num_latent = int(num_latent)
 
+directory = "./baseline/sc-non-nested/{}/".format(dataset)
+if not os.path.exists(directory):
+    os.makedirs(directory)
+    
 valid_pred, valid_error, test_pred, test_error = non_discriminative(dataset, cur_fold, num_latent)
 
 np.save("./baseline/sc-non-nested/{}/sc-non-valid-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_pred)

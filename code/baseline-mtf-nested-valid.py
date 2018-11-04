@@ -5,6 +5,7 @@ from dataloader import APPLIANCE_ORDER, get_train_test
 from tensor_custom_core import stf_4dim, stf_4dim_time
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
+import os
 
 num_folds = 5
 
@@ -38,7 +39,9 @@ cur_fold = int(cur_fold)
 r = int(r)
 lr = float(lr)
 num_iter = int(num_iter)
-
+directory = "./baseline/mtf/{}/valid/".format(dataset)
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 valid_pred, valid_error, valid_gt = nested_stf(dataset, cur_fold, r, lr, num_iter)
 

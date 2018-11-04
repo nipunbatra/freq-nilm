@@ -29,6 +29,12 @@ def get_train_test(dataset, num_folds=5, fold_num=0):
         tensor = np.load('../2015-5appliances-sum-true-agg.npy')
     if dataset == 5:
         tensor = np.load('../2015-5appliances-true-agg-residual.npy')
+    if dataset == 6:
+        tensor = np.load('../2015-5appliances-true-agg-residual-3hour.npy')
+    if dataset == 7:
+        tensor = np.load('../2015-5appliances-true-aggregate-residual-15min.npy')
+    if dataset == 8:
+        tensor = np.load('../2015-5appliances-true-aggregate-15min.npy')
         
     num_homes = tensor.shape[0]
     

@@ -47,6 +47,10 @@ r = int(r)
 lr = float(lr)
 num_iter = int(num_iter)
 
+directory = "./baseline/stf/{}/valid/".format(dataset)
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
 
 valid_pred, valid_error, valid_gt = nested_stf(dataset, cur_fold, r, lr, num_iter)
 # pred = np.minimum(pred, tensor[:, 0:1, :, :])

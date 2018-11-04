@@ -1,0 +1,484 @@
+nohup: ignoring input
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'dr', 'dw', 'mw']
+Round: 500 Training Error: tensor(555.6467, device='cuda:0') Validation Error: tensor(493.8174, device='cuda:0') Test Error: tensor(556.0985, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7101, device='cuda:0') Validation Error: tensor(377.2986, device='cuda:0') Test Error: tensor(445.9690, device='cuda:0')
+Round: 1500 Training Error: tensor(308.7514, device='cuda:0') Validation Error: tensor(270.5955, device='cuda:0') Test Error: tensor(356.5269, device='cuda:0')
+Round: 2000 Training Error: tensor(255.4224, device='cuda:0') Validation Error: tensor(248.9165, device='cuda:0') Test Error: tensor(328.9586, device='cuda:0')
+Round: 2500 Training Error: tensor(243.8050, device='cuda:0') Validation Error: tensor(256.0713, device='cuda:0') Test Error: tensor(328.9361, device='cuda:0')
+Round: 3000 Training Error: tensor(241.1129, device='cuda:0') Validation Error: tensor(261.8018, device='cuda:0') Test Error: tensor(331.6467, device='cuda:0')
+Round: 3500 Training Error: tensor(239.5894, device='cuda:0') Validation Error: tensor(261.9414, device='cuda:0') Test Error: tensor(332.0056, device='cuda:0')
+Round: 4000 Training Error: tensor(238.1820, device='cuda:0') Validation Error: tensor(257.3550, device='cuda:0') Test Error: tensor(329.1685, device='cuda:0')
+Round: 4500 Training Error: tensor(236.0888, device='cuda:0') Validation Error: tensor(255.3015, device='cuda:0') Test Error: tensor(327.7000, device='cuda:0')
+Round: 5000 Training Error: tensor(231.8477, device='cuda:0') Validation Error: tensor(252.8492, device='cuda:0') Test Error: tensor(325.6279, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'dr', 'mw', 'dw']
+Round: 500 Training Error: tensor(555.7039, device='cuda:0') Validation Error: tensor(493.7640, device='cuda:0') Test Error: tensor(555.8914, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7153, device='cuda:0') Validation Error: tensor(377.3286, device='cuda:0') Test Error: tensor(445.7196, device='cuda:0')
+Round: 1500 Training Error: tensor(308.1038, device='cuda:0') Validation Error: tensor(272.9313, device='cuda:0') Test Error: tensor(357.6052, device='cuda:0')
+Round: 2000 Training Error: tensor(256.0556, device='cuda:0') Validation Error: tensor(247.2098, device='cuda:0') Test Error: tensor(332.8064, device='cuda:0')
+Round: 2500 Training Error: tensor(245.3324, device='cuda:0') Validation Error: tensor(252.0033, device='cuda:0') Test Error: tensor(331.9016, device='cuda:0')
+Round: 3000 Training Error: tensor(242.2165, device='cuda:0') Validation Error: tensor(253.4459, device='cuda:0') Test Error: tensor(331.8889, device='cuda:0')
+Round: 3500 Training Error: tensor(240.2297, device='cuda:0') Validation Error: tensor(252.4853, device='cuda:0') Test Error: tensor(333.0948, device='cuda:0')
+Round: 4000 Training Error: tensor(238.6099, device='cuda:0') Validation Error: tensor(251.4488, device='cuda:0') Test Error: tensor(331.6469, device='cuda:0')
+Round: 4500 Training Error: tensor(235.3637, device='cuda:0') Validation Error: tensor(249.0432, device='cuda:0') Test Error: tensor(327.8556, device='cuda:0')
+Round: 5000 Training Error: tensor(230.0738, device='cuda:0') Validation Error: tensor(248.3768, device='cuda:0') Test Error: tensor(325.6967, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'dw', 'dr', 'mw']
+Round: 500 Training Error: tensor(555.8747, device='cuda:0') Validation Error: tensor(493.9622, device='cuda:0') Test Error: tensor(556.0276, device='cuda:0')
+Round: 1000 Training Error: tensor(430.1778, device='cuda:0') Validation Error: tensor(377.5111, device='cuda:0') Test Error: tensor(445.4825, device='cuda:0')
+Round: 1500 Training Error: tensor(309.0822, device='cuda:0') Validation Error: tensor(271.9215, device='cuda:0') Test Error: tensor(356.0415, device='cuda:0')
+Round: 2000 Training Error: tensor(258.1424, device='cuda:0') Validation Error: tensor(246.3019, device='cuda:0') Test Error: tensor(331.6759, device='cuda:0')
+Round: 2500 Training Error: tensor(246.5952, device='cuda:0') Validation Error: tensor(252.1453, device='cuda:0') Test Error: tensor(329.4799, device='cuda:0')
+Round: 3000 Training Error: tensor(243.7038, device='cuda:0') Validation Error: tensor(256.9004, device='cuda:0') Test Error: tensor(331.4167, device='cuda:0')
+Round: 3500 Training Error: tensor(241.7889, device='cuda:0') Validation Error: tensor(256.9763, device='cuda:0') Test Error: tensor(332.7947, device='cuda:0')
+Round: 4000 Training Error: tensor(239.5345, device='cuda:0') Validation Error: tensor(250.7315, device='cuda:0') Test Error: tensor(329.3214, device='cuda:0')
+Round: 4500 Training Error: tensor(236.8100, device='cuda:0') Validation Error: tensor(250.9461, device='cuda:0') Test Error: tensor(326.8027, device='cuda:0')
+Round: 5000 Training Error: tensor(232.0249, device='cuda:0') Validation Error: tensor(250.3775, device='cuda:0') Test Error: tensor(324.1117, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'dw', 'mw', 'dr']
+Round: 500 Training Error: tensor(556.3083, device='cuda:0') Validation Error: tensor(494.1562, device='cuda:0') Test Error: tensor(555.9429, device='cuda:0')
+Round: 1000 Training Error: tensor(430.0005, device='cuda:0') Validation Error: tensor(377.2118, device='cuda:0') Test Error: tensor(445.6469, device='cuda:0')
+Round: 1500 Training Error: tensor(308.8532, device='cuda:0') Validation Error: tensor(274.7744, device='cuda:0') Test Error: tensor(359.1455, device='cuda:0')
+Round: 2000 Training Error: tensor(256.8236, device='cuda:0') Validation Error: tensor(251.3677, device='cuda:0') Test Error: tensor(334.2058, device='cuda:0')
+Round: 2500 Training Error: tensor(246.2860, device='cuda:0') Validation Error: tensor(263.5927, device='cuda:0') Test Error: tensor(337.6803, device='cuda:0')
+Round: 3000 Training Error: tensor(243.2900, device='cuda:0') Validation Error: tensor(275.2057, device='cuda:0') Test Error: tensor(342.8350, device='cuda:0')
+Round: 3500 Training Error: tensor(240.9900, device='cuda:0') Validation Error: tensor(291.3256, device='cuda:0') Test Error: tensor(386.3459, device='cuda:0')
+Round: 4000 Training Error: tensor(239.2841, device='cuda:0') Validation Error: tensor(301.6453, device='cuda:0') Test Error: tensor(391.8038, device='cuda:0')
+Round: 4500 Training Error: tensor(237.0052, device='cuda:0') Validation Error: tensor(307.2541, device='cuda:0') Test Error: tensor(390.7879, device='cuda:0')
+Round: 5000 Training Error: tensor(232.8919, device='cuda:0') Validation Error: tensor(304.2359, device='cuda:0') Test Error: tensor(389.6036, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'mw', 'dr', 'dw']
+Round: 500 Training Error: tensor(555.9611, device='cuda:0') Validation Error: tensor(494.0285, device='cuda:0') Test Error: tensor(555.9041, device='cuda:0')
+Round: 1000 Training Error: tensor(430.1486, device='cuda:0') Validation Error: tensor(378.1411, device='cuda:0') Test Error: tensor(445.6507, device='cuda:0')
+Round: 1500 Training Error: tensor(309.5788, device='cuda:0') Validation Error: tensor(272.1562, device='cuda:0') Test Error: tensor(355.4955, device='cuda:0')
+Round: 2000 Training Error: tensor(257.6576, device='cuda:0') Validation Error: tensor(245.3542, device='cuda:0') Test Error: tensor(332.1913, device='cuda:0')
+Round: 2500 Training Error: tensor(246.1432, device='cuda:0') Validation Error: tensor(249.8548, device='cuda:0') Test Error: tensor(332.9307, device='cuda:0')
+Round: 3000 Training Error: tensor(243.4616, device='cuda:0') Validation Error: tensor(251.1096, device='cuda:0') Test Error: tensor(333.5510, device='cuda:0')
+Round: 3500 Training Error: tensor(242.1114, device='cuda:0') Validation Error: tensor(254.3991, device='cuda:0') Test Error: tensor(333.7161, device='cuda:0')
+Round: 4000 Training Error: tensor(240.8583, device='cuda:0') Validation Error: tensor(254.3184, device='cuda:0') Test Error: tensor(332.2083, device='cuda:0')
+Round: 4500 Training Error: tensor(238.2082, device='cuda:0') Validation Error: tensor(254.3967, device='cuda:0') Test Error: tensor(330.5113, device='cuda:0')
+Round: 5000 Training Error: tensor(233.4036, device='cuda:0') Validation Error: tensor(252.4603, device='cuda:0') Test Error: tensor(327.5577, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'hvac', 'mw', 'dw', 'dr']
+Round: 500 Training Error: tensor(555.6449, device='cuda:0') Validation Error: tensor(493.7682, device='cuda:0') Test Error: tensor(555.9523, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7954, device='cuda:0') Validation Error: tensor(378.1803, device='cuda:0') Test Error: tensor(445.8257, device='cuda:0')
+Round: 1500 Training Error: tensor(308.8873, device='cuda:0') Validation Error: tensor(271.0866, device='cuda:0') Test Error: tensor(354.9013, device='cuda:0')
+Round: 2000 Training Error: tensor(256.9920, device='cuda:0') Validation Error: tensor(242.2592, device='cuda:0') Test Error: tensor(328.5465, device='cuda:0')
+Round: 2500 Training Error: tensor(244.3215, device='cuda:0') Validation Error: tensor(255.2735, device='cuda:0') Test Error: tensor(329.4107, device='cuda:0')
+Round: 3000 Training Error: tensor(241.7654, device='cuda:0') Validation Error: tensor(266.3988, device='cuda:0') Test Error: tensor(333.1141, device='cuda:0')
+Round: 3500 Training Error: tensor(240.0500, device='cuda:0') Validation Error: tensor(274.2357, device='cuda:0') Test Error: tensor(335.9538, device='cuda:0')
+Round: 4000 Training Error: tensor(238.6309, device='cuda:0') Validation Error: tensor(275.5719, device='cuda:0') Test Error: tensor(336.0579, device='cuda:0')
+Round: 4500 Training Error: tensor(236.5891, device='cuda:0') Validation Error: tensor(278.8467, device='cuda:0') Test Error: tensor(337.0446, device='cuda:0')
+Round: 5000 Training Error: tensor(232.2455, device='cuda:0') Validation Error: tensor(273.2444, device='cuda:0') Test Error: tensor(333.2368, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'hvac', 'dw', 'mw']
+Round: 500 Training Error: tensor(555.7385, device='cuda:0') Validation Error: tensor(493.7692, device='cuda:0') Test Error: tensor(556.3654, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7396, device='cuda:0') Validation Error: tensor(377.1762, device='cuda:0') Test Error: tensor(445.2528, device='cuda:0')
+Round: 1500 Training Error: tensor(307.8648, device='cuda:0') Validation Error: tensor(270.5628, device='cuda:0') Test Error: tensor(354.5996, device='cuda:0')
+Round: 2000 Training Error: tensor(253.4487, device='cuda:0') Validation Error: tensor(243.7122, device='cuda:0') Test Error: tensor(328.6578, device='cuda:0')
+Round: 2500 Training Error: tensor(241.7725, device='cuda:0') Validation Error: tensor(248.9059, device='cuda:0') Test Error: tensor(328.8135, device='cuda:0')
+Round: 3000 Training Error: tensor(238.3992, device='cuda:0') Validation Error: tensor(252.0804, device='cuda:0') Test Error: tensor(331.1405, device='cuda:0')
+Round: 3500 Training Error: tensor(236.6298, device='cuda:0') Validation Error: tensor(254.7013, device='cuda:0') Test Error: tensor(332.5296, device='cuda:0')
+Round: 4000 Training Error: tensor(234.9422, device='cuda:0') Validation Error: tensor(255.3382, device='cuda:0') Test Error: tensor(333.0892, device='cuda:0')
+Round: 4500 Training Error: tensor(233.1608, device='cuda:0') Validation Error: tensor(254.2938, device='cuda:0') Test Error: tensor(331.3528, device='cuda:0')
+Round: 5000 Training Error: tensor(229.5672, device='cuda:0') Validation Error: tensor(251.7712, device='cuda:0') Test Error: tensor(328.3167, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'hvac', 'mw', 'dw']
+Round: 500 Training Error: tensor(555.7910, device='cuda:0') Validation Error: tensor(493.7318, device='cuda:0') Test Error: tensor(556.2838, device='cuda:0')
+Round: 1000 Training Error: tensor(429.8793, device='cuda:0') Validation Error: tensor(377.6614, device='cuda:0') Test Error: tensor(445.7589, device='cuda:0')
+Round: 1500 Training Error: tensor(307.9728, device='cuda:0') Validation Error: tensor(270.0876, device='cuda:0') Test Error: tensor(353.8340, device='cuda:0')
+Round: 2000 Training Error: tensor(254.5494, device='cuda:0') Validation Error: tensor(241.1240, device='cuda:0') Test Error: tensor(329.7376, device='cuda:0')
+Round: 2500 Training Error: tensor(242.1319, device='cuda:0') Validation Error: tensor(245.6166, device='cuda:0') Test Error: tensor(330.5542, device='cuda:0')
+Round: 3000 Training Error: tensor(238.6900, device='cuda:0') Validation Error: tensor(248.8926, device='cuda:0') Test Error: tensor(331.8953, device='cuda:0')
+Round: 3500 Training Error: tensor(237.3441, device='cuda:0') Validation Error: tensor(250.9466, device='cuda:0') Test Error: tensor(332.1437, device='cuda:0')
+Round: 4000 Training Error: tensor(236.2485, device='cuda:0') Validation Error: tensor(256.7542, device='cuda:0') Test Error: tensor(333.6434, device='cuda:0')
+Round: 4500 Training Error: tensor(233.9646, device='cuda:0') Validation Error: tensor(256.0960, device='cuda:0') Test Error: tensor(332.1736, device='cuda:0')
+Round: 5000 Training Error: tensor(230.8551, device='cuda:0') Validation Error: tensor(252.3488, device='cuda:0') Test Error: tensor(329.2734, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'dw', 'hvac', 'mw']
+Round: 500 Training Error: tensor(556.0518, device='cuda:0') Validation Error: tensor(494.2623, device='cuda:0') Test Error: tensor(556.8447, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7657, device='cuda:0') Validation Error: tensor(377.7176, device='cuda:0') Test Error: tensor(445.8257, device='cuda:0')
+Round: 1500 Training Error: tensor(309.0847, device='cuda:0') Validation Error: tensor(270.0748, device='cuda:0') Test Error: tensor(356.9332, device='cuda:0')
+Round: 2000 Training Error: tensor(255.7927, device='cuda:0') Validation Error: tensor(242.1561, device='cuda:0') Test Error: tensor(331.5389, device='cuda:0')
+Round: 2500 Training Error: tensor(244.2322, device='cuda:0') Validation Error: tensor(262.2841, device='cuda:0') Test Error: tensor(338.1512, device='cuda:0')
+Round: 3000 Training Error: tensor(241.3671, device='cuda:0') Validation Error: tensor(284.2029, device='cuda:0') Test Error: tensor(348.1866, device='cuda:0')
+Round: 3500 Training Error: tensor(239.5632, device='cuda:0') Validation Error: tensor(300.3763, device='cuda:0') Test Error: tensor(355.6297, device='cuda:0')
+Round: 4000 Training Error: tensor(237.8815, device='cuda:0') Validation Error: tensor(299.8047, device='cuda:0') Test Error: tensor(355.1978, device='cuda:0')
+Round: 4500 Training Error: tensor(235.6600, device='cuda:0') Validation Error: tensor(292.1722, device='cuda:0') Test Error: tensor(352.1674, device='cuda:0')
+Round: 5000 Training Error: tensor(231.7472, device='cuda:0') Validation Error: tensor(287.0168, device='cuda:0') Test Error: tensor(349.6204, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'dw', 'mw', 'hvac']
+Round: 500 Training Error: tensor(555.7386, device='cuda:0') Validation Error: tensor(493.9636, device='cuda:0') Test Error: tensor(556.2510, device='cuda:0')
+Round: 1000 Training Error: tensor(429.5676, device='cuda:0') Validation Error: tensor(378.3294, device='cuda:0') Test Error: tensor(445.8676, device='cuda:0')
+Round: 1500 Training Error: tensor(307.4801, device='cuda:0') Validation Error: tensor(269.9981, device='cuda:0') Test Error: tensor(357.4665, device='cuda:0')
+Round: 2000 Training Error: tensor(254.2990, device='cuda:0') Validation Error: tensor(240.0751, device='cuda:0') Test Error: tensor(335.5932, device='cuda:0')
+Round: 2500 Training Error: tensor(242.3515, device='cuda:0') Validation Error: tensor(241.1549, device='cuda:0') Test Error: tensor(336.2830, device='cuda:0')
+Round: 3000 Training Error: tensor(239.4053, device='cuda:0') Validation Error: tensor(242.7798, device='cuda:0') Test Error: tensor(336.6640, device='cuda:0')
+Round: 3500 Training Error: tensor(237.7239, device='cuda:0') Validation Error: tensor(244.0263, device='cuda:0') Test Error: tensor(337.4688, device='cuda:0')
+Round: 4000 Training Error: tensor(236.3008, device='cuda:0') Validation Error: tensor(243.3270, device='cuda:0') Test Error: tensor(336.5065, device='cuda:0')
+Round: 4500 Training Error: tensor(234.2490, device='cuda:0') Validation Error: tensor(243.1209, device='cuda:0') Test Error: tensor(334.6995, device='cuda:0')
+Round: 5000 Training Error: tensor(230.4046, device='cuda:0') Validation Error: tensor(247.5209, device='cuda:0') Test Error: tensor(333.1885, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'mw', 'hvac', 'dw']
+Round: 500 Training Error: tensor(556.0633, device='cuda:0') Validation Error: tensor(494.1064, device='cuda:0') Test Error: tensor(556.7554, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7453, device='cuda:0') Validation Error: tensor(377.7975, device='cuda:0') Test Error: tensor(445.8027, device='cuda:0')
+Round: 1500 Training Error: tensor(308.9018, device='cuda:0') Validation Error: tensor(269.9718, device='cuda:0') Test Error: tensor(355.7288, device='cuda:0')
+Round: 2000 Training Error: tensor(255.2774, device='cuda:0') Validation Error: tensor(242.1990, device='cuda:0') Test Error: tensor(330.8891, device='cuda:0')
+Round: 2500 Training Error: tensor(243.8074, device='cuda:0') Validation Error: tensor(244.4075, device='cuda:0') Test Error: tensor(331.3741, device='cuda:0')
+Round: 3000 Training Error: tensor(240.9944, device='cuda:0') Validation Error: tensor(246.8192, device='cuda:0') Test Error: tensor(333.9662, device='cuda:0')
+Round: 3500 Training Error: tensor(239.3577, device='cuda:0') Validation Error: tensor(246.2547, device='cuda:0') Test Error: tensor(334., device='cuda:0')
+Round: 4000 Training Error: tensor(237.5024, device='cuda:0') Validation Error: tensor(244.8815, device='cuda:0') Test Error: tensor(333.6377, device='cuda:0')
+Round: 4500 Training Error: tensor(235.7469, device='cuda:0') Validation Error: tensor(245.6369, device='cuda:0') Test Error: tensor(334.4504, device='cuda:0')
+Round: 5000 Training Error: tensor(232.6372, device='cuda:0') Validation Error: tensor(245.1820, device='cuda:0') Test Error: tensor(334.1208, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dr', 'mw', 'dw', 'hvac']
+Round: 500 Training Error: tensor(555.7191, device='cuda:0') Validation Error: tensor(494.1519, device='cuda:0') Test Error: tensor(556.2017, device='cuda:0')
+Round: 1000 Training Error: tensor(429.6177, device='cuda:0') Validation Error: tensor(377.9922, device='cuda:0') Test Error: tensor(445.9273, device='cuda:0')
+Round: 1500 Training Error: tensor(307.5373, device='cuda:0') Validation Error: tensor(271.5382, device='cuda:0') Test Error: tensor(355.8925, device='cuda:0')
+Round: 2000 Training Error: tensor(254.6293, device='cuda:0') Validation Error: tensor(242.5262, device='cuda:0') Test Error: tensor(332.2850, device='cuda:0')
+Round: 2500 Training Error: tensor(243.1899, device='cuda:0') Validation Error: tensor(242.3581, device='cuda:0') Test Error: tensor(332.5975, device='cuda:0')
+Round: 3000 Training Error: tensor(239.6916, device='cuda:0') Validation Error: tensor(244.8763, device='cuda:0') Test Error: tensor(334.1194, device='cuda:0')
+Round: 3500 Training Error: tensor(237.7729, device='cuda:0') Validation Error: tensor(244.4596, device='cuda:0') Test Error: tensor(333.2625, device='cuda:0')
+Round: 4000 Training Error: tensor(236.2965, device='cuda:0') Validation Error: tensor(244.5221, device='cuda:0') Test Error: tensor(332.6594, device='cuda:0')
+Round: 4500 Training Error: tensor(234.4487, device='cuda:0') Validation Error: tensor(244.2676, device='cuda:0') Test Error: tensor(331.9435, device='cuda:0')
+Round: 5000 Training Error: tensor(231.3293, device='cuda:0') Validation Error: tensor(242.5890, device='cuda:0') Test Error: tensor(329.4791, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'hvac', 'dr', 'mw']
+Round: 500 Training Error: tensor(555.7751, device='cuda:0') Validation Error: tensor(493.8516, device='cuda:0') Test Error: tensor(556.4116, device='cuda:0')
+Round: 1000 Training Error: tensor(429.8693, device='cuda:0') Validation Error: tensor(377.8973, device='cuda:0') Test Error: tensor(445.7096, device='cuda:0')
+Round: 1500 Training Error: tensor(308.5291, device='cuda:0') Validation Error: tensor(271.0112, device='cuda:0') Test Error: tensor(354.8482, device='cuda:0')
+Round: 2000 Training Error: tensor(254.5910, device='cuda:0') Validation Error: tensor(244.9310, device='cuda:0') Test Error: tensor(331.8748, device='cuda:0')
+Round: 2500 Training Error: tensor(242.5908, device='cuda:0') Validation Error: tensor(250.8275, device='cuda:0') Test Error: tensor(333.3942, device='cuda:0')
+Round: 3000 Training Error: tensor(239.7843, device='cuda:0') Validation Error: tensor(255.2684, device='cuda:0') Test Error: tensor(335.4598, device='cuda:0')
+Round: 3500 Training Error: tensor(238.2904, device='cuda:0') Validation Error: tensor(261.3507, device='cuda:0') Test Error: tensor(337.7186, device='cuda:0')
+Round: 4000 Training Error: tensor(237.1013, device='cuda:0') Validation Error: tensor(266.5119, device='cuda:0') Test Error: tensor(337.6965, device='cuda:0')
+Round: 4500 Training Error: tensor(235.4500, device='cuda:0') Validation Error: tensor(276.3388, device='cuda:0') Test Error: tensor(340.3031, device='cuda:0')
+Round: 5000 Training Error: tensor(231.6497, device='cuda:0') Validation Error: tensor(283.9866, device='cuda:0') Test Error: tensor(341.1859, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'hvac', 'mw', 'dr']
+Round: 500 Training Error: tensor(555.7266, device='cuda:0') Validation Error: tensor(493.4926, device='cuda:0') Test Error: tensor(556.3099, device='cuda:0')
+Round: 1000 Training Error: tensor(429.5524, device='cuda:0') Validation Error: tensor(377.1650, device='cuda:0') Test Error: tensor(445.6035, device='cuda:0')
+Round: 1500 Training Error: tensor(307.7504, device='cuda:0') Validation Error: tensor(270.7478, device='cuda:0') Test Error: tensor(354.6929, device='cuda:0')
+Round: 2000 Training Error: tensor(254.0554, device='cuda:0') Validation Error: tensor(244.9164, device='cuda:0') Test Error: tensor(330.3362, device='cuda:0')
+Round: 2500 Training Error: tensor(241.7088, device='cuda:0') Validation Error: tensor(252.9348, device='cuda:0') Test Error: tensor(331.3316, device='cuda:0')
+Round: 3000 Training Error: tensor(238.6182, device='cuda:0') Validation Error: tensor(265.4369, device='cuda:0') Test Error: tensor(335.5417, device='cuda:0')
+Round: 3500 Training Error: tensor(236.8245, device='cuda:0') Validation Error: tensor(268.4565, device='cuda:0') Test Error: tensor(335.1505, device='cuda:0')
+Round: 4000 Training Error: tensor(235.6089, device='cuda:0') Validation Error: tensor(276.7192, device='cuda:0') Test Error: tensor(337.3153, device='cuda:0')
+Round: 4500 Training Error: tensor(234.3450, device='cuda:0') Validation Error: tensor(285.9999, device='cuda:0') Test Error: tensor(338.9265, device='cuda:0')
+Round: 5000 Training Error: tensor(231.1322, device='cuda:0') Validation Error: tensor(286.2287, device='cuda:0') Test Error: tensor(336.6239, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'dr', 'hvac', 'mw']
+Round: 500 Training Error: tensor(556.0096, device='cuda:0') Validation Error: tensor(494.2992, device='cuda:0') Test Error: tensor(556.7130, device='cuda:0')
+Round: 1000 Training Error: tensor(429.4513, device='cuda:0') Validation Error: tensor(377.6412, device='cuda:0') Test Error: tensor(446.2523, device='cuda:0')
+Round: 1500 Training Error: tensor(308.5948, device='cuda:0') Validation Error: tensor(268.9449, device='cuda:0') Test Error: tensor(355.8403, device='cuda:0')
+Round: 2000 Training Error: tensor(255.9958, device='cuda:0') Validation Error: tensor(237.9241, device='cuda:0') Test Error: tensor(329.3316, device='cuda:0')
+Round: 2500 Training Error: tensor(243.8819, device='cuda:0') Validation Error: tensor(249.1323, device='cuda:0') Test Error: tensor(331.6259, device='cuda:0')
+Round: 3000 Training Error: tensor(240.4203, device='cuda:0') Validation Error: tensor(263.4476, device='cuda:0') Test Error: tensor(339.3937, device='cuda:0')
+Round: 3500 Training Error: tensor(239.1777, device='cuda:0') Validation Error: tensor(266.4187, device='cuda:0') Test Error: tensor(340.6653, device='cuda:0')
+Round: 4000 Training Error: tensor(237.3417, device='cuda:0') Validation Error: tensor(270.9831, device='cuda:0') Test Error: tensor(342.2857, device='cuda:0')
+Round: 4500 Training Error: tensor(235.2527, device='cuda:0') Validation Error: tensor(270.3884, device='cuda:0') Test Error: tensor(340.9789, device='cuda:0')
+Round: 5000 Training Error: tensor(231.0036, device='cuda:0') Validation Error: tensor(271.3210, device='cuda:0') Test Error: tensor(339.7361, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'dr', 'mw', 'hvac']
+Round: 500 Training Error: tensor(555.7040, device='cuda:0') Validation Error: tensor(493.8888, device='cuda:0') Test Error: tensor(556.1175, device='cuda:0')
+Round: 1000 Training Error: tensor(429.3626, device='cuda:0') Validation Error: tensor(378.0621, device='cuda:0') Test Error: tensor(446.1220, device='cuda:0')
+Round: 1500 Training Error: tensor(307.2344, device='cuda:0') Validation Error: tensor(270.0356, device='cuda:0') Test Error: tensor(357.1414, device='cuda:0')
+Round: 2000 Training Error: tensor(253.0486, device='cuda:0') Validation Error: tensor(244.6140, device='cuda:0') Test Error: tensor(334.4367, device='cuda:0')
+Round: 2500 Training Error: tensor(241.7318, device='cuda:0') Validation Error: tensor(244.2639, device='cuda:0') Test Error: tensor(332.0452, device='cuda:0')
+Round: 3000 Training Error: tensor(238.8404, device='cuda:0') Validation Error: tensor(246.5107, device='cuda:0') Test Error: tensor(333.4611, device='cuda:0')
+Round: 3500 Training Error: tensor(237.1187, device='cuda:0') Validation Error: tensor(251.4416, device='cuda:0') Test Error: tensor(333.9231, device='cuda:0')
+Round: 4000 Training Error: tensor(235.5282, device='cuda:0') Validation Error: tensor(252.8479, device='cuda:0') Test Error: tensor(333.2368, device='cuda:0')
+Round: 4500 Training Error: tensor(233.8031, device='cuda:0') Validation Error: tensor(253.6166, device='cuda:0') Test Error: tensor(332.1903, device='cuda:0')
+Round: 5000 Training Error: tensor(231.3138, device='cuda:0') Validation Error: tensor(253.3386, device='cuda:0') Test Error: tensor(329.8398, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'mw', 'hvac', 'dr']
+Round: 500 Training Error: tensor(556.0247, device='cuda:0') Validation Error: tensor(494.3688, device='cuda:0') Test Error: tensor(556.6338, device='cuda:0')
+Round: 1000 Training Error: tensor(429.7254, device='cuda:0') Validation Error: tensor(378.3079, device='cuda:0') Test Error: tensor(445.9069, device='cuda:0')
+Round: 1500 Training Error: tensor(308.9282, device='cuda:0') Validation Error: tensor(271.6321, device='cuda:0') Test Error: tensor(356.1920, device='cuda:0')
+Round: 2000 Training Error: tensor(254.9776, device='cuda:0') Validation Error: tensor(242.2229, device='cuda:0') Test Error: tensor(328.8287, device='cuda:0')
+Round: 2500 Training Error: tensor(243.5374, device='cuda:0') Validation Error: tensor(242.6336, device='cuda:0') Test Error: tensor(331.1169, device='cuda:0')
+Round: 3000 Training Error: tensor(241.1475, device='cuda:0') Validation Error: tensor(244.6469, device='cuda:0') Test Error: tensor(332.7375, device='cuda:0')
+Round: 3500 Training Error: tensor(239.8644, device='cuda:0') Validation Error: tensor(246.3363, device='cuda:0') Test Error: tensor(333.8498, device='cuda:0')
+Round: 4000 Training Error: tensor(238.6688, device='cuda:0') Validation Error: tensor(246.1524, device='cuda:0') Test Error: tensor(334.4241, device='cuda:0')
+Round: 4500 Training Error: tensor(236.5333, device='cuda:0') Validation Error: tensor(244.7683, device='cuda:0') Test Error: tensor(333.6920, device='cuda:0')
+Round: 5000 Training Error: tensor(232.2593, device='cuda:0') Validation Error: tensor(241.6018, device='cuda:0') Test Error: tensor(331.6364, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'dw', 'mw', 'dr', 'hvac']
+Round: 500 Training Error: tensor(555.7542, device='cuda:0') Validation Error: tensor(494.0796, device='cuda:0') Test Error: tensor(556.3104, device='cuda:0')
+Round: 1000 Training Error: tensor(429.9520, device='cuda:0') Validation Error: tensor(378.2804, device='cuda:0') Test Error: tensor(446.0816, device='cuda:0')
+Round: 1500 Training Error: tensor(308.1633, device='cuda:0') Validation Error: tensor(272.2234, device='cuda:0') Test Error: tensor(356.3361, device='cuda:0')
+Round: 2000 Training Error: tensor(255.1853, device='cuda:0') Validation Error: tensor(243.1543, device='cuda:0') Test Error: tensor(331.4810, device='cuda:0')
+Round: 2500 Training Error: tensor(243.1478, device='cuda:0') Validation Error: tensor(242.2864, device='cuda:0') Test Error: tensor(332.0375, device='cuda:0')
+Round: 3000 Training Error: tensor(240.8268, device='cuda:0') Validation Error: tensor(244.6715, device='cuda:0') Test Error: tensor(333.4192, device='cuda:0')
+Round: 3500 Training Error: tensor(238.9246, device='cuda:0') Validation Error: tensor(245.3627, device='cuda:0') Test Error: tensor(333.0818, device='cuda:0')
+Round: 4000 Training Error: tensor(237.3242, device='cuda:0') Validation Error: tensor(246.6663, device='cuda:0') Test Error: tensor(333.8452, device='cuda:0')
+Round: 4500 Training Error: tensor(235.4368, device='cuda:0') Validation Error: tensor(245.6932, device='cuda:0') Test Error: tensor(332.2514, device='cuda:0')
+Round: 5000 Training Error: tensor(231.5078, device='cuda:0') Validation Error: tensor(246.0835, device='cuda:0') Test Error: tensor(331.7690, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'mw', 'hvac', 'dr', 'dw']
+Round: 500 Training Error: tensor(555.8358, device='cuda:0') Validation Error: tensor(493.9335, device='cuda:0') Test Error: tensor(556.3347, device='cuda:0')
+Round: 1000 Training Error: tensor(430.1182, device='cuda:0') Validation Error: tensor(377.4583, device='cuda:0') Test Error: tensor(445.7463, device='cuda:0')
+Round: 1500 Training Error: tensor(307.8856, device='cuda:0') Validation Error: tensor(272.5763, device='cuda:0') Test Error: tensor(353.5000, device='cuda:0')
+Round: 2000 Training Error: tensor(254.3659, device='cuda:0') Validation Error: tensor(246.4763, device='cuda:0') Test Error: tensor(327.6965, device='cuda:0')
+Round: 2500 Training Error: tensor(243.0071, device='cuda:0') Validation Error: tensor(253.4005, device='cuda:0') Test Error: tensor(329.6170, device='cuda:0')
+Round: 3000 Training Error: tensor(240.0517, device='cuda:0') Validation Error: tensor(262.8595, device='cuda:0') Test Error: tensor(334.2528, device='cuda:0')
+Round: 3500 Training Error: tensor(238.2823, device='cuda:0') Validation Error: tensor(269.3145, device='cuda:0') Test Error: tensor(337.0485, device='cuda:0')
+Round: 4000 Training Error: tensor(236.8380, device='cuda:0') Validation Error: tensor(276.5397, device='cuda:0') Test Error: tensor(338.0920, device='cuda:0')
+Round: 4500 Training Error: tensor(235.4090, device='cuda:0') Validation Error: tensor(291.3015, device='cuda:0') Test Error: tensor(340.9518, device='cuda:0')
+Round: 5000 Training Error: tensor(232.0133, device='cuda:0') Validation Error: tensor(296.6591, device='cuda:0') Test Error: tensor(339.0638, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'mw', 'hvac', 'dw', 'dr']
+Round: 500 Training Error: tensor(555.6982, device='cuda:0') Validation Error: tensor(493.6480, device='cuda:0') Test Error: tensor(556.2987, device='cuda:0')
+Round: 1000 Training Error: tensor(429.6531, device='cuda:0') Validation Error: tensor(377.4735, device='cuda:0') Test Error: tensor(445.8218, device='cuda:0')
+Round: 1500 Training Error: tensor(307.8694, device='cuda:0') Validation Error: tensor(270.0812, device='cuda:0') Test Error: tensor(353.9794, device='cuda:0')
+Round: 2000 Training Error: tensor(254.2331, device='cuda:0') Validation Error: tensor(241.1974, device='cuda:0') Test Error: tensor(328.0691, device='cuda:0')
+Round: 2500 Training Error: tensor(242.7184, device='cuda:0') Validation Error: tensor(247.4680, device='cuda:0') Test Error: tensor(328.8819, device='cuda:0')
+Round: 3000 Training Error: tensor(239.8306, device='cuda:0') Validation Error: tensor(252.6315, device='cuda:0') Test Error: tensor(330.1973, device='cuda:0')
+Round: 3500 Training Error: tensor(238.2030, device='cuda:0') Validation Error: tensor(255.1903, device='cuda:0') Test Error: tensor(330.7607, device='cuda:0')
+Round: 4000 Training Error: tensor(237.0072, device='cuda:0') Validation Error: tensor(259.8751, device='cuda:0') Test Error: tensor(331.5321, device='cuda:0')
+Round: 4500 Training Error: tensor(235.3129, device='cuda:0') Validation Error: tensor(261.9019, device='cuda:0') Test Error: tensor(331.2159, device='cuda:0')
+Round: 5000 Training Error: tensor(232.2903, device='cuda:0') Validation Error: tensor(260.9843, device='cuda:0') Test Error: tensor(329.3438, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'mw', 'dr', 'hvac', 'dw']
+Round: 500 Training Error: tensor(556.0349, device='cuda:0') Validation Error: tensor(494.0915, device='cuda:0') Test Error: tensor(556.5983, device='cuda:0')
+Round: 1000 Training Error: tensor(429.5143, device='cuda:0') Validation Error: tensor(377.5561, device='cuda:0') Test Error: tensor(446.0840, device='cuda:0')
+Round: 1500 Training Error: tensor(308.6621, device='cuda:0') Validation Error: tensor(268.4463, device='cuda:0') Test Error: tensor(355.6831, device='cuda:0')
+Round: 2000 Training Error: tensor(255.2160, device='cuda:0') Validation Error: tensor(240.3687, device='cuda:0') Test Error: tensor(330.8250, device='cuda:0')
+Round: 2500 Training Error: tensor(243.0673, device='cuda:0') Validation Error: tensor(245.3370, device='cuda:0') Test Error: tensor(331.5246, device='cuda:0')
+Round: 3000 Training Error: tensor(239.7187, device='cuda:0') Validation Error: tensor(255.9095, device='cuda:0') Test Error: tensor(335.4752, device='cuda:0')
+Round: 3500 Training Error: tensor(238.0408, device='cuda:0') Validation Error: tensor(262.4681, device='cuda:0') Test Error: tensor(338.7794, device='cuda:0')
+Round: 4000 Training Error: tensor(236.7091, device='cuda:0') Validation Error: tensor(259.7393, device='cuda:0') Test Error: tensor(337.4792, device='cuda:0')
+Round: 4500 Training Error: tensor(234.7598, device='cuda:0') Validation Error: tensor(265.2167, device='cuda:0') Test Error: tensor(340.1347, device='cuda:0')
+Round: 5000 Training Error: tensor(230.8884, device='cuda:0') Validation Error: tensor(262.6917, device='cuda:0') Test Error: tensor(337.0901, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'mw', 'dr', 'dw', 'hvac']
+Round: 500 Training Error: tensor(555.7019, device='cuda:0') Validation Error: tensor(493.9587, device='cuda:0') Test Error: tensor(556.0920, device='cuda:0')
+Round: 1000 Training Error: tensor(429.4032, device='cuda:0') Validation Error: tensor(378.2131, device='cuda:0') Test Error: tensor(446.1540, device='cuda:0')
+Round: 1500 Training Error: tensor(307.2897, device='cuda:0') Validation Error: tensor(271.4409, device='cuda:0') Test Error: tensor(359.2843, device='cuda:0')
+Round: 2000 Training Error: tensor(254.3049, device='cuda:0') Validation Error: tensor(241.0346, device='cuda:0') Test Error: tensor(337.7820, device='cuda:0')
+Round: 2500 Training Error: tensor(242.8598, device='cuda:0') Validation Error: tensor(242.2533, device='cuda:0') Test Error: tensor(339.7405, device='cuda:0')
+Round: 3000 Training Error: tensor(240.5115, device='cuda:0') Validation Error: tensor(246.0251, device='cuda:0') Test Error: tensor(341.8714, device='cuda:0')
+Round: 3500 Training Error: tensor(238.7130, device='cuda:0') Validation Error: tensor(247.4258, device='cuda:0') Test Error: tensor(342.2778, device='cuda:0')
+Round: 4000 Training Error: tensor(237.2819, device='cuda:0') Validation Error: tensor(247.8097, device='cuda:0') Test Error: tensor(341.8454, device='cuda:0')
+Round: 4500 Training Error: tensor(235.8893, device='cuda:0') Validation Error: tensor(247.8700, device='cuda:0') Test Error: tensor(340.8818, device='cuda:0')
+Round: 5000 Training Error: tensor(232.7034, device='cuda:0') Validation Error: tensor(247.0638, device='cuda:0') Test Error: tensor(338.5587, device='cuda:0')
+/zf14/yj9xs/anaconda3/lib/python3.6/site-packages/sklearn/utils/fixes.py:313: FutureWarning: numpy not_equal will not check object identity in the future. The comparison did not return the same result as suggested by the identity (`is`)) and will change.
+  _nan_object_mask = _nan_object_array != _nan_object_array
+cnn-tree-73.py:168: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  test_losses[t] = test_loss.data[0]
+cnn-tree-73.py:169: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  valid_losses[t] = valid_loss.data[0]
+cnn-tree-73.py:170: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  train_losses[t] = loss.data[0]
+cnn-tree-73.py:182: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  print("Round:", t, "Training Error:", loss.data[0], "Validation Error:", valid_loss.data[0], "Test Error:", test_loss.data[0])
+6 3 0.001 5000 0.0 ['fridge', 'mw', 'dw', 'hvac', 'dr']
+Round: 500 Training Error: tensor(556.0112, device='cuda:0') Validation Error: tensor(494.1575, device='cuda:0') Test Error: tensor(556.7072, device='cuda:0')
+Round: 1000 Training Error: tensor(429.5317, device='cuda:0') Validation Error: tensor(377.7126, device='cuda:0') Test Error: tensor(446.0566, device='cuda:0')
+Round: 1500 Training Error: tensor(308.9357, device='cuda:0') Validation Error: tensor(270.8189, device='cuda:0') Test Error: tensor(355.7421, device='cuda:0')
+Round: 2000 Training Error: tensor(255.4400, device='cuda:0') Validation Error: tensor(240.3756, device='cuda:0') Test Error: tensor(334.9345, device='cuda:0')
+Round: 2500 Training Error: tensor(243.5063, device='cuda:0') Validation Error: tensor(257.9995, device='cuda:0') Test Error: tensor(340.1684, device='cuda:0')
+Round: 3000 Training Error: tensor(240.3699, device='cuda:0') Validation Error: tensor(279.0792, device='cuda:0') Test Error: tensor(344.7137, device='cuda:0')
+Round: 3500 Training Error: tensor(238.8880, device='cuda:0') Validation Error: tensor(293.5799, device='cuda:0') Test Error: tensor(348.2592, device='cuda:0')
+Round: 4000 Training Error: tensor(237.4954, device='cuda:0') Validation Error: tensor(299.5397, device='cuda:0') Test Error: tensor(347.7598, device='cuda:0')
+Round: 4500 Training Error: tensor(235.1737, device='cuda:0') Validation Error: tensor(303.6469, device='cuda:0') Test Error: tensor(347.2997, device='cuda:0')
+Round: 5000 Training Error: tensor(230.5225, device='cuda:0') Validation Error: tensor(308.3455, device='cuda:0') Test Error: tensor(347.5548, device='cuda:0')

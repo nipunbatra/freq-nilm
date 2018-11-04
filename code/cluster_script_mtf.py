@@ -7,7 +7,7 @@ import delegator
 
 c = 0
 cmds = {}
-for dataset in [1, 2]:
+for dataset in [6]:
     for cur_fold in range(5):
         for num_latent in range(1, 21):
             for lr in [0.01, 0.1, 1, 2]:
