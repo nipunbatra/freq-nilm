@@ -277,7 +277,7 @@ directory = "./baseline/cnn-tree/7_3/{}/{}/{}/{}/{}".format(dataset, fold_num, l
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-
+print(test_error[1000])
 np.save('{}/valid-pred-{}.npy'.format(directory, ORDER), valid_fold)
 np.save('{}/valid-error-{}.npy'.format(directory, ORDER), valid_error)
 # np.save('{}/valid-losses-{}.npy'.format(directory, ORDER), valid_losses)
