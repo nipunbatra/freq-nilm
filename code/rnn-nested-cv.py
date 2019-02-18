@@ -109,9 +109,9 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
     train = train[:int(0.8 * len(train))].copy()
 
 
-    train_aggregate = train[:, 0, :, :].reshape(-1, 24, 1)
-    valid_aggregate = valid[:, 0, :, :].reshape(-1, 24, 1)
-    test_aggregate = test[:, 0, :, :].reshape(-1, 24, 1)
+    train_aggregate = train[:, 0, :, :].reshape(-1, train.shape[3], 1)
+    valid_aggregate = valid[:, 0, :, :].reshape(-1, train.shape[3], 1)
+    test_aggregate = test[:, 0, :, :].reshape(-1, train.shape[3], 1)
 
 
     #print (train.shape)
@@ -251,10 +251,10 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         valid_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
             for appliance_num, appliance in enumerate(ORDER):
-                valid_fold[t][appliance_num] = valid_pred[t][appliance_num].cpu().data.numpy().reshape(-1, 24)
+                valid_fold[t][appliance_num] = valid_pred[t][appliance_num].cpu().data.numpy().reshape(-1, valid.shape[3])
         else:
             for appliance_num, appliance in enumerate(ORDER):
-                valid_fold[t][appliance_num] = valid_pred[t][appliance_num].data.numpy().reshape(-1, 24)
+                valid_fold[t][appliance_num] = valid_pred[t][appliance_num].data.numpy().reshape(-1, valid.shape[3])
 
     test_fold = {}
     for t in range(1000, num_iterations + 1, 1000):
@@ -263,23 +263,23 @@ def disagg_fold(fold_num, dataset, cell_type, hidden_size, num_layers, bidirecti
         test_fold[t] = [None for x in range(len(ORDER))]
         if cuda_av:
             for appliance_num, appliance in enumerate(ORDER):
-                test_fold[t][appliance_num] = test_pred[t][appliance_num].cpu().data.numpy().reshape(-1, 24)
+                test_fold[t][appliance_num] = test_pred[t][appliance_num].cpu().data.numpy().reshape(-1, valid.shape[3])
         else:
             for appliance_num, appliance in enumerate(ORDER):
-                test_fold[t][appliance_num] = test_pred[t][appliance_num].data.numpy().reshape(-1, 24)
+                test_fold[t][appliance_num] = test_pred[t][appliance_num].data.numpy().reshape(-1, valid.shape[3])
 
     # store ground truth of validation set
     valid_gt_fold = [None for x in range(len(ORDER))]
     for appliance_num, appliance in enumerate(ORDER):
         valid_gt_fold[appliance_num] = valid[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(
             valid_aggregate.shape[0],
-            -1, 1).reshape(-1, 24)
+            -1, 1).reshape(-1, valid.shape[3])
 
     test_gt_fold = [None for x in range(len(ORDER))]
     for appliance_num, appliance in enumerate(ORDER):
         test_gt_fold[appliance_num] = test[:, APPLIANCE_ORDER.index(appliance), :, :].reshape(
             test_aggregate.shape[0],
-            -1, 1).reshape(-1, 24)
+            -1, 1).reshape(-1, test.shape[3])
 
     # calcualte the error of validation set
     valid_error = {}
@@ -320,10 +320,10 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 #filename = os.path.join(directory, name + '.pkl')
 
-np.save('./baseline/rnn-tree/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
+# np.save('./baseline/rnn-tree/{}/valid-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_fold)
 np.save('./baseline/rnn-tree/{}/valid-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_error)
 # np.save('./baseline/rnn-tree-order-new/train-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), train_fold)
-np.save('./baseline/rnn-tree/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
+# np.save('./baseline/rnn-tree/{}/test-pred-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_fold)
 np.save('./baseline/rnn-tree/{}/test-error-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_error)
 # np.save('./baseline/rnn-tree/{}/test-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), test_losses)
 # np.save('./baseline/rnn-tree/{}/valid-losses-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(folder, fold_num, dataset, cell_type, hidden_size, num_layers, bidirectional, lr, num_iterations, p, ORDER), valid_losses)

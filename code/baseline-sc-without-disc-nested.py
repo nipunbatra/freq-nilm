@@ -5,6 +5,7 @@ from dataloader import APPLIANCE_ORDER, get_train_test
 from ddsc import SparseCoding, reshape_for_sc
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
+import os
 
 num_folds = 5
 
@@ -14,6 +15,8 @@ def non_discriminative(dataset, cur_fold, num_latent):
     # for cur_fold in range(5):
     train, test = get_train_test(dataset, num_folds=num_folds, fold_num=cur_fold)
     #train, valid = train_test_split(train, test_size=0.2, random_state=0)
+    train[train<0]=1e-8
+    test[test<0]=1e-8
     valid = train[int(0.8*len(train)):].copy()
     train = train[:int(0.8 * len(train))].copy()
 
@@ -26,7 +29,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     c = SparseCoding()
     c.train(train_data, num_latent=num_latent)
     valid_pred = c.disaggregate(valid_sc[:, :, 0].swapaxes(0, 1)).swapaxes(0, 2).swapaxes(1, 2)
-    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, 24)
+    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, train.shape[3])
 
     valid_pred = np.minimum(valid_pred, valid_gt[:, 0:1, :, :])
 
@@ -39,7 +42,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     c = SparseCoding()
     c.train(train_data, num_latent=num_latent)
     test_pred = c.disaggregate(test_sc[:, :, 0].swapaxes(0, 1)).swapaxes(0, 2).swapaxes(1, 2)
-    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 24)
+    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, train.shape[3])
 
     #test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
 

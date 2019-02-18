@@ -18,7 +18,7 @@ def get_train_test(dataset, num_folds=5, fold_num=0):
     :param fold_num: which fold to return
     :return:
     """
-
+    tensor = 0
     if dataset == 1:
     	tensor = np.load('../2015-5appliances.numpy.npy')
     if dataset == 2:

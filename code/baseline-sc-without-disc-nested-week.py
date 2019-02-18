@@ -26,7 +26,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     c = SparseCoding()
     c.train(train_data, num_latent=num_latent)
     valid_pred = c.disaggregate(valid_sc[:, :, 0].swapaxes(0, 1)).swapaxes(0, 2).swapaxes(1, 2)
-    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, 24)
+    valid_pred = valid_pred.reshape(valid_pred.shape[0], valid_pred.shape[1], -1, train.shape[3])
 
     valid_pred = np.minimum(valid_pred, valid_gt[:, 0:1, :, :])
 
@@ -39,7 +39,7 @@ def non_discriminative(dataset, cur_fold, num_latent):
     c = SparseCoding()
     c.train(train_data, num_latent=num_latent)
     test_pred = c.disaggregate(test_sc[:, :, 0].swapaxes(0, 1)).swapaxes(0, 2).swapaxes(1, 2)
-    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, 24)
+    test_pred = test_pred.reshape(test_pred.shape[0], test_pred.shape[1], -1, train.shape[3])
 
     #test_pred = np.minimum(test_pred, test_gt[:, 0:1, :, :])
 
@@ -55,8 +55,8 @@ num_latent = int(num_latent)
 
 valid_pred, valid_error, test_pred, test_error = non_discriminative(dataset, cur_fold, num_latent)
 
-np.save("./baseline/sc-non-nested/{}/sc-non-valid-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_pred)
+# np.save("./baseline/sc-non-nested/{}/sc-non-valid-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_pred)
 np.save("./baseline/sc-non-nested/{}/sc-non-valid-error-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), valid_error)
 
-np.save("./baseline/sc-non-nested/{}/sc-non-test-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), test_pred)
+# np.save("./baseline/sc-non-nested/{}/sc-non-test-pred-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), test_pred)
 np.save("./baseline/sc-non-nested/{}/sc-non-test-error-{}-{}-{}.npy".format(dataset, dataset, cur_fold, num_latent), test_error)
